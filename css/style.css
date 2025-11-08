@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cce5ff;
+    color: #333;
+}
+
+.intestazione {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.contenuto-principale {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sezione-introduzione, .sezione-motivazione {
+    margin-bottom: 20px;
+}
+
+.piè-di-pagina {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
