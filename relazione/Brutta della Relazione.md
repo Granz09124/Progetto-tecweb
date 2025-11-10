@@ -18,7 +18,10 @@
     - CSS  
     - Immagini e icone  
     - Font  
-    - Colori  
+    - Colori
+      - #161717 SFONDO
+      - #29292c GRIGIO SCURO
+      - #5c5c5c GRIGIO SCRITTE SECONDARIE
   - Comportamento  
     - PHP  
     - JavaScript  
