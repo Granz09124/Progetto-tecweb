@@ -25,6 +25,8 @@ Piano alimentare personalizzato
 Allenamenti 1:1 in sede
 Monitoraggio dei progressi tramite la propria area riservata. (possibile)
 
+Recensioni (possibile)
+
 ADMIN:
 Visualizzare e gestire tutti gli abbonamenti attivi, sospesi o scaduti.
 Storico pagamenti e statistiche sui ricavi per periodo o tipologia di abbonamento.
