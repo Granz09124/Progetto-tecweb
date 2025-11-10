@@ -1,0 +1,37 @@
+UTENTE:
+Possibilità di sottoscrivere un abbonamento:
+Mensile Trimestrale Semestrale Annuale  (Greentheory)
+Gestione semplice del rinnovo o della disdetta dell’abbonamento.
+Visualizzazione dello stato attuale dell’abbonamento (attivo, in scadenza, scaduto). (Mcfit)
+
+Gli utenti possono scegliere di diventare membri della palestra con livelli a pagamento che offrono vantaggi esclusivi:
+Bronze (Standard) → Accesso base alla palestra e ai servizi principali.
+Silver → Include benefici aggiuntivi come accesso a più filiali o sconti sui corsi.
+Gold → Tutti i benefici Silver + accesso alla zona spa, corsi gratuiti introduttivi e vantaggi premium. (Mcfit)
+
+Accesso a corsi separati dalla sala pesi (con costo aggiuntivo):
+Zumba Pilates Yoga etc..
+Prenotazione facile tramite area personale.
+Visualizzazione orari, posti disponibili e istruttori dei corsi.
+
+Accesso opzionale alla zona spa (inclusa solo per alcuni livelli di membership o con supplemento).
+Possibilità di prenotare trattamenti o sessioni spa direttamente dal portale utente.
+
+Personal Trainer e Programmi Personalizzati (stile DLGym):
+Possibilità di richiedere un Personal Trainer dedicato.
+Creazione di:
+Scheda di allenamento personalizzata
+Piano alimentare personalizzato
+Allenamenti 1:1 in sede
+Monitoraggio dei progressi tramite la propria area riservata. (possibile)
+
+ADMIN:
+Visualizzare e gestire tutti gli abbonamenti attivi, sospesi o scaduti.
+Storico pagamenti e statistiche sui ricavi per periodo o tipologia di abbonamento.
+Visualizzazione dettagliata del profilo utente (schede, corsi, prenotazioni, PT assegnati, scadenze, ecc.).
+Gestione degli istruttori/personal trainer: calendario, disponibilità, schede clienti, retribuzione. (possibile)
+Dashboard con overview di ricavi, abbonamenti attivi, nuovi iscritti, e tassi di rinnovo.
+Statistiche su utilizzo della palestra, corsi più frequentati, tassi di retention.(possibile)
+
+
+
