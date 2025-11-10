@@ -11,7 +11,7 @@ con descrizioni e pulsante per ognuna
 Pagina SPA: (Marco)
 pagina contentente immagine e descrizione, messe in modo alternato 
 
-Pagina Corsi: (Luca)
+Pagina Corsi: (Luca)  rifare modello logo.
 su modello di pagina spa: zumba, pilates, yoga, crossfit, verticali, arrampicata.
 bottone su descrizione che cambia lo spazio dedicato alla descrizione a uno spazio per gli orari del corso stesso.
 
