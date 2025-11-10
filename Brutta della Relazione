@@ -1,0 +1,37 @@
+# Indice
+
+- Introduzione
+- Analisi dei requisiti  
+  - Analisi utente  
+  - SEO
+- Progettazione  
+  - Schema organizzativo  
+  - Tipi di utente  
+  - Funzionalità  
+  - Convenzioni interne  
+  - Schema database
+- Realizzazione  
+  - Struttura e contenuto  
+    - HTML  
+    - Popolamento database  
+  - Presentazione  
+    - CSS  
+    - Immagini e icone  
+    - Font  
+    - Colori  
+  - Comportamento  
+    - PHP  
+    - JavaScript  
+    - Validazione dell’input  
+    - Sicurezza  
+    - Errori di navigazione o del server  
+  - Accessibilità  
+    - Aiuti per lo screen reader  
+    - Compatibilità
+- Test effettuati  
+  - Navigabilità ed accessibilità  
+  - Falsi positivi  
+  - Screen reader
+- Organizzazione del gruppo  
+  - Divisione dei compiti
+- Note
