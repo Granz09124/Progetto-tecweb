@@ -1,0 +1,70 @@
+PUNTI IMPORTANTI SULL’ACCESSIBILITÀ
+
+La parte di accessibilità, spiegata dalla prof.ssa Gaggi, riporta tutte le regole fondamentali per garantire una navigazione fluida anche alle persone ipovedenti, assicurando tutte le funzionalità offerte dal sito.
+Di seguito trovi un elenco delle cose più importanti da inserire o omettere nel sito e da menzionare nella relazione, se opportuno:
+
+TORNA SU:
+Inserire un link o pulsante (soprattutto per mobile) per tornare all’inizio della pagina.
+Esempio: <a href="#">Torna su</a>
+
+VAI AL CONTENUTO:
+Aggiungere un link invisibile (visibile solo agli screen reader) subito dopo il tag <body>, con riferimento alla sezione principale del contenuto (dopo la testata o il menù).
+
+ALT NELLE IMMAGINI:
+Ogni immagine deve avere un attributo alt.
+Non è necessario per immagini puramente decorative.
+In caso di dubbio, confrontarsi con i docenti.
+
+LONGDESC NELLE IMMAGINI:
+Usare solo per immagini complesse o importanti, senza una descrizione testuale chiara nel contenuto.
+In alternativa, si può aggiungere un ID alla descrizione (es. #descImmagine1).
+
+TABINDEX:
+Non necessario se i form e gli elementi di input sono già navigabili in modo naturale.
+Giustificare l’eventuale mancato utilizzo.
+
+ACCESSKEY:
+Evitare l’uso, poiché può entrare in conflitto con le scorciatoie dei browser.
+
+ATTRIBUTI XML:LANG E LANG:
+Obbligatori per indicare la lingua del documento o di singole parole/frasi in lingua diversa.
+Esempio: <html lang="it" xml:lang="it">
+
+ABBREVIAZIONI E ACRONIMI:
+Usare i tag appropriati (abbr o acronym) per permettere agli screen reader di leggere le parole per esteso.
+
+SITEMAP:
+Non obbligatoria, ma va giustificata la presenza o l’assenza.
+Se presente → indica che la navigazione può risultare complessa.
+Se assente → il sito è ritenuto facilmente navigabile.
+
+BREADCRUMB:
+Consigliato per mostrare all’utente dove si trova e facilitare la navigazione.
+
+LINK CIRCOLARI:
+Da evitare completamente.
+Meglio rimuovere il tag <a> e sostituirlo con semplice testo o con uno <span>.
+
+CACHE MANIFEST:
+Non necessario; implementazione troppo complessa per il contesto del progetto.
+
+FILE CSS MINIMIZZATI E DIVISI PER GRANDEZZA SCHERMO:
+È consigliabile minimizzare i file CSS (rimuovendo spazi e commenti superflui).
+Usare tool online come “CSS Minifier”.
+Alla consegna, includere anche la versione non minimizzata.
+Un file css per la stampa, uno per mobile/tablet.
+
+TABELLE ACCESSIBILI:
+Strutturare le tabelle come visto in laboratorio:
+Collegare intestazioni e celle tramite id, scope, headers e altri attributi appropriati.
+
+COOKIE CONSENT:
+Facoltativo, ma deve essere giustificata la scelta.
+In un progetto accademico può essere omesso.
+In un prodotto reale deve essere incluso.
+
+TAB: 
+pulsante tab deve funzionare bene per navigare tra i contenuti.
+
+COLORI: 
+colori messi in modo sensato e che non causino affaticamento visivo.

@@ -1,0 +1,43 @@
+RELAZIONE DI PROGETTO
+
+La relazione di progetto riassume brevemente tutto ciò che è stato fatto, dalla progettazione allo sviluppo, fino ai test e alla validazione.
+In generale non c’è molto da dire a tal riguardo, se non come predisporre i vari argomenti, basandosi anche su quanto fatto dai gruppi degli anni precedenti.
+
+Di seguito una possibile scaletta ordinata degli argomenti da trattare:
+
+Frontpage
+Inserire le intestazioni richieste nelle specifiche di progetto.
+
+Introduzione (Abstract)
+Breve descrizione del progetto e del suo scopo.
+
+Analisi dei requisiti
+Descrivere:
+Target di utenza
+Obiettivi del progetto
+Requisiti di funzionamento e altre necessità tecniche o funzionali
+Organizzazione del lavoro e progettazione
+Indicare gli approcci utilizzati, la gestione dei file e la suddivisione dei compiti nel gruppo.
+
+Implementazioni lato front-end
+Elencare:
+Sezioni implementate
+Funzionalità per visitatori, utenti e amministratori
+Sicurezza degli input (ad esempio tramite JavaScript)
+Accessibilità e usabilità
+Descrivere lo studio dei colori (colortest) e le implementazioni effettuate per migliorare l’esperienza utente.
+
+Implementazioni lato back-end
+Spiegare:
+
+Funzioni di aggiunta, modifica e cancellazione
+Descrizione del sistema utente e modalità di utilizzo
+Struttura e gestione del database
+Motivazione delle scelte implementative e parti critiche del progetto
+Evidenziare le scelte progettuali principali e i punti più complessi affrontati durante lo sviluppo.
+
+Note conclusive
+Breve riepilogo dei risultati ottenuti e delle considerazioni finali.
+
+(Opzionale) Implementazioni future
+Possibili miglioramenti o estensioni del progetto per versioni successive.
