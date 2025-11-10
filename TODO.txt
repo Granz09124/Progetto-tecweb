@@ -1,0 +1,28 @@
+Pagina home: (Alessandro)
+Immagine 
+presentazione con frase ad effetto 
+sezione dove vai a scegliere tra: palestra, spa, abbonamenti.
+recensioni (capire come fare).
+
+Pagina palestra: (Armando)
+si suddivide in 3: salapesi, corsi e pt.
+con descrizioni e pulsante per ognuna
+
+Pagina SPA: (Marco)
+pagina contentente immagine e descrizione, messe in modo alternato 
+
+Pagina Corsi: (Luca)
+su modello di pagina spa: zumba, pilates, yoga, crossfit, verticali, arrampicata.
+bottone su descrizione che cambia lo spazio dedicato alla descrizione a uno spazio per gli orari del corso stesso.
+
+
+Pagina abbonamenti: (PROSSIMAMENTE)
+3 sezioni + bundle con i best seller (palestra, spa, corsi)
+per palestra, 4 abbonamenti(mensile,trimestrale...) + possibilità di aggiungere il pt. 
+per spa, costo fisso. 
+per corsi, sezione dove si seleziona i corsi a cui si vuole fare l'abbonamento.
+per corsi sezione che va a calcolare il totale nel caso si scelgano + corsi, o anche nel caso singolo. 
+
+
+
+
