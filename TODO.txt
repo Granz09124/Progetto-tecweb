@@ -17,11 +17,66 @@ bottone su descrizione che cambia lo spazio dedicato alla descrizione a uno spaz
 
 
 Pagina abbonamenti: (PROSSIMAMENTE)
-3 sezioni + bundle con i best seller (palestra, spa, corsi)
+3 sezioni + bundle con i best seller (palestra, spa, corsi)  (pagina abbonamenti)
 per palestra, 4 abbonamenti(mensile,trimestrale...) + possibilità di aggiungere il pt. 
 per spa, costo fisso. 
 per corsi, sezione dove si seleziona i corsi a cui si vuole fare l'abbonamento.
 per corsi sezione che va a calcolare il totale nel caso si scelgano + corsi, o anche nel caso singolo. 
+
+
+---------------------------------------------------------------------------------------------------------------
+
+DECISIONI:
+
+Scaricare estensioni per vedere pagina in bianco e nero:  gray screen browsing.  wcag contrast checker.  
+
+Pagina abbonamenti, pagina contattaci, pagine errore 404 (PROSSIMAMENTE)
+
+Css: ognuno fa il css della pagina che ha realizzato. 
+     decidere i colori per link visitati e non. (giallo verde e ciano)
+
+aggiungere pulsante al menu login. 
+
+Modificare per fare in modo che la home sia la pagina dell'associazione di varie palestre, con 3 palestre nella sezione "Scopri le 
+nostre palestre" una con solo sala pesi, una con salapesi e spa, una con sala pesi e corsi. 
+
+convertire il  yoga.png in jpg. o webp. e il logo farlo più piccolo senza utilizzo di css.
+
+COSE DA VEDERE NELLA PROSSIMA RIUNIONE:
+
+Discussione se cambiare o no il logo e il nome dell'ora associazione. Proposto Phanteon come alternativa. 
+
+Come gestire le tabelle dei corsi? tabelle o no? 
+
+Definire funzionalità di amministratore e utente, cosa possono fare. (vedere documento feature.txt per questo)
+
+Discutere sul css applicato per le varie pagine. 
+
+
+TO DO:
+
+CSS ognuno la sua pagina. (creare più css e poi in futuro fonderli)
+
+pagina contattaci.html (Marco)
+
+pagina 404 e  update della relazione (Luca)
+
+modifica della home con le nuove cose (versione dell'associazione da implementare). (Alessandro)
+
+pagina abbonamenti (Armando) 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
