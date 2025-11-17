@@ -1,0 +1,121 @@
+
+body {
+    background-color: #161717;
+    color: #fecd00;
+    font-family: Arial, sans-serif;
+   
+}
+
+.intestazione {
+    text-align: center;
+    padding: 1.25em;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0.625em ;
+}   
+h2{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+#breadcrumb {
+    background-color: #fecd00;
+    color: #161717;
+    padding: 0.625em;
+    text-align: center;
+}
+
+.contenuto-principale {
+    padding: 1.25em;
+}
+
+.sezione-corsi {
+    display: flex;
+    flex-direction: column;
+}
+
+.corso {
+    display: flex;
+    margin-bottom: 1.25em;
+    margin-left: 7em;
+    margin-right: 7em;
+    padding: 1.25em;
+    border-radius: 0.9375em;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 15px rgba(254,205,0,0.5);
+}
+
+.corso img {
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+}
+
+.corso-descrizione {
+    width: 70%;
+    padding: 0.625em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.corso button {
+    align-self: flex-end;
+    background-color: #fecd00;
+    color: #161717;
+    border: none;
+    padding: 0.625em;
+    cursor: pointer;
+    border-radius: 0.3125em;
+}
+
+.corso button:focus {
+    outline: 2px solid #fecd00;
+    outline-offset: 0.125em;
+}
+
+.corso.alternato {
+    flex-direction: row-reverse;
+}
+
+.corso.alternato button {
+    align-self: flex-start;
+}
+
+footer {
+    text-align: center;
+    padding: 1.25em;
+    background-color: #fecd00;
+    color: #161717;
+}
+
+@media (max-width: 768px) {
+    .corso {
+        flex-direction: column;
+    }
+
+    .corso img,
+    .corso-descrizione {
+        width: 100%;
+    }
+
+    .corso button {
+        position: static;
+        margin-top: 0.625em;
+        width: 100%;
+    }
+
+    .corso.alternato button {
+        position: static;
+        margin-top: 0.625em;
+        width: 100%;
+    }
+}
