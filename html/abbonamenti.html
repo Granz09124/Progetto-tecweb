@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestra - Abbonamenti</title>
+    <meta name="description" content="Abbonamenti palestra, sala pesi, spa, personal trainer, corsi fitness">
+    <meta name="keywords" content="abbonamenti, palestra, sala pesi, spa, personal trainer, corsi, fitness">
+    <link rel="stylesheet" href="../css/style-palestra-abbonamenti.css">
+</head>
+<body>
+    <header class="intestazione">
+        <img src="../immagini/Logo_palestra.png" alt="Logo Palestra" class="logo">
+        <nav id="menu">
+            <ul>
+                <li lang="en"><a href="home.html">Home</a></li>
+                <li><a href="palestra.html">Palestra</a></li>
+                <li>Abbonamenti</li>
+                <li><a href="contatti.html">Contattaci</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav id="breadcrumb">
+        <p>Ti trovi in: Home > > Abbonamenti</p>
+    </nav>
+
+    <main class="contenuto-principale">
+        <div class="parent">
+            <div class="div1">
+                <h2>Sala Pesi</h2>
+                
+                <h3>Mensile</h3>
+                <p><strong>€ 49,90/mese</strong></p>
+                <ul>
+                    <li>Accesso illimitato alla sala pesi</li>
+                    <li>Utilizzo di tutti gli attrezzi</li>
+                    <li>Armadietto personale</li>
+                    <li>Orario: 6:00 - 23:00</li>
+                </ul>
+                
+                <h3>Trimestrale</h3>
+                <p><strong>€ 128,70 (€ 42,90/mese)</strong></p>
+                <ul>
+                    <li>Tutti i vantaggi del mensile</li>
+                    <li>Risparmio del 14%</li>
+                    <li>Validità 3 mesi</li>
+                </ul>
+                
+                <h3>Semestrale</h3>
+                <p><strong>€ 233,40 (€ 38,90/mese)</strong></p>
+                <ul>
+                    <li>Tutti i vantaggi del mensile</li>
+                    <li>Risparmio del 22%</li>
+                    <li>1 sessione PT gratuita</li>
+                    <li>Validità 6 mesi</li>
+                </ul>
+                
+                <h3>Annuale</h3>
+                <p><strong>€ 394,80 (€ 32,90/mese)</strong></p>
+                <ul>
+                    <li>Tutti i vantaggi del mensile</li>
+                    <li>Risparmio del 34%</li>
+                    <li>2 sessioni PT gratuite</li>
+                    <li>Validità 12 mesi</li>
+                </ul>
+            </div>
+            
+            <div class="div2">
+                <h2>Spa</h2>
+                
+                <h3>Mensile</h3>
+                <p><strong>€ 39,90/mese</strong></p>
+                <ul>
+                    <li>Accesso a sauna e bagno turco</li>
+                    <li>Area relax</li>
+                    <li>Idromassaggio</li>
+                    <li>10 ingressi/mese</li>
+                </ul>
+                
+                <h3>Trimestrale</h3>
+                <p><strong>€ 109,90 (€ 36,63/mese)</strong></p>
+                <ul>
+                    <li>Tutti i vantaggi del mensile</li>
+                    <li>Risparmio dell'8%</li>
+                    <li>12 ingressi/mese</li>
+                    <li>Validità 3 mesi</li>
+                </ul>
+                
+                <h3>Semestrale</h3>
+                <p><strong>€ 209,90 (€ 34,98/mese)</strong></p>
+                <ul>
+                    <li>Tutti i vantaggi del mensile</li>
+                    <li>Risparmio del 12%</li>
+                    <li>15 ingressi/mese</li>
+                    <li>1 massaggio gratuito</li>
+                    <li>Validità 6 mesi</li>
+                </ul>
+                
+                <h3>Annuale</h3>
+                <p><strong>€ 399,00 (€ 33,25/mese)</strong></p>
+                <ul>
+                    <li>Tutti i vantaggi del mensile</li>
+                    <li>Risparmio del 17%</li>
+                    <li>Ingressi illimitati</li>
+                    <li>2 massaggi gratuiti</li>
+                    <li>Validità 12 mesi</li>
+                </ul>
+            </div>
+            
+            <div class="div3">
+                <h2>Personal Trainer</h2>
+                
+                <h3>Pacchetto 5 Sessioni</h3>
+                <p><strong>€ 150,00</strong></p>
+                <ul>
+                    <li>5 sessioni da 60 minuti</li>
+                    <li>Programma personalizzato</li>
+                    <li>Valutazione iniziale</li>
+                    <li>Piano alimentare base</li>
+                </ul>
+                
+                <h3>Pacchetto 10 Sessioni</h3>
+                <p><strong>€ 280,00</strong></p>
+                <ul>
+                    <li>10 sessioni da 60 minuti</li>
+                    <li>Programma completo</li>
+                    <li>Monitoraggio continuo</li>
+                    <li>Piano alimentare dettagliato</li>
+                </ul>
+            </div>
+            
+            <div class="div4">
+                <h2>Corsi</h2>
+                <div class="corso-selector">
+                    <label for="corso-select">Seleziona un corso:</label>
+                    <select id="corso-select" onchange="mostraCorso(this.value)">
+                        <option value="">-- Scegli un corso --</option>
+                        <option value="arrampicata">Arrampicata</option>
+                        <option value="yoga">Yoga e Meditazione</option>
+                        <option value="pilates">Pilates</option>
+                        <option value="crossfit">Crossfit</option>
+                        <option value="fitbox">Fit Box</option>
+                        <option value="zumba">Zumba</option>
+                    </select>
+                </div>
+                
+                <div id="corso-dettagli" class="corso-dettagli">
+                    <p>Seleziona un corso dal menu per visualizzare i dettagli.</p>
+                </div>
+            </div>
+            
+            <div class="div5">
+                <h2>I nostri Best Seller Bundle</h2>
+                
+                <section class="bundle">
+                    <h3>Bundle Fitness Completo</h3>
+                    <p><strong>€ 119,90/mese</strong> <span class="prezzo-originale">(Risparmi €29,90)</span></p>
+                    <ul>
+                        <li>Sala Pesi - Accesso illimitato</li>
+                        <li>Spa - 10 ingressi/mese</li>
+                        <li>2 Corsi a scelta</li>
+                        <li>1 Sessione PT gratuita</li>
+                    </ul>
+                </section>
+                
+                <section class="bundle">
+                    <h3>Bundle Relax & Benessere</h3>
+                    <p><strong>€ 99,90/mese</strong> <span class="prezzo-originale">(Risparmi €19,90)</span></p>
+                    <ul>
+                        <li>Spa - Ingressi illimitati</li>
+                        <li>Yoga e Meditazione</li>
+                        <li>Pilates</li>
+                        <li>2 Massaggi gratuiti/mese</li>
+                    </ul>
+                </section>
+                
+                <section class="bundle">
+                    <h3>Bundle Forza & Performance</h3>
+                    <p><strong>€ 149,90/mese</strong> <span class="prezzo-originale">(Risparmi €39,90)</span></p>
+                    <ul>
+                        <li>Sala Pesi - Accesso illimitato</li>
+                        <li>Crossfit - Sessioni illimitate</li>
+                        <li>5 Sessioni PT</li>
+                        <li>Piano alimentare personalizzato</li>
+                    </ul>
+                </section>
+                
+                <section class="bundle">
+                    <h3>Bundle All Inclusive Premium</h3>
+                    <p><strong>€ 199,90/mese</strong> <span class="prezzo-originale">(Risparmi €89,90)</span></p>
+                    <ul>
+                        <li>Sala Pesi - Accesso illimitato</li>
+                        <li>Spa - Ingressi illimitati</li>
+                        <li>Tutti i Corsi illimitati</li>
+                        <li>10 Sessioni PT</li>
+                        <li>Piano alimentare completo</li>
+                        <li>Massaggi illimitati</li>
+                    </ul>
+                </section>
+            </div>
+
+        </div>
+    </main>
+    
+    <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
+        <img src="../immagini/Icon/torna_su.webp" alt="Torna su">
+    </button>
+    
+    <footer class="piè-di-pagina">
+        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="../javascript/seleziona-corsi.js"></script>
+    <script src="../javascript/torna-su.js"></script>
+
+</body>
+</html>
