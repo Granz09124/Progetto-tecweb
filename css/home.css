@@ -1,0 +1,229 @@
+/* ==================
+ * COMMON           *
+ ===================*/
+* {
+    padding: 0em;
+    margin: 0em;
+}
+
+:root {
+    --mainColor: #fecd00;
+    --backgroundColor: #191919;
+    --backgroundLight: #202020;
+    --backgroundDark: #050505;
+
+    --textColor: #959595;
+    --unvisitedUrlColor: #005EFF;
+    --visitedUrlColor: #1f53ad;
+}
+
+html,
+body {
+    font-size: 100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    line-height: 1.5em;
+}
+
+html {
+    background-color: var(--backgroundDark);
+}
+
+body {
+    color: var(--textColor);
+    max-width: 1200px;
+    border-radius: 10% 20% 5% 5%;
+    border-width: 15px 15px 10px 10px;
+    border-color: var(--mainColor);
+    border-style: solid;
+    /* potenzialmente mortale */
+    contain: paint;
+    margin: auto;
+}
+
+body>* {
+    margin: .5em;
+    overflow: hidden;
+}
+
+main {
+    padding: 2em;
+    background-color: var(--backgroundDark);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--mainColor);
+}
+
+a {
+    text-decoration: underline;
+    color: var(--unvisitedUrlColor);
+}
+
+a:visited,
+a:active {
+    color: var(--visitedUrlColor);
+}
+
+a:hover {
+    color: var(--mainColor);
+}
+
+strong {
+    font-weight: normal;
+    font-size: medium;
+}
+
+/* ==================
+ * CLASS            *
+ ===================*/
+.rounded-main {
+    padding: .5em;
+    border: solid 2px var(--mainColor);
+    border-radius: .5em 1em .5em 1em;
+    background-color: var(--backgroundColor);
+}
+
+.rounded-sub {
+    margin-top: 1em;
+    border: solid 1px var(--mainColor);
+    border-radius: .5em .5em 1em 1em;
+    background-color: var(--backgroundColor);
+}
+
+.rounded-sub>* {
+    margin: 1em;
+}
+
+.ref-pagina-attuale {
+    font-weight: bold;
+}
+
+/* ==================
+ * HEADER           *
+ ===================*/
+
+/* logo */
+.intestazione img {
+    text-align: left;
+    width: 20%;
+    margin: 2.5% 2.5% 0% 5%;
+    vertical-align: middle;
+}
+
+/* nome palestra */
+.intestazione h1 {
+    display: inline;
+    font-size: 200%;
+}
+
+/* ==================
+ * BREADCRUMBS      *
+ ===================*/
+#breadcrumb {
+    color: var(--mainColor);
+    background-color: var(--backgroundColor);
+    padding: .5em 1.25em;
+}
+
+/* ==================
+ * MENU             *
+ ===================*/
+#menu {
+    background-color: var(--backgroundLight);
+    padding: 1em 2em;
+}
+
+#menu * {
+    display: inline;
+    font-size: 1.35rem;
+}
+
+#menu li {
+    margin: .2em;
+}
+
+/* ================== (solo per home)
+ * PRESENTAZIONE    *
+ ===================*/
+#presentazione h1 {
+    padding: .5em;
+    text-align: center;
+}
+
+#presentazione>article {
+    display: flex;
+    align-items: center;
+}
+
+#presentazione img {
+    width: 35%;
+    padding: 2em 4em 2em 1em;
+}
+
+#catchphrase {
+    color: var(--mainColor);
+    display: inline;
+    font-size: 1.5em;
+    width: 50%;
+    font-style: italic;
+    line-height: 1.75em;
+}
+
+/* ==================(modificare che non ha senso)
+ * CORE             *
+ ===================*/
+h2 {
+    text-align: center;
+    margin-top: 1em;
+}
+
+#core {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: .5em;
+}
+
+#core>article {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#core>article>* {
+    display: block;
+}
+
+#core>article>a {
+    text-align: right;
+}
+
+
+/* ================== (home->recensioni)
+ * ASIDE            *
+ ===================*/
+#recensioni>h2 {
+    text-align: center;
+}
+
+#recensioni>ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+#recensioni>ul>li {
+    margin-left: 5%;
+}
+
+.recensione {
+    flex: 0 0 200px;
+    padding: 1em;
+}
+
+/* ==================
+ * FOOTER           *
+ ===================*/
+footer {
+    padding: 1em 3em;
+}

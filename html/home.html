@@ -7,7 +7,8 @@
     <title>Palestra - Home</title>
     <meta name="description" content="Palestra, allenamento, sala pesi, bodybuilding, attrezzi, manubri, fitness, sport, salute, motivazione, forma fisica">
     <meta name="keywords" content="palestra, allenamento, sala pesi, bodybuilding, attrezzi, manubri, fitness, sport, salute, motivazione, forma fisica">
-    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,13 +18,13 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <span lang="en">Home</span></p>
+        <p>Ti trovi in: <span lang="en" class="ref-pagina-attuale">Home</span></p>
     </nav>
 
     <nav id="menu">
         <ul>
             <li>
-                <span lang="en">Home</span>
+                <span lang="en" class="ref-pagina-attuale">Home</span>
             </li>
             <li>
                 <a href="./Palestra.html"><strong>Palestra</strong></a>
@@ -32,13 +33,13 @@
                 </button>
                 <ul>
                     <li>
-                        <a href="Palestra/Sala-pesi.html"><strong>Sala pesi</strong></a>
+                        <a href="./Palestra/Sala-pesi.html"><strong>Sala pesi</strong></a>
                     </li>
                     <li>
-                        <a href="Palestra/Corsi.html"><strong>Corsi</strong></a>
+                        <a href="./Palestra/Corsi.html"><strong>Corsi</strong></a>
                     </li>
                     <li>
-                        <a href="Palestra/Personal-Trainer.html"><span lang="en"><strong>Personal Trainer</strong></span></a>
+                        <a href="./Palestra/Personal-Trainer.html"><span lang="en"><strong>Personal Trainer</strong></span></a>
                     </li>
                 </ul>
             </li>
@@ -49,54 +50,57 @@
                 <a href="./Abbonamenti.html">Abbonamenti</a>
             </li>
             <li>
-                <a href="/Sedi.html">Le nostre sedi</a>
+                <a href="./Sedi.html">Le nostre sedi</a>
             </li>
             <li>
-                <a href="/Contattaci.html">Contattaci</a>
+                <a href="./Contattaci.html">Contattaci</a>
             </li>
             <li>
                 <a href="./Chi-siamo.html">Chi siamo</a>
             </li>
             <li>
-                <a href="/Login.html">Login</a>
+                <a href="./Login.html">Login</a>
             </li>
             <li>
-                <a href="/Registrati.html">Registrati</a>
+                <a href="./Registrati.html">Registrati</a>
             </li>
         </ul>
     </nav>
 
-    <main class="contenuto-principale">
+    <main>
         <section id="presentazione">
-            <h1>Benvenuti nella nostra Palestra</h1>
-            <img src="../immagini/palestra-presentazione-tmp.jpg" alt="TODO">
-            <p id="catchphrase">A bellezza e bontà le persone aspirano, l'apollinea perfezione tutti ammirano.</p>
-        </section>
-        <section id="elementi-base">
-            <h2>Cosa offriamo</h2>
+            <h1 class="rounded-main">Benvenuti nella nostra Palestra</h1>
             <article>
+                <img src="../immagini/palestra-presentazione-tmp.jpg" alt="TODO">
+                <p id="catchphrase">A bellezza e bontà le persone aspirano, l'apollineo splendore tutti ammirano.</p>
+            </article>
+        </section>
+
+        <h2 class="rounded-main">Cosa offriamo</h2> <!-- Facilita le cose ma è fatto bene? -->
+        <section id="core">
+            <article class="rounded-sub">
                 <h3>La palestra</h3>
                 <img src="../immagini/presentazione-palestra.jpg" alt="TODO">
                 <a href="./Palestra.html">Scopri di più</a>
             </article>
-            <article>
+            <article class="rounded-sub">
                 <h3>Servizi SPA</h3>
                 <img src="../immagini/presentazione-SPA.jpg" alt="TODO">
                 <a href="./SPA.html">Scopri di più</a>
             </article>
-            <article>
+            <article class="rounded-sub">
                 <h3>Scopri le nostre sedi</h3>
                 <img src="../immagini/Sedi.jpg" alt="TODO">
                 <a href="./Abbonamenti.html">Scopri di più</a>
             </article>
-
         </section>
+
         <!-- Si tiene statico -->
         <aside id="recensioni">
-            <h2>Recensioni</h2>
+            <h2 class="rounded-main">Recensioni</h2>
             <ul>
                 <li>
-                    <dl>
+                    <dl class="recensione rounded-sub">
                         <dt>Nome Cognome1</dt>
                         <dd><img src="../immagini/recensioni/recensione1.jpg" alt="TODO"></dd>
                         <dt>Voto recensione indicato con stelle</dt>
@@ -104,7 +108,7 @@
                     </dl>
                 </li>
                 <li>
-                    <dl>
+                    <dl class="recensione rounded-sub">
                         <dt>Nome Cognome2</dt>
                         <dd><img src="../immagini/recensioni/recensione2.jpg" alt="TODO"></dd>
                         <dt>Sito recensione</dt>
