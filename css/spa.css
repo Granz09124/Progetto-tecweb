@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #161717;
+    color: #ffffff;
+}
+
+#breadcrumb {
+    background-color: #fecd00;
+    color: #161717;
+    padding: 0.625em;
+    text-align: center;
+}
+
+.intestazione {
+    background-color: #161717;
+    color: rgb(254, 205, 0);
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.contenuto-principale {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sezione-introduzione, .sezione-motivazione {
+    margin-bottom: 20px;
+}
+
+.piè-di-pagina {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.sezione-spa {
+    display: flex;
+    flex-direction: column;
+    gap: 2em; 
+    margin-bottom: 80px; 
+}
+
+.servizio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 1.5em;
+    border-radius: 15px;
+    background-color: #29292c;
+    box-shadow: 1px 1px 10px rgb(254, 205, 0);
+}
+
+.immagine-servizio {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.descrizione {
+    flex: 1;
+}
+    
+.servizio h2 {
+    margin-top: 0;
+    color: #fecd00;
+}
+
+.servizio p {
+    line-height: 1.5;
+}
+
+/* alterna immagine e descrizione */
+.servizio:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .servizio, 
+  .servizio:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
