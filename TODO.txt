@@ -66,6 +66,40 @@ modifica della home con le nuove cose (versione dell'associazione da implementar
 pagina abbonamenti (Armando) 
 
 
+-----------------------------------------------------------------------------------------------------------------------
+DECISIONI:
+
+Confermato logo e nome dell'associazione Apollo's (Temple?)
+
+Capire come sistemare meglio su pagina abbonamenti: togliere personal trainer integrandolo nella sezione di sala pesi, come qualcosa
+di aggiuntivo. Sistemare sezione di salapesi e spa con menu a tendina e sezione corsi prende il posto di personal trainer, anche lei
+con il menu a tendina. grigi troppo accesi 
+
+Utilizzare lo shadowbox presente nella pagina corsi.css per le altre pagine. 
+
+
+TODO :
+Rivedere le keyword per ogni pagina, non tutte uguali ---> uso dello strong per le parole che compaiono nella pagina che sono keyword (NON METTERE SE KEYWORD è ALL'INTERNO DI H1 O H2) (TUTTI)
+max 1200 pixel a pagine (Luca e Armando)
+modifica della home con le nuove cose (versione dell'associazione da implementare). (Alessandro)
+cambiare lo span in pagina error404 (Luca)
+cambiare la pagina abbonamenti secondo le specifiche decise (Armando/Marco) 
+Creare cartella palestra per rispettare la struttura decisa in precedenza.
+Logo home cliccabile. (Luca)
+Navigazione tramite tab. (TUTTI)
+andare avanti con relazione (Luca)
+tabella corsa offriamo che cambia dimensione in base alla dimensione della finestra (Alessandro)
+
+COSE DA VEDERE:
+
+come saranno le varie pagine dopo le modifiche al css, vedere se sono ok o cambiare ancora qualcosa e poi unire. 
+vedere funzioni di utente e amministratore
+
+
+
+
+
+
 
 
 
