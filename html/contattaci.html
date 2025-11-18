@@ -1,0 +1,105 @@
+<!-- TODO: sostituire <span lang="en">Apollo's Gym</span>, le ore con l'attributo corretto (?)-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contattaci</title>
+    <meta name="description" content="Contatta la palestra <span lang="en">Apollo's Gym</span> per informazioni su corsi, abbonamenti e sedi.">
+    <link rel="stylesheet" href="../css/contattaci.css">
+</head>
+
+<body>
+
+    <header class="intestazione">
+        <img src="../immagini/Logo_palestra.png" alt="" class="logo">
+        <h1>Contattaci</h1>
+    </header>
+
+    <nav id="breadcrumb">
+        <p> Ti trovi in: <a href="home.html" lang="en">Home</a> >> <a href="palestra.html">Palestra</a> >> Contattaci </p>
+    </nav>
+
+    <main class="contenuto-principale">
+
+        <section class="sezione-sedi">
+            <h2>Le nostre sedi</h2>
+
+            <article class="sede">
+                <h3>Venezia</h3>
+                <p><strong>Indirizzo:</strong> Via Roma 12, Venezia</p>
+                <p><strong>Telefono:</strong> 041 234 567</p>
+                <p><strong>Email:</strong> centro@<span lang="en">Apollo's Gym</span>.it</p>
+                <p><strong>Orari:</strong> Lun-Ven 7:00-22:00</p>
+            </article>
+
+            <br>
+
+            <article class="sede">
+                <h3>Mestre</h3>
+                <p><strong>Indirizzo:</strong> Via Piave 88, Mestre</p>
+                <p><strong>Telefono:</strong> 041 555 123</p>
+                <p><strong>Email:</strong> mestre@<span lang="en">Apollo's Gym</span>.it</p>
+                <p><strong>Orari:</strong> Lun-Ven 7:00-22:00</p>
+            </article>
+
+            <br>
+
+            <article class="sede">
+                <h3>Padova</h3>
+                <p><strong>Indirizzo:</strong> Corso Milano 44, Padova</p>
+                <p><strong>Telefono:</strong> 049 999 222</p>
+                <p><strong>Email:</strong> padova@<span lang="en">Apollo's Gym</span>.it</p>
+                <p><strong>Orari:</strong> Lun-Dom 7:00-22:00</p>
+            </article>
+        </section>
+
+        <section class="sezione-form">
+            <h2>Scrivici</h2>
+
+            <form action="#" method="post">
+
+                <div class="campo-form">
+                    <label for="nome">Nome *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="tel">Telefono</label>
+                    <input type="tel" id="tel" name="tel">
+                </div>
+
+                <div class="campo-form">
+                    <label for="sede">Sede di interesse *</label>
+                    <select id="sede" name="sede" required>
+                        <option value="">Seleziona una sede</option>
+                        <option value="venezia">Venezia</option>
+                        <option value="mestre">Mestre</option>
+                        <option value="padova">Padova</option>
+                    </select>
+                </div>
+
+                <div class="campo-form">
+                    <label for="messaggio">Messaggio *</label>
+                    <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-invia">Invia</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="piè-di-pagina">
+        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+
+</html>
