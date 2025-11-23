@@ -5,23 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palestra - Home</title>
-    <meta name="description" content="Palestra, allenamento, sala pesi, bodybuilding, attrezzi, manubri, fitness, sport, salute, motivazione, forma fisica">
-    <meta name="keywords" content="palestra, allenamento, sala pesi, bodybuilding, attrezzi, manubri, fitness, sport, salute, motivazione, forma fisica">
+    <meta name="description" content="Presentazione Associazione Apollo's Temple.">
+    <meta name="keywords" content="palestra,allenamento,sala pesi,spa,corsi,personal trainer,pt,rilassarsi,attrezzi,tempio,apollo">
     <link rel="stylesheet" href="../css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="intestazione">
-        <img src="../immagini/Logo_palestra.png" alt="Logo Palestra" class="logo">
-        <h1><span lang="en">Apollo's Gym</span></h1>
+    <header>
+        <img src="../immagini/Logo_palestra.png" alt="Logo" class="logo">
+        <h1><span lang="en">Apollo's Temple</span></h1>
     </header>
 
-    <nav id="breadcrumb">
+    <nav id="breadcrumb" class="viewport-spanning">
         <p>Ti trovi in: <span lang="en" class="ref-pagina-attuale">Home</span></p>
     </nav>
 
-    <nav id="menu">
+    <a class="fast-and-furious" href="#presentazione">Vai alla presentazione</a>
+    <a class="fast-and-furious" href="#presentazione-servizi">Vai ai servizi</a>
+    <a class="fast-and-furious" href="#recensioni">Vai alle recensioni</a>
+
+    <nav id="menu" class="viewport-spanning">
         <ul>
             <li>
                 <span lang="en" class="ref-pagina-attuale">Home</span>
@@ -69,48 +73,53 @@
 
     <main>
         <section id="presentazione">
-            <h1 class="rounded-main">Benvenuti nella nostra Palestra</h1>
+            <h1 id="page-title" class="viewport-spanning">Benvenuti nel Tempio di Apollo</h1>
             <article>
                 <img src="../immagini/palestra-presentazione-tmp.jpg" alt="TODO">
-                <p id="catchphrase">A bellezza e bontà le persone aspirano, l'apollineo splendore tutti ammirano.</p>
+                <p id="catchphrase">A Bellezza e Bontà le persone aspirano, l'Apollineo Splendore tutti ammirano.</p>
             </article>
         </section>
 
-        <h2 class="rounded-main">Cosa offriamo</h2> <!-- Facilita le cose ma è fatto bene? -->
-        <section id="core">
-            <article class="rounded-sub">
-                <h3>La palestra</h3>
-                <img src="../immagini/presentazione-palestra.jpg" alt="TODO">
-                <a href="./Palestra.html">Scopri di più</a>
-            </article>
-            <article class="rounded-sub">
-                <h3>Servizi SPA</h3>
-                <img src="../immagini/presentazione-SPA.jpg" alt="TODO">
-                <a href="./SPA.html">Scopri di più</a>
-            </article>
-            <article class="rounded-sub">
-                <h3>Scopri le nostre sedi</h3>
-                <img src="../immagini/Sedi.jpg" alt="TODO">
-                <a href="./Abbonamenti.html">Scopri di più</a>
+        <section id="presentazione-servizi">
+            <h2 class="big-border background">I nostri servizi</h2>
+            <p>Presso le sedi del <strong>Tempio</strong> troverai <strong>palestre</strong>, dove potrai <strong>allenarti</strong> da solo o in compagnia all'interno di <strong>sale pesi</strong>, facendo o meno riferimento a un <span lang="en"><strong>Personal Trainer</strong></span>. Qualora volessi un percorso strutturato alternativo, offriamo anche <strong>corsi</strong> di gruppo. Se invece desideri solo <strong>
+                    rilassarti</strong>, le nostre <strong>SPA</strong> fanno al caso tuo.</p>
+            <article class="simple-flex">
+                <article class="small-border background">
+                    <h3>La palestra</h3>
+                    <img src="../immagini/presentazione-palestra.jpg" alt="TODO">
+                    <a href="./Palestra.html">Scopri di più</a>
+                </article>
+                <article class="small-border background">
+                    <h3>Servizi SPA</h3>
+                    <img src="../immagini/presentazione-SPA.jpg" alt="TODO">
+                    <a href="./SPA.html">Scopri di più</a>
+                </article>
+                <article class="small-border background">
+                    <h3>Scopri le nostre sedi</h3>
+                    <img src="../immagini/Sedi.jpg" alt="TODO">
+                    <a href="./Abbonamenti.html">Scopri di più</a>
+                </article>
             </article>
         </section>
 
         <!-- Si tiene statico -->
         <aside id="recensioni">
-            <h2 class="rounded-main">Recensioni</h2>
-            <ul>
-                <li>
-                    <dl class="recensione rounded-sub">
+            <h2 class=" big-border background">Recensioni</h2>
+            <p>Ecco finite recensioni di infinita qualità positiva lasciate dai nostri infiniti clienti:</p>
+            <ul class="simple-flex">
+                <li class="recensione small-border background">
+                    <dl>
                         <dt>Nome Cognome1</dt>
-                        <dd><img src="../immagini/recensioni/recensione1.jpg" alt="TODO"></dd>
+                        <dd><img src="../immagini/recensioni/recensione1.jpg" alt="Volto recensore"></dd>
                         <dt>Voto recensione indicato con stelle</dt>
                         <dd>Contenuto recensione</dd>
                     </dl>
                 </li>
-                <li>
-                    <dl class="recensione rounded-sub">
+                <li class="recensione small-border background">
+                    <dl>
                         <dt>Nome Cognome2</dt>
-                        <dd><img src="../immagini/recensioni/recensione2.jpg" alt="TODO"></dd>
+                        <dd><img src="../immagini/recensioni/recensione2.jpg" alt="Volto recensore"></dd>
                         <dt>Sito recensione</dt>
                         <dd>Contenuto recensione</dd>
                     </dl>
@@ -118,7 +127,7 @@
             </ul>
         </aside>
     </main>
-    <footer class="piè-di-pagina">
+    <footer class="viewport-spanning">
         <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
     </footer>
 </body>
