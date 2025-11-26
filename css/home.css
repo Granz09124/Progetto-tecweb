@@ -4,10 +4,12 @@
 * {
     padding: 0em;
     margin: 0em;
+    box-sizing: border-box;
 }
 
 :root {
     --mainColor: #fecd00;
+    --mainAlpha: #fecd0080;
     --backgroundColor: #191919;
     --backgroundLight: #202020;
     --backgroundDark: #050505;
@@ -31,23 +33,7 @@ html {
 body {
     color: var(--textColor);
     max-width: 1200px;
-    border-radius: 10% 20% 5% 5%;
-    border-width: 15px 15px 10px 10px;
-    border-color: var(--mainColor);
-    border-style: solid;
-    /* potenzialmente mortale */
-    contain: paint;
     margin: auto;
-}
-
-body>* {
-    margin: .5em;
-    overflow: hidden;
-}
-
-main {
-    padding: 2em;
-    background-color: var(--backgroundDark);
 }
 
 h1,
@@ -75,47 +61,74 @@ strong {
     font-size: medium;
 }
 
+p {
+    margin: .5em .5em;
+}
+
 /* ==================
- * CLASS            *
+ * ID, ClASS        *
  ===================*/
-.rounded-main {
+#page-title {
     padding: .5em;
-    border: solid 2px var(--mainColor);
-    border-radius: .5em 1em .5em 1em;
-    background-color: var(--backgroundColor);
+    background-color: var(--mainColor);
+    color: var(--backgroundColor);
+    text-align: center;
 }
 
-.rounded-sub {
-    margin-top: 1em;
-    border: solid 1px var(--mainColor);
-    border-radius: .5em .5em 1em 1em;
-    background-color: var(--backgroundColor);
+.fast-and-furious {
+    left: -999em;
+    position: absolute;
 }
 
-.rounded-sub>* {
-    margin: 1em;
-}
-
+/* Utilizzato da menu e breadcrumb */
 .ref-pagina-attuale {
     font-weight: bold;
 }
 
+.viewport-spanning {
+    width: 99.5vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    text-align: center;
+}
+
+.big-border {
+    padding: .5em;
+    border-radius: 0.9375em;
+    border: 2px solid var(--mainColor);
+    box-shadow: 0 0 .5em var(--mainAlpha);
+    margin: .5em;
+}
+
+.small-border {
+    padding: .25em;
+    border-radius: 0.75em;
+    border: 1px solid var(--mainColor);
+    box-shadow: 0 0 .4em var(--mainAlpha);
+    margin: .4em;
+}
+
+.background {
+    background-color: var(--backgroundColor);
+}
+
 /* ==================
- * HEADER           *
+ * SUB HEADER       *
  ===================*/
 
 /* logo */
-.intestazione img {
+header img {
     text-align: left;
     width: 20%;
     margin: 2.5% 2.5% 0% 5%;
     vertical-align: middle;
 }
 
-/* nome palestra */
-.intestazione h1 {
+/* Apollo's Temple */
+header h1 {
     display: inline;
-    font-size: 200%;
+    font-size: 2em;
 }
 
 /* ==================
@@ -137,20 +150,15 @@ strong {
 
 #menu * {
     display: inline;
-    font-size: 1.35rem;
 }
 
 #menu li {
     margin: .2em;
 }
 
-/* ================== (solo per home)
+/* ================== (solo per home: )
  * PRESENTAZIONE    *
  ===================*/
-#presentazione h1 {
-    padding: .5em;
-    text-align: center;
-}
 
 #presentazione>article {
     display: flex;
@@ -159,13 +167,14 @@ strong {
 
 #presentazione img {
     width: 35%;
-    padding: 2em 4em 2em 1em;
+    padding: 3%;
+    margin: auto;
 }
 
 #catchphrase {
     color: var(--mainColor);
     display: inline;
-    font-size: 1.5em;
+    font-size: 1.25em;
     width: 50%;
     font-style: italic;
     line-height: 1.75em;
@@ -179,25 +188,31 @@ h2 {
     margin-top: 1em;
 }
 
-#core {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: .5em;
+main h2 {
+    margin: auto;
+    margin-bottom: .6em;
 }
 
-#core>article {
+#presentazione-servizi .simple-flex>article {
     padding-left: 2em;
     padding-right: 2em;
+    margin: .2em;
+    flex: 1;
 }
 
-#core>article>* {
+#presentazione-servizi .simple-flex>article>* {
     display: block;
 }
 
-#core>article>a {
+#presentazione-servizi .simple-flex>article>a {
     text-align: right;
 }
 
+.simple-flex {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* ================== (home->recensioni)
  * ASIDE            *
@@ -206,18 +221,17 @@ h2 {
     text-align: center;
 }
 
-#recensioni>ul {
-    display: flex;
-    flex-wrap: wrap;
+ul.simple-flex {
     list-style-type: none;
 }
 
-#recensioni>ul>li {
+#recensioni li {
     margin-left: 5%;
 }
 
 .recensione {
-    flex: 0 0 200px;
+    flex: 1 1 200px;
+    margin: .25em;
     padding: 1em;
 }
 
@@ -226,4 +240,6 @@ h2 {
  ===================*/
 footer {
     padding: 1em 3em;
+    color: var(--mainColor);
+    background-color: var(--backgroundColor);
 }
