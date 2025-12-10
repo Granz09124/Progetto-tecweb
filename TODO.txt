@@ -95,6 +95,48 @@ COSE DA VEDERE:
 come saranno le varie pagine dopo le modifiche al css, vedere se sono ok o cambiare ancora qualcosa e poi unire. 
 vedere funzioni di utente e amministratore
 
+----------------------------------------------------------------------------------------------------------------------------------
+DECISIONI:
+scelte le varie funzioni di utente , utente pt e admin (feature.txt)
+tolta la sezione spa: quindi pagina spa e sezione spa in abbonamento.html insieme ai bundle 
+
+TODO:
+AGGIORNAMENTO DELLA RELAZIONE (Luca)
+togliere spa.html e css. 
+A MO DI DISEGNO definire un template che verrà utilizzato per admin utente utente pt. (MCFIT) (ognuno presenta una sua idea)
+checkup generale del css (Tutti)
+
+COSE DA VEDERE:
+come aggiornare la sezione budle, come modificarla o in caso cambiarla con qualcos'altro o toglierla 
+gestione dei corsi: come scegliamo di impostare i corsi 
+come gestire la sezione abbonamenti (cosa togliere e mettere dai vari abbonamenti)
+rivedere nome-> dopo aver tolto la spa non ha senso che apollo sia ancora un'associazione.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+TODO 10/12/2025
+
+DECISIONI:
+nome deciso: Tempio di Apollo
+1 singola sede
+
+TODO:
+AGGIORNANE PAGINA ABBONAMENTI.HTML: modificare bundle e togliere la sezione spa (mettere la sezione da parte in caso di riutilizzo) , 
+mettere mensile cliccato come default (marco e armando)
+AGGIORNARE PAGINE CORSI.HTML: mettere accanto al bottone "vai a vedere gli orari" che poi diventa un "torna alla descrizione" 
+mettere span eng per fitboxe e home in breadcrumb (luca)
+creazione pagina pt.html e css (Alessandro)
+AGGIORNARE PAGINA CONTATTACI: integrazione pagina dove siamo, avendo come riferimento energym 
+AGGIORNARE LA RELAZIONE (luca)
+TOGLIERE SAUNA HTML E CSS. 
+
+
+A MO DI DISEGNO definire un template che verrà utilizzato per admin utente utente pt. (MCFIT) (ognuno presenta una sua idea)
+checkup generale del css (Tutti)
+
+COSE DA VEDERE:
+lato backend
+decisione del css e del template per area utenti 
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
