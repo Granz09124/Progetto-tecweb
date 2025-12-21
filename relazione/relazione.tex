@@ -15,6 +15,9 @@
 \section{Introduzione}
 Questo documento presenta il progetto per la realizzazione del sito web di un’associazione che gestisce diverse palestre dotate di sala pesi, corsi fitness e un’area spa. Il sito prevede una struttura completa, con pagine dedicate agli abbonamenti, ai corsi, ai servizi della spa, alla sezione Contatti e una pagina Home che offra una panoramica introduttiva chiara.
 
+\section{Analisi del target}
+Il sito web è destinato a due principali categorie di utenti: gli utenti finali, che sono iscritti alla palestra e utilizzano i servizi offerti, e i personal trainer (PT), che forniscono servizi di coaching personalizzato. Gli utenti finali possono essere persone interessate al fitness, al benessere e ai servizi spa, mentre i PT sono professionisti che gestiscono sessioni di allenamento e piani alimentari personalizzati.
+
 \section{Struttura del Sito}
 Il sito è composto da: \\
 \\
@@ -24,7 +27,7 @@ Il sito è composto da: \\
     \item \texttt{corsi.html:} Pagina che espone i vari corsi disponibili.
     \item \texttt{abbonamenti.html:} Pagina che raffigura i vari abbonamenti offerti.
     \item \texttt{palestra.html:} Pagina di intermissione tra home e i servizi che la palestra offre, ovvero la sala pesi, i corsi e i pt/coaching.
-    \item \texttt{spa.html:} Pagina che descrive i vari servizi inclusi della spa.
+
     \item \texttt{error404.html:} Pagina che mostra un messaggio quando la pagina richiesta non esiste.
     \item \texttt{contattaci.html:} Pagina che permette agli utenti di inviare richieste o messaggi all'associazione.
     
@@ -44,19 +47,22 @@ Il sito è composto da: \\
 
 \section{Tecnologie Utilizzate}
 \begin{itemize}
-    \item HTML5 per la struttura.
-    \item CSS per lo styling.
-    \item LaTeX per questa relazione.
-    \item Javascript per le animazioni.
-    \item PHP per generare pagine web dinamiche.
+    \item \textbf{HTML5}: Utilizzato per definire la struttura semantica delle pagine web, fornendo elementi come header, nav, section e footer per una migliore accessibilità e SEO.
+    \item \textbf{CSS}: Impiegato per lo styling e il layout delle pagine, garantendo un design responsive e adattabile a diversi dispositivi.
+    \item \textbf{JavaScript}: Integrato per aggiungere interattività e animazioni dinamiche, migliorando l'esperienza utente senza ricaricare la pagina.
+    \item \textbf{PHP}: Utilizzato per generare contenuti dinamici lato server, come la gestione di sessioni utente e l'interazione con database per funzionalità avanzate.
+    \item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
+    \item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
 \end{itemize}
 Infine una cartella immagini con all'interno:
 \begin{itemize}
     \item immagine logo palestra.
-   
 \end{itemize}
 \section{Attori presenti nel sito}
-All'interno del sito troviamo due attori: \texttt{utente/user} e \texttt{admin/amministratore}. \\
+All'interno del sito troviamo tre attori:\\
+\texttt{utente/user} \\
+\texttt{utente personal trainerr} \\
+\texttt{admin/amministratore}. \\
 \noindent
 \\
 Le credenziali necessarie per il login dei rispettivi sono: \\
@@ -67,6 +73,8 @@ Le credenziali necessarie per il login dei rispettivi sono: \\
 \hline
 USER  & user  & user  \\
 \hline
+PT & pt & pt \\
+\hline
 ADMIN & admin & admin \\
 \hline
 \end{tabular}
@@ -75,15 +83,45 @@ ADMIN & admin & admin \\
 Di seguito sono riportate le funzionalità disponibili per i ruoli User e Admin:
 \subsection{USER}
 \begin{itemize}
-    \item 
+    \item Gestione semplice della disdetta dell’abbonamento (valutare se mantenere).
+    \item Visualizzazione della data di attivazione, scadenza e dello stato attuale dell’abbonamento (attivo, in scadenza, scaduto).
+    \item Visualizzazione orari, posti disponibili e istruttori dei corsi a cui    l’utente è iscritto.
+    \item Calendario dei corsi a cui si è iscritti e degli appuntamenti con il personal trainer.
+    \item Visualizzazione della scheda di allenamento personalizzata (se presente personal trainer).
+    \item Visualizzazione del piano alimentare personalizzato (se presente personal trainer).
+    \item Possibilità di lasciare recensioni (da valutare per questioni di sicurezza).
+    \item Gestione del proprio account (cancellazione account, modifica dei dati).
+\end{itemize}
+
+\subsection{PT}
+\begin{itemize}
+    \item Profilo pubblico, visualizzabile da chiunque.
+    \item Calendario con le disponibilità e le fasce orarie già occupate da altri utenti.
+    \item Possibilità di caricare scheda di allenamento e piano alimentare per i clienti che lo richiedono.
+    \item Lista dei clienti (confermata), con possibilità di chat con ogni cliente non in tempo reale (da valutare).
 \end{itemize}
 
 \subsection{ADMIN}
 \begin{itemize}
-    \item 
+    \item Possibilità di creare account personal trainer o convertire un account utente in account PT.
+    \item Visualizzazione e gestione di tutti gli abbonamenti attivi, sospesi o scaduti.
+    \item Gestione del profilo utente (schede, corsi, prenotazioni, PT assegnati, scadenze, ecc.).
+    \item Gestione degli istruttori/personal trainer: calendario, disponibilità, schede clienti, retribuzione (possibile).
+    \item Dashboard con panoramica di ricavi, abbonamenti attivi, nuovi iscritti e lista degli iscritti attivi.
+    \item Statistiche sull’utilizzo della palestra, corsi più frequentati e tassi di retention (possibile).
+    \item Cancellazione account (sia utente che PT) tramite dashboard.
+    \item Possibilità di gestione dei corsi (modifica della capienza e degli orari).
 \end{itemize}
 
+\section{Accessibilità}
+\subsection{Separazione della struttura, presentazione e contenuto}
+La separazione tra struttura (HTML), presentazione (CSS) e contenuto garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistive. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
 
+\subsection{Palette dei colori e contrasti}
+La palette dei colori è stata scelta per garantire un elevato contrasto tra testi e sfondi, rispettando le linee guida WCAG. Ad esempio, testi chiari su sfondi scuri per una migliore leggibilità, evitando combinazioni che potrebbero causare difficoltà a utenti con disabilità visive.
+
+\subsection{Lingue straniere}
+Il sito supporta contenuti in italiano come lingua principale, ma è progettato per essere facilmente adattabile a lingue straniere attraverso l'uso di attributi lang e meccanismi di internazionalizzazione, permettendo una migliore accessibilità per utenti non italofoni.
 
 \section{Divisione dei compiti}
 Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto: \\
@@ -91,23 +129,24 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 \\
 \textbf{Armando Moda Scarati}
 \begin{itemize}
-    \item Creazione delle pagine: \texttt{abbonamenti.html}, \texttt{palestra.html} 
+    \item Creazione delle e gestione pagine: \texttt{abbonamenti.html}, \texttt{palestra.html} 
     \item Gestione in css delle stesse 
 \end{itemize}
 \textbf{Alessandro}
 \begin{itemize}
-    \item Creazione delle pagine: \texttt{home.html}
+    \item Creazione e gestione delle pagine: \texttt{home.html}
     \item Gestione in css delle stesse 
 \end{itemize}
 \textbf{Granziero Luca}
 \begin{itemize}
-    \item Creazione delle pagine: \texttt{corsi.html} \texttt{error404.html}
+    \item Creazione e gestione delle pagine: \texttt{corsi.html} \texttt{error404.html}
     \item Gestione in css delle stesse
     \item Stesura e aggiornamento della relazione 
 \end{itemize}
 \textbf{Marco}
 \begin{itemize}
-    \item Creazione delle pagine: \texttt{spa.html} \texttt{contattaci.html}
+    \item Gestione della pagina: \texttt{abbonamenti.html} 
+    \item Creazione delle pagina: \texttt{contattaci.html}
     \item Gestione in css delle stesse
 \end{itemize}
 
