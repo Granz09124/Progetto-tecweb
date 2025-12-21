@@ -153,7 +153,7 @@ header h1 {
  * MENU             *
  ===================*/
 #menu {
-    background-color: var(--backgroundLight);
+    background-color: var(--backgroundColor);
     padding: 1em 2em;
 }
 
