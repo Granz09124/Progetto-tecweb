@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palestra - Abbonamenti</title>
-    <meta name="description" content="Abbonamenti palestra, sala pesi, spa, personal trainer, corsi fitness">
-    <meta name="keywords" content="abbonamenti, palestra, sala pesi, spa, personal trainer, corsi, fitness">
+    <meta name="description" content="Abbonamenti palestra, sala pesi, personal trainer, corsi fitness">
+    <meta name="keywords" content="abbonamenti, palestra, sala pesi, personal trainer, corsi, fitness">
     <link rel="stylesheet" href="../css/style-palestra-abbonamenti.css">
 </head>
 
 <body>
     <header class="intestazione">
-        <a href="home.html"><img src="../immagini/Logo_palestra.png" alt="Logo Palestra" class="logo"></a>
+        <a href="home.html" class="logo-container">
+            <img src="../immagini/Logo_palestra.png" alt="Logo Palestra" class="logo">
+            <span class="nome-palestra">Apollo's Temple</span>
+        </a>
         <nav id="menu">
             <ul>
                 <li lang="en"><a href="home.html">Home</a></li>
@@ -27,232 +30,151 @@
         <p>Ti trovi in: Home > > Abbonamenti</p>
     </nav>
 
-    <main class="contenuto-principale">
-        <div class="parent">
-            <div class="div1">
-                <h2>Sala Pesi</h2>
+    <main class="contenuto-principale layout-abbonamenti">
+        
+        <section class="sezione-abbonamento">
+            <h2>Sala Pesi</h2>
 
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Mensile</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 49,90/mese</strong></p>
-                        <ul>
-                            <li>Accesso illimitato alla sala pesi</li>
-                            <li>Utilizzo di tutti gli attrezzi</li>
-                            <li>Armadietto personale</li>
-                        </ul>
-                    </div>
+            <div class="abbonamento-item active">
+                <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
+                    <h3>Mensile</h3>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
                 </div>
-
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Trimestrale</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 128,70 (€ 42,90/mese)</strong></p>
-                        <ul>
-                            <li>Tutti i vantaggi del mensile</li>
-                            <li>Risparmio del 14%</li>
-                            <li>Validità 3 mesi</li>
-                        </ul>
-                    </div>
+                <div class="abbonamento-content">
+                    <p><strong>€ 49,90/mese</strong></p>
+                    <ul>
+                        <li>Accesso illimitato alla sala pesi</li>
+                        <li>Utilizzo di tutti gli attrezzi</li>
+                        <li>Armadietto personale</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Semestrale</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 233,40 (€ 38,90/mese)</strong></p>
-                        <ul>
-                            <li>Tutti i vantaggi del mensile</li>
-                            <li>Risparmio del 22%</li>
-                            <li>1 sessione PT gratuita</li>
-                            <li>Validità 6 mesi</li>
-                        </ul>
-                    </div>
+            <div class="abbonamento-item">
+                <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
+                    <h3>Trimestrale</h3>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
                 </div>
-
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Annuale</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 394,80 (€ 32,90/mese)</strong></p>
-                        <ul>
-                            <li>Tutti i vantaggi del mensile</li>
-                            <li>Risparmio del 34%</li>
-                            <li>2 sessioni PT gratuite</li>
-                            <li>Validità 12 mesi</li>
-                        </ul>
-                    </div>
+                <div class="abbonamento-content">
+                    <p><strong>€ 128,70 (€ 42,90/mese)</strong></p>
+                    <ul>
+                        <li>Tutti i vantaggi del mensile</li>
+                        <li>Risparmio del 14%</li>
+                        <li>Validità 3 mesi</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="checkbox-container">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="personal-trainer-checkbox" onchange="togglePersonalTrainer()">
+            <div class="abbonamento-item">
+                <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
+                    <h3>Semestrale</h3>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="abbonamento-content">
+                    <p><strong>€ 233,40 (€ 38,90/mese)</strong></p>
+                    <ul>
+                        <li>Tutti i vantaggi del mensile</li>
+                        <li>Risparmio del 22%</li>
+                        <li>1 sessione PT gratuita</li>
+                        <li>Validità 6 mesi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="abbonamento-item">
+                <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
+                    <h3>Annuale</h3>
+                    <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="abbonamento-content">
+                    <p><strong>€ 394,80 (€ 32,90/mese)</strong></p>
+                    <ul>
+                        <li>Tutti i vantaggi del mensile</li>
+                        <li>Risparmio del 34%</li>
+                        <li>2 sessioni PT gratuite</li>
+                        <li>Validità 12 mesi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="checkbox-container">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="personal-trainer-checkbox">
+                    <a href="personaltrainers.html" class="link-pt">
                         <span lang="en">Personal Trainers</span>
-                    </label>
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <div class="div2">
-                <h2>Spa</h2>
-
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Mensile</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 39,90/mese</strong></p>
-                        <ul>
-                            <li>Accesso a sauna e bagno turco</li>
-                            <li>Area <span lang="en">relax</span></li>
-                            <li>Idromassaggio</li>
-                            <li>10 ingressi/mese</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Trimestrale</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 109,90 (€ 36,63/mese)</strong></p>
-                        <ul>
-                            <li>Tutti i vantaggi del mensile</li>
-                            <li>Risparmio dell'8%</li>
-                            <li>12 ingressi/mese</li>
-                            <li>Validità 3 mesi</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Semestrale</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 209,90 (€ 34,98/mese)</strong></p>
-                        <ul>
-                            <li>Tutti i vantaggi del mensile</li>
-                            <li>Risparmio del 12%</li>
-                            <li>15 ingressi/mese</li>
-                            <li>1 massaggio gratuito</li>
-                            <li>Validità 6 mesi</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="abbonamento-item">
-                    <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                        <h3>Annuale</h3>
-                        <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="abbonamento-content">
-                        <p><strong>€ 399,00 (€ 33,25/mese)</strong></p>
-                        <ul>
-                            <li>Tutti i vantaggi del mensile</li>
-                            <li>Risparmio del 17%</li>
-                            <li>Ingressi illimitati</li>
-                            <li>2 massaggi gratuiti</li>
-                            <li>Validità 12 mesi</li>
-                        </ul>
-                    </div>
-                </div>
+        <section class="sezione-abbonamento">
+            <h2>Corsi</h2>
+            <div class="corso-selector">
+                <label for="corso-select">Seleziona un corso:</label>
+                <select id="corso-select" onchange="cambiaCorso(this.value)">
+                    <option value="">-- Scegli un corso --</option>
+                    <option value="arrampicata">Arrampicata</option>
+                    <option value="yoga">Yoga e Meditazione</option>
+                    <option value="pilates">Pilates</option>
+                    <option value="crossfit">Crossfit</option>
+                    <option value="fitbox">Fit Box</option>
+                    <option value="zumba">Zumba</option>
+                </select>
             </div>
 
-            <div class="div3">
-                <h2>Corsi</h2>
-                <div class="corso-selector">
-                    <label for="corso-select">Seleziona un corso:</label>
-                    <select id="corso-select" onchange="cambiaCorso(this.value)">
-                        <option value="">-- Scegli un corso --</option>
-                        <option value="arrampicata">Arrampicata</option>
-                        <option value="yoga">Yoga e Meditazione</option>
-                        <option value="pilates">Pilates</option>
-                        <option value="crossfit">Crossfit</option>
-                        <option value="fitbox">Fit Box</option>
-                        <option value="zumba">Zumba</option>
-                    </select>
-                </div>
-
-                <div id="corsi-abbonamenti" class="corsi-abbonamenti-container">
-                    <p class="messaggio-selezione">Seleziona un corso dal menu per visualizzare gli abbonamenti disponibili.</p>
-                </div>
+            <div id="corsi-abbonamenti" class="corsi-abbonamenti-container">
+                <p class="messaggio-selezione">Seleziona un corso dal menu per visualizzare gli abbonamenti disponibili.</p>
             </div>
+        </section>
 
-            <div class="div5">
-                <h2>I nostri <span lang="en">Best Seller Bundle</span></h2>
+        <section class="sezione-bundles">
+            <h2>I nostri <span lang="en">Best Seller Bundle</span></h2>
 
-                <div class="bundle-podio">
-                    <section class="bundle bundle-secondo">
-                        <div class="badge-posizione">🥈 2° PIÙ VENDUTO</div>
-                        <h3><span lang="en">Bundle Relax</span> & Benessere</h3>
-                        <p><strong>€ 99,90/mese</strong> <span class="prezzo-originale">(Risparmi €19,90)</span></p>
-                        <ul>
-                            <li>Spa - Ingressi illimitati</li>
-                            <li>Yoga e Meditazione</li>
-                            <li>Pilates</li>
-                            <li>2 Massaggi gratuiti/mese</li>
-                        </ul>
-                    </section>
+            <div class="bundle-podio">
+                <section class="bundle bundle-secondo">
+                    <div class="badge-posizione">🥈 2° PIÙ VENDUTO</div>
+                    <h3><span lang="en">Bundle Relax</span> & Benessere</h3>
+                    <p><strong>€ 69,90/mese</strong> <span class="prezzo-originale">(Risparmi €14,90)</span></p>
+                    <ul>
+                        <li>Yoga e Meditazione</li>
+                        <li>Pilates</li>
+                        <li>Stretching posturale</li>
+                    </ul>
+                </section>
 
-                    <section class="bundle bundle-primo">
-                        <div class="badge-posizione">🏆 1° PIÙ VENDUTO</div>
-                        <h3><span lang="en">Bundle All Inclusive Premium</span></h3>
-                        <p><strong>€ 199,90/mese</strong> <span class="prezzo-originale">(Risparmi €89,90)</span></p>
-                        <ul>
-                            <li>Sala Pesi - Accesso illimitato</li>
-                            <li>Spa - Ingressi illimitati</li>
-                            <li>Tutti i Corsi illimitati</li>
-                            <li>10 Sessioni PT</li>
-                            <li>Piano alimentare completo</li>
-                            <li>Massaggi illimitati</li>
-                        </ul>
-                    </section>
+                <section class="bundle bundle-primo">
+                    <div class="badge-posizione">🏆 1° PIÙ VENDUTO</div>
+                    <h3><span lang="en">Bundle All Inclusive Premium</span></h3>
+                    <p><strong>€ 159,90/mese</strong> <span class="prezzo-originale">(Risparmi €59,90)</span></p>
+                    <ul>
+                        <li>Sala Pesi - Accesso illimitato</li>
+                        <li>Tutti i Corsi illimitati</li>
+                        <li>10 Sessioni PT</li>
+                        <li>Piano alimentare completo</li>
+                    </ul>
+                </section>
 
-                    <section class="bundle bundle-terzo">
-                        <div class="badge-posizione">🥉 3° PIÙ VENDUTO</div>
-                        <h3><span lang="en">Bundle Fitness</span> Completo</h3>
-                        <p><strong>€ 119,90/mese</strong> <span class="prezzo-originale">(Risparmi €29,90)</span></p>
-                        <ul>
-                            <li>Sala Pesi - Accesso illimitato</li>
-                            <li>Spa - 10 ingressi/mese</li>
-                            <li>2 Corsi a scelta</li>
-                            <li>1 Sessione PT gratuita</li>
-                        </ul>
-                    </section>
-                </div>
+                <section class="bundle bundle-terzo">
+                    <div class="badge-posizione">🥉 3° PIÙ VENDUTO</div>
+                    <h3><span lang="en">Bundle Fitness</span> Completo</h3>
+                    <p><strong>€ 99,90/mese</strong> <span class="prezzo-originale">(Risparmi €19,90)</span></p>
+                    <ul>
+                        <li>Sala Pesi - Accesso illimitato</li>
+                        <li>2 Corsi a scelta</li>
+                        <li>1 Sessione PT gratuita</li>
+                    </ul>
+                </section>
             </div>
+        </section>
 
-        </div>
     </main>
 
     <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
@@ -267,5 +189,4 @@
     <script src="../javascript/toggle-corsi.js"></script>
 
 </body>
-
 </html>

@@ -1,231 +1,40 @@
+/* toggle-corsi.js */
 const corsiData = {
     arrampicata: {
-        mensile: {
-            prezzo: "€ 69,90/mese",
-            include: [
-                "Attrezzatura inclusa (imbragatura, scarpe)",
-                "Istruttore certificato",
-                "3 sessioni a settimana",
-                "Accesso libero alle pareti nei weekend"
-            ]
-        },
-        trimestrale: {
-            prezzo: "€ 189,00 (€ 63,00/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 10%",
-                "Validità 3 mesi",
-                "1 sessione extra gratuita"
-            ]
-        },
-        semestrale: {
-            prezzo: "€ 359,00 (€ 59,83/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 14%",
-                "Validità 6 mesi",
-                "Workshop gratuito mensile"
-            ]
-        },
-        annuale: {
-            prezzo: "€ 671,00 (€ 55,92/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 20%",
-                "Validità 12 mesi",
-                "Corso avanzato gratuito"
-            ]
-        }
+        mensile: { prezzo: "€ 69,90/mese", include: ["Attrezzatura inclusa", "Istruttore certificato", "3 sessioni a settimana", "Accesso weekend"] },
+        trimestrale: { prezzo: "€ 189,00", include: ["Vantaggi mensile", "Risparmio 10%", "Validità 3 mesi", "1 sessione extra"] },
+        semestrale: { prezzo: "€ 359,00", include: ["Vantaggi mensile", "Risparmio 14%", "Validità 6 mesi", "Workshop mensile"] },
+        annuale: { prezzo: "€ 671,00", include: ["Vantaggi mensile", "Risparmio 20%", "Validità 12 mesi", "Corso avanzato"] }
     },
     yoga: {
-        mensile: {
-            prezzo: "€ 59,90/mese",
-            include: [
-                "Tappetino e cuscino inclusi",
-                "Sessioni per tutti i livelli",
-                "3 sessioni a settimana",
-                "Accesso a workshop mensili gratuiti"
-            ]
-        },
-        trimestrale: {
-            prezzo: "€ 161,70 (€ 53,90/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 10%",
-                "Validità 3 mesi",
-                "1 lezione privata gratuita"
-            ]
-        },
-        semestrale: {
-            prezzo: "€ 305,40 (€ 50,90/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 15%",
-                "Validità 6 mesi",
-                "2 lezioni private gratuite"
-            ]
-        },
-        annuale: {
-            prezzo: "€ 574,80 (€ 47,90/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 20%",
-                "Validità 12 mesi",
-                "Ritiro yoga gratuito"
-            ]
-        }
+        mensile: { prezzo: "€ 59,90/mese", include: ["Tappetino incluso", "Tutti i livelli", "3 sessioni a settimana", "Workshop mensili"] },
+        trimestrale: { prezzo: "€ 161,70", include: ["Vantaggi mensile", "Risparmio 10%", "Validità 3 mesi", "1 lezione privata"] },
+        semestrale: { prezzo: "€ 305,40", include: ["Vantaggi mensile", "Risparmio 15%", "Validità 6 mesi", "2 lezioni private"] },
+        annuale: { prezzo: "€ 574,80", include: ["Vantaggi mensile", "Risparmio 20%", "Validità 12 mesi", "Ritiro yoga gratuito"] }
     },
     pilates: {
-        mensile: {
-            prezzo: "€ 54,90/mese",
-            include: [
-                "Tappetino incluso",
-                "Piccoli gruppi (max 12 persone)",
-                "3 sessioni a settimana",
-                "Valutazione posturale iniziale"
-            ]
-        },
-        trimestrale: {
-            prezzo: "€ 148,23 (€ 49,41/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 10%",
-                "Validità 3 mesi",
-                "1 sessione di stretching gratuita"
-            ]
-        },
-        semestrale: {
-            prezzo: "€ 280,26 (€ 46,71/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 15%",
-                "Validità 6 mesi",
-                "Valutazione posturale trimestrale"
-            ]
-        },
-        annuale: {
-            prezzo: "€ 527,04 (€ 43,92/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 20%",
-                "Validità 12 mesi",
-                "Piano personalizzato completo"
-            ]
-        }
+        mensile: { prezzo: "€ 54,90/mese", include: ["Tappetino incluso", "Piccoli gruppi", "3 sessioni a settimana", "Valutazione posturale"] },
+        trimestrale: { prezzo: "€ 148,23", include: ["Vantaggi mensile", "Risparmio 10%", "Validità 3 mesi", "Sessione stretching"] },
+        semestrale: { prezzo: "€ 280,26", include: ["Vantaggi mensile", "Risparmio 15%", "Validità 6 mesi", "Valutazione trimestrale"] },
+        annuale: { prezzo: "€ 527,04", include: ["Vantaggi mensile", "Risparmio 20%", "Validità 12 mesi", "Piano personalizzato"] }
     },
     crossfit: {
-        mensile: {
-            prezzo: "€ 89,90/mese",
-            include: [
-                "Sessioni illimitate",
-                "Coach certificati Crossfit",
-                "WOD personalizzabili",
-                "Community attiva e sfide mensili"
-            ]
-        },
-        trimestrale: {
-            prezzo: "€ 242,73 (€ 80,91/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 10%",
-                "Validità 3 mesi",
-                "1 sessione PT gratuita"
-            ]
-        },
-        semestrale: {
-            prezzo: "€ 458,31 (€ 76,39/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 15%",
-                "Validità 6 mesi",
-                "3 sessioni PT gratuite"
-            ]
-        },
-        annuale: {
-            prezzo: "€ 862,56 (€ 71,88/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 20%",
-                "Validità 12 mesi",
-                "Piano alimentare personalizzato"
-            ]
-        }
+        mensile: { prezzo: "€ 89,90/mese", include: ["Sessioni illimitate", "Coach certificati", "WOD personalizzabili", "Community attiva"] },
+        trimestrale: { prezzo: "€ 242,73", include: ["Vantaggi mensile", "Risparmio 10%", "Validità 3 mesi", "1 sessione PT"] },
+        semestrale: { prezzo: "€ 458,31", include: ["Vantaggi mensile", "Risparmio 15%", "Validità 6 mesi", "3 sessioni PT"] },
+        annuale: { prezzo: "€ 862,56", include: ["Vantaggi mensile", "Risparmio 20%", "Validità 12 mesi", "Piano alimentare"] }
     },
     fitbox: {
-        mensile: {
-            prezzo: "€ 64,90/mese",
-            include: [
-                "Guanti e bendaggi inclusi",
-                "3 sessioni a settimana",
-                "Allenamento cardio e forza",
-                "Tecnica e sparring controllato"
-            ]
-        },
-        trimestrale: {
-            prezzo: "€ 175,23 (€ 58,41/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 10%",
-                "Validità 3 mesi",
-                "1 lezione privata gratuita"
-            ]
-        },
-        semestrale: {
-            prezzo: "€ 331,17 (€ 55,20/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 15%",
-                "Validità 6 mesi",
-                "2 lezioni private gratuite"
-            ]
-        },
-        annuale: {
-            prezzo: "€ 623,04 (€ 51,92/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 20%",
-                "Validità 12 mesi",
-                "Kit attrezzatura professionale"
-            ]
-        }
+        mensile: { prezzo: "€ 64,90/mese", include: ["Guanti inclusi", "3 sessioni a settimana", "Cardio e forza", "Sparring controllato"] },
+        trimestrale: { prezzo: "€ 175,23", include: ["Vantaggi mensile", "Risparmio 10%", "Validità 3 mesi", "1 lezione privata"] },
+        semestrale: { prezzo: "€ 331,17", include: ["Vantaggi mensile", "Risparmio 15%", "Validità 6 mesi", "2 lezioni private"] },
+        annuale: { prezzo: "€ 623,04", include: ["Vantaggi mensile", "Risparmio 20%", "Validità 12 mesi", "Kit attrezzatura"] }
     },
     zumba: {
-        mensile: {
-            prezzo: "€ 49,90/mese",
-            include: [
-                "3 sessioni a settimana",
-                "Coreografie sempre nuove",
-                "Atmosfera divertente e inclusiva",
-                "Adatto a tutti i livelli"
-            ]
-        },
-        trimestrale: {
-            prezzo: "€ 134,73 (€ 44,91/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 10%",
-                "Validità 3 mesi",
-                "Bottiglia d'acqua in omaggio"
-            ]
-        },
-        semestrale: {
-            prezzo: "€ 254,49 (€ 42,42/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 15%",
-                "Validità 6 mesi",
-                "T-shirt Zumba in omaggio"
-            ]
-        },
-        annuale: {
-            prezzo: "€ 478,80 (€ 39,90/mese)",
-            include: [
-                "Tutti i vantaggi del mensile",
-                "Risparmio del 20%",
-                "Validità 12 mesi",
-                "Kit completo Zumba"
-            ]
-        }
+        mensile: { prezzo: "€ 49,90/mese", include: ["3 sessioni a settimana", "Coreografie nuove", "Divertente", "Tutti i livelli"] },
+        trimestrale: { prezzo: "€ 134,73", include: ["Vantaggi mensile", "Risparmio 10%", "Validità 3 mesi", "Acqua omaggio"] },
+        semestrale: { prezzo: "€ 254,49", include: ["Vantaggi mensile", "Risparmio 15%", "Validità 6 mesi", "T-shirt omaggio"] },
+        annuale: { prezzo: "€ 478,80", include: ["Vantaggi mensile", "Risparmio 20%", "Validità 12 mesi", "Kit completo"] }
     }
 };
 
@@ -238,88 +47,44 @@ function cambiaCorso(corsoSelezionato) {
     }
     
     const corso = corsiData[corsoSelezionato];
+    const durate = ['mensile', 'trimestrale', 'semestrale', 'annuale']; // Chiavi dell'oggetto
     
-    container.innerHTML = `
-        <div class="abbonamento-item">
-            <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                <h3>Mensile</h3>
-                <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </div>
-            <div class="abbonamento-content">
-                <p><strong>${corso.mensile.prezzo}</strong></p>
-                <ul>
-                    ${corso.mensile.include.map(item => `<li>${item}</li>`).join('')}
-                </ul>
-            </div>
-        </div>
+    // Genera l'HTML dinamicamente con .map()
+    container.innerHTML = durate.map((durata, index) => {
+        const info = corso[durata];
+        const titolo = durata.charAt(0).toUpperCase() + durata.slice(1); // "mensile" -> "Mensile"
+        const activeClass = index === 0 ? 'active' : ''; // Il primo è attivo di default
         
-        <div class="abbonamento-item">
+        return `
+        <div class="abbonamento-item ${activeClass}">
             <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                <h3>Trimestrale</h3>
+                <h3>${titolo}</h3>
                 <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </div>
             <div class="abbonamento-content">
-                <p><strong>${corso.trimestrale.prezzo}</strong></p>
+                <p><strong>${info.prezzo}</strong></p>
                 <ul>
-                    ${corso.trimestrale.include.map(item => `<li>${item}</li>`).join('')}
+                    ${info.include.map(item => `<li>${item}</li>`).join('')}
                 </ul>
             </div>
-        </div>
-        
-        <div class="abbonamento-item">
-            <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                <h3>Semestrale</h3>
-                <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </div>
-            <div class="abbonamento-content">
-                <p><strong>${corso.semestrale.prezzo}</strong></p>
-                <ul>
-                    ${corso.semestrale.include.map(item => `<li>${item}</li>`).join('')}
-                </ul>
-            </div>
-        </div>
-        
-        <div class="abbonamento-item">
-            <div class="abbonamento-header" onclick="toggleAbbonamento(this)">
-                <h3>Annuale</h3>
-                <svg class="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </div>
-            <div class="abbonamento-content">
-                <p><strong>${corso.annuale.prezzo}</strong></p>
-                <ul>
-                    ${corso.annuale.include.map(item => `<li>${item}</li>`).join('')}
-                </ul>
-            </div>
-        </div>
-    `;
+        </div>`;
+    }).join('');
 }
 
 function toggleAbbonamento(header) {
     const abbonamentoItem = header.parentElement;
-    const wasActive = abbonamentoItem.classList.contains('active');
+    const isClosed = !abbonamentoItem.classList.contains('active');
     
+    // Chiudi tutti gli altri nello stesso contenitore
     const parent = abbonamentoItem.parentElement;
     parent.querySelectorAll('.abbonamento-item').forEach(item => {
         item.classList.remove('active');
     });
     
-    if (!wasActive) {
+    // Se era chiuso, aprilo (comportamento accordion classico)
+    if (isClosed) {
         abbonamentoItem.classList.add('active');
-    }
-}
-
-function togglePersonalTrainer() {
-    const checkbox = document.getElementById('personal-trainer-checkbox');
-    
-    if (checkbox.checked) {
-        window.location.href = 'personaltrainers.html';
     }
 }
