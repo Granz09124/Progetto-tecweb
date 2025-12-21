@@ -1,95 +1,73 @@
-<!-- TODO: sostituire <span lang="en">Apollo's Gym</span>, le ore con l'attributo corretto (?)-->
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contattaci</title>
-    <meta name="description" content="Contatta la palestra Apollo's Gym per informazioni su corsi, abbonamenti e sedi.">
+    <meta name="description" content="Contatta la palestra per informazioni su corsi, abbonamenti e orari. Sede di Padova.">
     <link rel="stylesheet" href="../css/contattaci.css">
 </head>
 
 <body>
 
-    <header class="intestazione">
-        <img src="../immagini/Logo_palestra.png" alt="" class="logo">
-        <h1>Contattaci</h1>
-    </header>
+<header class="intestazione">
+    <img src="../immagini/Logo_palestra.png" alt="Logo della palestra" class="logo">
+    <h1>Contattaci</h1>
+</header>
 
-    <nav id="breadcrumb">
-        <p> Ti trovi in: <a href="home.html" lang="en">Home</a> >> <a href="palestra.html">Palestra</a> >> Contattaci </p>
-    </nav>
+<nav id="breadcrumb">
+    <p>Ti trovi in: <a href="home.html" lang="en">Home</a> &gt;&gt; Contattaci</p>
+</nav>
 
-    <main class="contenuto-principale">
+<main class="contenuto-principale">
+    
+    <section class="contatti-sede">
+        <h2>Sede di Padova</h2>
 
-        <section class="sezione-sedi">
-            <h2>Le nostre sedi</h2>
+        <ul>
+            <li><strong>Indirizzo:</strong> Piazzetta Sartori 20, 35137 Padova (PD)</li>
+            <li><strong>Telefono:</strong> 049 8762439</li>
+            <li><strong>Email:</strong> padova@<span lang="en">apollosgym</span>.it</li>
+            <li><strong>Orari:</strong> Lun-Dom 7:00-22:00</li>
+        </ul>
+    </section>
 
-            <article class="sede">
-                <h3>Venezia</h3>
-                <p><strong>Indirizzo:</strong> Via Roma 12, Venezia</p>
-                <p><strong>Telefono:</strong> 041 234 567</p>
-                <p><strong>Email:</strong> centro@<span lang="en">Apollo's Gym</span>.it</p>
-                <p><strong>Orari:</strong> Lun-Ven 7:00-22:00</p>
-            </article>
-
-            <br>
-
-            <article class="sede">
-                <h3>Mestre</h3>
-                <p><strong>Indirizzo:</strong> Via Piave 88, Mestre</p>
-                <p><strong>Telefono:</strong> 041 555 123</p>
-                <p><strong>Email:</strong> mestre@<span lang="en">Apollo's Gym</span>.it</p>
-                <p><strong>Orari:</strong> Lun-Ven 7:00-22:00</p>
-            </article>
-
-            <br>
-
-            <article class="sede">
-                <h3>Padova</h3>
-                <p><strong>Indirizzo:</strong> Corso Milano 44, Padova</p>
-                <p><strong>Telefono:</strong> 049 999 222</p>
-                <p><strong>Email:</strong> padova@<span lang="en">Apollo's Gym</span>.it</p>
-                <p><strong>Orari:</strong> Lun-Dom 7:00-22:00</p>
-            </article>
-        </section>
-
-        <section class="sezione-form">
+    
+    <section class="contatti-interazione">
+        
+        
+        <div class="form-contatto">
             <h2>Scrivici</h2>
 
             <form action="#" method="post">
-
                 <label for="nome">Nome *</label>
                 <input type="text" id="nome" name="nome" required>
 
                 <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required>
-            
-                <label for="tel">Telefono</label>
-                <input type="tel" id="tel" name="tel">
-            
-                <label for="sede">Sede di interesse *</label>
-                <select id="sede" name="sede" required>
-                    <option value="">Seleziona una sede</option>
-                    <option value="venezia">Venezia</option>
-                    <option value="mestre">Mestre</option>
-                    <option value="padova">Padova</option>
-                </select>
-            
+
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" name="telefono">
+
                 <label for="messaggio">Messaggio *</label>
                 <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
-        
+
                 <button type="submit" class="btn-invia">Invia</button>
             </form>
-        </section>
+        </div>
 
-    </main>
+        
+        <div class="mappa" aria-label="Posizione della palestra su mappa">
+            <p>qua ci va la mappa</p>
+        </div>
 
-    <footer class="pie-di-pagina">
-        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
-    </footer>
+    </section>
+
+</main>
+
+<footer class="pie-di-pagina">
+    <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+</footer>
 
 </body>
-
 </html>
