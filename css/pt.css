@@ -58,11 +58,15 @@ a:hover {
 
 strong {
     font-weight: normal;
-    font-size: medium;
+    /*font-size: medium;*/
 }
 
 p {
     margin: 0.5em 0.5em;
+}
+
+img {
+    padding: 1em;
 }
 
 /* ==================
@@ -116,12 +120,50 @@ p {
     border: 1px solid var(--mainColor);
     box-shadow: 0 0 0.4em var(--mainAlpha);
     margin: 0.4em;
+    overflow: hidden;
 }
 
 .background {
     background-color: var(--backgroundColor);
 }
 
+.dati-pt {
+    padding: 1em;
+}
+.dati-pt dt {
+    display: inline-block;
+    font-weight: bold;
+    width: 20%;
+}
+.dati-pt dt:not(:first-child)::after {
+    content: ":";
+}
+.dati-pt dd:not(:nth-child(2)) {
+    display: inline-block;
+    width: 35%;
+    vertical-align: top;
+}
+.dati-pt dd .img-pt {
+    float: right;
+    width: 30%;
+}
+.dati-pt-short {
+    padding: 0.5em;
+    margin: 1em 1em 0.5em 1em;
+}
+.img-pt-small {
+    float: left;
+    width: 20%;
+}
+.dati-pt-short dt,
+.dati-pt-short dd,
+.presentazione-pt h2 {
+    padding-left: 22.5%;
+    text-align: left;
+}
+.presentazione-pt h2 {
+    margin-top: 1em;
+}
 /* ==================
  * SUB HEADER       *
  ===================*/
@@ -189,6 +231,13 @@ header h1 {
     line-height: 1.75em;
 }
 
+#barra-ricerca-pt {
+    padding: 0.2em 1em;
+    width: 100%;
+    font-size: 1.2em;
+    margin: 1em 1em 0.2em 1em;
+}
+
 /* ==================(modificare che non ha senso)
  * CORE             *
  ===================*/
@@ -251,4 +300,5 @@ footer {
     padding: 1em 3em;
     color: var(--mainColor);
     background-color: var(--backgroundColor);
+    clear: both;
 }
