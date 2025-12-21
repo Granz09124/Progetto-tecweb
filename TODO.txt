@@ -137,6 +137,43 @@ COSE DA VEDERE:
 lato backend
 decisione del css e del template per area utenti 
 ------------------------------------------------------------------------------------------------------------------------------------
+TODO 21/12/2025
+
+DECISIONI:
+
+CSS:I vari link devono sempre essere sottolineati.
+per i link visitati si è scelto un colore azzurro/blu (quelli in root di home)
+ header-> ridurre il gradiente del nome della palestra ma che rimanga comunque ok per il contrasto colori, per l'immagine una grandezza di circa (130-150px)
+ breadcrumb -> ok, 
+
+Area utenti:
+vedere immagini di riferimento e fare un "meglio delle due", una sola pagina per ogni tipo di utente.
+
+
+TODO:
+Cambiare nome palestra a tempio di apollo nelle varie pagine (LUCA)
+Fare in modo che tutti gli abbonamenti in abbonamenti.html all'avvio della pagina siano già tutti aperti, anche per corsi (ARMANDO)
+sempre in abbonamenti.html vedere riferimento immagine. 
+aggiungere link ai breadcrumb delle pagine (TUTTI) 
+AGGIORNARE PAGINE CORSI.HTML: mettere accanto al bottone "vai a vedere gli orari" che poi diventa un "torna alla descrizione" (LUCA)
+AGGIORNARE LA RELAZIONE (LUCA)
+aggiungere pagina error 403 (LUCA)
+aggiungere login all'header delle varie pagine (MARCO)
+aggiungere pagine: lista-utenti (disponibile solo all'admin) (Alessandro)
+pagina login e registrazione (Marco)
+
+aggiungere js per pagina corsi (LUCA) 
+aggiungere immagini (Alessandro)
+
+struttura del database: creare scherma ER (TUTTI) e cercare dei dati da riempire 
+aggiorna il CSS (Alessandro) -> unico file css per tutte le pagine (riferimento pagina abbonamenti.html con le varie decisioni prese) 
+
+COSE DA VEDERE:
+pagina utenti per admin e pt 
+stile da mobile e da stampante 
+Se il css effettivamente va bene -> sistemare le varie pagine che vengono fuori male  
+finire il database 
+
 
 
 
