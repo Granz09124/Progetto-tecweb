@@ -32,7 +32,6 @@ body {
     color: var(--text-main);
     font-family: var(--font-main);
     line-height: 1.6;
-    background-image: radial-gradient(circle at 50% 0%, #2a1a00 0%, #0a0a0a 60%);
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -53,7 +52,6 @@ HEADER E NAVIGAZIONE
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 20px rgba(255, 106, 0, 0.15);
 }
 
 .logo-container {
@@ -64,9 +62,8 @@ HEADER E NAVIGAZIONE
 }
 
 .intestazione .logo {
-    max-width: 80px;
+    max-width: 130px;
     height: auto;
-    filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
 }
 
 .nome-palestra {
@@ -79,7 +76,6 @@ HEADER E NAVIGAZIONE
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--gold);
-    text-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 
 #menu ul {
@@ -91,32 +87,17 @@ HEADER E NAVIGAZIONE
 
 #menu a {
     color: var(--text-main);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.9em;
     letter-spacing: 1px;
     transition: color 0.3s ease;
-    position: relative;
 }
 
 #menu a:hover {
     color: var(--gold);
-}
-
-#menu a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: var(--apollo-gradient);
-    transition: width 0.3s ease;
-}
-
-#menu a:hover::after {
-    width: 100%;
 }
 
 /*
@@ -132,6 +113,16 @@ BREADCRUMB
     border-bottom: 1px solid #333;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+#breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+#breadcrumb a:hover {
+    color: var(--gold);
 }
 
 /*
@@ -260,119 +251,153 @@ PAGINA ABBONAMENTI
 ========================================================================
 */
 .layout-abbonamenti {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 3em; 
-    align-items: start; 
-}
-
-.sezione-abbonamento {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-}
-
-.layout-abbonamenti > .sezione-abbonamento:first-child h2::after {
-    content: "";
     display: block;
-    height: 81.5px;
-    margin-bottom: 2em;
 }
 
-.corso-selector {
+.tab-container {
+    display: flex;
+    gap: 2em;
+    min-height: 500px;
+    margin-bottom: 4em;
+    align-items: flex-start;
+}
+
+.tab-menu {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     background: var(--bg-card);
     padding: 1.5em;
     border-radius: var(--radius);
     border: 1px solid #333;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1em;
-    margin-bottom: 2em;
-    box-sizing: border-box; 
 }
 
-.corso-selector label {
-    color: var(--gold);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.corso-selector select {
-    flex: 1;
-    background-color: #000;
-    border: 1px solid var(--orange);
-    color: #fff;
-    padding: 0.8em;
-    border-radius: 5px;
-    cursor: pointer;
+.tab-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    padding: 15px;
+    text-align: left;
     font-family: var(--font-main);
-    min-width: 150px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-.abbonamento-item {
+.tab-btn:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background: linear-gradient(90deg, rgba(255, 204, 0, 0.1) 0%, transparent 100%);
+    border-left: 4px solid var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.tab-content-area {
+    flex: 1;
     background: var(--bg-card);
-    margin-bottom: 1em;
     border-radius: var(--radius);
     border: 1px solid #333;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    padding: 2em;
+    position: relative;
+    min-height: 400px;
 }
 
-.abbonamento-item.active {
-    border: 1px solid var(--gold);
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
-.abbonamento-header {
-    background: linear-gradient(90deg, #1a1a1a 0%, #111 100%);
-    padding: 1.2em 1.5em;
-    cursor: pointer;
+.tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-panel h2 {
+    text-align: left;
+    margin-bottom: 0.2em;
+    font-size: 2em;
+    background: none;
+    -webkit-text-fill-color: var(--gold);
+    color: var(--gold);
+    text-shadow: none;
+}
+
+.descrizione-tab {
+    margin-bottom: 2em;
+    font-size: 1.1em;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1em;
+}
+
+.abbonamento-card {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin-bottom: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
-.abbonamento-header h3 {
-    margin: 0;
+.abbonamento-card:hover {
+    border-color: var(--orange);
+    transform: translateX(5px);
+}
+
+.abbonamento-card h3 {
     color: var(--text-main);
-    font-size: 1.2em;
-}
-
-.abbonamento-item.active .abbonamento-header h3 {
-    color: var(--gold);
-}
-
-.toggle-icon {
-    width: 24px;
-    height: 24px;
-    stroke: var(--orange);
-    transition: transform 0.3s ease;
-}
-
-.abbonamento-item.active .toggle-icon {
-    transform: rotate(180deg);
-}
-
-.abbonamento-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    background: #0f0f0f;
-}
-
-.abbonamento-item.active .abbonamento-content {
-    max-height: 600px;
-    padding: 1.5em;
-    border-top: 1px solid #333;
-}
-
-.abbonamento-content strong {
     font-size: 1.3em;
+    min-width: 150px;
+    margin: 0;
+}
+
+.abbonamento-card .prezzo {
     color: var(--gold);
+    font-weight: bold;
+    font-size: 1.2em;
+    min-width: 180px;
+    margin: 0;
+}
+
+.abbonamento-card small {
     display: block;
-    margin-bottom: 0.5em;
+    font-size: 0.7em;
+    color: var(--text-muted);
+    font-weight: normal;
+}
+
+.abbonamento-card ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 0.9em;
+    color: var(--text-muted);
+    flex: 1;
+}
+
+.abbonamento-card ul li {
+    list-style-type: square;
+    margin-bottom: 2px;
+}
+
+.pt-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    background: linear-gradient(to right, #0a0a0a, #141414);
 }
 
 /*
@@ -438,6 +463,7 @@ BUNDLES - PODIO
 .bundle ul li {
     margin-bottom: 0.5em;
     color: #ddd;
+    list-style: none;
 }
 
 .prezzo-originale {
@@ -506,58 +532,9 @@ BUNDLES - PODIO
 
 /*
 ========================================================================
-CHECKBOX E UTILS
+UTILS
 ========================================================================
 */
-.checkbox-container {
-    margin-top: 1.5em;
-    padding: 1em;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius);
-}
-
-.checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.checkbox-wrapper input[type="checkbox"] {
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    border: 2px solid var(--orange);
-    border-radius: 4px;
-    background: #000;
-    cursor: pointer;
-    display: grid;
-    place-content: center;
-    flex-shrink: 0;
-}
-
-.checkbox-wrapper input[type="checkbox"]::before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    background: var(--gold);
-    transform: scale(0);
-    transition: 0.2s transform ease;
-}
-
-.checkbox-wrapper input[type="checkbox"]:checked::before {
-    transform: scale(1);
-}
-
-.checkbox-wrapper .link-pt {
-    color: var(--gold);
-    font-size: 1.1em;
-    text-decoration: none;
-    line-height: 1;
-}
-
-.checkbox-wrapper .link-pt:hover {
-    text-decoration: underline;
-}
 
 #torna-su {
     background: var(--gold);
@@ -576,9 +553,19 @@ CHECKBOX E UTILS
     z-index: 1000;
     transition: transform 0.3s;
 }
-#torna-su:hover { transform: scale(1.1); }
-#torna-su img { width: 60%; height: auto; }
-#torna-su.visible { display: flex; }
+
+#torna-su:hover { 
+    transform: scale(1.1); 
+}
+
+#torna-su img { 
+    width: 60%; 
+    height: auto; 
+}
+
+#torna-su.visible { 
+    display: flex; 
+}
 
 /*
 ========================================================================
@@ -600,19 +587,7 @@ RESPONSIVE
 ========================================================================
 */
 
-/* TABLET E SCHERMI MEDI (Sotto 900px) */
-@media screen and (max-width: 900px) {
-    .layout-abbonamenti {
-        grid-template-columns: 1fr;
-        gap: 4em;
-    }
-    
-    .layout-abbonamenti > .sezione-abbonamento:first-child h2::after {
-        display: none;
-    }
-}
-
-/* MOBILE (Sotto 768px) */
+/* MOBILE e TABLET (Sotto 768px) */
 @media screen and (max-width: 768px) {
     .intestazione { 
         flex-direction: column; 
@@ -632,6 +607,51 @@ RESPONSIVE
     
     .layout-palestra { 
         grid-template-columns: 1fr; 
+    }
+
+    .tab-container {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .tab-menu {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px;
+        flex: none;
+        white-space: nowrap;
+        border-bottom: 2px solid var(--orange);
+        background: #000;
+        position: sticky;
+        top: 80px;
+        z-index: 90;
+        margin-bottom: 1em;
+    }
+
+    .tab-btn {
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: #222;
+        border: 1px solid #444;
+        font-size: 0.9em;
+    }
+
+    .tab-btn.active {
+        background: var(--gold);
+        color: #000;
+        border-left: 1px solid var(--gold);
+    }
+
+    .abbonamento-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .abbonamento-card ul {
+        padding-left: 15px;
+        margin-bottom: 10px;
     }
     
     .bundle-podio { 
