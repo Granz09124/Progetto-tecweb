@@ -70,13 +70,17 @@ h2{
 }
 
 .corso button {
-    align-self: flex-end;
+    position: absolute;
+    bottom: 0.625em;
+    right: 0.625em;
     background-color: #fecd00;
     color: #161717;
     border: none;
     padding: 0.625em;
     cursor: pointer;
     border-radius: 0.3125em;
+    width: 180px;
+    text-align: center;
 }
 
 .corso button:focus {
@@ -84,12 +88,39 @@ h2{
     outline-offset: 0.125em;
 }
 
+
+
+.corso-orari {
+    margin-top: 0.625em;
+    padding: 0.625em;
+    border-radius: 0.3125em;
+}
+
+.corso-orari h3 {
+    margin: 0 0 0.625em 0;
+    font-size: 1.125em;
+}
+
+.corso-orari p {
+    margin: 0.3125em 0;
+}
+
 .corso.alternato {
     flex-direction: row-reverse;
+    position: relative;
 }
 
 .corso.alternato button {
-    align-self: flex-start;
+    position: absolute;
+    bottom: 0.625em;
+    left: 0.625em;
+}
+
+.corso.alternato .corso-orari {
+    position: absolute;
+    left: 45%;
+    top: 2em;
+    width: 25%;
 }
 
 footer {

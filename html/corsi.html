@@ -7,11 +7,12 @@
     <meta name="description" content="Palestra, corsi, zumba, pilates, yoga, crossfit, verticali, arrampicata, fitness, sport, salute">
     <meta name="keywords" content="corsi, zumba, pilates, yoga, crossfit, fit boxe, arrampicata, sport, salute">
     <link rel="stylesheet" href="../css/corsi.css">
+    <script src="../javascript/toggle-orari.js"></script>
 </head>
 <body>
     <header class="intestazione">
        <a href="home.html"> <img src="../immagini/Logo_palestra.png"  alt="Logo Palestra" class="logo"> </a>
-        <h1><span lang="en">Apollo's Gym</span></h1>
+        <h1><span lang="en">Tempio di Apollo</span></h1>
     </header>
 
     <nav id="breadcrumb">
@@ -21,46 +22,46 @@
     <main class="contenuto-principale">
         <section class="sezione-corsi">
             <h2>I Nostri Corsi</h2>
-            <article class="corso">
+            <article class="corso" id="zumba">
                 <img src="../immagini/zumba.jpg" alt="Zumba">
                 <div class="corso-descrizione">
                     <p><strong> Zumba </strong> è un corso di danza aerobica che combina ritmi latini e movimenti divertenti per bruciare calorie e migliorare la forma fisica in modo divertente.</p>
-                    <button> ➥ </button>
+                    <button onclick="toggleOrari('zumba')">vedi gli orari ➥</button>
                 </div>
             </article>
-            <article class="corso alternato">
+            <article class="corso alternato" id="pilates">
                 <img src="../immagini/pilates.jpg" alt="Pilates">
                 <div class="corso-descrizione">
                     <p> <strong> Pilates </strong> è un metodo di esercizi che rafforza il core, migliora la flessibilità e promuove il benessere generale attraverso movimenti controllati e respirazione.</p>
-                    <button> ➥ </button>
+                    <button onclick="toggleOrari('pilates')">vedi gli orari ➥</button>
                 </div>
             </article>
-            <article class="corso">
+            <article class="corso" id="yoga">
                 <img src="../immagini/yoga.png" alt="Yoga">
                 <div class="corso-descrizione">
                     <p>Lo <strong> yoga </strong> è una pratica antica che unisce corpo e mente, aiutando a ridurre lo stress, aumentare la flessibilità e raggiungere uno stato di calma interiore.</p>
-                    <button> ➥ </button>
+                    <button onclick="toggleOrari('yoga')">vedi gli orari ➥</button>
                 </div>
             </article>
-            <article class="corso alternato">
+            <article class="corso alternato" id="crossfit">
                 <img src="../immagini/crossfit.jpg" alt="Crossfit">
                 <div class="corso-descrizione">
                     <p> <strong> Crossfit </strong> è un allenamento ad alta intensità che combina esercizi funzionali, sollevamento pesi e condizionamento cardiovascolare per massimizzare la forza e la resistenza.</p>
-                    <button> ➥ </button>
+                    <button onclick="toggleOrari('crossfit')">vedi gli orari ➥</button>
                 </div>
             </article>
-            <article class="corso">
+            <article class="corso" id="fitboxe">
                 <img src="../immagini/fit_boxe.jpg" alt="Fit Boxe">
                 <div class="corso-descrizione">
                     <p>La <strong> <span lang="en"> fit boxe </span></strong> è un allenamento ad alta intensità che unisce movimenti delle arti marziali e del pugilato (calci, pugni, ginocchiate) con ritmi musicali energici. Si svolge generalmente con l’ausilio di un sacco da boxe, ma senza contatto fisico con altre persone.</p>
-                    <button> ➥ </button>
+                    <button onclick="toggleOrari('fitboxe')">vedi gli orari ➥</button>
                 </div>
             </article>
-            <article class="corso alternato">
+            <article class="corso alternato" id="arrampicata">
                 <img src="../immagini/arrampicata.jpg" alt="Arrampicata">
                 <div class="corso-descrizione">
                     <p> <strong> L'arrampicata </strong> è uno sport che sfida corpo e mente, migliorando la forza, l'equilibrio e la concentrazione attraverso scalate su pareti artificiali.</p>
-                    <button> ➥ </button>
+                    <button onclick="toggleOrari('arrampicata')">vedi gli orari ➥</button>
                 </div>
             </article>
         </section>
