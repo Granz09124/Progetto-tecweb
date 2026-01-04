@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Palestra - Corsi</title>
+        <meta
+            name="description"
+            content="Palestra, corsi, zumba, pilates, yoga, crossfit, verticali, arrampicata, fitness, sport, salute"
+        />
+        <meta
+            name="keywords"
+            content="corsi, zumba, pilates, yoga, crossfit, fit boxe, arrampicata, sport, salute"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <script src="../javascript/toggle-orari.js"></script>
+    </head>
+    <body>
+        <a class="vai-al-contenuto" href="#contenuto">Vai al contenuto</a>
+        <header class="intestazione">
+            <header>
+                <img
+                    src="../immagini/Logo_palestra.png"
+                    alt="Logo"
+                    class="logo"
+                />
+                <h1>Il Tempio di Apollo</h1>
+            </header>
+
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a lang="en" href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./Palestra.html"><strong>Palestra</strong></a>
+                    </li>
+                    <li><a href="./Abbonamenti.html">Abbonamenti</a></li>
+                    <li>
+                        <a href="./cerca-pt.html">I nostri Personal Trainer</a>
+                    </li>
+                    <li><a href="./Contattaci.html">Contattaci</a></li>
+                    <li><a href="./Login.html">Login</a></li>
+                    <li><a href="./Registrati.html">Registrati</a></li>
+                </ul>
+            </nav>
+        </header>
+        <nav id="breadcrumb">
+            <p>
+                Ti trovi in:
+                <a lang="en" href="./home.html">Home</a> &gt; &gt;
+                <a href="palestra.html">Palestra</a> &gt; &gt; Corsi
+            </p>
+        </nav>
+
+        <main class="contenuto-principale">
+            <section class="lista-corsi">
+                <h2>I Nostri Corsi</h2>
+                <article class="corso topic" id="zumba">
+                    <img src="../immagini/zumba.jpg" alt="Zumba" />
+                    <div class="corso-descrizione">
+                        <p>
+                            <strong> Zumba </strong> è un corso di danza
+                            aerobica che combina ritmi latini e movimenti
+                            divertenti per bruciare calorie e migliorare la
+                            forma fisica in modo divertente.
+                        </p>
+                        <button onclick="toggleOrari('zumba')">
+                            vedi gli orari ➥
+                        </button>
+                    </div>
+                </article>
+                <article class="corso alternato topic" id="pilates">
+                    <img src="../immagini/pilates.jpg" alt="Pilates" />
+                    <div class="corso-descrizione">
+                        <p>
+                            <strong> Pilates </strong> è un metodo di esercizi
+                            che rafforza il core, migliora la flessibilità e
+                            promuove il benessere generale attraverso movimenti
+                            controllati e respirazione.
+                        </p>
+                        <button onclick="toggleOrari('pilates')">
+                            vedi gli orari ➥
+                        </button>
+                    </div>
+                </article>
+                <article class="corso topic" id="yoga">
+                    <img src="../immagini/yoga.png" alt="Yoga" />
+                    <div class="corso-descrizione">
+                        <p>
+                            Lo <strong> yoga </strong> è una pratica antica che
+                            unisce corpo e mente, aiutando a ridurre lo stress,
+                            aumentare la flessibilità e raggiungere uno stato di
+                            calma interiore.
+                        </p>
+                        <button onclick="toggleOrari('yoga')">
+                            vedi gli orari ➥
+                        </button>
+                    </div>
+                </article>
+                <article class="corso alternato topic" id="crossfit">
+                    <img src="../immagini/crossfit.jpg" alt="Crossfit" />
+                    <div class="corso-descrizione">
+                        <p>
+                            <strong> Crossfit </strong> è un allenamento ad alta
+                            intensità che combina esercizi funzionali,
+                            sollevamento pesi e condizionamento cardiovascolare
+                            per massimizzare la forza e la resistenza.
+                        </p>
+                        <button onclick="toggleOrari('crossfit')">
+                            vedi gli orari ➥
+                        </button>
+                    </div>
+                </article>
+                <article class="corso" id="fitboxe">
+                    <img src="../immagini/fit_boxe.jpg" alt="Fit Boxe" />
+                    <div class="corso-descrizione">
+                        <p>
+                            La
+                            <strong> <span lang="en"> fit boxe </span></strong>
+                            è un allenamento ad alta intensità che unisce
+                            movimenti delle arti marziali e del pugilato (calci,
+                            pugni, ginocchiate) con ritmi musicali energici. Si
+                            svolge generalmente con l’ausilio di un sacco da
+                            boxe, ma senza contatto fisico con altre persone.
+                        </p>
+                        <button onclick="toggleOrari('fitboxe')">
+                            vedi gli orari ➥
+                        </button>
+                    </div>
+                </article>
+                <article class="corso alternato" id="arrampicata">
+                    <img src="../immagini/arrampicata.jpg" alt="Arrampicata" />
+                    <div class="corso-descrizione">
+                        <p>
+                            <strong> L'arrampicata </strong> è uno sport che
+                            sfida corpo e mente, migliorando la forza,
+                            l'equilibrio e la concentrazione attraverso scalate
+                            su pareti artificiali.
+                        </p>
+                        <button onclick="toggleOrari('arrampicata')">
+                            vedi gli orari ➥
+                        </button>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="piè-di-pagina">
+            <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+        </footer>
+    </body>
+</html>
