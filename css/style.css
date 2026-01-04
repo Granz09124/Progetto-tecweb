@@ -165,7 +165,7 @@ footer {
     box-shadow: 0 0 10px var(--mainColor);
     background-color: var(--mainBackgroundColor);
     border-radius: 1.2em;
-    margin: 0.1em;
+    margin: 0.5em;
     padding: 0.3em 1em;
 }
 
@@ -1053,7 +1053,7 @@ textarea {
 }
 
 .dati-pt dt:not(:first-child)::after,
-.dati-pt-short dt:not(:first-child)::after {
+.dati-risultato-short dt:not(:first-child)::after {
     content: ":";
 }
 
@@ -1066,19 +1066,21 @@ textarea {
 .dati-pt dd .img-pt {
     float: right;
     width: 30%;
+    border-radius: 50%;
 }
 
-.dati-pt-short {
+.dati-risultato-short {
     padding: 0.5em;
 }
 
 .img-pt-small {
     float: left;
     width: 20%;
-    margin: .5em;
+    margin: 0.5em;
+    border-radius: 50%;
 }
 
-.dati-pt-short dt,
+.dati-risultato-short dt,
 .presentazione-pt h2 {
     text-align: left;
     /*! margin-left: -25%; */
@@ -1091,7 +1093,7 @@ textarea {
 /* ===================
  * Ricerca PT
  =================== */
-#barra-ricerca-pt {
+.barra-ricerca {
     padding: 0.2em 1em;
     width: 95%;
     font-size: 1.2em;
@@ -1100,23 +1102,45 @@ textarea {
     overflow: hidden;
 }
 
-.cerca-pt-es {
+.ricerca-esempio {
     font-size: small;
     display: block;
 }
 
-ul#risultati-ricerca-pt {
+ul#risultati-ricerca {
     list-style: none;
     display: flex;
     flex-direction: column;
 }
 
-#risultati-ricerca-pt h2 {
-/*     padding-left: 20%; */
+#risultati-ricerca h2 {
+    /*     padding-left: 20%; */
     text-align: left;
 }
 
 /* #risultati-ricerca-pt dl, */
-#barra-ricerca-pt li {
+#barra-ricerca li {
     display: flex;
+}
+
+/* ===================
+ * Ricerca Utente
+ =================== */
+button.vai-a-profilo {
+    display: block;
+    margin-left: auto;
+    margin-right: 1em;
+    padding: 0.5em;
+    border: 3px solid var(--mainColorDark);
+    border-radius: 1.5em;
+    background-color: var(--mainBackgroundColor);
+    color: var(--mainColor);
+    transition-duration: 0.5s;
+}
+
+button.vai-a-profilo:hover {
+    background-color: var(--mainColorLight);
+    border: 3px solid var(--mainColorLight);
+    color: var(--mainBackgroundColorDark);
+    transition-duration: 0.5s;
 }
