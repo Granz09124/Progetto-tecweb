@@ -18,8 +18,8 @@
 
     --headerGradient: linear-gradient(
         to right,
-        var(--mainColorLight) 25%,
-        var(--mainColorDark) 75%
+        var(--mainColor) 25%,
+        var(--mainColorLight) 75%
     );
     --backgroundGradient: radial-gradient(
         circle 600px at center,
