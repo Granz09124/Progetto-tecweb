@@ -37,8 +37,7 @@ body {
 
 body {
     color: var(--textColor);
-    background-color: var(--mainBackgroundColorDark);
-    background: var(--backgroundGradient);
+    background-color: var(--mainBackgroundColor);
     max-width: 1000px;
     margin: auto;
 }
