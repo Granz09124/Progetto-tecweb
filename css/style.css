@@ -1025,6 +1025,16 @@ textarea {
     font-style: italic;
 }
 
+@media (max-width: 768px) {
+    .contatti-interazione {
+        flex-direction: column;
+    }
+
+    .btn-invia {
+        align-self: stretch;
+    }
+}
+
 /* ===============
  * Pagine errore
  =============== */
