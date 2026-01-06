@@ -614,36 +614,35 @@ RESPONSIVE
         gap: 1em;
     }
 
-    /* --- INIZIO MODIFICA MENU VERTICALE --- */
+
     .tab-menu {
         width: 100%;
-        flex-direction: column; /* Dispone i bottoni in colonna */
-        overflow-x: visible;    /* Rimuove lo scroll orizzontale */
+        flex-direction: column; 
+        overflow-x: visible; 
         padding: 10px;
         flex: none;
-        white-space: normal;    /* Permette al testo di andare a capo se necessario */
+        white-space: normal;
         border-bottom: 2px solid var(--orange);
         background: #000;
-        position: static;       /* Rimosso sticky: una lista lunga fissa coprirebbe lo schermo */
+        position: static;  
         margin-bottom: 1em;
-        gap: 10px;              /* Spazio tra i bottoni verticali */
+        gap: 10px;  
     }
 
     .tab-btn {
-        width: 100%;            /* Bottone a larghezza piena */
+        width: 100%;
         padding: 15px;
         border-radius: 8px;
         background: #222;
         border: 1px solid #444;
         font-size: 0.9em;
-        text-align: center;     /* Testo centrato */
+        text-align: center; 
     }
-    /* --- FINE MODIFICA --- */
 
     .tab-btn.active {
         background: var(--gold);
         color: #000;
-        border-color: var(--gold); /* Evidenzia tutto il bordo */
+        border-color: var(--gold);
         font-weight: bold;
     }
 
