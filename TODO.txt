@@ -151,22 +151,23 @@ vedere immagini di riferimento e fare un "meglio delle due", una sola pagina per
 
 
 TODO:
-Cambiare nome palestra a tempio di apollo nelle varie pagine (LUCA)
+Cambiare nome palestra a tempio di apollo nelle varie pagine (LUCA) OK
 Fare in modo che tutti gli abbonamenti in abbonamenti.html all'avvio della pagina siano già tutti aperti, anche per corsi (ARMANDO)
 sempre in abbonamenti.html vedere riferimento immagine. 
-aggiungere link ai breadcrumb delle pagine (TUTTI) 
-AGGIORNARE PAGINE CORSI.HTML: mettere accanto al bottone "vai a vedere gli orari" che poi diventa un "torna alla descrizione" (LUCA)
+aggiungere link ai breadcrumb delle pagine (TUTTI) Ok
+AGGIORNARE PAGINE CORSI.HTML: mettere accanto al bottone "vai a vedere gli orari" che poi diventa un "torna alla descrizione" (LUCA) OK
 AGGIORNARE LA RELAZIONE (LUCA)
-aggiungere pagina error 403 (LUCA)
+aggiungere pagina error 403 (LUCA) OK
 aggiungere login all'header delle varie pagine (MARCO)
 aggiungere pagine: lista-utenti (disponibile solo all'admin) (Alessandro)
 pagina login e registrazione (Marco)
 
-aggiungere js per pagina corsi (LUCA) 
+aggiungere js per pagina corsi (LUCA) OK
 aggiungere immagini (Alessandro)
 
 struttura del database: creare scherma ER (TUTTI) e cercare dei dati da riempire 
 aggiorna il CSS (Alessandro) -> unico file css per tutte le pagine (riferimento pagina abbonamenti.html con le varie decisioni prese) 
+
 
 COSE DA VEDERE:
 pagina utenti per admin e pt 
@@ -174,6 +175,40 @@ stile da mobile e da stampante
 Se il css effettivamente va bene -> sistemare le varie pagine che vengono fuori male  
 finire il database 
 
+
+------------------------------------------------------------------------------------------------------------------------------------
+TODO 06/01/2026
+
+DECISIONI:
+CSS: Titolo -> con grandiente più leggero. Ridurre grandezza dell'intestazione. Trovare un nome per il main. mettere colore diverso 
+più evidente per link cliccati e non. Rimozione del gradiente di background presente in tutte le pagine. Solo titolo con gradiente 
+il resto rimane giallo come colore di testo.
+sistemare i vari link alle pagine. 
+
+Nome per il main: mettere -> contenuto-principale
+
+Contattaci: cambiare indirizzo ed email per coerenza di maps. rimpicciolire sopra e sotto il grigio che circonda la mappa.
+
+
+DIAGRAMMA ER: Guardare nella cartella database immagine di riferimento 
+
+TODO: 
+
+Sistemare il CSS, gestione dell'immagine del logo. Controllo dei contrasti, su chrome c'è opzione molto facile per vedere(Tutti, copiare stile da style.css e poi fare le modifiche per le proprie pagine)
+
+Creazione pagina utenti per admin e pt (ARMANDO)
+Controllare le varie pagine, il resize se va bene o sono sorti problemi. (TUTTI)
+Popolazione del database (MARCO)
+Aggiornamento della relazione (LUCA)
+CSS da mobile e stampante (Ognuno fa il mobile e stampante delle sue pagine)
+CSS da mobile menù (Alessandro)
+Sistema pagina contattaci (MARCO)
+Guardare se c'è Navigazione tramite tab (LUCA)
+
+COSE DA VEDERE:
+RICONTROLLO DEL CSS 
+Controllo Popolazione database
+Rinominazione delle varie pagine html se css va bene. 
 
 
 
