@@ -614,33 +614,37 @@ RESPONSIVE
         gap: 1em;
     }
 
+    /* --- INIZIO MODIFICA MENU VERTICALE --- */
     .tab-menu {
         width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
+        flex-direction: column; /* Dispone i bottoni in colonna */
+        overflow-x: visible;    /* Rimuove lo scroll orizzontale */
         padding: 10px;
         flex: none;
-        white-space: nowrap;
+        white-space: normal;    /* Permette al testo di andare a capo se necessario */
         border-bottom: 2px solid var(--orange);
         background: #000;
-        position: sticky;
-        top: 80px;
-        z-index: 90;
+        position: static;       /* Rimosso sticky: una lista lunga fissa coprirebbe lo schermo */
         margin-bottom: 1em;
+        gap: 10px;              /* Spazio tra i bottoni verticali */
     }
 
     .tab-btn {
-        padding: 10px 20px;
-        border-radius: 20px;
+        width: 100%;            /* Bottone a larghezza piena */
+        padding: 15px;
+        border-radius: 8px;
         background: #222;
         border: 1px solid #444;
         font-size: 0.9em;
+        text-align: center;     /* Testo centrato */
     }
+    /* --- FINE MODIFICA --- */
 
     .tab-btn.active {
         background: var(--gold);
         color: #000;
-        border-left: 1px solid var(--gold);
+        border-color: var(--gold); /* Evidenzia tutto il bordo */
+        font-weight: bold;
     }
 
     .abbonamento-card {
