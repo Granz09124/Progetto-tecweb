@@ -43,7 +43,7 @@ body {
     margin: auto;
 }
 
-a:link:not(:has(.logo)) {
+a:link {
     text-decoration: underline;
     color: var(--urlColor);
 }
@@ -51,6 +51,10 @@ a:link:not(:has(.logo)) {
 a:visited {
     text-decoration: underline;
     color: var(--visitedUrlColor);
+}
+
+a:link:has(.logo) {
+    text-decoration: none;
 }
 
 h1,
