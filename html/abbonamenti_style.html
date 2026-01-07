@@ -1,531 +1,513 @@
 <!doctype html>
 <html lang="it">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Palestra - Abbonamenti</title>
-        <meta
-            name="description"
-            content="Abbonamenti palestra, sala pesi, personal trainer, corsi fitness"
-        />
-        <meta
-            name="keywords"
-            content="abbonamenti, palestra, sala pesi, personal trainer, corsi, fitness"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="../css/style.css" />
-    </head>
 
-    <body>
-        <header class="intestazione">
-            <img src="../immagini/Logo_palestra.png" alt="Logo" class="logo" />
-            <h1>Il Tempio di Apollo</h1>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palestra - Abbonamenti</title>
+    <meta name="description" content="Abbonamenti palestra, sala pesi, personal trainer, corsi fitness" />
+    <meta name="keywords" content="abbonamenti, palestra, sala pesi, personal trainer, corsi, fitness" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
 
-            <nav id="menu">
-                <ul>
-                    <li>
-                        <a lang="en" href="./home.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="./Palestra.html"><strong>Palestra</strong></a>
-                    </li>
-                    <li>Abbonamenti</li>
-                    <li>
-                        <a href="./cerca-pt.html">I nostri Personal Trainer</a>
-                    </li>
-                    <li><a href="./Contattaci.html">Contattaci</a></li>
-                    <li><a href="./Login.html">Login</a></li>
-                    <li><a href="./Registrati.html">Registrati</a></li>
-                </ul>
-            </nav>
-        </header>
+<body>
+    <header class="intestazione">
+        <img src="../immagini/Logo_palestra.png" alt="Logo" class="logo" />
+        <h1>Il Tempio di Apollo</h1>
 
-        <nav id="breadcrumb">
-            <p>
-                Ti trovi in:
-                <a lang="en" href="./home.html">Home</a> &gt; &gt; Abbonamenti
-            </p>
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a lang="en" href="./home.html">Home</a>
+                </li>
+                <li>
+                    <a href="./Palestra.html"><strong>Palestra</strong></a>
+                </li>
+                <li>Abbonamenti</li>
+                <li>
+                    <a href="./cerca-pt.html">Ricerca Istruttori</a>
+                </li>
+                <li><a href="./Contattaci.html">Contattaci</a></li>
+                <li><a href="./Login.html">Login</a></li>
+                <li><a href="./Registrati.html">Registrati</a></li>
+            </ul>
         </nav>
-        <main class="contenuto-principale layout-abbonamenti">
-            <section class="tab-container">
-                <nav class="tab-menu" aria-label="Menu Categorie Corsi">
-                    <button class="tab-btn active" data-target="sala-pesi">
-                        Sala Pesi
-                    </button>
-                    <button class="tab-btn" data-target="personal-trainer">
-                        Personal Trainer
-                    </button>
-                    <button class="tab-btn" data-target="arrampicata">
-                        Arrampicata
-                    </button>
-                    <button class="tab-btn" data-target="yoga">
-                        Yoga e Meditazione
-                    </button>
-                    <button class="tab-btn" data-target="pilates">
-                        Pilates
-                    </button>
-                    <button class="tab-btn" data-target="crossfit">
-                        Crossfit
-                    </button>
-                    <button class="tab-btn" data-target="fitbox">
-                        Fit Box
-                    </button>
-                    <button class="tab-btn" data-target="zumba">Zumba</button>
-                </nav>
+    </header>
 
-                <section class="tab-content-area">
-                    <article id="sala-pesi" class="tab-panel active">
-                        <h2>Sala Pesi</h2>
-                        <p class="descrizione-tab">
-                            Accesso completo a tutti i macchinari isotonici,
-                            area cardio e pesi liberi.
-                        </p>
+    <nav id="breadcrumb">
+        <p>
+            Ti trovi in:
+            <a lang="en" href="./home.html">Home</a> &gt; &gt; Abbonamenti
+        </p>
+    </nav>
+    <main class="contenuto-principale layout-abbonamenti">
+        <section class="tab-container">
+            <nav class="tab-menu" aria-label="Menu Categorie Corsi">
+                <button class="tab-btn active" data-target="sala-pesi">
+                    Sala Pesi
+                </button>
+                <button class="tab-btn" data-target="personal-trainer">
+                    Personal Trainer
+                </button>
+                <button class="tab-btn" data-target="arrampicata">
+                    Arrampicata
+                </button>
+                <button class="tab-btn" data-target="yoga">
+                    Yoga e Meditazione
+                </button>
+                <button class="tab-btn" data-target="pilates">
+                    Pilates
+                </button>
+                <button class="tab-btn" data-target="crossfit">
+                    Crossfit
+                </button>
+                <button class="tab-btn" data-target="fitbox">
+                    Fit Box
+                </button>
+                <button class="tab-btn" data-target="zumba">Zumba</button>
+            </nav>
 
-                        <article class="abbonamento-card">
-                            <h3>Mensile</h3>
-                            <p class="prezzo">€ 49,90/mese</p>
-                            <ul>
-                                <li>Accesso illimitato alla sala pesi</li>
-                                <li>Utilizzo di tutti gli attrezzi</li>
-                                <li>Armadietto personale</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Trimestrale</h3>
-                            <p class="prezzo">
-                                € 128,70 <small>(€ 42,90/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Tutti i vantaggi del mensile</li>
-                                <li>Risparmio del 14%</li>
-                                <li>Validità 3 mesi</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Semestrale</h3>
-                            <p class="prezzo">
-                                € 233,40 <small>(€ 38,90/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Risparmio del 22%</li>
-                                <li>1 sessione PT gratuita</li>
-                                <li>Validità 6 mesi</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Annuale</h3>
-                            <p class="prezzo">
-                                € 394,80 <small>(€ 32,90/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Risparmio del 34%</li>
-                                <li>2 sessioni PT gratuite</li>
-                                <li>Validità 12 mesi</li>
-                            </ul>
-                        </article>
+            <section class="tab-content-area">
+                <article id="sala-pesi" class="tab-panel active">
+                    <h2>Sala Pesi</h2>
+                    <p class="descrizione-tab">
+                        Accesso completo a tutti i macchinari isotonici,
+                        area cardio e pesi liberi.
+                    </p>
+
+                    <article class="abbonamento-card">
+                        <h3>Mensile</h3>
+                        <p class="prezzo">€ 49,90/mese</p>
+                        <ul>
+                            <li>Accesso illimitato alla sala pesi</li>
+                            <li>Utilizzo di tutti gli attrezzi</li>
+                            <li>Armadietto personale</li>
+                        </ul>
                     </article>
-
-                    <article id="personal-trainer" class="tab-panel">
-                        <h2>Personal Trainer</h2>
-                        <p class="descrizione-tab">
-                            Raggiungi i tuoi obiettivi più velocemente con il
-                            supporto di un professionista dedicato.
+                    <article class="abbonamento-card">
+                        <h3>Trimestrale</h3>
+                        <p class="prezzo">
+                            € 128,70 <small>(€ 42,90/mese)</small>
                         </p>
-                        <article class="abbonamento-card pt-card">
-                            <h3>Scopri i nostri Trainer</h3>
-                            <p style="color: #ccc; margin-bottom: 1em">
-                                I nostri
-                                <span lang="en">personal trainers</span> offrono
-                                programmi su misura per dimagrimento,
-                                ipertrofia, riabilitazione e preparazione
-                                atletica.
-                            </p>
-                            <ul>
-                                <li>Valutazione della composizione corporea</li>
-                                <li>Scheda di allenamento personalizzata</li>
-                                <li>Consigli nutrizionali</li>
-                                <li>Monitoraggio costante dei progressi</li>
-                            </ul>
-                            <a
-                                href="pt.html"
-                                class="bottone-dettagli"
-                                style="margin-top: 20px; display: inline-block"
-                                >Vedi Profili PT</a
-                            >
-                        </article>
+                        <ul>
+                            <li>Tutti i vantaggi del mensile</li>
+                            <li>Risparmio del 14%</li>
+                            <li>Validità 3 mesi</li>
+                        </ul>
                     </article>
-
-                    <article id="arrampicata" class="tab-panel">
-                        <h2>Arrampicata</h2>
-                        <p class="descrizione-tab">
-                            Impara a scalare o perfeziona la tua tecnica sulla
-                            nostra parete attrezzata.
+                    <article class="abbonamento-card">
+                        <h3>Semestrale</h3>
+                        <p class="prezzo">
+                            € 233,40 <small>(€ 38,90/mese)</small>
                         </p>
-                        <article class="abbonamento-card">
-                            <h3>Mensile</h3>
-                            <p class="prezzo">€ 69,90/mese</p>
-                            <ul>
-                                <li>Attrezzatura inclusa</li>
-                                <li>Istruttore certificato</li>
-                                <li>3 sessioni a settimana</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Trimestrale</h3>
-                            <p class="prezzo">
-                                € 189,00 <small>(€ 63,00/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 10%</li>
-                                <li>Validità 3 mesi</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Semestrale</h3>
-                            <p class="prezzo">
-                                € 359,00 <small>(€ 59,83/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 14%</li>
-                                <li>Validità 6 mesi</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Annuale</h3>
-                            <p class="prezzo">
-                                € 671,00 <small>(€ 55,92/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 20%</li>
-                                <li>Validità 12 mesi</li>
-                            </ul>
-                        </article>
+                        <ul>
+                            <li>Risparmio del 22%</li>
+                            <li>1 sessione PT gratuita</li>
+                            <li>Validità 6 mesi</li>
+                        </ul>
                     </article>
-
-                    <article id="yoga" class="tab-panel">
-                        <h2>Yoga e Meditazione</h2>
-                        <p class="descrizione-tab">
-                            Ritrova l'equilibrio tra mente e corpo con le nostre
-                            pratiche guidate.
+                    <article class="abbonamento-card">
+                        <h3>Annuale</h3>
+                        <p class="prezzo">
+                            € 394,80 <small>(€ 32,90/mese)</small>
                         </p>
-                        <article class="abbonamento-card">
-                            <h3>Mensile</h3>
-                            <p class="prezzo">€ 59,90/mese</p>
-                            <ul>
-                                <li>Tappetino incluso</li>
-                                <li>Tutti i livelli</li>
-                                <li>3 sessioni a settimana</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Trimestrale</h3>
-                            <p class="prezzo">
-                                € 161,70 <small>(€ 53,90/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 10%</li>
-                                <li>1 lezione privata</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Semestrale</h3>
-                            <p class="prezzo">
-                                € 305,40 <small>(€ 50,90/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 15%</li>
-                                <li>2 lezioni private</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Annuale</h3>
-                            <p class="prezzo">
-                                € 574,80 <small>(€ 47,90/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 20%</li>
-                                <li>Ritiro yoga gratuito</li>
-                            </ul>
-                        </article>
+                        <ul>
+                            <li>Risparmio del 34%</li>
+                            <li>2 sessioni PT gratuite</li>
+                            <li>Validità 12 mesi</li>
+                        </ul>
                     </article>
+                </article>
 
-                    <article id="pilates" class="tab-panel">
-                        <h2>Pilates</h2>
-                        <p class="descrizione-tab">
-                            Migliora postura e flessibilità con esercizi
-                            controllati e precisi.
+                <article id="personal-trainer" class="tab-panel">
+                    <h2>Personal Trainer</h2>
+                    <p class="descrizione-tab">
+                        Raggiungi i tuoi obiettivi più velocemente con il
+                        supporto di un professionista dedicato.
+                    </p>
+                    <article class="abbonamento-card pt-card">
+                        <h3>Scopri i nostri Trainer</h3>
+                        <p style="color: #ccc; margin-bottom: 1em">
+                            I nostri
+                            <span lang="en">personal trainers</span> offrono
+                            programmi su misura per dimagrimento,
+                            ipertrofia, riabilitazione e preparazione
+                            atletica.
                         </p>
-                        <article class="abbonamento-card">
-                            <h3>Mensile</h3>
-                            <p class="prezzo">€ 54,90/mese</p>
-                            <ul>
-                                <li>Tappetino incluso</li>
-                                <li>Piccoli gruppi</li>
-                                <li>Valutazione posturale</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Trimestrale</h3>
-                            <p class="prezzo">
-                                € 148,23 <small>(€ 49,41/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 10%</li>
-                                <li>Sessione stretching</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Semestrale</h3>
-                            <p class="prezzo">
-                                € 280,26 <small>(€ 46,71/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 15%</li>
-                                <li>Valutazione trimestrale</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Annuale</h3>
-                            <p class="prezzo">
-                                € 527,04 <small>(€ 43,92/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 20%</li>
-                                <li>Piano personalizzato</li>
-                            </ul>
-                        </article>
+                        <ul>
+                            <li>Valutazione della composizione corporea</li>
+                            <li>Scheda di allenamento personalizzata</li>
+                            <li>Consigli nutrizionali</li>
+                            <li>Monitoraggio costante dei progressi</li>
+                        </ul>
+                        <a href="pt.html" class="bottone-dettagli" style="margin-top: 20px; display: inline-block">Vedi Profili PT</a>
                     </article>
+                </article>
 
-                    <article id="crossfit" class="tab-panel">
-                        <h2>Crossfit</h2>
-                        <p class="descrizione-tab">
-                            Allenamento ad alta intensità per superare i tuoi
-                            limiti ogni giorno.
-                        </p>
-                        <article class="abbonamento-card">
-                            <h3>Mensile</h3>
-                            <p class="prezzo">€ 89,90/mese</p>
-                            <ul>
-                                <li>Sessioni illimitate</li>
-                                <li>Coach certificati</li>
-                                <li>Community attiva</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Trimestrale</h3>
-                            <p class="prezzo">
-                                € 242,73 <small>(€ 80,91/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 10%</li>
-                                <li>1 sessione PT</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Semestrale</h3>
-                            <p class="prezzo">
-                                € 458,31 <small>(€ 76,39/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 15%</li>
-                                <li>3 sessioni PT</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Annuale</h3>
-                            <p class="prezzo">
-                                € 862,56 <small>(€ 71,88/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 20%</li>
-                                <li>Piano alimentare</li>
-                            </ul>
-                        </article>
+                <article id="arrampicata" class="tab-panel">
+                    <h2>Arrampicata</h2>
+                    <p class="descrizione-tab">
+                        Impara a scalare o perfeziona la tua tecnica sulla
+                        nostra parete attrezzata.
+                    </p>
+                    <article class="abbonamento-card">
+                        <h3>Mensile</h3>
+                        <p class="prezzo">€ 69,90/mese</p>
+                        <ul>
+                            <li>Attrezzatura inclusa</li>
+                            <li>Istruttore certificato</li>
+                            <li>3 sessioni a settimana</li>
+                        </ul>
                     </article>
+                    <article class="abbonamento-card">
+                        <h3>Trimestrale</h3>
+                        <p class="prezzo">
+                            € 189,00 <small>(€ 63,00/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 10%</li>
+                            <li>Validità 3 mesi</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Semestrale</h3>
+                        <p class="prezzo">
+                            € 359,00 <small>(€ 59,83/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 14%</li>
+                            <li>Validità 6 mesi</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Annuale</h3>
+                        <p class="prezzo">
+                            € 671,00 <small>(€ 55,92/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 20%</li>
+                            <li>Validità 12 mesi</li>
+                        </ul>
+                    </article>
+                </article>
 
-                    <article id="fitbox" class="tab-panel">
-                        <h2>Fit Box</h2>
-                        <p class="descrizione-tab">
-                            Scarica lo stress e brucia calorie combinando arti
-                            marziali e aerobica.
-                        </p>
-                        <article class="abbonamento-card">
-                            <h3>Mensile</h3>
-                            <p class="prezzo">€ 64,90/mese</p>
-                            <ul>
-                                <li>Guanti inclusi</li>
-                                <li>Cardio e forza</li>
-                                <li>Sparring controllato</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Trimestrale</h3>
-                            <p class="prezzo">
-                                € 175,23 <small>(€ 58,41/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 10%</li>
-                                <li>1 lezione privata</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Semestrale</h3>
-                            <p class="prezzo">
-                                € 331,17 <small>(€ 55,20/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 15%</li>
-                                <li>2 lezioni private</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Annuale</h3>
-                            <p class="prezzo">
-                                € 623,04 <small>(€ 51,92/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 20%</li>
-                                <li>Kit attrezzatura</li>
-                            </ul>
-                        </article>
+                <article id="yoga" class="tab-panel">
+                    <h2>Yoga e Meditazione</h2>
+                    <p class="descrizione-tab">
+                        Ritrova l'equilibrio tra mente e corpo con le nostre
+                        pratiche guidate.
+                    </p>
+                    <article class="abbonamento-card">
+                        <h3>Mensile</h3>
+                        <p class="prezzo">€ 59,90/mese</p>
+                        <ul>
+                            <li>Tappetino incluso</li>
+                            <li>Tutti i livelli</li>
+                            <li>3 sessioni a settimana</li>
+                        </ul>
                     </article>
+                    <article class="abbonamento-card">
+                        <h3>Trimestrale</h3>
+                        <p class="prezzo">
+                            € 161,70 <small>(€ 53,90/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 10%</li>
+                            <li>1 lezione privata</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Semestrale</h3>
+                        <p class="prezzo">
+                            € 305,40 <small>(€ 50,90/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 15%</li>
+                            <li>2 lezioni private</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Annuale</h3>
+                        <p class="prezzo">
+                            € 574,80 <small>(€ 47,90/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 20%</li>
+                            <li>Ritiro yoga gratuito</li>
+                        </ul>
+                    </article>
+                </article>
 
-                    <article id="zumba" class="tab-panel">
-                        <h2>Zumba</h2>
-                        <p class="descrizione-tab">
-                            Balla e divertiti a ritmo di musica latina bruciando
-                            calorie.
-                        </p>
-                        <article class="abbonamento-card">
-                            <h3>Mensile</h3>
-                            <p class="prezzo">€ 49,90/mese</p>
-                            <ul>
-                                <li>3 sessioni a settimana</li>
-                                <li>Coreografie nuove</li>
-                                <li>Tutti i livelli</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Trimestrale</h3>
-                            <p class="prezzo">
-                                € 134,73 <small>(€ 44,91/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 10%</li>
-                                <li>Acqua omaggio</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Semestrale</h3>
-                            <p class="prezzo">
-                                € 254,49 <small>(€ 42,42/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 15%</li>
-                                <li>T-shirt omaggio</li>
-                            </ul>
-                        </article>
-                        <article class="abbonamento-card">
-                            <h3>Annuale</h3>
-                            <p class="prezzo">
-                                € 478,80 <small>(€ 39,90/mese)</small>
-                            </p>
-                            <ul>
-                                <li>Vantaggi mensile</li>
-                                <li>Risparmio 20%</li>
-                                <li>Kit completo</li>
-                            </ul>
-                        </article>
+                <article id="pilates" class="tab-panel">
+                    <h2>Pilates</h2>
+                    <p class="descrizione-tab">
+                        Migliora postura e flessibilità con esercizi
+                        controllati e precisi.
+                    </p>
+                    <article class="abbonamento-card">
+                        <h3>Mensile</h3>
+                        <p class="prezzo">€ 54,90/mese</p>
+                        <ul>
+                            <li>Tappetino incluso</li>
+                            <li>Piccoli gruppi</li>
+                            <li>Valutazione posturale</li>
+                        </ul>
                     </article>
+                    <article class="abbonamento-card">
+                        <h3>Trimestrale</h3>
+                        <p class="prezzo">
+                            € 148,23 <small>(€ 49,41/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 10%</li>
+                            <li>Sessione stretching</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Semestrale</h3>
+                        <p class="prezzo">
+                            € 280,26 <small>(€ 46,71/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 15%</li>
+                            <li>Valutazione trimestrale</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Annuale</h3>
+                        <p class="prezzo">
+                            € 527,04 <small>(€ 43,92/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 20%</li>
+                            <li>Piano personalizzato</li>
+                        </ul>
+                    </article>
+                </article>
+
+                <article id="crossfit" class="tab-panel">
+                    <h2>Crossfit</h2>
+                    <p class="descrizione-tab">
+                        Allenamento ad alta intensità per superare i tuoi
+                        limiti ogni giorno.
+                    </p>
+                    <article class="abbonamento-card">
+                        <h3>Mensile</h3>
+                        <p class="prezzo">€ 89,90/mese</p>
+                        <ul>
+                            <li>Sessioni illimitate</li>
+                            <li>Coach certificati</li>
+                            <li>Community attiva</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Trimestrale</h3>
+                        <p class="prezzo">
+                            € 242,73 <small>(€ 80,91/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 10%</li>
+                            <li>1 sessione PT</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Semestrale</h3>
+                        <p class="prezzo">
+                            € 458,31 <small>(€ 76,39/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 15%</li>
+                            <li>3 sessioni PT</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Annuale</h3>
+                        <p class="prezzo">
+                            € 862,56 <small>(€ 71,88/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 20%</li>
+                            <li>Piano alimentare</li>
+                        </ul>
+                    </article>
+                </article>
+
+                <article id="fitbox" class="tab-panel">
+                    <h2>Fit Box</h2>
+                    <p class="descrizione-tab">
+                        Scarica lo stress e brucia calorie combinando arti
+                        marziali e aerobica.
+                    </p>
+                    <article class="abbonamento-card">
+                        <h3>Mensile</h3>
+                        <p class="prezzo">€ 64,90/mese</p>
+                        <ul>
+                            <li>Guanti inclusi</li>
+                            <li>Cardio e forza</li>
+                            <li>Sparring controllato</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Trimestrale</h3>
+                        <p class="prezzo">
+                            € 175,23 <small>(€ 58,41/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 10%</li>
+                            <li>1 lezione privata</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Semestrale</h3>
+                        <p class="prezzo">
+                            € 331,17 <small>(€ 55,20/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 15%</li>
+                            <li>2 lezioni private</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Annuale</h3>
+                        <p class="prezzo">
+                            € 623,04 <small>(€ 51,92/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 20%</li>
+                            <li>Kit attrezzatura</li>
+                        </ul>
+                    </article>
+                </article>
+
+                <article id="zumba" class="tab-panel">
+                    <h2>Zumba</h2>
+                    <p class="descrizione-tab">
+                        Balla e divertiti a ritmo di musica latina bruciando
+                        calorie.
+                    </p>
+                    <article class="abbonamento-card">
+                        <h3>Mensile</h3>
+                        <p class="prezzo">€ 49,90/mese</p>
+                        <ul>
+                            <li>3 sessioni a settimana</li>
+                            <li>Coreografie nuove</li>
+                            <li>Tutti i livelli</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Trimestrale</h3>
+                        <p class="prezzo">
+                            € 134,73 <small>(€ 44,91/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 10%</li>
+                            <li>Acqua omaggio</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Semestrale</h3>
+                        <p class="prezzo">
+                            € 254,49 <small>(€ 42,42/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 15%</li>
+                            <li>T-shirt omaggio</li>
+                        </ul>
+                    </article>
+                    <article class="abbonamento-card">
+                        <h3>Annuale</h3>
+                        <p class="prezzo">
+                            € 478,80 <small>(€ 39,90/mese)</small>
+                        </p>
+                        <ul>
+                            <li>Vantaggi mensile</li>
+                            <li>Risparmio 20%</li>
+                            <li>Kit completo</li>
+                        </ul>
+                    </article>
+                </article>
+            </section>
+        </section>
+        <section class="sezione-bundles">
+            <h2>I nostri <span lang="en">Best Seller Bundle</span></h2>
+
+            <div class="bundle-podio">
+                <section class="bundle bundle-secondo">
+                    <div class="badge-posizione">🥈 2° PIÙ VENDUTO</div>
+                    <h3><span lang="en">Bundle Relax</span> & Benessere</h3>
+                    <p>
+                        <strong>€ 69,90/mese</strong>
+                        <span class="prezzo-originale">(Risparmi €14,90)</span>
+                    </p>
+                    <ul>
+                        <li>Yoga e Meditazione</li>
+                        <li>Pilates</li>
+                        <li>Stretching posturale</li>
+                    </ul>
                 </section>
-            </section>
-            <section class="sezione-bundles">
-                <h2>I nostri <span lang="en">Best Seller Bundle</span></h2>
 
-                <div class="bundle-podio">
-                    <section class="bundle bundle-secondo">
-                        <div class="badge-posizione">🥈 2° PIÙ VENDUTO</div>
-                        <h3><span lang="en">Bundle Relax</span> & Benessere</h3>
-                        <p>
-                            <strong>€ 69,90/mese</strong>
-                            <span class="prezzo-originale"
-                                >(Risparmi €14,90)</span
-                            >
-                        </p>
-                        <ul>
-                            <li>Yoga e Meditazione</li>
-                            <li>Pilates</li>
-                            <li>Stretching posturale</li>
-                        </ul>
-                    </section>
+                <section class="bundle bundle-primo">
+                    <div class="badge-posizione">🏆 1° PIÙ VENDUTO</div>
+                    <h3>
+                        <span lang="en">Bundle All Inclusive Premium</span>
+                    </h3>
+                    <p>
+                        <strong>€ 159,90/mese</strong>
+                        <span class="prezzo-originale">(Risparmi €59,90)</span>
+                    </p>
+                    <ul>
+                        <li>Sala Pesi - Accesso illimitato</li>
+                        <li>Tutti i Corsi illimitati</li>
+                        <li>10 Sessioni PT</li>
+                        <li>Piano alimentare completo</li>
+                    </ul>
+                </section>
 
-                    <section class="bundle bundle-primo">
-                        <div class="badge-posizione">🏆 1° PIÙ VENDUTO</div>
-                        <h3>
-                            <span lang="en">Bundle All Inclusive Premium</span>
-                        </h3>
-                        <p>
-                            <strong>€ 159,90/mese</strong>
-                            <span class="prezzo-originale"
-                                >(Risparmi €59,90)</span
-                            >
-                        </p>
-                        <ul>
-                            <li>Sala Pesi - Accesso illimitato</li>
-                            <li>Tutti i Corsi illimitati</li>
-                            <li>10 Sessioni PT</li>
-                            <li>Piano alimentare completo</li>
-                        </ul>
-                    </section>
+                <section class="bundle bundle-terzo">
+                    <div class="badge-posizione">🥉 3° PIÙ VENDUTO</div>
+                    <h3><span lang="en">Bundle Fitness</span> Completo</h3>
+                    <p>
+                        <strong>€ 99,90/mese</strong>
+                        <span class="prezzo-originale">(Risparmi €19,90)</span>
+                    </p>
+                    <ul>
+                        <li>Sala Pesi - Accesso illimitato</li>
+                        <li>2 Corsi a scelta</li>
+                        <li>1 Sessione PT gratuita</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
 
-                    <section class="bundle bundle-terzo">
-                        <div class="badge-posizione">🥉 3° PIÙ VENDUTO</div>
-                        <h3><span lang="en">Bundle Fitness</span> Completo</h3>
-                        <p>
-                            <strong>€ 99,90/mese</strong>
-                            <span class="prezzo-originale"
-                                >(Risparmi €19,90)</span
-                            >
-                        </p>
-                        <ul>
-                            <li>Sala Pesi - Accesso illimitato</li>
-                            <li>2 Corsi a scelta</li>
-                            <li>1 Sessione PT gratuita</li>
-                        </ul>
-                    </section>
-                </div>
-            </section>
-        </main>
+    <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
+        <img src="../immagini/Icon/torna_su.webp" alt="Torna su" />
+    </button>
 
-        <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
-            <img src="../immagini/Icon/torna_su.webp" alt="Torna su" />
-        </button>
+    <footer class="piè-di-pagina">
+        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+    </footer>
 
-        <footer class="piè-di-pagina">
-            <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
-        </footer>
+    <script src="../javascript/torna-su.js"></script>
+    <script src="../javascript/selettoreAbbonamenti.js"></script>
+</body>
 
-        <script src="../javascript/torna-su.js"></script>
-        <script src="../javascript/selettoreAbbonamenti.js"></script>
-    </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,7 @@
                 <li><a lang="en" href="home.html">Home</a></li>
                 <li><a href="palestra.html">Palestra</a></li>
                 <li><a href="abbonamenti.html">Abbonamenti</a></li>
-                <li><a href="cerca-pt.html">I nostri Personal Trainer</a></li>
+                <li><a href="cerca-pt.html">Ricerca Istruttori</a></li>
                 <li><a href="contattaci.html">Contattaci</a></li>
                 <li><strong aria-current="page">Login</strong></li>
                 <li><a href="registrati.html">Registrati</a></li>
@@ -38,12 +39,12 @@
     </nav>
 
     <main id="contenuto-principale" class="contenuto-principale">
-        
+
         <section class="form-container">
             <h2>Accedi all'Area Riservata</h2>
-            
+
             <form action="#" method="post">
-                
+
                 <label for="username">Email</label>
                 <input type="text" id="username" name="username" required autocomplete="username" placeholder="es. mario.rossi@email.it">
 
@@ -71,7 +72,7 @@
         function mostraPassword() {
             const inputPass = document.getElementById("password");
             const btn = document.querySelector(".toggle-password");
-            
+
             if (inputPass.type === "password") {
                 inputPass.type = "text";
                 btn.textContent = "Nascondi password";
@@ -84,4 +85,5 @@
         }
     </script>
 </body>
+
 </html>
