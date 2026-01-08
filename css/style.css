@@ -185,7 +185,7 @@ header.intestazione {
  * Home
  * ================= */
 :root {
-    --reviewImageSize: 15em;
+    --reviewImageSize: 10em;
 }
 
 #presentazione {
@@ -213,11 +213,6 @@ header.intestazione {
     padding-bottom: 0.5em;
 }
 
-#presentazione-servizi {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 #presentazione-servizi h2,
 #presentazione-servizi h3 {
     flex-basis: 100%;
@@ -228,9 +223,13 @@ header.intestazione {
     width: 90%;
 }
 
-#presentazione-servizi section {
+#presentazione-servizi section:nth-child(3) {
     display: flex;
     margin: auto;
+}
+
+#presentazione-servizi section strong {
+    font-weight: bolder;
 }
 
 /* un po' schifo, da risistemare il codice */
@@ -250,7 +249,6 @@ header.intestazione {
 
 #recensioni .recensione dd:has(img) {
     width: 40%;
-    /*! display: inline-block; */
 }
 
 #recensioni img {
@@ -266,10 +264,7 @@ header.intestazione {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 1em;
-}
-
-#recensioni ul li {
-    margin-top: 1em;
+    gap: 1em;
 }
 
 .voto-recensione {

@@ -172,7 +172,7 @@ a:link:has(.logo) {
     padding-bottom: 1em;
 }
 
-#presentazione-servizi section {
+#presentazione-servizi section:nth-child(n) {
     display: block;
 }
 
