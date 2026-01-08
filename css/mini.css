@@ -146,3 +146,57 @@ a:link:has(.logo) {
         scaleX(.65);
     transition: transform 0.25s ease-in-out;
 }
+
+/* ==============
+ * Home
+ ============= */
+#presentazione section {
+    display: block;
+}
+
+#presentazione section img {
+    z-index: 1;
+    width: 100%;
+}
+
+#catchphrase {
+    position: relative;
+    margin-top: -30%;
+    margin-bottom: 10%;
+    margin-left: 1.25em;
+    padding-left: 25%;
+    margin-right: -1.25em;
+    background-color: var(--mobileMenuBackgroundColor);
+    z-index: 2;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#presentazione-servizi section {
+    display: block;
+}
+
+#presentazione-servizi section article {
+    text-align: center;
+}
+
+#presentazione-servizi img {
+    margin: auto;
+}
+
+#presentazione-servizi a {
+    margin-left: auto;
+}
+
+#recensioni {
+    margin: auto;
+    padding: 1em;
+}
+
+#recensioni .recensione {
+    width: 100%;
+}
+
+#recensioni ul {
+    padding: 0;
+}
