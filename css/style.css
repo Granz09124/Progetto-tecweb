@@ -48,6 +48,10 @@ a:visited {
     color: var(--visitedUrlColor);
 }
 
+a:link:hover {
+    color: var(--mainColorLight);
+}
+
 a:link:has(.logo) {
     text-decoration: none;
     width: fit-content;
