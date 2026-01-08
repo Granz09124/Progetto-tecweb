@@ -16,16 +16,12 @@
     --mainBackgroundColor: #181211;
     --mainBackgroundColorLight: #332;
 
-    --headerGradient: linear-gradient(
-        to right,
-        var(--mainColor) 25%,
-        var(--mainColorLight) 75%
-    );
-    --backgroundGradient: radial-gradient(
-        circle 600px at center,
-        var(--mainBackgroundColorLight),
-        var(--mainBackgroundColor)
-    );
+    --headerGradient: linear-gradient(to right,
+            var(--mainColor) 25%,
+            var(--mainColorLight) 75%);
+    --backgroundGradient: radial-gradient(circle 600px at center,
+            var(--mainBackgroundColorLight),
+            var(--mainBackgroundColor));
 }
 
 html,
@@ -54,6 +50,8 @@ a:visited {
 
 a:link:has(.logo) {
     text-decoration: none;
+    width: fit-content;
+    display: inline;
 }
 
 h1,
@@ -102,6 +100,7 @@ footer {
     padding: 1em;
     font-size: 2em;
 }
+
 .vai-al-contenuto:focus {
     left: 0;
     background-color: white;
@@ -112,7 +111,10 @@ footer {
 /* =================
  * Common
  ================== */
-.intestazione {
+header.intestazione {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     top: 0;
     position: sticky;
     z-index: 999;
@@ -124,16 +126,23 @@ footer {
     width: 156px;
     display: inline;
     vertical-align: middle;
-    padding: 2em;
+    padding: .2em .5em;
 }
+
 .intestazione h1 {
     display: inline;
+    width: fit-content;
+    flex: 1 1 auto;
 }
 
 #menu {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+#menu input[type="checkbox"] {
+    display: none;
 }
 
 #menu ul {
@@ -143,7 +152,7 @@ footer {
 }
 
 #menu li {
-    margin: 10px;
+    margin: .2em .5em;
 }
 
 #breadcrumb {
@@ -153,7 +162,7 @@ footer {
     border-bottom: 2px solid var(--mainColorDark);
 }
 
-#content > article,
+#content>article,
 .topic {
     border: 2px solid var(--mainColor);
     box-shadow: 0 0 10px var(--mainColor);
@@ -183,7 +192,7 @@ footer {
     margin: 1em;
 }
 
-#presentazione > section {
+#presentazione>section {
     display: flex;
     width: 90%;
     padding: 1em;
@@ -223,6 +232,7 @@ footer {
     display: flex;
     margin: auto;
 }
+
 /* un po' schifo, da risistemare il codice */
 #presentazione-servizi article {
     display: flex;
@@ -242,6 +252,7 @@ footer {
     width: 40%;
     /*! display: inline-block; */
 }
+
 #recensioni img {
     width: var(--reviewImageSize);
     float: left;
@@ -264,6 +275,7 @@ footer {
 .voto-recensione {
     color: var(--mainColor);
 }
+
 #recensioni .recensione .voto-recensione,
 #recensioni .recensione .contenuto-recensione {
     margin-top: -1em;
@@ -286,6 +298,7 @@ footer {
 
     --radius: 12px;
 }
+
 .layout-palestra {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -521,11 +534,9 @@ footer {
 }
 
 .tab-btn.active {
-    background: linear-gradient(
-        90deg,
-        rgba(255, 204, 0, 0.1) 0%,
-        transparent 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(255, 204, 0, 0.1) 0%,
+            transparent 100%);
     border-left: 4px solid var(--gold);
     color: var(--gold);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -555,6 +566,7 @@ footer {
         opacity: 0;
         transform: translateY(5px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -772,10 +784,12 @@ footer {
     background: #c0c0c0;
     color: #000;
 }
+
 .bundle-terzo .badge-posizione {
     background: #cd7f32;
     color: #fff;
 }
+
 .bundle-primo h3 {
     color: var(--gold);
     font-size: 1.5em;
@@ -927,9 +941,11 @@ footer {
         transform-origin: center;
         margin-bottom: 1em;
     }
+
     .bundle-secondo {
         order: 2;
     }
+
     .bundle-terzo {
         order: 3;
     }
@@ -1048,7 +1064,7 @@ textarea {
     margin: 0 auto;
 }
 
-.error-image ~ * {
+.error-image~* {
     text-align: center;
 }
 
