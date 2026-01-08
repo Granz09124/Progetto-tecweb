@@ -42,6 +42,7 @@ function toggleOrari(corso) {
         descrizione.style.display = 'block';
         const orariDiv = article.querySelector('.corso-orari');
         if (orariDiv) orariDiv.remove();
+        button.style.display = 'block';
         button.textContent = 'vedi gli orari ➥';
     } else {
         // Mostra orari
@@ -55,6 +56,7 @@ function toggleOrari(corso) {
         } else {
             article.querySelector('.corso-descrizione').appendChild(orariDiv);
         }
+        button.style.display = 'none';
         button.textContent = 'torna alla descrizione ➥';
     }
 }

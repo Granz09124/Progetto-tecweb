@@ -8,20 +8,29 @@
     <meta name="description" content="Errore 403 - Accesso negato." />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-corsi-404-403.css">
 </head>
 
 <body>
+    <a class=" vai-al-contenuto" href="#contenuto">Vai al contenuto</a>
     <header class="intestazione">
-        <a href="./home.html">
-            <img src="../immagini/Logo_palestra.png" alt="Home" class="logo" />
-        </a>
-        <h1>Il Tempio di Apollo</h1>
+        <div class="intestazione-bg">
+            <a href="./home.html">
+                <img src="../immagini/Logo_palestra.png" alt="Home" class="logo">
+            </a>
+            <h1>Il Tempio di Apollo</h1>
+        </div>
 
         <nav id="menu">
+            <input type="checkbox" name="">
+            <div id="hamburger-menu">
+                <span id="ham-line1"></span>
+                <span id="ham-line2"></span>
+                <span id="ham-line3"></span>
+            </div>
+
             <ul>
-                <li>
-                    <a lang="en" href="./home.html">Home</a>
-                </li>
+                <li><span lang="en">Home</span></li>
                 <li>
                     <a href="./Palestra.html"><strong>Palestra</strong></a>
                 </li>

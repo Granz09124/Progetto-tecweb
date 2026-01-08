@@ -409,13 +409,24 @@ header.intestazione {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.corso:not(.alternato) .corso-descrizione {
+    padding-bottom: 2em;
+}
+
+.corso:not(.alternato) .corso-descrizione p {
+    margin-bottom: 2em;
+}
+
+.corso:not(.alternato) .corso-orari {
+    margin-bottom: 2em;
 }
 
 .corso button {
     position: absolute;
     bottom: 0.625em;
-    right: 0.625em;
+    right: 0.125em;
     background-color: #fecd00;
     color: #161717;
     border: none;
@@ -452,9 +463,8 @@ header.intestazione {
 }
 
 .corso.alternato button {
-    position: absolute;
-    bottom: 0.625em;
-    left: 0.625em;
+    position: static;
+    margin-top: 0.625em;
 }
 
 .corso.alternato .corso-orari {
