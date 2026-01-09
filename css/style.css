@@ -251,6 +251,10 @@ header.intestazione {
     justify-content: center;
 }
 
+#recensioni strong {
+    font-weight: bolder;
+}
+
 #recensioni {
     margin: 1em;
 }

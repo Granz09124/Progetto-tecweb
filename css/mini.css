@@ -172,6 +172,8 @@ a:link:has(.logo) {
 
 #presentazione-servizi section article {
     text-align: center;
+    margin: auto;
+    width: 95%;
 }
 
 #presentazione-servizi img {
