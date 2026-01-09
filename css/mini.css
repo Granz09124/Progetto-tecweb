@@ -161,15 +161,9 @@ a:link:has(.logo) {
 
 #catchphrase {
     position: relative;
-    margin-top: -30%;
-    margin-bottom: 10%;
-    margin-left: 1.25em;
-    padding-left: 25%;
-    margin-right: -1.25em;
-    background-color: var(--mobileMenuBackgroundColor);
-    z-index: 2;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    max-width: 95%;
+    padding: 10%;
+    box-sizing: border-box;
 }
 
 #presentazione-servizi section:nth-child(n) {
@@ -193,8 +187,24 @@ a:link:has(.logo) {
     padding: 1em;
 }
 
+#recensioni .recensione dd:has(img) {
+    margin: 1em auto;
+    width: 100%;
+}
+
+#recensioni img {
+    float: none;
+    width: 100%;
+}
+
 #recensioni .recensione {
     width: 100%;
+}
+
+#recensioni .recensione .voto-recensione,
+#recensioni .recensione .contenuto-recensione {
+    margin-left: 0;
+    max-width: 100%;
 }
 
 #recensioni ul {
