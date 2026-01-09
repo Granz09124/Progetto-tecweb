@@ -52,6 +52,10 @@ a:link:hover {
     color: var(--mainColorLight);
 }
 
+a:visited:hover {
+    color: var(--mainColorDark);
+}
+
 a:link:has(.logo) {
     text-decoration: none;
     width: fit-content;
