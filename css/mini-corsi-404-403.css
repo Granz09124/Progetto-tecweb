@@ -1,0 +1,289 @@
+:root {
+    --hamburgerWidth: 2.3em;
+    --hamburgerHeight: 1.8em;
+
+    --hamburgerTopPos: 20px;
+    --hamburgerLeftPos: 20px;
+
+    --hamburgerSliceHeight: 5px;
+
+    --hamburgerPrecisionOffset: 20px;
+    
+    --mobileMenuBackgroundColor: #111111F0;
+    --logoHeight: calc(var(--hamburgerHeight) * 2);
+}
+
+body {
+    max-width: 768px;
+}
+
+.menu {
+    position: fixed;
+    align-content: left;
+}
+
+header.intestazione {
+    overflow-x: clip;
+    background-color: #ffffff00;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+.intestazione-bg {
+    display: flex;
+    width: 100%;
+    background-color: var(--mainBackgroundColorDark);
+    border-bottom: 2px solid var(--mainColor);
+}
+
+.intestazione h1 {
+    position: absolute;
+    left: 2000px;
+}
+
+.intestazione .logo {
+    width: var(--logoHeight);
+    padding: 0;
+    margin-top: 5px;
+}
+
+a:link:has(.logo) {
+    margin-left: auto;
+    display: inline-block;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    background-color: #fff;
+    padding-right: 0;
+    margin-left: 0;
+    justify-content: left;
+}
+
+#menu li {
+    margin: .2em 1em;
+}
+
+#menu input[type="checkbox"] {
+    display: block;
+    position: absolute;
+    height: calc(var(--hamburgerHeight) + var(--hamburgerPrecisionOffset));
+    width: calc(var(--hamburgerWidth) + var(--hamburgerPrecisionOffset));
+    top: calc(var(--hamburgerTopPos) - var(--hamburgerPrecisionOffset)/2);
+    left: calc(var(--hamburgerLeftPos) - var(--hamburgerPrecisionOffset)/2);
+    z-index: 999;
+    opacity: 0;
+}
+
+#hamburger-menu {
+    height: var(--hamburgerHeight);
+    width: var(--hamburgerWidth);
+    position: absolute;
+    top: var(--hamburgerTopPos);
+    left: var(--hamburgerLeftPos);
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#ham-line1,
+#ham-line2,
+#ham-line3 {
+    display: block;
+    height: var(--hamburgerSliceHeight);
+    width: 100%;
+    border-radius: 10px;
+    background: var(--mainColor);
+    transition-duration: .25s;
+}
+
+#menu input[type="checkbox"]~ul {
+    transform: translateX(-150%);
+    transition: transform 0.25s ease-out;
+}
+
+#menu input[type="checkbox"]:checked~ul {
+    transform: translateX(0);
+    transition: transform 0.25s ease-out;
+}
+
+#menu input[type="checkbox"]~ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--mobileMenuBackgroundColor);
+    border-right: 2px solid var(--mainColorLight);
+    max-width: 40%;
+    margin-left: -100px;
+    padding-left: 100px;
+    padding-right: 10%;
+    padding-top: 1em;
+    height: 100vh;
+    position: fixed;
+}
+
+#menu input[type="checkbox"]:checked~#hamburger-menu :first-child
+{
+    transform-origin: center right;
+    transform: translate(calc(-.5 * var(--hamburgerWidth)), calc(var(--hamburgerHeight)))
+        rotateZ(45deg)
+        scaleX(.65);
+    transition: transform 0.25s ease-in-out;
+}
+
+#menu input[type="checkbox"]:checked~#hamburger-menu :nth-child(3)
+{
+    transform-origin: center right;
+    transform: rotateZ(270deg)
+        translateX(var(--hamburgerHeight))
+        rotateZ(90deg)
+        translateX(calc(-1 * var(--hamburgerWidth) / 2))
+        rotateZ(-45deg)
+        scaleX(.65);
+    transition: transform 0.25s ease-in-out;
+}
+
+/* Mobile accessibility styles for courses, error404, and error403 pages */
+
+.contenuto-principale {
+    padding: 1em;
+}
+
+.sezione-corsi, .lista-corsi {
+    display: flex;
+    flex-direction: column;
+}
+
+.corso {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 10px rgba(254,205,0,0.3);
+}
+
+.corso img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 0.5em;
+}
+
+.corso-descrizione {
+    width: 100%;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.corso-descrizione p {
+    margin-bottom: 1em;
+}
+
+.corso-descrizione:has(.corso-orari) button {
+    display: none;
+}
+
+.corso button {
+    position: static;
+    margin-top: 0.5em;
+    background-color: #fecd00;
+    color: #161717;
+    border: none;
+    padding: 0.75em;
+    cursor: pointer;
+    border-radius: 0.25em;
+    width: 100%;
+    min-height: 44px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.corso button:focus {
+    outline: 2px solid #fecd00;
+    outline-offset: 2px;
+}
+
+.corso.alternato {
+    flex-direction: column;
+}
+
+.corso.alternato button {
+    position: static;
+    margin-top: 0.5em;
+    width: 100%;
+}
+
+.corso.alternato .corso-orari {
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+}
+
+.corso-orari {
+    position: static;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+
+.corso-orari h3 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.1em;
+}
+
+.corso-orari p {
+    margin: 0.25em 0;
+}
+
+#breadcrumb {
+    background-color: #fecd00;
+    color: #161717;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+main {
+    padding: 1em;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+main img, .error-image {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em auto;
+}
+
+main p {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+main p a {
+    color: #fecd00;
+    text-decoration: underline;
+}
+
+footer, .piè-di-pagina {
+    text-align: center;
+    padding: 1em;
+    background-color: #fecd00;
+    color: #161717;
+    font-size: 0.9em;
+}
