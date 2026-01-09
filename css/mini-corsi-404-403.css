@@ -179,55 +179,29 @@ a:link:has(.logo) {
 
 .corso-descrizione {
     width: 100%;
-    padding: 0.5em;
+    right: 0.625em;
     display: flex;
     flex-direction: column;
 }
 
 .corso-descrizione p {
-    margin-bottom: 1em;
-}
-
-.corso-descrizione:has(.corso-orari) button {
-    display: none;
+    margin-bottom: 0.5em;
 }
 
 .corso button {
-    position: static;
-    margin-top: 0.5em;
+    display: block;
+    width: 100%; 
+    box-sizing: border-box;    
     background-color: #fecd00;
     color: #161717;
     border: none;
-    padding: 0.75em;
     cursor: pointer;
     border-radius: 0.25em;
-    width: 100%;
     min-height: 44px;
     font-size: 1em;
     text-align: center;
 }
 
-.corso button:focus {
-    outline: 2px solid #fecd00;
-    outline-offset: 2px;
-}
-
-.corso.alternato {
-    flex-direction: column;
-}
-
-.corso.alternato button {
-    position: static;
-    margin-top: 0.5em;
-    width: 100%;
-}
-
-.corso.alternato .corso-orari {
-    position: static;
-    left: auto;
-    top: auto;
-    width: auto;
-}
 
 .corso-orari {
     position: static;

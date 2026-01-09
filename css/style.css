@@ -395,6 +395,10 @@ header.intestazione {
 /* =================
  * Corsi
  ================== */
+h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
 .lista-corsi {
     display: flex;
     flex-direction: column;
@@ -402,6 +406,7 @@ header.intestazione {
 
 .corso {
     display: flex;
+    flex-direction: column;
     margin-bottom: 1.25em;
     margin-left: 7em;
     margin-right: 7em;
@@ -412,35 +417,31 @@ header.intestazione {
 }
 
 .corso img {
-    width: 30%;
+    width: 100%;
     height: auto;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
 .corso-descrizione {
-    width: 70%;
-    padding: 0.625em;
     position: relative;
-    display: flex;
-    flex-direction: column;
+    padding: 0.625em;
+    margin-bottom: 1.5em;
 }
 
-.corso:not(.alternato) .corso-descrizione {
-    padding-bottom: 2em;
+.corso-orari {
+    padding: 0.625em;
 }
 
-.corso:not(.alternato) .corso-descrizione p {
-    margin-bottom: 2em;
-}
-
-.corso:not(.alternato) .corso-orari {
-    margin-bottom: 2em;
+.corso-orari {
+    display: none;
 }
 
 .corso button {
     position: absolute;
-    bottom: 0.625em;
-    right: 0.125em;
+    bottom: -2.5em;
+    right: 0.1em;
     background-color: #fecd00;
     color: #161717;
     border: none;
@@ -449,17 +450,12 @@ header.intestazione {
     border-radius: 0.3125em;
     width: 180px;
     text-align: center;
+    z-index: 1;
 }
 
 .corso button:focus {
     outline: 2px solid #fecd00;
     outline-offset: 0.125em;
-}
-
-.corso-orari {
-    margin-top: 0.625em;
-    padding: 0.625em;
-    border-radius: 0.3125em;
 }
 
 .corso-orari h3 {
@@ -469,23 +465,6 @@ header.intestazione {
 
 .corso-orari p {
     margin: 0.3125em 0;
-}
-
-.corso.alternato {
-    flex-direction: row-reverse;
-    position: relative;
-}
-
-.corso.alternato button {
-    position: static;
-    margin-top: 0.625em;
-}
-
-.corso.alternato .corso-orari {
-    position: absolute;
-    left: 45%;
-    top: 2em;
-    width: 25%;
 }
 
 @media (max-width: 768px) {
@@ -504,11 +483,6 @@ header.intestazione {
         width: 100%;
     }
 
-    .corso.alternato button {
-        position: static;
-        margin-top: 0.625em;
-        width: 100%;
-    }
 }
 
 /* ===============

@@ -1,0 +1,100 @@
+/* CSS per la stampa delle pagine corsi, error404 e error403 */
+/* Testo nero, sfondo bianco, senza colori, immagini incluse */
+
+@media print {
+    /* Impostazioni generali per la stampa */
+    body {
+        color: black;
+        background: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Nasconde elementi non necessari per la stampa */
+    header, nav, footer, button, .piè-di-pagina, .intestazione, #breadcrumb {
+        display: none !important;
+    }
+
+    /* Stili per la pagina corsi */
+    .contenuto-principale {
+        margin: 20px;
+    }
+
+    .sezione-corsi h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .corso {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        border: none;
+        box-shadow: none;
+    }
+
+    .corso img {
+        max-width: 150px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .corso-descrizione {
+        flex: 1;
+    }
+
+    .corso-descrizione p {
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .corso-orari {
+        display: block !important;
+        margin-top: 10px;
+    }
+
+    .corso-orari h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .corso-orari p {
+        margin: 2px 0;
+        line-height: 1.4;
+    }
+
+    /* Stili per le pagine errore 404 e 403 */
+    main {
+        text-align: center;
+        margin: 20px;
+    }
+
+    main h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    main img {
+        max-width: 300px;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    main p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    main a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    /* Assicura che le immagini siano stampate */
+    img {
+        display: block;
+    }
+}
