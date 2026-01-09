@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Utente - Il Tempio di Apollo</title>
+    <link rel="stylesheet" href="../css/utente.css">
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-utenti.css">
+    <link rel="stylesheet" media="print" href="../css/print-utenti.css">
+</head>
+<body>
+    <input type="checkbox" id="sidebar-toggle" style="display: none;">
+
+    <div class="dashboard-container">
+        
+        <aside class="dashboard-sidebar">
+            <a href="home.html" class="sidebar-logo">
+                <img src="../immagini/Logo_palestra.png" alt="Logo">
+                <span>Il Tempio</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><button class="nav-btn active" data-target="dashboard">📊 <span lang="en">Dashboard</span></button></li>
+                    <li><button class="nav-btn" data-target="calendario">📅 Calendario Corsi</button></li>
+                    <li><button class="nav-btn" data-target="abbonamento">💳 Abbonamento</button></li>
+                    <li><button class="nav-btn" data-target="scheda">🥗 Scheda & Dieta</button></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <header class="dashboard-header">
+    
+            <div class="header-left">
+                <label for="sidebar-toggle" class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <img src="../immagini/Logo_palestra.png" alt="Logo" class="header-logo-img">
+            </div>
+
+            <div class="header-center">
+                <span class="header-title-text">Il Tempio</span>
+            </div>
+
+            <div class="header-right">
+                <figure class="user-profile">
+                    <figcaption class="user-info">
+                        <span class="user-info-name">Mario Rossi</span>
+                        <span class="user-info-role">Cliente Premium</span>
+                    </figcaption>
+                    <div class="user-avatar">MR</div>
+                </figure>
+                <button class="logout-btn" title="Logout" onclick="window.location.href='home.html'">➔</button>
+            </div>
+
+        </header>
+
+        <main class="dashboard-content">
+            
+            <section id="dashboard" class="content-panel active">
+                <header class="welcome-banner">
+                    <h1>Bentornato, Mario!</h1>
+                    <p>Ecco il riepilogo della tua attività settimanale al Tempio.</p>
+                </header>
+
+                <section class="stats-grid" aria-label="Statistiche Rapide">
+                    <article class="stat-card accent-green">
+                        <div class="stat-info">
+                            <h3>Abbonamento</h3>
+                            <div class="value">Premium Annuale</div>
+                            <div class="stat-detail text-success">Attivo fino al 31/12/2025</div>
+                        </div>
+                        <div class="stat-icon">💳</div>
+                    </article>
+
+                    <article class="stat-card accent-blue">
+                        <div class="stat-info">
+                            <h3>Corsi Iscritti</h3>
+                            <div class="value">3</div>
+                            <div class="stat-detail text-muted">Questa settimana</div>
+                        </div>
+                        <div class="stat-icon">👥</div>
+                    </article>
+                </section>
+
+                <h2 class="section-title">Prossimi Corsi</h2>
+                <section class="data-list mb-large">
+                    <article class="list-item">
+                        <div class="item-info">
+                            <strong>Yoga</strong>
+                            <small>Lunedì alle 18:00 - Istr. Laura Bianchi</small>
+                        </div>
+                        <span class="tag sala">Sala 1</span>
+                    </article>
+                    <article class="list-item">
+                        <div class="item-info">
+                            <strong><span lang="en">Spinning</span></strong>
+                            <small>Mercoledì alle 19:00 - Istr. Marco Verdi</small>
+                        </div>
+                        <span class="tag sala">Sala Cardio</span>
+                    </article>
+                </section>
+            </section>
+
+            <section id="calendario" class="content-panel">
+                <h2 class="section-title">Calendario Corsi</h2>
+                <p class="text-muted">Qui vedrai il calendario completo dei corsi prenotabili.</p>
+                <section class="data-list">
+                    <article class="list-item">
+                        <strong>Caricamento calendario in corso...</strong>
+                    </article>
+                </section>
+            </section>
+
+            <section id="abbonamento" class="content-panel">
+                <h2 class="section-title text-center no-border">Dettagli Abbonamento</h2>
+                
+                <section class="subscription-wrapper">
+                    <article class="stat-card accent-green large-feature">
+                        <div class="stat-icon">💳</div>
+                        <div class="stat-info">
+                            <h3>PIANO ATTUALE</h3>
+                            <div class="value">Premium Annuale</div>
+                            <div class="subscription-badge">
+                                Scade il: 31/12/2025
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </section>
+
+            <section id="scheda" class="content-panel">
+                <h2 class="section-title">Scheda di oggi: Petto e Tricipiti</h2>
+                <article class="workout-day">
+                    <h4>Riscaldamento</h4>
+                    <p class="warmup-text">10 min <span lang="fr">Tapis Roulant</span> - Pendenza 5%</p>
+                    <h4>Esercizi</h4>
+                    <ul class="exercise-list">
+                        <li><span>Panca Piana Bilanciere</span><span>4 x 10</span></li>
+                        <li><span>Croci Manubri</span><span>3 x 12</span></li>
+                        <li><span><span lang="en">Push Down</span> Cavo Alto</span><span>3 x 15</span></li>
+                        <li><span><span lang="en">French Press</span></span><span>3 x 10</span></li>
+                    </ul>
+                </article>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../javascript/dashboard.js"></script>
+
+</body>
+</html>

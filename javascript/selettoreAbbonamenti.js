@@ -1,5 +1,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+    /* =========================================
+       1. GESTIONE SIDEBAR (Navigazione Tab)
+       ========================================= */
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
