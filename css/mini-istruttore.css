@@ -1,0 +1,18 @@
+.dati-pt dd .img-pt {
+    float: initial;
+    display: block;
+    margin: 1em auto 2em;
+    width: 70%;
+}
+
+.dati-pt dt:not(:first-child) {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.dati-pt dd:not(:first-child) {
+    display: block;
+    margin: auto;
+    width: 80%;
+}

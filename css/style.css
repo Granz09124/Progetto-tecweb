@@ -1097,6 +1097,12 @@ textarea {
     border-radius: 50%;
 }
 
+
+.dati-pt ul {
+    list-style: lower-greek;
+    list-style-position: inside;
+}
+
 .dati-risultato-short {
     padding: 0.5em;
 }
@@ -1148,7 +1154,7 @@ textarea {
     flex: 1 1 64px;
     justify-content: center;
     margin-right: 1%;
-    
+
     border: 3px solid var(--mainColorDark);
     border-radius: 1.5em;
     background-color: var(--mainBackgroundColor);
