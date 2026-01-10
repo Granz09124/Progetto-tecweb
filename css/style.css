@@ -399,6 +399,7 @@ h2 {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
+
 .lista-corsi {
     display: flex;
     flex-direction: column;
@@ -1103,7 +1104,8 @@ textarea {
 .img-pt-small {
     float: left;
     width: 20%;
-    margin: 0.5em;
+    min-width: 256px;
+    margin: 1em;
     border-radius: 50%;
 }
 
@@ -1163,6 +1165,9 @@ button.vai-a-profilo {
     background-color: var(--mainBackgroundColor);
     color: var(--mainColor);
     transition-duration: 0.5s;
+    text-decoration: underline;
+    padding: 1em;
+    margin-bottom: .5em;
 }
 
 button.vai-a-profilo:hover {
