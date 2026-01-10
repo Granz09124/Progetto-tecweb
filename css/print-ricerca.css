@@ -1,0 +1,14 @@
+button.vai-a-profilo,
+#form-ricerca-istruttore button {
+    display: none;
+}
+
+.img-pt-small {
+    min-width: 5cm;
+    width: 5cm;
+}
+
+#risultati-ricerca li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}

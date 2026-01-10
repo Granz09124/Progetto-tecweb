@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
     <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-ricerca.css">
+    <link rel="stylesheet" media="print" href="../css/print-home.css">
+    <link rel="stylesheet" media="print" href="../css/print-ricerca.css">
 </head>
 
 <body>
@@ -58,8 +60,16 @@
             <h1 class="viewport-spanning" id="page-title">
                 Cerca un istruttore
             </h1>
-            <input type="text" class="barra-ricerca" placeholder="Nome">
-            <small class="ricerca-esempio">ad es. Maria Rossi</small>
+            <form id="form-ricerca-istruttore">
+                <div>
+                    <input type="text" class="barra-ricerca" placeholder="Nome" name="nome">
+                    <button type="submit">
+                        Cerca
+                    </button>
+                </div>
+                <small class=" ricerca-esempio">ad es. Maria Rossi</small>
+            </form>
+
 
             <ul id="risultati-ricerca">
                 <li class="light-topic">
