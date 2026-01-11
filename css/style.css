@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /* spero non vi dia fastidio, serve per le tre sezione di palestra_style.html, che non si sovrappongano */
 }
 
 :root {
@@ -315,9 +316,10 @@ header.intestazione {
 
 .layout-palestra {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5em;
-    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 .sezione-sala-pesi,
@@ -843,111 +845,6 @@ h2 {
     text-align: center;
     border-top: 1px solid #222;
     margin-top: 0em;
-}
-
-/*
- ========================================================================
- RESPONSIVE
- ========================================================================
- */
-
-/* MOBILE e TABLET (Sotto 768px) */
-@media screen and (max-width: 768px) {
-    .intestazione {
-        flex-direction: column;
-        gap: 1em;
-        padding: 1em;
-    }
-
-    .nome-palestra {
-        font-size: 1.2em;
-    }
-
-    #menu ul {
-        gap: 1em;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .layout-palestra {
-        grid-template-columns: 1fr;
-    }
-
-    .tab-container {
-        flex-direction: column;
-        gap: 1em;
-    }
-
-    .tab-menu {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        padding: 10px;
-        flex: none;
-        white-space: nowrap;
-        border-bottom: 2px solid var(--orange);
-        background: #000;
-        position: sticky;
-        top: 80px;
-        z-index: 90;
-        margin-bottom: 1em;
-    }
-
-    .tab-btn {
-        padding: 10px 20px;
-        border-radius: 20px;
-        background: #222;
-        border: 1px solid #444;
-        font-size: 0.9em;
-    }
-
-    .tab-btn.active {
-        background: var(--gold);
-        color: #000;
-        border-left: 1px solid var(--gold);
-    }
-
-    .abbonamento-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .abbonamento-card ul {
-        padding-left: 15px;
-        margin-bottom: 10px;
-    }
-
-    .bundle-podio {
-        flex-direction: column;
-        align-items: center;
-        gap: 3em;
-    }
-
-    .bundle-primo,
-    .bundle-secondo,
-    .bundle-terzo {
-        width: 100%;
-        transform: none;
-        order: initial;
-        padding: 2em;
-        font-size: 1em;
-    }
-
-    .bundle-primo {
-        order: 1;
-        transform: scale(1.05);
-        transform-origin: center;
-        margin-bottom: 1em;
-    }
-
-    .bundle-secondo {
-        order: 2;
-    }
-
-    .bundle-terzo {
-        order: 3;
-    }
 }
 
 /* ================
