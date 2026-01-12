@@ -1,7 +1,8 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* spero non vi dia fastidio, serve per le tre sezione di palestra_style.html, che non si sovrappongano */
+    box-sizing: border-box;
+    /* spero non vi dia fastidio, serve per le tre sezione di palestra_style.html, che non si sovrappongano */
 }
 
 :root {
@@ -16,13 +17,11 @@
     --mainBackgroundColorDark: #111;
     --mainBackgroundColor: #181211;
     --mainBackgroundColorLight: #332;
+    /* inutilizzato */
 
     --headerGradient: linear-gradient(to right,
             var(--mainColor) 25%,
             var(--mainColorLight) 75%);
-    --backgroundGradient: radial-gradient(circle 600px at center,
-            var(--mainBackgroundColorLight),
-            var(--mainBackgroundColor));
 }
 
 html,
@@ -939,6 +938,12 @@ textarea {
     min-height: 300px;
     font-style: italic;
 }
+
+.mappa iframe {
+    width: 100%;
+    height: 100%;
+}
+
 
 @media (max-width: 768px) {
     .contatti-interazione {
