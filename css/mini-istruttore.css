@@ -2,17 +2,17 @@
     float: initial;
     display: block;
     margin: 1em auto 2em;
-    width: 70%;
+    width: 60%;
 }
 
 .dati-pt dt:not(:first-child) {
     display: block;
     margin: auto;
-    width: 80%;
+    width: 90%;
 }
 
 .dati-pt dd:not(:first-child) {
     display: block;
     margin: auto;
-    width: 80%;
+    width: 90%;
 }

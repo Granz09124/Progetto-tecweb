@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Palestra - Home</title>
+        <title>Palestra - Offre</title>
         <meta
             name="description"
             content="Palestra, allenamento, sala pesi, bodybuilding, attrezzi, manubri, fitness, sport, salute, motivazione, forma fisica"
@@ -17,6 +17,8 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-palestra-abbonamenti.css">
+        <link rel="stylesheet" media="print" href="../css/print-palestra-abbonamenti.css">
     </head>
     <body>
         <a class="vai-al-contenuto" href="#contenuto">Vai al contenuto</a>
@@ -31,6 +33,13 @@
             <h1>Il Tempio di Apollo</h1>
 
             <nav id="menu">
+                <input type="checkbox" id="menu-toggle">
+                <div id="hamburger-menu">
+                    <span id="ham-line1"></span>
+                    <span id="ham-line2"></span>
+                    <span id="ham-line3"></span>
+                </div>
+
                 <ul>
                     <li><a lang="en" href="./Home_style.html">Home</a></li>
                     <li><strong>Palestra</strong></li>

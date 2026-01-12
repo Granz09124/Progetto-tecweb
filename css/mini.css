@@ -8,7 +8,7 @@
     --hamburgerSliceHeight: 5px;
 
     --hamburgerPrecisionOffset: 20px;
-    
+
     --mobileMenuBackgroundColor: #111111F0;
     --logoHeight: calc(var(--hamburgerHeight) * 2);
 }
@@ -25,6 +25,7 @@ body {
 header.intestazione {
     overflow-x: clip;
     background-color: #ffffff00;
+    flex-direction: column;
     padding: 0;
     margin: 0;
     gap: 0;
@@ -61,6 +62,12 @@ a:link:has(.logo) {
     padding-right: 0;
     margin-left: 0;
     justify-content: left;
+}
+
+#menu ul {
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #menu li {
@@ -126,24 +133,15 @@ a:link:has(.logo) {
     position: fixed;
 }
 
-#menu input[type="checkbox"]:checked~#hamburger-menu :first-child
-{
+#menu input[type="checkbox"]:checked~#hamburger-menu :first-child {
     transform-origin: center right;
-    transform: translate(calc(-.5 * var(--hamburgerWidth)), calc(var(--hamburgerHeight)))
-        rotateZ(45deg)
-        scaleX(.65);
+    transform: translate(calc(-.5 * var(--hamburgerWidth)), calc(var(--hamburgerHeight))) rotateZ(45deg) scaleX(.65);
     transition: transform 0.25s ease-in-out;
 }
 
-#menu input[type="checkbox"]:checked~#hamburger-menu :nth-child(3)
-{
+#menu input[type="checkbox"]:checked~#hamburger-menu :nth-child(3) {
     transform-origin: center right;
-    transform: rotateZ(270deg)
-        translateX(var(--hamburgerHeight)) 
-        rotateZ(90deg) 
-        translateX(calc(-1 * var(--hamburgerWidth) / 2)) 
-        rotateZ(-45deg)
-        scaleX(.65);
+    transform: rotateZ(270deg) translateX(var(--hamburgerHeight)) rotateZ(90deg) translateX(calc(-1 * var(--hamburgerWidth) / 2)) rotateZ(-45deg) scaleX(.65);
     transition: transform 0.25s ease-in-out;
 }
 
