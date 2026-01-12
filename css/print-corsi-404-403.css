@@ -1,12 +1,23 @@
 /* CSS per la stampa delle pagine corsi, error404 e error403 */
 /* Testo nero, sfondo bianco, senza colori, immagini incluse */
 
+:root {
+    --textColor: #000;
+}
+
+html,
+body {
+    font-size: 100%;
+    font-family: "Times New Roman", "Times", serif;
+    line-height: 1.6em;
+}
+
 @media print {
     /* Impostazioni generali per la stampa */
     body {
-        color: black;
+        color: var(--textColor);
         background: white;
-        font-family: Arial, sans-serif;
+        font-family: "Times New Roman", "Times", serif;
         margin: 0;
         padding: 0;
     }
@@ -14,6 +25,44 @@
     /* Nasconde elementi non necessari per la stampa */
     header, nav, footer, button, .piè-di-pagina, .intestazione, #breadcrumb {
         display: none !important;
+    }
+
+    a:link {
+        text-decoration: underline;
+        color: var(--textColor);
+    }
+
+    a:visited {
+        text-decoration: underline;
+        color: var(--textColor);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        background: initial;
+        background-clip: initial;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+        color: var(--textColor);
+    }
+
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    strong {
+        font-weight: normal;
+    }
+
+    p {
+        color: var(--textColor);
     }
 
     /* Stili per la pagina corsi */
@@ -72,6 +121,10 @@
         margin: 20px;
     }
 
+    main * {
+        color: var(--textColor);
+    }
+
     main h1 {
         font-size: 48px;
         margin-bottom: 20px;
@@ -89,7 +142,7 @@
     }
 
     main a {
-        color: black;
+        color: var(--textColor);
         text-decoration: underline;
     }
 

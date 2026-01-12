@@ -203,20 +203,38 @@ Aggiornamento della relazione (LUCA)
 CSS da mobile e stampante (Ognuno fa il mobile e stampante delle sue pagine)
 CSS da mobile menù (Alessandro)
 Sistema pagina contattaci (MARCO)
-Guardare se c'è Navigazione tramite tab (LUCA)
+Guardare se c'è Navigazione tramite tab (LUCA) OK
 
 COSE DA VEDERE:
 RICONTROLLO DEL CSS 
 Controllo Popolazione database
 Rinominazione delle varie pagine html se css va bene. 
 
+-------------------------------------------------------------------------------------------------------------------
+
+TODO 12/01/2026
+
+Decisioni: 
+- colori da utilizzare per il css in style.css 
+- come fare la stampa delle varie pagine: su modello di home_style.html senza i vari border box
+- per il database: niente tabella corsi, per gli abbonamenti non mettere i prezzi ma solo la data inizio e fine (senza vincoli logici)
 
 
+TODO:
+togliere la regola generale border-sizing (Armando)
+sistemare i vari css: style mini e print entro il 15. (TUTTI)
+aggiornamento della relazione (LUCA)
+Popolazione del database (MARCO)
+
+Separazione porzioni HTML template, SE C'è TEMPO (Alessandro)
+ cancellazione pagine css e html in eccesso (chi vuole)
 
 
-
-
-
+DA VEDERE:
+- colore link visitato e non (vedere se troviamo una soluzione)
+- se serve o meno avere un tipo di utente in più oltre a PT (Istruttore)
+- Pagine PHP
+- Test con lo screen reader
 
 
 
