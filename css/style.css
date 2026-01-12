@@ -1,7 +1,8 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* spero non vi dia fastidio, serve per le tre sezione di palestra_style.html, che non si sovrappongano */
+    box-sizing: border-box;
+    /* spero non vi dia fastidio, serve per le tre sezione di palestra_style.html, che non si sovrappongano */
 }
 
 :root {
@@ -20,9 +21,6 @@
     --headerGradient: linear-gradient(to right,
             var(--mainColor) 25%,
             var(--mainColorLight) 75%);
-    --backgroundGradient: radial-gradient(circle 600px at center,
-            var(--mainBackgroundColorLight),
-            var(--mainBackgroundColor));
 }
 
 html,
