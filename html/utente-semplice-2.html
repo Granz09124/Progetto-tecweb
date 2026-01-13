@@ -10,14 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/utente-2.css" />
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-utente-2.css">
+    <link rel="stylesheet" media="print" href="../css/print-utenti-2.css">
 </head>
 
 <body id="layout-adhoc">
     <header class="intestazione">
-        <img src="../immagini/Logo_palestra.png" alt="Logo" class="logo" />
-        <h1>Il Tempio di Apollo</h1>
+        <div class="intestazione-bg">
+            <a href="./home.html">
+                <img src="../immagini/Logo_palestra.png" alt="Home" class="logo">
+            </a>
+            <h1>Il Tempio di Apollo</h1>
+        </div>
 
-        <nav id="menu">
+        <nav id="menu" aria-label="menu">
             <input type="checkbox" id="menu-toggle">
             <div id="hamburger-menu">
                 <span id="ham-line1"></span>
@@ -138,7 +144,7 @@
         <img src="../immagini/Icon/torna_su.webp" alt="Torna su" />
     </button>
 
-    <footer class="piè-di-pagina">
+    <footer>
         <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
     </footer>
 
