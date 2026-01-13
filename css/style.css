@@ -1,8 +1,13 @@
 * {
     padding: 0;
     margin: 0;
+}
+
+#layout-adhoc,
+#layout-adhoc *,
+#layout-adhoc *::before,
+#layout-adhoc *::after {
     box-sizing: border-box;
-    /* spero non vi dia fastidio, serve per le tre sezione di palestra_style.html, che non si sovrappongano */
 }
 
 :root {
