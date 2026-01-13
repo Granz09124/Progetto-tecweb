@@ -48,7 +48,6 @@ header.intestazione {
 
 a:link:has(.logo) {
     margin-left: auto;
-    margin-right: auto;
     display: inline-block;
 }
 
