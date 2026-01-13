@@ -219,14 +219,6 @@ a:link:has(.logo) {
     margin: 0.25em 0;
 }
 
-#breadcrumb {
-    background-color: #fecd00;
-    color: #161717;
-    padding: 0.5em;
-    text-align: center;
-    font-size: 0.9em;
-}
-
 main {
     padding: 1em;
     text-align: center;
@@ -254,10 +246,3 @@ main p a {
     text-decoration: underline;
 }
 
-footer, .piè-di-pagina {
-    text-align: center;
-    padding: 1em;
-    background-color: #fecd00;
-    color: #161717;
-    font-size: 0.9em;
-}
