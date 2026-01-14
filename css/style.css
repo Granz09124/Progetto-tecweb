@@ -231,6 +231,10 @@ header.intestazione {
     flex-basis: 100%;
 }
 
+#presentazione-servizi a::after {
+    content: " ⇨";
+}
+
 #presentazione-servizi img {
     display: block;
     width: 90%;
