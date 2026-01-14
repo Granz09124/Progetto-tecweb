@@ -11,6 +11,8 @@
 
     --mobileMenuBackgroundColor: #111111F0;
     --logoHeight: calc(var(--hamburgerHeight) * 2);
+
+    --mobileMenuToggleSpeed: .1s;
 }
 
 body {
@@ -105,17 +107,17 @@ a:link:has(.logo) {
     width: 100%;
     border-radius: 10px;
     background: var(--mainColor);
-    transition-duration: .25s;
+    transition-duration: var(--mobileMenuToggleSpeed);
 }
 
 #menu input[type="checkbox"]~ul {
     transform: translateX(-150%);
-    transition: transform 0.25s ease-out;
+    transition: transform var(--mobileMenuToggleSpeed) ease-out;
 }
 
 #menu input[type="checkbox"]:checked~ul {
     transform: translateX(0);
-    transition: transform 0.25s ease-out;
+    transition: transform var(--mobileMenuToggleSpeed) ease-out;
 }
 
 #menu input[type="checkbox"]~ul {
@@ -133,15 +135,19 @@ a:link:has(.logo) {
 }
 
 #menu input[type="checkbox"]:checked~#hamburger-menu :first-child {
-    transform-origin: center right;
-    transform: translate(calc(-.5 * var(--hamburgerWidth)), calc(var(--hamburgerHeight))) rotateZ(45deg) scaleX(.65);
-    transition: transform 0.25s ease-in-out;
+    transform-origin: center left;
+    transform: translateY(calc(var(--hamburgerHeight) / 2 - var(--hamburgerSliceHeight) / 3))
+        rotateZ(-45deg)
+        scaleX(.7);
+    transition: transform var(--mobileMenuToggleSpeed) ease-in-out;
 }
 
 #menu input[type="checkbox"]:checked~#hamburger-menu :nth-child(3) {
-    transform-origin: center right;
-    transform: rotateZ(270deg) translateX(var(--hamburgerHeight)) rotateZ(90deg) translateX(calc(-1 * var(--hamburgerWidth) / 2)) rotateZ(-45deg) scaleX(.65);
-    transition: transform 0.25s ease-in-out;
+    transform-origin: center left;
+    transform: translateY(calc(-1 * var(--hamburgerHeight) / 2))
+        rotateZ(45deg)
+        scaleX(.7);
+    transition: transform var(--mobileMenuToggleSpeed) ease-in-out;
 }
 
 /* ==============
