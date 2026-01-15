@@ -44,7 +44,7 @@ CREATE TABLE Messaggio_Contattaci (
     id_messaggio SERIAL PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    oggetto VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20),
     messaggio TEXT NOT NULL,
     data_invio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
