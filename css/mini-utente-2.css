@@ -1,0 +1,299 @@
+:root {
+    --hamburgerWidth: 2.3em;
+    --hamburgerHeight: 1.8em;
+
+    --hamburgerTopPos: 20px;
+    --hamburgerLeftPos: 20px;
+
+    --hamburgerSliceHeight: 5px;
+
+    --hamburgerPrecisionOffset: 20px;
+
+    --mobileMenuBackgroundColor: #111111F0;
+    --logoHeight: calc(var(--hamburgerHeight) * 2);
+}
+
+body {
+    max-width: 768px;
+}
+
+
+.menu {
+    position: fixed;
+    align-content: left;
+}
+
+header.intestazione {
+    overflow-x: clip;
+    background-color: #ffffff00;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+.intestazione-bg {
+    display: flex;
+    width: 100%;
+    background-color: var(--mainBackgroundColorDark);
+    border-bottom: 2px solid var(--mainColor);
+}
+
+.intestazione h1 {
+    position: absolute;
+    left: 2000px;
+}
+
+.intestazione .logo {
+    width: var(--logoHeight);
+    padding: 0;
+    margin-top: 5px;
+}
+
+a:link:has(.logo) {
+    margin-left: auto;
+    display: inline-block;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    background-color: #fff;
+    padding-right: 0;
+    margin-left: 0;
+    justify-content: left;
+}
+
+#menu ul {
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#menu li {
+    margin: .2em 1em;
+}
+
+#menu input[type="checkbox"] {
+    display: block;
+    position: absolute;
+    height: calc(var(--hamburgerHeight) + var(--hamburgerPrecisionOffset));
+    width: calc(var(--hamburgerWidth) + var(--hamburgerPrecisionOffset));
+    top: calc(var(--hamburgerTopPos) - var(--hamburgerPrecisionOffset)/2);
+    left: calc(var(--hamburgerLeftPos) - var(--hamburgerPrecisionOffset)/2);
+    z-index: 999;
+    opacity: 0;
+}
+
+#hamburger-menu {
+    height: var(--hamburgerHeight);
+    width: var(--hamburgerWidth);
+    position: absolute;
+    top: var(--hamburgerTopPos);
+    left: var(--hamburgerLeftPos);
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#ham-line1,
+#ham-line2,
+#ham-line3 {
+    display: block;
+    height: var(--hamburgerSliceHeight);
+    width: 100%;
+    border-radius: 10px;
+    background: var(--mainColor);
+    transition-duration: .25s;
+}
+
+#menu input[type="checkbox"]~ul {
+    transform: translateX(-150%);
+    transition: transform 0.25s ease-out;
+}
+
+#menu input[type="checkbox"]:checked~ul {
+    transform: translateX(0);
+    transition: transform 0.25s ease-out;
+}
+
+#menu input[type="checkbox"]~ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--mobileMenuBackgroundColor);
+    border-right: 2px solid var(--mainColorLight);
+    max-width: 60%;
+    margin-left: -100px;
+    padding-left: 100px;
+    padding-right: 5%;
+    padding-top: 1em;
+    height: 100vh;
+    position: fixed;
+}
+
+#menu input[type="checkbox"]:checked~#hamburger-menu :first-child {
+    transform-origin: center right;
+    transform: translate(calc(-.5 * var(--hamburgerWidth)), calc(var(--hamburgerHeight))) rotateZ(45deg) scaleX(.65);
+    transition: transform 0.25s ease-in-out;
+}
+
+#menu input[type="checkbox"]:checked~#hamburger-menu :nth-child(3) {
+    transform-origin: center right;
+    transform: rotateZ(270deg) translateX(var(--hamburgerHeight)) rotateZ(90deg) translateX(calc(-1 * var(--hamburgerWidth) / 2)) rotateZ(-45deg) scaleX(.65);
+    transition: transform 0.25s ease-in-out;
+}
+
+/* ==============
+ * User Pages
+ ============= */
+.contenuto-principale {
+    padding: 1em;
+}
+
+.contenuto-principale h2{
+    text-align: center;
+}
+
+.area-personale section {
+    display: block;
+    margin: auto;
+    width: 95%;
+}
+
+.user-section {
+    text-align: center;
+    margin: auto;
+    width: 95%;
+}
+
+.data-list-group {
+    display: block;
+}
+
+.data-item {
+    display: block;
+    margin: 1em auto;
+    width: 95%;
+}
+
+.data-item input,
+.data-item textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.tech-form-group {
+    display: block;
+}
+
+.btn-link {
+    width: 100%;
+    background-color: transparent;
+    color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-sizing: border-box;
+    min-height: 44px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-link:hover {
+    background-color: var(--mainBackgroundColorLight);
+    color: var(--mainColorLight);
+    border-color: var(--mainColorLight);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.btn-modify {
+    width: 120px;
+    background-color: var(--mainBackgroundColorLight);
+    color: var(--textColor);
+    border: 1px solid var(--mainColorDark);
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    height: 48px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.btn-modify:hover {
+    background-color: var(--mainColorDark);
+    color: var(--mainBackgroundColorDark);
+}
+
+
+
+.btn-logout:hover {
+    background-color: var(--mainColorLight);
+}
+
+
+.btn-logout,
+.btn-delete {
+    width: 30%;     
+    height: 48px;           
+    padding: 0;              
+    display: inline-flex;   
+    align-items: center;    
+    justify-content: center; 
+    box-sizing: border-box;
+}
+
+.btn-logout {
+    margin-right: 0.5em;
+}
+
+.btn-delete {
+    margin-left: 0.5em;
+}
+
+.btn-delete:hover {
+    background-color: var(--mainColorDark);
+    color: var(--mainBackgroundColorDark);
+}
+
+.links-list {
+    padding: 0;
+}
+
+.links-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em auto;
+    width: 95%;
+    gap: 0.5em;
+}
+
+.account-actions {
+    display: flex;
+    gap: 111em;
+    justify-content: center;
+    margin-top: 1em;
+}
+main {
+    padding: 1em;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}

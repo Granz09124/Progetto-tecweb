@@ -4,8 +4,8 @@
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
 
-\title{Progetto Palestra - Sito Web}
-\author{Armando Moda Scarati - 2082864, Granziero Luca - 2075512, Alessandro, Marco}
+\title{Tempio di Apollo - Sito Web}
+\author{Armando Moda Scarati - 2082864, Granziero Luca - 2075512, \\ Alessandro Morabito 2137991, Marco Beltrame 2111021}
 \date{\today}
 
 \begin{document}
@@ -23,25 +23,65 @@ Il sito è composto da: \\
 \\
 \textbf{Pagine html:}
 \begin{itemize}
-    \item \texttt{home.html}: Pagina principale con logo e contenuti in italiano.
+    \item \texttt{home.html}: Pagina principale che introduce la palestra: mostrando servizi, sedi e recensioni di alcuni clienti.
+    
     \item \texttt{corsi.html:} Pagina che espone i vari corsi disponibili.
+    
     \item \texttt{abbonamenti.html:} Pagina che raffigura i vari abbonamenti offerti.
+    
     \item \texttt{palestra.html:} Pagina di intermissione tra home e i servizi che la palestra offre, ovvero la sala pesi, i corsi e i pt/coaching.
 
     \item \texttt{error404.html:} Pagina che mostra un messaggio quando la pagina richiesta non esiste.
+
+    \item \texttt{error403.html:} Pagina che mostra un messaggio quando non si hanno i permessi necessari per accedere a quella pagina.
+    
     \item \texttt{contattaci.html:} Pagina che permette agli utenti di inviare richieste o messaggi all'associazione.
+
+    \item \texttt{pt.html:} Pagina che permette agli admin di trovare un preciso PT registrato.
+
+    \item \texttt{cerca-pt.html:} Pagina che permette agli utenti di cercare tra i vari PT quello che più gli aggrada.
+
+    \item \texttt{cerca-utenti.html:} Pagina che permette agli admin di trovare un preciso utente registrato
+
+    \item \texttt{registrati.html:} Pagina che permette agli utenti di registrarsi al sito.
+
+    \item \texttt{login.html:} Pagina che permette agli utenti di accedere alla loro area riservata.
+
+    \item \texttt{utente-admin.html:} Pagina di area personale dell'admin.    
+    
+    \item \texttt{utente-pt.html:} Pagina di area personale del Personal Trainer.  
+
+    \item \texttt{utente-semplice.html:} Pagina di area personale dell'utente.  .
     
 \end{itemize} 
     \textbf{Pagine css:}
 \begin{itemize}
     \item \texttt{style.css}: Foglio di stile per il design base.
+    \item \texttt{mini.css}: Foglio di stile per il design mobile. 
+    \item \texttt{print.css} Foglio di stile per il design da stampante.
 \end{itemize}
  \textbf{Pagine javascript:}
 \begin{itemize}
-    \item 
+    \item \texttt{torna-su.js:} abilità il bottone per tornare in cima alla pagina riposto in basso a destra di ogni pagina.
+
+    \item \texttt{toggle-descrizione-orari.js:} abilità lo "switch" tra descrizione e un calendario orario nella pagina dei corsi
+
+    \item \texttt{selettoreAbbonamenti.js:}  
+    
+    \item \texttt{dashboard.js:}  
+
+    
 \end{itemize}
 \textbf{Pagine php:}
 \begin{itemize}
+    \item 
+\end{itemize}
+\noindent
+\\
+\textbf{Infine una cartella immagini con all'interno:}
+\begin{itemize}
+    \item immagine logo palestra.
+    \item Immagini dei corsi presenti
     \item 
 \end{itemize}
 
@@ -53,11 +93,10 @@ Il sito è composto da: \\
     \item \textbf{PHP}: Utilizzato per generare contenuti dinamici lato server, come la gestione di sessioni utente e l'interazione con database per funzionalità avanzate.
     \item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
     \item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
+    \item \textbf{LLM:} Utilizzati per la generazione di immagini come: il logo, le immagini di sfondo presenti nelle pagine di error403 e error404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni (PT) 
+    
 \end{itemize}
-Infine una cartella immagini con all'interno:
-\begin{itemize}
-    \item immagine logo palestra.
-\end{itemize}
+
 \section{Attori presenti nel sito}
 All'interno del sito troviamo tre attori:\\
 \texttt{utente/user} \\
@@ -120,8 +159,38 @@ La separazione tra struttura (HTML), presentazione (CSS) e contenuto garantisce 
 \subsection{Palette dei colori e contrasti}
 La palette dei colori è stata scelta per garantire un elevato contrasto tra testi e sfondi, rispettando le linee guida WCAG. Ad esempio, testi chiari su sfondi scuri per una migliore leggibilità, evitando combinazioni che potrebbero causare difficoltà a utenti con disabilità visive.
 
-\subsection{Lingue straniere e abbreviazioni}
-Il sito supporta contenuti in italiano come lingua principale, ma è progettato per essere facilmente adattabile a lingue straniere attraverso l'uso di attributi lang e meccanismi di internazionalizzazione, permettendo una migliore accessibilità per utenti non italofoni. Inoltre, le abbreviazioni utilizzate nel sito, come "PT" per "Personal Trainer", sono spiegate o espanse dove necessario per garantire chiarezza e facilitare la comprensione da parte di tutti gli utenti, inclusi quelli con disabilità cognitive o che utilizzano tecnologie assistive.
+\bigskip
+\noindent
+\textbf{Palette dei colori utilizzata:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{lightgray} \textbf{Colore} & \textbf{Codice HEX} & \textbf{Utilizzato per} \\
+\hline
+\cellcolor[HTML]{c0ebfb}\hspace{2cm} & \texttt{\#c0ebfb}  & Links non visitati \\
+\hline
+\cellcolor[HTML]{965cfd}\hspace{2cm} & \texttt{\#965cfd}  & Links non visitati \\
+\hline
+\cellcolor[HTML]{ffee55}\hspace{2cm} & \texttt{\#ffee55}  & Testo \\
+\hline
+\cellcolor[HTML]{ffcc00}\hspace{2cm} & \texttt{\#ffcc00}  & Testo \\
+\hline
+\cellcolor[HTML]{ee8800}\hspace{2cm} & \texttt{\#ee8800}  & Testo \\
+\hline
+\cellcolor[HTML]{181211}\hspace{2cm} & \texttt{\#181211}  & Sfondo \\
+\hline
+\cellcolor[HTML]{111111}\hspace{2cm} & \texttt{\#111111}  & Sfondo header\\
+\hline
+\cellcolor[HTML]{dddddd}\hspace{2cm} & \texttt{\#dddddd}  & Testi secondari \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\subsection{Lingue straniere}
+Il sito supporta contenuti in italiano come lingua principale, ma è progettato per essere facilmente adattabile a lingue straniere attraverso l'uso di attributi lang e meccanismi di internazionalizzazione, permettendo una migliore accessibilità per utenti non italofoni.
 
 \section{Divisione dei compiti}
 Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto: \\
@@ -129,28 +198,28 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 \\
 \textbf{Armando Moda Scarati}
 \begin{itemize}
-    \item Creazione delle e gestione pagine: \texttt{abbonamenti.html}, \texttt{palestra.html} 
+    \item Creazione delle e gestione pagine: \texttt{abbonamenti.html}, \texttt{palestra.html},  \texttt{utente-admin.html},  \texttt{utente-pt.html},  \texttt{utente-semplice.html}
     \item Gestione in css delle stesse 
 \end{itemize}
 \textbf{Alessandro}
 \begin{itemize}
-    \item Creazione e gestione delle pagine: \texttt{home.html}
+    \item Creazione e gestione delle pagine: \texttt{home.html},  \texttt{lista-utenti.html},  \texttt{pt.html},  \texttt{cerca-pt.html}
     \item Gestione in css delle stesse 
 \end{itemize}
 \textbf{Granziero Luca}
 \begin{itemize}
-    \item Creazione e gestione delle pagine: \texttt{corsi.html} \texttt{error404.html}
+    \item Creazione e gestione delle pagine: \texttt{corsi.html} \texttt{error404.html}, \textit{erro403.html}
     \item Gestione in css delle stesse
+    \item Creazione delle pagine js: toggle-descrizione-orari.js 
     \item Stesura e aggiornamento della relazione 
 \end{itemize}
 \textbf{Marco}
 \begin{itemize}
-    \item Gestione della pagina: \texttt{abbonamenti.html} 
-    \item Creazione delle pagina: \texttt{contattaci.html}
+    \item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
     \item Gestione in css delle stesse
+    \item Crezione prima versione del database
 \end{itemize}
 
-\section{Conclusioni}
-Il progetto fornisce una base per un sito web di palestra, pronto per ulteriori sviluppi.
-
+\section{Conclusioni e sviluppi futuri}
+Il progetto costituisce una base strutturata per lo sviluppo di un sito web per una palestra, progettato in modo da consentire agevolmente future espansioni e l’implementazione di ulteriori funzionalità, quali ad esempio:
 \end{document}
