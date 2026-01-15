@@ -236,11 +236,34 @@ DA VEDERE:
 - Pagine PHP
 - Test con lo screen reader
 
+--------------------------------------------------------------------------------------------------------------------------------------
+
+TODO 15/12/2026
+
+DECISIONI: controllare per lo screen reader per quando si ha tempo le proprie pagine 
 
 
+TODO:
+- rifare pagina corsi, cambiando-> 3x2 con i vari corsi con la descrizione e tabella degli orari sotto. (LUCA)
+- MERGE DEI CSS (Alessandro)
+- CANCELLAZIONE PAGINE NON STYLE e RINOMINAZIONE DELLE PAGINE TOGLIENDO IL _STYLE. (Ognuno le sue pagine)
+- METTERE FOOTER CENTRATO
 
+PAGINE PHP (controllare gli input messi):
+- Pagina login e registrati (MARCO)
+- Contattaci (ARMANDO)
+- Aree Utente (pt/admin/utente) (Luca/Armando) (caricamento pdf solo per esercizi, togliere dieta)
+ (fondere lista clienti e template esercizi (PDF))
+- Cerca-pt/utenti (Alessandro)
+ 
+Provare Xxampp (o docker) per test su localhost delle pagine php, se non funziona trovarsi per caricare su server del paolotti. 
 
+Il server a vostra disposizione per il progetto ha installato:
 
+    Debian 13.1
+    PHP 8.4.11
+    database MariaDB 11.8.3
+https://stem.elearning.unipd.it/mod/page/view.php?id=719281
 
 
 
