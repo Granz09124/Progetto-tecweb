@@ -1,258 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Amministrazione - Il Tempio di Apollo</title>
-    <link rel="stylesheet" href="../css/utente.css">
-    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-utenti.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palestra - Area Utente Admin</title>
+    <meta name="description" content="Pannello di Amministrazione Il Tempio di Apollo, gestione iscritti, abbonamenti, corsi, staff e statistiche della palestra." />
+    <meta name="keywords" content="pannello admin, gestione palestra, database utenti, amministrazione, statistiche" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/utente-2.css" />
+
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
     <link rel="stylesheet" media="print" href="../css/print-utenti.css">
 </head>
-<body>
-    <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <div class="dashboard-container">
-        
-        <aside class="dashboard-sidebar">
-            <a href="home.html" class="sidebar-logo">
-                <img src="../immagini/Logo_palestra.png" alt="Logo">
-                <span>Il Tempio</span>
+<body id="layout-adhoc">
+    <header class="intestazione">
+        <div class="intestazione-bg">
+            <a href="./home.html">
+                <img src="../immagini/Logo_palestra.png" alt="Home" class="logo">
             </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><button class="nav-btn active" data-target="admin-dashboard">📊 Panoramica</button></li>
-                    <li><button class="nav-btn" data-target="admin-utenti">👥 Gestione Utenti</button></li>
-                    <li><button class="nav-btn" data-target="admin-abbonamenti">💳 Abbonamenti</button></li>
-                    <li><button class="nav-btn" data-target="admin-corsi">📅 Gestione Corsi</button></li>
+            <h1>Il Tempio di Apollo</h1>
+        </div>
+
+        <nav id="menu" aria-label="menu">
+            <input type="checkbox" id="menu-toggle">
+            <div id="hamburger-menu">
+                <span id="ham-line1"></span>
+                <span id="ham-line2"></span>
+                <span id="ham-line3"></span>
+            </div>
+
+            <ul>
+                <li><a lang="en" href="./home.html">Home</a></li>
+                <li><a href="./Palestra.html"><strong>Palestra</strong></a></li>
+                <li><a href="./abbonamenti.html">Abbonamenti</a></li>
+                <li><a href="./cerca-pt.html">Ricerca Istruttori</a></li>
+                <li><a href="./Contattaci.html">Contattaci</a></li>
+                <li>Area Utente</li>
+                <li><a href="./home.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav id="breadcrumb">
+        <p>
+            Ti trovi in:
+            <a lang="en" href="./home.html">Home</a> &gt; &gt; Area personale
+        </p>
+    </nav>
+
+    <main class="contenuto-principale">
+
+        <section class="area-personale">
+            <h1>Pannello Amministrazione</h1>
+
+            <section class="user-section">
+                <h2>Gestione Palestra</h2>
+                <p style="margin-bottom: 1em;">Seleziona una lista per visualizzare, modificare o eliminare i record dal database.</p>
+                <ul class="links-list">
+                    <li>
+                        <span>📝 Visualizza Lista Iscritti (Clienti)</span>
+                        <a href="#" class="btn-link">Gestisci</a>
+                    </li>
+                    <li>
+                        <span>💪 Visualizza Lista Personal Trainer</span>
+                        <a href="#" class="btn-link">Gestisci</a>
+                    </li>
+                    <li>
+                        <span>👥 Visualizza Lista Utenti Totali</span>
+                        <a href="#" class="btn-link">Gestisci</a>
+                    </li>
                 </ul>
-            </nav>
-        </aside>
-
-        <header class="dashboard-header">
-    
-            <div class="header-left">
-                <label for="sidebar-toggle" class="hamburger-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                <img src="../immagini/Logo_palestra.png" alt="Logo" class="header-logo-img">
-            </div>
-
-            <div class="header-center">
-                <span class="header-title-text">Il Tempio</span>
-            </div>
-
-            <div class="header-right">
-                <figure class="user-profile">
-                    <figcaption class="user-info">
-                        <span class="user-info-name"><span lang="en">Admin System</span></span>
-                        <span class="user-info-role text-gold">Direttore</span>
-                    </figcaption>
-                    <div class="user-avatar admin">AD</div>
-                </figure>
-                <button class="logout-btn" title="Logout" onclick="window.location.href='home.html'">➔</button>
-            </div>
-
-        </header>
-
-        <main class="dashboard-content">
-            
-            <section id="admin-dashboard" class="content-panel active">
-                <header class="welcome-banner">
-                    <h1>Pannello di Controllo</h1>
-                    <p>Panoramica completa dell'andamento della palestra.</p>
-                </header>
-
-                <section class="stats-grid">
-                    <article class="stat-card accent-green">
-                        <div class="stat-info">
-                            <h3>Ricavi Mensili</h3>
-                            <div class="value">€ 12.450</div>
-                            <div class="stat-detail text-success">+15% rispetto al mese scorso</div>
-                        </div>
-                        <div class="stat-icon">📈</div>
-                    </article>
-
-                    <article class="stat-card accent-blue">
-                        <div class="stat-info">
-                            <h3>Abbonamenti Attivi</h3>
-                            <div class="value">142</div>
-                            <div class="stat-detail text-muted">Su 180 iscritti totali</div>
-                        </div>
-                        <div class="stat-icon">💳</div>
-                    </article>
-
-                    <article class="stat-card accent-purple">
-                        <div class="stat-info">
-                            <h3>Nuovi Iscritti</h3>
-                            <div class="value">8</div>
-                            <div class="stat-detail text-muted">Questa settimana</div>
-                        </div>
-                        <div class="stat-icon">user</div>
-                    </article>
-                </section>
-
-                <h2 class="section-title">Iscritti Recenti</h2>
-                <section class="data-list">
-                    <article class="list-item">
-                        <div class="item-info"><strong>Giulia Rossi</strong><small>Iscritta il: 07/01/2026</small></div>
-                        <span class="tag active">Premium</span>
-                    </article>
-                    <article class="list-item">
-                        <div class="item-info"><strong>Marco Verdi</strong><small>Iscritto il: 05/01/2026</small></div>
-                        <span class="tag standard">Base</span>
-                    </article>
-                    <article class="list-item">
-                        <div class="item-info"><strong>Elena Bianchi</strong><small>Iscritta il: 02/01/2026</small></div>
-                        <span class="tag standard">Base</span>
-                    </article>
-                </section>
             </section>
 
-            <section id="admin-utenti" class="content-panel">
-                <header class="flex-header">
-                    <h2 class="section-title no-margin">Gestione Utenti</h2>
-                    <button class="btn-primary">+ Nuovo PT</button>
-                </header>
+            <section class="user-section">
+                <h2>Credenziali Accesso</h2>
+                <form action="#" method="POST">
+                    <div class="tech-form-group">
+                        <div class="data-item tech-input-wrapper">
+                            <label>E-mail Amministratore</label>
+                            <input type="email" value="admin@tempioapollo.it" name="email">
+                        </div>
+                        <button type="button" class="btn-modify">Modifica</button>
+                    </div>
 
-                <form class="search-bar-container" role="search" onsubmit="return false;">
-                    <input type="text" placeholder="Cerca utente per nome..." class="admin-input search">
+                    <div class="tech-form-group">
+                        <div class="data-item tech-input-wrapper">
+                            <label>Password</label>
+                            <input type="password" value="********" name="password">
+                        </div>
+                        <button type="button" class="btn-modify">Cambia</button>
+                    </div>
                 </form>
-
-                <section class="data-list">
-                    <article class="list-item">
-                        <div class="item-info">
-                            <strong>Mario Rossi</strong>
-                            <small>Utente Standard | ID: #U402</small>
-                        </div>
-                        <div class="admin-actions">
-                            <button class="btn-action" title="Gestisci Profilo">⚙️</button>
-                            <button class="btn-action btn-convert" title="Converti in PT">⬆ PT</button>
-                            <button class="btn-action btn-delete" title="Elimina Account">🗑️</button>
-                        </div>
-                    </article>
-                    <article class="list-item">
-                        <div class="item-info">
-                            <strong>Luca Neri (Trainer)</strong>
-                            <small class="text-gold">Account <span lang="en">Personal Trainer</span> | ID: #PT05</small>
-                        </div>
-                        <div class="admin-actions">
-                            <button class="btn-action" title="Gestisci Clienti">👥</button>
-                            <button class="btn-action btn-delete" title="Licenzia">🗑️</button>
-                        </div>
-                    </article>
-                </section>
             </section>
 
-            <section id="admin-abbonamenti" class="content-panel">
-                <h2 class="section-title">Stato Abbonamenti</h2>
-                
-                <nav class="filters-row" aria-label="Filtri stato">
-                    <button class="filter-tag active" data-filter="all">Tutti</button>
-                    <button class="filter-tag" data-filter="attivo">Attivi</button>
-                    <button class="filter-tag" data-filter="sospeso">Sospesi</button>
-                    <button class="filter-tag" data-filter="scaduto">Scaduti</button>
-                </nav>
-
-                <section class="data-list mt-small">
-                    
-                    <article class="list-item" data-status="attivo">
-                        <div class="item-info">
-                            <strong>Mario Rossi</strong>
-                            <small>Premium Annuale - Scade: 31/12/2025</small>
-                        </div>
-                        <div class="status-wrapper">
-                            <span class="tag active">Attivo</span>
-                            <button class="text-btn text-danger">Sospendi</button>
-                        </div>
-                    </article>
-
-                    <article class="list-item" data-status="attivo">
-                         <div class="item-info">
-                            <strong>Anna Gialli</strong>
-                            <small>Mensile Base - Scade: 15/01/2026</small>
-                        </div>
-                        <div class="status-wrapper">
-                            <span class="tag warning">In Scadenza</span>
-                            <button class="text-btn">Rinnova</button>
-                        </div>
-                    </article>
-
-                    <article class="list-item opacity-50" data-status="scaduto">
-                        <div class="item-info">
-                            <strong>Roberto Neri</strong>
-                            <small>Trimestrale - Scaduto: 10/11/2025</small>
-                        </div>
-                        <div class="status-wrapper">
-                            <span class="tag danger">Scaduto</span>
-                            <button class="text-btn text-success">Riattiva</button>
-                        </div>
-                    </article>
-
-                    <article class="list-item" data-status="sospeso">
-                        <div class="item-info">
-                            <strong>Luisa Bianchi</strong>
-                            <small>Annuale - Sospeso per infortunio</small>
-                        </div>
-                        <div class="status-wrapper">
-                            <span class="tag standard">Sospeso</span>
-                            <button class="text-btn text-success">Riattiva</button>
-                        </div>
-                    </article>
-
-                </section>
+            <section class="account-actions" aria-label="Gestione Account">
+                <a href="./home.html" class="btn-logout">Logout</a>
             </section>
+        </section>
 
-            <section id="admin-corsi" class="content-panel">
-                <h2 class="section-title">Programmazione Corsi</h2>
-                <p class="text-muted mb-med">Modifica orari e posti disponibili per le classi.</p>
+    </main>
 
-                <section class="data-list">
-                    
-                    <article class="list-item column-mode">
-                        <div class="course-header">
-                            <strong>Yoga <span lang="en">Morning</span></strong>
-                            <span class="tag sala">Sala 1</span>
-                        </div>
-                        <div class="admin-inputs-row">
-                            <div class="input-group">
-                                <label>Orario</label>
-                                <input type="time" class="admin-input" value="08:00">
-                            </div>
-                            <div class="input-group">
-                                <label>Capienza Max</label>
-                                <input type="number" class="admin-input" value="20" min="1">
-                            </div>
-                            <button class="btn-save">Salva</button>
-                        </div>
-                    </article>
+    <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
+        <img src="../immagini/Icon/torna_su.webp" alt="Torna su" />
+    </button>
 
-                    <article class="list-item column-mode">
-                        <div class="course-header">
-                            <strong><span lang="en">Spinning Extreme</span></strong>
-                            <span class="tag sala">Sala Cardio</span>
-                        </div>
-                        <div class="admin-inputs-row">
-                            <div class="input-group">
-                                <label>Orario</label>
-                                <input type="time" class="admin-input" value="18:30">
-                            </div>
-                            <div class="input-group">
-                                <label>Capienza Max</label>
-                                <input type="number" class="admin-input" value="15" min="1">
-                            </div>
-                            <button class="btn-save">Salva</button>
-                        </div>
-                    </article>
+    <footer>
+        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+    </footer>
 
-                </section>
-            </section>
-
-        </main>
-    </div>
-
-    <script src="../javascript/dashboard.js"></script>
-
+    <script src="../javascript/torna-su.js"></script>
 </body>
+
 </html>
