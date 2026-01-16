@@ -379,28 +379,33 @@ header.intestazione {
     color: var(--text-main);
 }
 
-.bottone-dettagli {
+a.bottone-dettagli,
+a.bottone-dettagli:visited {
     margin-top: auto;
-    display: inline-block;
-    background: var(--fire-gradient);
-    color: #000;
-    font-weight: 800;
-    text-decoration: none;
     padding: 1em 2em;
-    border-radius: 50px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition:
-        filter 0.3s ease,
-        transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4);
+    text-decoration: underline; 
+    display: inline-block;
+    box-sizing: border-box; 
+    transition: background-color 0.3s, color 0.3s;
+    background-color: transparent;
+    border: 2px solid var(--mainColorDark);
+    color: var(--mainColorDark); 
 }
 
-.bottone-dettagli:hover {
-    filter: brightness(1.2);
-    transform: scale(1.05);
-    color: #000;
+a.bottone-dettagli:hover,
+a.bottone-dettagli:visited:hover,
+a.bottone-dettagli:active {
+    background-color: var(--mainColorDark);
+    color: var(--mainBackgroundColorDark);
+    text-decoration: underline;
+    box-shadow: none;
+    transform: none;
+    filter: none;
 }
 
 /* =================
