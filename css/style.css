@@ -965,6 +965,180 @@ textarea {
     }
 }
 
+/* =================
+ * Login
+ ================ */
+.form-container {
+    max-width: 400px;
+    margin: 4em auto;
+    /* Spazio sopra e sotto */
+    padding: 2.5em;
+    background-color: var(--backgroundLight, #202020);
+    border: 1px solid var(--mainColor, #fecd00);
+    border-radius: 1em;
+    box-shadow: 0 0 20px rgba(254, 205, 0, 0.15);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--mainColor, #fecd00);
+    text-transform: uppercase;
+}
+
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    font-family: inherit;
+}
+
+.form-container input:focus {
+    outline: 2px solid var(--mainColor, #fecd00);
+    border-color: var(--mainColor, #fecd00);
+    background-color: #000;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-password {
+    background: none;
+    border: none;
+    color: var(--mainColor, #fecd00);
+    font-size: 0.85em;
+    cursor: pointer;
+    text-align: right;
+    text-decoration: underline;
+    margin-top: -1.2em;
+    margin-bottom: 1.5em;
+    align-self: flex-end;
+}
+
+.toggle-password:focus {
+    outline: 1px dotted var(--mainColor, #fecd00);
+}
+
+.link-registrazione {
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 0.9em;
+}
+
+.link-registrazione a {
+    color: var(--mainColor, #fecd00);
+}
+
+/* ==================
+ * Registrati
+ ================== */
+.form-registrazione {
+    max-width: 500px;
+    margin: 2em auto;
+    padding: 2.5em;
+    background-color: var(--backgroundLight, #202020);
+    border: 2px solid var(--mainColor, #fecd00);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.form-registrazione fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 2em 0;
+}
+
+
+.form-registrazione legend {
+    font-size: 1.2em;
+    color: var(--mainColor, #fecd00);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    padding: 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(254, 205, 0, 0.3);
+    padding-bottom: 0.5em;
+}
+
+
+.form-registrazione label {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-top: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Rimuove il margine superiore solo per la prima label di ogni fieldset */
+.form-registrazione label:first-of-type {
+    margin-top: 0;
+}
+
+
+.form-registrazione input[type="text"],
+.form-registrazione input[type="email"],
+.form-registrazione input[type="password"],
+.form-registrazione input[type="date"],
+.form-registrazione input[type="tel"] {
+    width: 100%;
+    padding: 0.8em;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+}
+
+.form-registrazione input:focus {
+    outline: 2px solid var(--mainColor, #fecd00);
+    border-color: var(--mainColor, #fecd00);
+    background-color: #000;
+}
+
+.info-password {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.85em;
+    color: #ccc;
+}
+
+.titolo-registrazione {
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: var(--mainColor, #fecd00);
+    text-transform: uppercase;
+}
+
+.link-login {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.link-login a {
+    color: var(--mainColor, #fecd00);
+}
+
 /* ===============
  * Pagine errore
  =============== */
