@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ../html:/var/www/html
+      - ../css:/var/www/html/css
+      - ../javascript:/var/www/html/javascript
+      - ../immagini:/var/www/html/immagini
+    depends_on:
+      - db
+    networks:
+      - palestra-network
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: palestra_db
+      POSTGRES_USER: palestra_user
+      POSTGRES_PASSWORD: palestra_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../Database/db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - palestra-network
+
+volumes:
+  postgres_data:
+
+networks:
+  palestra-network:
+    driver: bridge
