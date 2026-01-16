@@ -104,6 +104,7 @@ footer {
     font-size: small;
     color: var(--mainColor);
     border-top: 2px solid var(--mainColorDark);
+    text-align: center;
 }
 
 .vai-al-contenuto {
@@ -411,16 +412,16 @@ h2 {
 }
 
 .lista-corsi {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1em;
+    margin: 1em 2em 0 2em;
 }
 
 .corso {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.25em;
-    margin-left: 7em;
-    margin-right: 7em;
     padding: 1.25em;
     border-radius: 0.9375em;
     border: 2px solid #ffd700;
@@ -449,34 +450,6 @@ h2 {
     display: none;
 }
 
-.corso button {
-    position: absolute;
-    bottom: -2.5em;
-    right: 0.1em;
-    background-color: #fecd00;
-    color: #161717;
-    border: none;
-    padding: 0.625em;
-    cursor: pointer;
-    border-radius: 0.3125em;
-    width: 180px;
-    text-align: center;
-    z-index: 1;
-}
-
-.corso button:focus {
-    outline: 2px solid #fecd00;
-    outline-offset: 0.125em;
-}
-
-.corso-orari h3 {
-    margin: 0 0 0.625em 0;
-    font-size: 1.125em;
-}
-
-.corso-orari p {
-    margin: 0.3125em 0;
-}
 
 @media (max-width: 768px) {
     .corso {
@@ -494,6 +467,50 @@ h2 {
         width: 100%;
     }
 
+}
+
+/* =================
+ * Orari Corsi
+ ================== */
+.orari-corsi {
+    margin: 2em 2em;
+}
+
+.orari-corsi table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    background-color: var(--mainBackgroundColor);
+    border: 2px solid var(--mainColor);
+    box-shadow: 0 0 10px var(--mainColor);
+}
+
+.orari-corsi th,
+.orari-corsi td {
+    padding: 0.75em;
+    text-align: center;
+    border: 1px solid var(--mainColorDark);
+}
+
+.orari-corsi th {
+    background: var(--headerGradient);
+    background-clip: text;
+  
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.orari-corsi tbody tr:nth-child(even) {
+    background-color: var(--mainBackgroundColorLight);
+}
+
+
+.orari-corsi th[scope="row"] {
+    text-align: center;
+    font-weight: bold;
+    color: var(--textColor);
 }
 
 /* ===============

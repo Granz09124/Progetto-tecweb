@@ -21,7 +21,7 @@ body {
     }
 
     /* Nasconde elementi non necessari per la stampa */
-    #menu, button {
+    #menu {
         display: none !important;
     }
 
@@ -71,9 +71,11 @@ body {
     border-top: .2mm solid var(--textColor);
 }
     header.intestazione {
-    all: initial;
-    text-transform: uppercase;
-}
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1cm;
+    }
 
 .intestazione .logo {
     width: 2.5cm;
@@ -93,7 +95,7 @@ body {
     border-bottom: .5mm solid var(--textColor);
 }    
 
-    /* Stili per la pagina corsi */
+  
     .contenuto-principale {
         margin: 20px;
     }
@@ -110,6 +112,8 @@ body {
         align-items: center;
         border: none;
         box-shadow: none;
+        padding: 1.25em;
+        border-radius: 0.9375em;
     }
 
     .corso img {
@@ -130,16 +134,18 @@ body {
 
     .corso-orari {
         display: block !important;
-        margin-top: 10px;
+        margin-top: 0.625em;
+        padding: 0.625em;
+        border-radius: 0.3125em;
     }
 
     .corso-orari h3 {
         font-size: 16px;
-        margin-bottom: 5px;
+        margin: 0 0 0.625em 0;
     }
 
     .corso-orari p {
-        margin: 2px 0;
+        margin: 0.3125em 0;
         line-height: 1.4;
     }
 
@@ -174,10 +180,40 @@ body {
         text-decoration: underline;
     }
 
-    /* Assicura che le immagini siano stampate */
+   
     img {
         display: block;
     }
 
 
+    .orari-corsi table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .orari-corsi th,
+    .orari-corsi td {
+        background-color: white !important; 
+        color: black !important;          
+        border: 1px solid black !important;
+        text-shadow: none !important;       
+        box-shadow: none !important;
+        padding: 4px;
+        word-wrap: break-word;
+        white-space: normal;
+        background: initial !important;
+        background-clip: initial !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: black !important;
+    }
+
+    .orari-corsi th {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 }
+
+
