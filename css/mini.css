@@ -283,6 +283,26 @@ a:link:has(.logo) {
     margin: 0.25em 0;
 }
 
+.orari-corsi thead,
+.orari-corsi tfoot {
+    display: none;
+}
+
+.orari-corsi tr,
+.orari-corsi th,
+.orari-corsi td {
+    display: block;
+}
+
+.orari-corsi th[data-title]:before,
+.orari-corsi td[data-title]:before {
+    content: attr(data-title) ": \00A0";
+}
+
+.orari-corsi td:not(:has(span)) {
+    display: none;
+}
+
 /* ============
  * Istruttore
  =========== */
