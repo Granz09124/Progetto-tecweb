@@ -48,4 +48,3 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 }
 
 echo $bottom;
-?>
