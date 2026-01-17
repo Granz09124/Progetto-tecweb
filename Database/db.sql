@@ -1,29 +1,33 @@
+CREATE DATABASE IF NOT EXISTS palestra_db;
+USE palestra_db;
+
+--ricordarsi di hashare la password (e modificare le password già inserite)
 CREATE TABLE Utente (
     id_utente SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     cognome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL --ricordarsi di hashare la password (e modificare le password già inserite)
+    password_hash VARCHAR(255) NOT NULL 
 );
 
 CREATE TABLE Admin (
-    id_utente INTEGER PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE
+    id_utente BIGINT UNSIGNED PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE
 );
 
 CREATE TABLE Cliente (
-    id_utente INTEGER PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE,
+    id_utente BIGINT UNSIGNED PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE,
     codice_fiscale CHAR(16) UNIQUE NOT NULL,
     telefono VARCHAR(20)
 );
 
 CREATE TABLE Istruttore (
-    id_utente INTEGER PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE,
+    id_utente BIGINT UNSIGNED PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE,
     specializzazione VARCHAR(100),
     qualifica VARCHAR(100)
 );
 
 CREATE TABLE Personal_Trainer (
-    id_istruttore INTEGER PRIMARY KEY REFERENCES Istruttore(id_utente) ON DELETE CASCADE
+    id_istruttore BIGINT UNSIGNED PRIMARY KEY REFERENCES Istruttore(id_utente) ON DELETE CASCADE
 );
 
 CREATE TABLE Abbonamento (
@@ -33,8 +37,8 @@ CREATE TABLE Abbonamento (
 );
 
 CREATE TABLE Sottoscrizione (
-    id_utente INTEGER REFERENCES Utente(id_utente) ON DELETE CASCADE,
-    id_abbonamento INTEGER REFERENCES Abbonamento(id_abbonamento) ON DELETE CASCADE,
+    id_utente BIGINT UNSIGNED REFERENCES Utente(id_utente) ON DELETE CASCADE,
+    id_abbonamento BIGINT UNSIGNED REFERENCES Abbonamento(id_abbonamento) ON DELETE CASCADE,
     data_inizio DATE NOT NULL,
     data_fine DATE NOT NULL,
     PRIMARY KEY (id_utente, id_abbonamento, data_inizio)
@@ -56,8 +60,8 @@ CREATE TABLE Messaggio_Contattaci (
 
 INSERT INTO Utente (nome, cognome, email, password_hash) VALUES
 -- Admin e User base
-('admin', '', '', 'admin'),
-('user', '', '', 'user'),
+('admin', '', 'admin@email.it', 'admin'),
+('user', '', 'user@email.it', 'user'),
 
 -- Clienti
 ('Mario', 'Rossi', 'mario.rossi@email.it', 'password123'),
@@ -152,7 +156,7 @@ INSERT INTO Sottoscrizione (id_utente, id_abbonamento, data_inizio, data_fine) V
 
 -- Sottoscrizioni Clienti
 (3, 4, '2024-07-01', '2025-06-30'),   -- Mario - Sala Pesi Annuale
-(4, 30, '2024-10-01', '2025-09-30'),  -- Laura - Bundle All Inclusive
+(4, 23, '2024-10-01', '2025-09-30'),  -- Laura - Bundle All Inclusive
 (5, 11, '2024-11-01', '2025-04-30'),  -- Giuseppe - Yoga Semestrale
 (6, 21, '2025-01-01', '2025-01-31'),  -- Francesca - Fit Box Mensile
 (7, 17, '2025-01-15', '2025-02-14'),  -- Alessandro - Crossfit Mensile

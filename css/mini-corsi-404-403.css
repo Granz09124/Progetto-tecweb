@@ -140,9 +140,10 @@ a:link:has(.logo) {
 
 .contenuto-principale {
     padding: 1em;
+    overflow-x: hidden;
 }
 
-.sezione-corsi, .lista-corsi {
+.lista-corsi {
     display: flex;
     flex-direction: column;
 }
@@ -154,10 +155,10 @@ a:link:has(.logo) {
     margin-bottom: 1em;
     margin-left: 0;
     margin-right: 0;
-    padding: 1em;
-    border-radius: 0.5em;
+    padding: 1.25em;
+    border-radius: 0.9375em;
     border: 2px solid #ffd700;
-    box-shadow: 0 0 10px rgba(254,205,0,0.3);
+    box-shadow: 0 0 15px rgba(254,205,0,0.5);
     width: 100%;
 }
 
@@ -170,42 +171,32 @@ a:link:has(.logo) {
 
 .corso-descrizione {
     width: 100%;
+    padding: 0.625em;
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0.625em;
 }
 
 .corso-descrizione p {
     margin-bottom: 0.5em;
 }
 
-.corso button {
-    display: block;
-    width: 100%; 
-    box-sizing: border-box !important;    
-    background-color: #fecd00;
-    color: #161717;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.25em;
-    min-height: 44px;
-    font-size: 1em;
-    text-align: center;
-}
-
 .corso-orari {
     position: static;
-    margin-top: 0.5em;
-    padding: 0.5em;
-    border-radius: 0.25em;
+    margin-top: 0.625em;
+    padding: 0.625em;
+    border-radius: 0.3125em;
 }
 
 .corso-orari h3 {
-    margin: 0 0 0.5em 0;
-    font-size: 1.1em;
+    margin: 0 0 0.625em 0;
+    font-size: 1.125em;
 }
 
 .corso-orari p {
-    margin: 0.25em 0;
+    margin: 0.3125em 0;
 }
 
 main {
@@ -233,5 +224,43 @@ main p {
 main p a {
     color: #fecd00;
     text-decoration: underline;
+}
+
+.orari-corsi {
+    width: 100%;
+    margin-top: 1em;
+    margin-left: -1em; 
+    margin-right: -1em;
+    padding: 0 1em; 
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.orari-corsi table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 0.75em;
+    table-layout: auto;
+    display: table; 
+}
+
+.orari-corsi th,
+.orari-corsi td {
+    padding: 0.5em 0.3em;
+    text-align: center;
+    border: 1px solid #fecd00;
+    white-space: nowrap;
+}
+
+
+.orari-corsi th {
+    background-color: #fecd00;
+    color: #161717;
+}
+
+.orari-corsi td {
+    background-color: #161717;
+    color: #fecd00;
 }
 

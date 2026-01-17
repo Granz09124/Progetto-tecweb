@@ -104,6 +104,7 @@ footer {
     font-size: small;
     color: var(--mainColor);
     border-top: 2px solid var(--mainColorDark);
+    text-align: center;
 }
 
 .vai-al-contenuto {
@@ -378,28 +379,33 @@ header.intestazione {
     color: var(--text-main);
 }
 
-.bottone-dettagli {
+a.bottone-dettagli,
+a.bottone-dettagli:visited {
     margin-top: auto;
-    display: inline-block;
-    background: var(--fire-gradient);
-    color: #000;
-    font-weight: 800;
-    text-decoration: none;
     padding: 1em 2em;
-    border-radius: 50px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition:
-        filter 0.3s ease,
-        transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4);
+    text-decoration: underline; 
+    display: inline-block;
+    box-sizing: border-box; 
+    transition: background-color 0.3s, color 0.3s;
+    background-color: transparent;
+    border: 2px solid var(--mainColorDark);
+    color: var(--mainColorDark); 
 }
 
-.bottone-dettagli:hover {
-    filter: brightness(1.2);
-    transform: scale(1.05);
-    color: #000;
+a.bottone-dettagli:hover,
+a.bottone-dettagli:visited:hover,
+a.bottone-dettagli:active {
+    background-color: var(--mainColorDark);
+    color: var(--mainBackgroundColorDark);
+    text-decoration: underline;
+    box-shadow: none;
+    transform: none;
+    filter: none;
 }
 
 /* =================
@@ -411,16 +417,16 @@ h2 {
 }
 
 .lista-corsi {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1em;
+    margin: 1em 2em 0 2em;
 }
 
 .corso {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.25em;
-    margin-left: 7em;
-    margin-right: 7em;
     padding: 1.25em;
     border-radius: 0.9375em;
     border: 2px solid #ffd700;
@@ -449,34 +455,6 @@ h2 {
     display: none;
 }
 
-.corso button {
-    position: absolute;
-    bottom: -2.5em;
-    right: 0.1em;
-    background-color: #fecd00;
-    color: #161717;
-    border: none;
-    padding: 0.625em;
-    cursor: pointer;
-    border-radius: 0.3125em;
-    width: 180px;
-    text-align: center;
-    z-index: 1;
-}
-
-.corso button:focus {
-    outline: 2px solid #fecd00;
-    outline-offset: 0.125em;
-}
-
-.corso-orari h3 {
-    margin: 0 0 0.625em 0;
-    font-size: 1.125em;
-}
-
-.corso-orari p {
-    margin: 0.3125em 0;
-}
 
 @media (max-width: 768px) {
     .corso {
@@ -496,11 +474,56 @@ h2 {
 
 }
 
+/* =================
+ * Orari Corsi
+ ================== */
+.orari-corsi {
+    margin: 2em 2em;
+}
+
+.orari-corsi table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    background-color: var(--mainBackgroundColor);
+    border: 2px solid var(--mainColor);
+    box-shadow: 0 0 10px var(--mainColor);
+}
+
+.orari-corsi th,
+.orari-corsi td {
+    padding: 0.75em;
+    text-align: center;
+    border: 1px solid var(--mainColorDark);
+}
+
+.orari-corsi th {
+    background: var(--headerGradient);
+    background-clip: text;
+  
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.orari-corsi tbody tr:nth-child(even) {
+    background-color: var(--mainBackgroundColorLight);
+}
+
+
+.orari-corsi th[scope="row"] {
+    text-align: center;
+    font-weight: bold;
+    color: var(--textColor);
+}
+
 /* ===============
  * Abbonamenti
  ================ */
 .layout-abbonamenti {
     display: block;
+    padding-top: 3em;
 }
 
 .tab-container {
@@ -680,7 +703,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 1.5em;
+    gap: 1.2em;
     padding-bottom: 0.5em;
     margin-top: 5em;
 }
@@ -738,8 +761,8 @@ h2 {
 }
 
 .bundle-primo {
-    flex: 0 0 35%;
-    padding: 4.5em 1.5em 3.5em 1.5em;
+    flex: 0 0 36%;
+    padding: 3em 1em 2.5em 1em;
     z-index: 10;
     background: linear-gradient(to bottom, #2a2a2a, #000);
     border: 2px solid var(--gold);
@@ -755,7 +778,7 @@ h2 {
 
 .bundle-secondo {
     flex: 0 0 30%;
-    padding: 3em 1.5em 2em 1.5em;
+    padding: 2em 1em 1.5em 1em;
     border-top: 4px solid #c0c0c0;
     order: 1;
 }
@@ -767,7 +790,7 @@ h2 {
 
 .bundle-terzo {
     flex: 0 0 29%;
-    padding: 2.2em 1em 1.5em 1em;
+    padding: 1.5em 0.5em 1em 0.5em;
     border-top: 4px solid #cd7f32;
     order: 3;
     font-size: 0.95em;
@@ -846,14 +869,7 @@ h2 {
  FOOTER
  ========================================================================
  */
-.piè-di-pagina {
-    background-color: #000;
-    color: #666;
-    padding: 3em 1em;
-    text-align: center;
-    border-top: 1px solid #222;
-    margin-top: 0em;
-}
+
 
 /* ================
  * Contattaci
@@ -962,6 +978,180 @@ textarea {
     .btn-invia {
         align-self: stretch;
     }
+}
+
+/* =================
+ * Login
+ ================ */
+.form-container {
+    max-width: 400px;
+    margin: 4em auto;
+    /* Spazio sopra e sotto */
+    padding: 2.5em;
+    background-color: var(--backgroundLight, #202020);
+    border: 1px solid var(--mainColor, #fecd00);
+    border-radius: 1em;
+    box-shadow: 0 0 20px rgba(254, 205, 0, 0.15);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--mainColor, #fecd00);
+    text-transform: uppercase;
+}
+
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    font-family: inherit;
+}
+
+.form-container input:focus {
+    outline: 2px solid var(--mainColor, #fecd00);
+    border-color: var(--mainColor, #fecd00);
+    background-color: #000;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-password {
+    background: none;
+    border: none;
+    color: var(--mainColor, #fecd00);
+    font-size: 0.85em;
+    cursor: pointer;
+    text-align: right;
+    text-decoration: underline;
+    margin-top: -1.2em;
+    margin-bottom: 1.5em;
+    align-self: flex-end;
+}
+
+.toggle-password:focus {
+    outline: 1px dotted var(--mainColor, #fecd00);
+}
+
+.link-registrazione {
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 0.9em;
+}
+
+.link-registrazione a {
+    color: var(--mainColor, #fecd00);
+}
+
+/* ==================
+ * Registrati
+ ================== */
+.form-registrazione {
+    max-width: 500px;
+    margin: 2em auto;
+    padding: 2.5em;
+    background-color: var(--backgroundLight, #202020);
+    border: 2px solid var(--mainColor, #fecd00);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.form-registrazione fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 2em 0;
+}
+
+
+.form-registrazione legend {
+    font-size: 1.2em;
+    color: var(--mainColor, #fecd00);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    padding: 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(254, 205, 0, 0.3);
+    padding-bottom: 0.5em;
+}
+
+
+.form-registrazione label {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-top: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Rimuove il margine superiore solo per la prima label di ogni fieldset */
+.form-registrazione label:first-of-type {
+    margin-top: 0;
+}
+
+
+.form-registrazione input[type="text"],
+.form-registrazione input[type="email"],
+.form-registrazione input[type="password"],
+.form-registrazione input[type="date"],
+.form-registrazione input[type="tel"] {
+    width: 100%;
+    padding: 0.8em;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+}
+
+.form-registrazione input:focus {
+    outline: 2px solid var(--mainColor, #fecd00);
+    border-color: var(--mainColor, #fecd00);
+    background-color: #000;
+}
+
+.info-password {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.85em;
+    color: #ccc;
+}
+
+.titolo-registrazione {
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: var(--mainColor, #fecd00);
+    text-transform: uppercase;
+}
+
+.link-login {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.link-login a {
+    color: var(--mainColor, #fecd00);
 }
 
 /* ===============

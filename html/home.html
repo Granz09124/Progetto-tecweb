@@ -1,174 +1,192 @@
 <!doctype html>
 <html lang="it">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Palestra - Home</title>
-        <meta
-            name="description"
-            content="Presentazione palestra Il Tempio di Apollo"
-        />
-        <meta
-            name="keywords"
-            content="palestra,allenamento,sala pesi,spa,corsi,personal trainer,pt,rilassarsi,attrezzi,tempio,apollo"
-        />
-        <link rel="stylesheet" href="../css/home.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-            rel="stylesheet"
-        />
-    </head>
 
-    <body>
-        <header>
-            <img src="../immagini/Logo_palestra.png" alt="Logo" class="logo" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestra - Home</title>
+    <meta name="description" content="Presentazione palestra Il Tempio di Apollo">
+    <meta name="keywords" content="palestra,allenamento,sala pesi,spa,corsi,personal trainer,pt,rilassarsi,attrezzi,tempio,apollo">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
+    <link rel="stylesheet" media="print" href="../css/print-home.css">
+</head>
+
+<body>
+    <a class=" vai-al-contenuto" href="#contenuto">Vai al contenuto</a>
+    <header class="intestazione">
+        <div class="intestazione-bg">
+            <a href="./home.html">
+                <img src="../immagini/Logo_palestra.png" alt="Home" class="logo">
+            </a>
             <h1>Il Tempio di Apollo</h1>
-        </header>
+        </div>
 
-        <nav id="breadcrumb" class="viewport-spanning">
-            <p>
-                Ti trovi in:
-                <span lang="en" class="ref-pagina-attuale">Home</span>
-            </p>
-        </nav>
+        <nav id="menu" aria-label="menu">
+            <input type="checkbox">
+            <div id="hamburger-menu">
+                <span id="ham-line1"></span>
+                <span id="ham-line2"></span>
+                <span id="ham-line3"></span>
+            </div>
 
-        <!-- Vedo "Skip to content" su GitHub, potrebbe essere effettivamente una rottura dover ogni volta andare a premere >1 volta tab per raggiungere il menu -->
-        <a class="fast-and-furious" href="#contenuto">Vai al contenuto</a>
-
-        <nav id="menu" class="viewport-spanning">
             <ul>
-                <li>
-                    <span lang="en" class="ref-pagina-attuale">Home</span>
-                </li>
+                <li><span lang="en">Home</span></li>
                 <li>
                     <a href="./Palestra.html"><strong>Palestra</strong></a>
-                    <button type="button">Espandi(tmp)</button>
-                    <ul>
-                        <li>
-                            <a href="./Palestra/Sala-pesi.html"
-                                ><strong>Sala pesi</strong></a
-                            >
-                        </li>
-                        <li>
-                            <a href="./Palestra/Corsi.html"
-                                ><strong>Corsi</strong></a
-                            >
-                        </li>
-                        <li>
-                            <a href="./Palestra/Personal-Trainer.html"
-                                ><span lang="en"
-                                    ><strong>Personal Trainer</strong></span
-                                ></a
-                            >
-                        </li>
-                    </ul>
                 </li>
+                <li><a href="./Abbonamenti.html">Abbonamenti</a></li>
                 <li>
-                    <a href="./Abbonamenti.html">Abbonamenti</a>
+                    <a href="./cerca-istruttore.html">Istruttori</a>
                 </li>
-                <li>
-                    <a href="./Sedi.html">Le nostre sedi</a>
-                </li>
-                <li>
-                    <a href="./Contattaci.html">Contattaci</a>
-                </li>
-                <li>
-                    <a href="./Chi-siamo.html">Chi siamo</a>
-                </li>
-                <li>
-                    <a href="./Login.html">Login</a>
-                </li>
-                <li>
-                    <a href="./Registrati.html">Registrati</a>
-                </li>
+                <li><a href="./Contattaci.html">Contattaci</a></li>
+                <li><a href="./Login.html">Login</a></li>
+                <li><a href="./Registrati.html">Registrati</a></li>
             </ul>
         </nav>
+    </header>
+    <nav id="breadcrumb" aria-label="dove-sono">
+        <p>
+            Ti trovi in: <span lang="en">Home</span>
+        </p>
+    </nav>
 
-        <main id="content">
-            <section id="presentazione">
-                <h1 id="page-title" class="viewport-spanning">
-                    Benvenuti nel Tempio di Apollo
-                </h1>
+    <main id="content">
+        <section id="presentazione">
+            <h1>Benvenuti nel Tempio di Apollo</h1>
+            <section>
+                <img src="../immagini/uomo-donna-allenamento.jpg" alt="Foto di sculture greche che si stanno allenando">
+                <p id="catchphrase">
+                    A Bellezza e Bontà le persone aspirano, l'Apollineo
+                    Splendore tutti ammirano.
+                </p>
+            </section>
+        </section>
+
+        <article id="presentazione-servizi">
+            <h2>I nostri servizi</h2>
+            <section>
+                <p>
+                    Benvenuti al <strong>Tempio</strong>!
+                </p>
+                <p> Che tu sia un lupo solitario della <strong>sala pesi</strong> o che tu ami <strong>allenarti</strong> in compagnia, qui troverai il tuo spazio ideale.
+                    Al <strong>Tempio di Apollo</strong> puoi costruire la tua routine in autonomia, farti seguire passo dopo passo dai nostri <strong lang="en">Personal Trainer</strong>,
+                    oppure scoprire la carica dei nostri <strong>corsi di gruppo</strong>. Qualunque sia la tua strada, noi ti diamo gli strumenti per percorrerla.
+                </p>
+            </section>
+            <section>
                 <article>
-                    <img
-                        src="../immagini/palestra-presentazione-tmp.jpg"
-                        alt="TODO"
-                    />
-                    <p id="catchphrase">
-                        A Bellezza e Bontà le persone aspirano, l'Apollineo
-                        Splendore tutti ammirano.
-                    </p>
+                    <h3><a href="./Palestra.html">La nostra palestra</a></h3>
+                    <img src="../immagini/la-nostra-palestra.jpg" alt="">
+                </article>
+                <article>
+                    <h3><a href="./cerca-istruttore_style.html">I nostri istruttori</a></h3>
+                    <img src="../immagini/i-nostri-istruttori.jpg" alt="">
                 </article>
             </section>
+        </article>
 
-            <section id="presentazione-servizi">
-                <h2 class="big-border background">I nostri servizi</h2>
-                <p>
-                    Presso le sedi del <strong>Tempio</strong> troverai
-                    <strong>palestre</strong>, dove potrai
-                    <strong>allenarti</strong> da solo o in compagnia
-                    all'interno di <strong>sale pesi</strong>, facendo o meno
-                    riferimento a un
-                    <span lang="en"><strong>Personal Trainer</strong></span
-                    >. Qualora volessi un percorso strutturato alternativo,
-                    offriamo anche <strong>corsi</strong> di gruppo.
-                </p>
-                <article class="simple-flex">
-                    <article class="small-border background">
-                        <h3>La palestra</h3>
-                        <img
-                            src="../immagini/presentazione-palestra.jpg"
-                            alt="TODO"
-                        />
-                        <a href="./Palestra.html">Scopri di più</a>
-                    </article>
-                    <article class="small-border background">
-                        <h3>Scopri le nostre sedi</h3>
-                        <img src="../immagini/Sedi.jpg" alt="TODO" />
-                        <a href="./Abbonamenti.html">Scopri di più</a>
-                    </article>
-                </article>
-            </section>
-
-            <!-- Si tiene statico -->
-            <aside id="recensioni">
-                <h2 class="big-border background">Recensioni</h2>
-                <p>
-                    Ecco finite recensioni di infinita qualità positiva lasciate
-                    dai nostri infiniti clienti:
-                </p>
-                <ul class="simple-flex">
-                    <li class="recensione small-border background">
+        <!-- Si tiene statico -->
+        <aside id="recensioni">
+            <h2>Recensioni</h2>
+            <p>
+                Non serve interrogare gli dei per sapere com'è <strong>allenarsi</strong> qui. Lasciamo la parola a chi ha già scelto Il <strong>Tempio di Apollo</strong> per trasformare il proprio corpo e la propria mente.
+            </p>
+            <article>
+                <ul>
+                    <li class="recensione light-topic">
                         <dl>
-                            <dt>Nome Cognome1</dt>
-                            <dd>
-                                <img
-                                    src="../immagini/recensioni/recensione1.jpg"
-                                    alt="Volto recensore"
-                                />
+                            <dt class="nome-recensore">Marco</dt>
+                            <dd class="img-recensore">
+                                <img src="../immagini/utenti/marco.jpg" alt="">
                             </dd>
-                            <dt>Voto recensione indicato con stelle</dt>
-                            <dd>Contenuto recensione</dd>
+                            <dt class="voto-recensione">★ ★ ★ ★ ★</dt>
+                            <dd class="contenuto-recensione">
+                                <p>
+                                    Palestra top!! vado li da 2 mesi e mi
+                                    trovo super bene con il bundle fitness
+                                    completo. la sala pesi e enorme e ce
+                                    tutto quello che serve. ho fatto la
+                                    lezione di prova col PT gratis e stato
+                                    molto bravo a spiegarmi i macchinari.
+                                    Faccio anche Zumba x divertirmi un po...
+                                    consigliata
+                                </p>
+                            </dd>
                         </dl>
                     </li>
-                    <li class="recensione small-border background">
+                    <li class="recensione light-topic">
                         <dl>
-                            <dt>Nome Cognome2</dt>
-                            <dd>
-                                <img
-                                    src="../immagini/recensioni/recensione2.jpg"
-                                    alt="Volto recensore"
-                                />
+                            <dt class="nome-recensore">Elena</dt>
+                            <dd class="img-recensore">
+                                <img src="../immagini/utenti/elena.jpg" alt="">
                             </dd>
-                            <dt>Sito recensione</dt>
-                            <dd>Contenuto recensione</dd>
+                            <dt class="voto-recensione">★ ★ ★ ★ ★</dt>
+                            <dd class="contenuto-recensione">
+                                <p>
+                                    Amo troppo i corsi di yoga e pilates di
+                                    questa palestra!!! pulizia ok e staff
+                                    gentile. Io ho fatto il Bundle Relax &
+                                    Benessere cosi faccio anche stretching
+                                    per la schiena che mi serve x il lavoro.
+                                    mi sento molto meglio da quando vengo
+                                    qui. 5 stelle meritatissime grazie a
+                                    tutti :)
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="recensione light-topic">
+                        <dl>
+                            <dt class="nome-recensore">Ahmed</dt>
+                            <dd class="img-recensore">
+                                <img src="../immagini/utenti/ahmed.jpg" alt="">
+                            </dd>
+                            <dt class="voto-recensione">★ ★ ★ ★ ★</dt>
+                            <dd class="contenuto-recensione">
+                                <p>
+                                    inizio adesso a lavorare qui come
+                                    personal e la palestra è veramente ok.
+                                    mi piace un sacco l'area crossfit e la
+                                    fit box!! peccato x il parcheggio che a
+                                    volte è un casino ma la qualità è
+                                    altissima. consiglio il Bundle Fitness
+                                    Completo x chi vuole iniziare... la
+                                    prima sessione di PT è gratis e magari
+                                    la facciamo insieme!
+                                </p>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="recensione light-topic">
+                        <dl>
+                            <dt class="nome-recensore">Svetlana</dt>
+                            <dd class="img-recensore">
+                                <img src="../immagini/utenti/svetlana.jpg" alt="">
+                            </dd>
+                            <dt class="voto-recensione">★ ★ ★ ★</dt>
+                            <dd class="contenuto-recensione">
+                                <p>
+                                    Molto buona per arrampicata e crossfit,
+                                    istruttori preparati anche se a volte ce
+                                    troppa gente alle 18. Prendo il bundle
+                                    all inclusive premium che mi serve la
+                                    dieta e le lezioni col personal trainer
+                                    se no faccio casino da solo ahah. 4
+                                    stelle solo x il casino in spogliatoio
+                                    ma il resto spacca
+                                </p>
+                            </dd>
                         </dl>
                     </li>
                 </ul>
-            </aside>
-        </main>
-        <footer class="viewport-spanning">
-            <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
-        </footer>
-    </body>
+            </article>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+
 </html>

@@ -9,9 +9,8 @@
     <meta name="keywords" content="corsi, zumba, pilates, yoga, crossfit, fit boxe, arrampicata, sport, salute" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-corsi-404-403.css">
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
     <link rel="stylesheet" media="print" href="../css/print-corsi-404-403.css">
-    <script src="../javascript/toggle-descrizione-orari.js"></script>
 </head>
 
 <body>
@@ -56,8 +55,8 @@
     </nav>
 
     <main class="contenuto-principale">
+        <h2>I Nostri Corsi</h2>
         <section class="lista-corsi">
-            <h2>I Nostri Corsi</h2>
             <article class="corso topic" id="zumba">
                 <img src="../immagini/zumba.jpg" alt="Zumba" />
                 <div class="corso-descrizione">
@@ -67,15 +66,6 @@
                         divertenti per bruciare calorie e migliorare la
                         forma fisica in modo divertente.
                     </p>
-                    <button onclick="toggleOrari('zumba')">
-                        vedi gli orari ➥
-                    </button>
-                    <div class="corso-orari" style="display: none;">
-                        <h3>Orari Zumba</h3>
-                        <p><strong>lunedì:</strong> 18:00 - 19:00</p>
-                        <p><strong>mercoledì:</strong> 18:00 - 19:00</p>
-                        <p><strong>venerdì:</strong> 18:00 - 19:00</p>
-                    </div>
                 </div>
             </article>
             <article class="corso topic" id="pilates">
@@ -87,15 +77,6 @@
                         promuove il benessere generale attraverso movimenti
                         controllati e respirazione.
                     </p>
-                    <button onclick="toggleOrari('pilates')">
-                        vedi gli orari ➥
-                    </button>
-                    <div class="corso-orari" style="display: none;">
-                        <h3>Orari Pilates</h3>
-                        <p><strong>martedì:</strong> 10:00 - 11:00</p>
-                        <p><strong>giovedì:</strong> 10:00 - 11:00</p>
-                        <p><strong>sabato:</strong> 09:00 - 10:00</p>
-                    </div>
                 </div>
             </article>
             <article class="corso topic" id="yoga">
@@ -107,15 +88,6 @@
                         aumentare la flessibilità e raggiungere uno stato di
                         calma interiore.
                     </p>
-                    <button onclick="toggleOrari('yoga')">
-                        vedi gli orari ➥
-                    </button>
-                     <div class="corso-orari" style="display: none;">
-                        <h3>Orari Yoga</h3>
-                        <p><strong>martedì:</strong> 10:00 - 11:00</p>
-                        <p><strong>giovedì:</strong> 10:00 - 11:00</p>
-                        <p><strong>sabato:</strong> 09:00 - 10:00</p>
-                    </div>
                 </div>
             </article>
             <article class="corso topic" id="crossfit">
@@ -127,15 +99,6 @@
                         sollevamento pesi e condizionamento cardiovascolare
                         per massimizzare la forza e la resistenza.
                     </p>
-                    <button onclick="toggleOrari('crossfit')">
-                        vedi gli orari ➥
-                    </button>
-                    <div class="corso-orari" style="display: none;">
-                        <h3>Orari Crossfit</h3>
-                        <p><strong>martedì:</strong> 20:00 - 21:30</p>
-                        <p><strong>giovedì:</strong> 20:00 - 21:30</p>
-                        <p><strong>sabato:</strong> 10:00 - 11:30</p>
-                    </div>
                 </div>
             </article>
             <article class="corso topic" id="fitboxe">
@@ -150,15 +113,6 @@
                         svolge generalmente con l’ausilio di un sacco da
                         boxe, ma senza contatto fisico con altre persone.
                     </p>
-                    <button onclick="toggleOrari('fitboxe')">
-                        vedi gli orari ➥
-                    </button>
-                    <div class="corso-orari" style="display: none;">
-                        <h3>Orari Fitboxe</h3>
-                        <p><strong>lunedì:</strong> 20:00 - 21:00</p>
-                        <p><strong>mercoledì:</strong> 20:00 - 21:00</p>
-                        <p><strong>venerdì:</strong> 20:00 - 21:00</p>
-                    </div>
                 </div>
             </article>
             <article class="corso topic" id="arrampicata">
@@ -170,17 +124,82 @@
                         l'equilibrio e la concentrazione attraverso scalate
                         su pareti artificiali.
                     </p>
-                    <button onclick="toggleOrari('arrampicata')">
-                        vedi gli orari ➥
-                    </button>
-                    <div class="corso-orari" style="display: none;">
-                        <h3>Orari Arrampicata</h3>
-                        <p><strong>martedì:</strong> 19:00 - 20:30</p>
-                        <p><strong>giovedì:</strong> 19:00 - 20:30</p>
-                        <p><strong>domenica:</strong> 14:00 - 16:00</p>
-                    </div>
                 </div>
             </article>
+        </section>
+        <section class="orari-corsi">
+            <h2>Orari dei Corsi</h2>
+            <p id="sum"> La tabella mostra i vari orari dei corsi: zumba, pilates, yoga, crossfit, <span lang="en"> fit boxe </span> e arrampicata
+                lungo i giorni della settimana. </p>
+            <table aria-describedby="sum">
+                <thead>
+                    <tr>
+                        <th scope="col">Corso</th>
+                        <th scope="col">Lunedì</th>
+                        <th scope="col">Martedì</th>
+                        <th scope="col">Mercoledì</th>
+                        <th scope="col">Giovedì</th>
+                        <th scope="col">Venerdì</th>
+                        <th scope="col">Sabato</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Zumba</th>
+                        <td data-title="Lunedì"> <span>18:00 - 19:00 </span></td>
+                        <td data-title="Martedì"></td>
+                        <td data-title="Mercoledì"><span>18:00 - 19:00</span></td>
+                        <td data-title="Giovedì"></td>
+                        <td data-title="Venerdì"><span>18:00 - 19:00</span></td>
+                        <td data-title="Sabato"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pilates</th>
+                        <td data-title="Lunedì"></td>
+                        <td data-title="Martedì"><span>10:00 - 11:00</span></td>
+                        <td data-title="Mercoledì"></td>
+                        <td data-title="Giovedì"><span>10:00 - 11:00</span></td>
+                        <td data-title="Venerdì"></td>
+                        <td data-title="Sabato"><span>09:00 - 10:00</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Yoga</th>
+                        <td data-title="Lunedì"></td>
+                        <td data-title="Martedì"><span>10:00 - 11:00</span></td>
+                        <td data-title="Mercoledì"></td>
+                        <td data-title="Giovedì"><span>10:00 - 11:00</span></td>
+                        <td data-title="Venerdì"></td>
+                        <td data-title="Sabato"><span>09:00 - 10:00</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Crossfit</th>
+                        <td data-title="Lunedì"></td>
+                        <td data-title="Martedì"><span>20:00 - 21:30</span></td>
+                        <td data-title="Mercoledì"></td>
+                        <td data-title="Giovedì"><span>20:00 - 21:30</span></td>
+                        <td data-title="Venerdì"></td>
+                        <td data-title="Sabato"><span>10:00 - 11:30</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fit Boxe</th>
+                        <td data-title="Lunedì"><span>20:00 - 21:00</span></td>
+                        <td data-title="Martedì"></td>
+                        <td data-title="Mercoledì"><span>20:00 - 21:00</span></td>
+                        <td data-title="Giovedì"></td>
+                        <td data-title="Venerdì"><span>20:00 - 21:00</span></td>
+                        <td data-title="Sabato"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Arrampicata</th>
+                        <td data-title="Lunedì"></td>
+                        <td data-title="Martedì"><span>19:00 - 20:30</span></td>
+                        <td data-title="Mercoledì"></td>
+                        <td data-title="Giovedì"><span>19:00 - 20:30</span></td>
+                        <td data-title="Venerdì"></td>
+                        <td data-title="Sabato"></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
     <footer>

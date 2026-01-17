@@ -1,166 +1,246 @@
 @media print {
-    /* =========================================
-    RESET TOTALE
-   ========================================= */
-    * {
+    /*
+    ========================================================================
+    RESET E IMPOSTAZIONI BASE
+    ========================================================================
+    */
+    *, *:before, *:after {
         background: transparent !important;
+        color: #000 !important;
         box-shadow: none !important;
         text-shadow: none !important;
-        color: #000 !important;
+        filter: none !important;
+        border-radius: 0 !important;
     }
 
-    /* =========================================
-    PAGINA SENZA BORDI
-   ========================================= */
     body {
         margin: 0;
         padding: 0;
         border: none !important;
-        box-shadow: none !important;
-        max-width: 100% !important;
         width: 100%;
+        max-width: 100% !important;
         font-family: "Times New Roman", Times, serif;
-        background-color: #fff;
+        font-size: 12pt;
+        line-height: 1.4;
+        background-color: #fff !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
-    .dashboard-container {
+    /*
+    ========================================================================
+    FIX TITOLI
+    ========================================================================
+    */
+    h1, h2, h3, h4, h5, h6, 
+    .area-personale > h1, 
+    .user-section h2 {
+        -webkit-text-fill-color: #000 !important;
+        text-fill-color: #000 !important;
+        -webkit-background-clip: border-box !important;
+        background-clip: border-box !important;
+        background-image: none !important;
+        color: #000 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-weight: bold !important;
+    }
+
+    /*
+    ========================================================================
+    HEADER E INTESTAZIONE
+    ========================================================================
+    */
+    header.intestazione {
         display: block !important;
-        border: none !important;
+        position: relative !important;
+        height: 100px !important;
+        border-bottom: 2px solid #000 !important;
+        margin-bottom: 20px !important;
+        padding: 0 !important;
+    }
+
+    .intestazione .logo {
+        position: absolute !important;
+        left: 0 !important;
+        top: 10px !important;
+        height: 80px !important;
+        width: auto !important;
+    }
+
+    .intestazione h1 {
+        position: absolute !important;
+        left: 0; 
+        right: 0;
+        top: 30px;
+        text-align: center !important;
+        font-size: 24pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+        text-transform: uppercase;
         width: 100%;
         margin: 0;
-        padding: 0;
     }
 
-    /* =========================================
-    HEADER
-   ========================================= */
-    .dashboard-header {
-        position: relative !important;
-        height: 120px !important;
-        border-bottom: 2px solid #000 !important;
-        margin-bottom: 30px !important;
-        display: block !important; 
+    #menu, #menu-toggle, #hamburger-menu, .vai-al-contenuto {
+        display: none !important;
     }
 
-    .header-left {
+    /*
+    ========================================================================
+    BREADCRUMB
+    ========================================================================
+    */
+    nav#breadcrumb {
         display: block !important;
-        position: absolute !important;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        border-bottom: 1px solid #ccc !important;
+        margin-bottom: 20px !important;
+        padding: 10px 0 !important;
+        font-size: 10pt !important;
+        color: #000 !important;
     }
-    .header-logo-img {
-        height: 100px !important;
-        width: auto !important;
-        display: block !important;
+    
+    #breadcrumb a {
+        text-decoration: none !important;
+        color: #000 !important;
     }
-    .hamburger-btn { display: none !important; }
 
-    .header-center {
+    /*
+    ========================================================================
+    CONTENUTO PRINCIPALE
+    ========================================================================
+    */
+    main.contenuto-principale {
         display: block !important;
-        position: absolute !important;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) !important;
-        text-align: center;
-        width: auto;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
-    .header-title-text {
-        font-size: 24pt !important;
+
+    .area-personale {
+        display: block !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .area-personale > h1 {
+        text-align: left !important;
+        font-size: 18pt !important;
+        border-bottom: 2px solid #000;
+        margin-bottom: 20px;
+        padding-left: 0;
+        display: block !important;
+    }
+
+    .role-badge {
+        border: 1px solid #000 !important;
+        color: #000 !important;
+        font-weight: bold;
+        background: transparent !important;
+    }
+
+    /*
+    ========================================================================
+    SEZIONI E BLOCCHI
+    ========================================================================
+    */
+    .user-section {
+        border: 1px solid #000 !important;
+        margin-bottom: 25px !important;
+        padding: 15px !important;
+        page-break-inside: avoid;
+    }
+
+    .user-section h2 {
+        font-size: 14pt !important;
+        border-bottom: 1px solid #000 !important;
+        margin-bottom: 15px !important;
+        color: #000 !important;
+        display: block !important;
+    }
+
+    /*
+    ========================================================================
+    LISTE DATI E INPUT
+    ========================================================================
+    */
+    .data-list-group {
+        grid-template-columns: 1fr 1fr !important; 
+    }
+
+    .data-item label {
+        color: #000 !important;
+        font-size: 10pt !important;
         font-weight: bold !important;
         text-transform: uppercase;
     }
 
-    .header-right {
-        display: block !important;
-        position: absolute !important;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+    .data-item input, 
+    .data-item textarea {
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px dotted #ccc !important;
+        padding: 5px 0 !important;
+        font-size: 11pt !important;
+        color: #000 !important;
+        resize: none !important;
+        font-weight: normal !important; 
     }
-    .user-profile, .user-info, .user-info-name {
-        display: block !important;
-        text-align: right;
-        font-size: 14pt !important;
-        font-weight: bold;
-    }
-    .user-avatar, .logout-btn, .user-info-role { display: none !important; }
 
-    /* =========================================
+    .data-item input[readonly] {
+        border-bottom: none !important;
+        font-weight: normal !important; 
+    }
+
+    .tech-form-group {
+        display: block !important; 
+        margin-bottom: 10px !important;
+    }
+
+    /*
+    ========================================================================
+    LISTE DOCUMENTI
+    ========================================================================
+    */
+    .links-list li {
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid #ddd !important;
+        padding: 10px 0 !important;
+        color: #000 !important;
+    }
+    
+    .links-list strong, .links-list span {
+        color: #000 !important;
+        font-weight: normal !important;
+    }
+
+    /*
+    ========================================================================
     NASCONDI ELEMENTI INUTILI
-   ========================================= */
-    .dashboard-sidebar, 
-    #sidebar-toggle,
-    .nav-links,
-    .filters-row,
-    .search-bar-container,
-    .btn-save, 
-    .btn-primary, 
-    .btn-action, 
-    .bottone-dettagli, 
-    .text-btn {
+    ========================================================================
+    */
+    .btn-link,          
+    .btn-modify,        
+    .account-actions,   
+    .btn-logout,
+    .btn-delete,
+    #torna-su {
         display: none !important;
     }
 
-    /* =========================================
-    PULIZIA CONTENITORI
-   ========================================= */
-    .dashboard-content {
-        padding: 0 !important;
-        margin: 0 !important;
-        border: none !important;
-    }
-
-    .data-list {
-        border: none !important;
-        border-radius: 0 !important;
-        background: transparent !important;
-        overflow: visible !important;
-    }
-
-    /* =========================================
-    CARD E SINGOLI ELEMENTI
-   ========================================= */
-    .stat-card, 
-    .list-item, 
-    .workout-day {
-        border: 1px solid #ccc !important;
-        border-radius: 4px !important;
-        margin-bottom: 15px !important;
-        page-break-inside: avoid;
-        background: transparent !important;
-        padding: 10px !important;
-    }
-    
-    .welcome-banner {
-        border: none !important;
-        padding: 0 !important;
-        margin-bottom: 20px !important;
-    }
-
-    .list-item {
-        display: flex !important;
-        justify-content: space-between;
-    }
-
-    .stats-grid {
-        display: flex !important;
-        gap: 15px;
-    }
-    .stat-card { flex: 1; }
-    
-    .stat-icon { color: #ccc !important; }
-    
-    .tag {
-        border: 1px solid #000 !important;
-        padding: 2px 6px !important;
+    /*
+    ========================================================================
+    FOOTER
+    ========================================================================
+    */
+    .piè-di-pagina {
+        border-top: 1px solid #000 !important;
+        margin-top: 30px !important;
+        padding-top: 10px !important;
+        text-align: center !important;
+        font-size: 9pt !important;
         color: #000 !important;
-    }
-
-    input {
-        border: none !important;
-        background: transparent !important;
     }
 }

@@ -1,127 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Trainer - Il Tempio di Apollo</title>
-    <link rel="stylesheet" href="../css/utente.css">
-    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini-utenti.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palestra - Area Utente PT</title>
+    <meta name="description" content="Area Trainer Il Tempio di Apollo, gestione clienti, caricamento schede e diete, agenda appuntamenti e monitoraggio progressi." />
+    <meta name="keywords" content="area trainer, gestione clienti, agenda pt, caricamento schede, dashboard istruttore, personal trainer" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/utente.css" />
+
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
     <link rel="stylesheet" media="print" href="../css/print-utenti.css">
 </head>
-<body>
-    <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <div class="dashboard-container">
-        
-        <aside class="dashboard-sidebar">
-            <a href="home.html" class="sidebar-logo">
-                <img src="../immagini/Logo_palestra.png" alt="Logo">
-                <span>Il Tempio</span>
+<body id="layout-adhoc">
+    <header class="intestazione">
+        <div class="intestazione-bg">
+            <a href="./home.html">
+                <img src="../immagini/Logo_palestra.png" alt="Home" class="logo">
             </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><button class="nav-btn active" data-target="pt-dashboard">📊 <span lang="en">Dashboard</span></button></li>
-                    <li><button class="nav-btn" data-target="pt-clienti">👥 I Miei Clienti</button></li>
-                    <li><button class="nav-btn" data-target="pt-agenda">📅 Agenda</button></li>
+            <h1>Il Tempio di Apollo</h1>
+        </div>
+
+        <nav id="menu" aria-label="menu">
+            <input type="checkbox" id="menu-toggle">
+            <div id="hamburger-menu">
+                <span id="ham-line1"></span>
+                <span id="ham-line2"></span>
+                <span id="ham-line3"></span>
+            </div>
+
+            <ul>
+                <li><a lang="en" href="./home.html">Home</a></li>
+                <li><a href="./Palestra.html"><strong>Palestra</strong></a></li>
+                <li><a href="./abbonamenti.html">Abbonamenti</a></li>
+                <li><a href="./cerca-pt.html">Ricerca Istruttori</a></li>
+                <li><a href="./Contattaci.html">Contattaci</a></li>
+                <li>Area Utente</li>
+                <li><a href="./home.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav id="breadcrumb">
+        <p>
+            Ti trovi in:
+            <a lang="en" href="./home.html">Home</a> &gt; &gt; Area personale
+        </p>
+    </nav>
+
+    <main class="contenuto-principale">
+
+        <section class="area-personale">
+            <h1>Profilo Trainer</h1>
+
+            <section class="user-section">
+                <h2>Informazioni Personali</h2>
+                <form class="data-list-group">
+                    <div class="data-item">
+                        <label>Nome</label>
+                        <input type="text" value="Luca" readonly>
+                    </div>
+                    <div class="data-item">
+                        <label>Cognome</label>
+                        <input type="text" value="Neri" readonly>
+                    </div>
+                    <div class="data-item">
+                        <label>Data di Nascita</label>
+                        <input type="date" value="1985-11-20" readonly>
+                    </div>
+                    <div class="data-item">
+                        <label>Peso (kg)</label>
+                        <input type="number" value="85" readonly>
+                    </div>
+                    <div class="data-item full-width">
+                        <label>Educazione / Certificazioni</label>
+                        <textarea readonly rows="2">Laurea in Scienze Motorie, Certificazione CONI 2° Livello</textarea>
+                    </div>
+                    <div class="data-item full-width">
+                        <label>Skills</label>
+                        <input type="text" value="Ipertrofia, Riabilitazione, Calisthenics" readonly>
+                    </div>
+                    <div class="data-item full-width">
+                        <label>Presentazione</label>
+                        <textarea readonly rows="3">Appassionato di fitness funzionale, aiuto i miei atleti a raggiungere la performance massima.</textarea>
+                    </div>
+                </form>
+            </section>
+
+            <section class="user-section">
+                <h2>Gestione Lavoro</h2>
+                <ul class="links-list">
+                    <li>
+                        <span>👥 Lista Clienti Attivi</span>
+                        <a href="#" class="btn-link">Visualizza Lista</a>
+                    </li>
+                    <li>
+                        <span>🥗 Template Dieta (PDF)</span>
+                        <a href="#" class="btn-link">Gestisci/Carica</a>
+                    </li>
+                    <li>
+                        <span>🏋️ Template Esercizi (PDF)</span>
+                        <a href="#" class="btn-link">Gestisci/Carica</a>
+                    </li>
+                    <li>
+                        <span>📅 Calendario dei Corsi</span>
+                        <a href="./Palestra.html" class="btn-link">Visualizza</a>
+                    </li>
                 </ul>
-            </nav>
-        </aside>
-
-        <header class="dashboard-header">
-    
-            <div class="header-left">
-                <label for="sidebar-toggle" class="hamburger-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                <img src="../immagini/Logo_palestra.png" alt="Logo" class="header-logo-img">
-            </div>
-
-            <div class="header-center">
-                <span class="header-title-text">Il Tempio</span>
-            </div>
-
-            <div class="header-right">
-                <figure class="user-profile">
-                    <figcaption class="user-info">
-                        <span class="user-info-name">Luca Neri</span>
-                        <span class="user-info-role gold"><span lang="en">Personal Trainer</span></span>
-                    </figcaption>
-                    <div class="user-avatar trainer">LN</div>
-                </figure>
-                <button class="logout-btn" title="Logout" onclick="window.location.href='home.html'">➔</button>
-            </div>
-
-        </header>
-
-        <main class="dashboard-content">
-            
-            <section id="pt-dashboard" class="content-panel active">
-                <header class="welcome-banner">
-                    <h1>Buon lavoro, Luca!</h1>
-                    <p>Hai 4 appuntamenti programmati per oggi.</p>
-                </header>
-
-                <section class="stats-grid">
-                    <article class="stat-card accent-blue">
-                        <div class="stat-info">
-                            <h3>Clienti Attivi</h3>
-                            <div class="value">24</div>
-                            <div class="stat-detail text-muted">+2 questo mese</div>
-                        </div>
-                        <div class="stat-icon">👥</div>
-                    </article>
-                    <article class="stat-card accent-purple">
-                        <div class="stat-info">
-                            <h3>Schede da Rinnovare</h3>
-                            <div class="value">5</div>
-                            <div class="stat-detail text-danger">Scadenza < 7 giorni</div>
-                        </div>
-                        <div class="stat-icon">📝</div>
-                    </article>
-                </section>
-
-                <div class="appointments-grid">
-                    <section>
-                        <h2 class="section-title">Appuntamenti di Oggi</h2>
-                        <div class="data-list">
-                            <article class="list-item">
-                                <div class="item-info"><strong>09:00 - Marco Bianchi</strong><small>Controllo Plicometria</small></div>
-                                <span class="tag active">Confermato</span>
-                            </article>
-                            <article class="list-item">
-                                <div class="item-info"><strong>11:30 - Giulia Verdi</strong><small>Allenamento Gambe</small></div>
-                                <span class="tag active">Confermato</span>
-                            </article>
-                        </div>
-                    </section>
-                </div>
             </section>
 
-            <section id="pt-clienti" class="content-panel">
-                <h2 class="section-title">Lista Clienti</h2>
-                <section class="data-list">
-                    <article class="list-item">
-                        <div class="item-info"><strong>Mario Rossi</strong><small>Obiettivo: Ipertrofia</small></div>
-                        <button class="bottone-dettagli btn-small">Scheda</button>
-                    </article>
-                    <article class="list-item">
-                        <div class="item-info"><strong>Luigi Esposito</strong><small>Obiettivo: Dimagrimento</small></div>
-                        <button class="bottone-dettagli btn-small">Scheda</button>
-                    </article>
-                </section>
+            <section class="user-section">
+                <h2>Info Tecniche</h2>
+                <form action="#" method="POST">
+                    <div class="tech-form-group">
+                        <div class="data-item tech-input-wrapper">
+                            <label>E-mail</label>
+                            <input type="email" value="luca.pt@tempio.it" name="email">
+                        </div>
+                        <button type="button" class="btn-modify">Modifica</button>
+                    </div>
+
+                    <div class="tech-form-group">
+                        <div class="data-item tech-input-wrapper">
+                            <label>Password</label>
+                            <input type="password" value="********" name="password">
+                        </div>
+                        <button type="button" class="btn-modify">Cambia</button>
+                    </div>
+
+                    <div class="tech-form-group">
+                        <div class="data-item tech-input-wrapper">
+                            <label>Numero Telefono</label>
+                            <input type="tel" value="+39 340 9876543" name="telefono">
+                        </div>
+                        <button type="button" class="btn-modify">Modifica</button>
+                    </div>
+                </form>
             </section>
 
-            <section id="pt-agenda" class="content-panel">
-                <h2 class="section-title">Agenda Settimanale</h2>
-                <p class="text-muted">Visualizzazione completa appuntamenti.</p>
+            <section class="account-actions" aria-label="Gestione Account">
+                <a href="./home.html" class="btn-logout">Logout</a>
+                <button class="btn-delete" onclick="alert('Contattare l\'amministrazione per cancellare un account PT.')">Cancella Account</button>
             </section>
+        </section>
 
-        </main>
-    </div>
+    </main>
 
-    <script src="../javascript/dashboard.js"></script>
+    <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
+        <img src="../immagini/Icon/torna_su.webp" alt="Torna su" />
+    </button>
 
+    <footer>
+        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="../javascript/torna-su.js"></script>
 </body>
+
 </html>
