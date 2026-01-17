@@ -56,8 +56,8 @@ CREATE TABLE Messaggio_Contattaci (
 
 INSERT INTO Utente (nome, cognome, email, password_hash) VALUES
 -- Admin e User base
-('admin', '', '', 'admin'),
-('user', '', '', 'user'),
+('admin', '', 'admin@email.it', 'admin'),
+('user', '', 'user@email.it', 'user'),
 
 -- Clienti
 ('Mario', 'Rossi', 'mario.rossi@email.it', 'password123'),
