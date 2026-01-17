@@ -1,7 +1,7 @@
 CREATE TABLE Utente (
     id_utente SERIAL PRIMARY KEY,
-    nome VARCHAR(50) NOT NULL,
-    cognome VARCHAR(50) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    cognome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL --ricordarsi di hashare la password (e modificare le password già inserite)
 );
@@ -75,7 +75,8 @@ INSERT INTO Utente (nome, cognome, email, password_hash) VALUES
 ('Davide', 'Bruno', 'davide.bruno@tempio.apollo.it', 'trainer123');
 
 
-INSERT INTO Admin (id_utente) VALUES (1);
+INSERT INTO Admin (id_utente) VALUES 
+(1);
 
 -- Inserimento Clienti
 INSERT INTO Cliente (id_utente, codice_fiscale, telefono) VALUES

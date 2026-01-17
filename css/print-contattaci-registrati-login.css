@@ -258,9 +258,7 @@ legend {
     color: var(--textColor);
 }
 
-/* ============
- * UTILS
- ============ */
+
 button:not(.btn-invia) {
     display: none;
 }
