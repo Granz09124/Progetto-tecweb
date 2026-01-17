@@ -388,13 +388,13 @@ a.bottone-dettagli:visited {
     cursor: pointer;
     width: 100%;
     text-align: center;
-    text-decoration: underline; 
+    text-decoration: underline;
     display: inline-block;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     transition: background-color 0.3s, color 0.3s;
     background-color: transparent;
     border: 2px solid var(--mainColorDark);
-    color: var(--mainColorDark); 
+    color: var(--mainColorDark);
 }
 
 a.bottone-dettagli:hover,
@@ -500,7 +500,7 @@ h2 {
 .orari-corsi th {
     background: var(--headerGradient);
     background-clip: text;
-  
+
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1173,6 +1173,7 @@ textarea {
  ================ */
 .dati-pt {
     padding: 1em;
+    overflow: auto;
 }
 
 .dati-pt dt:not(:first-child) {
@@ -1306,24 +1307,3 @@ ul#risultati-ricerca {
 /* ===================
  * Ricerca Utente
  =================== */
-button.vai-a-profilo {
-    display: block;
-    margin-left: auto;
-    margin-right: 1em;
-    padding: 0.5em;
-    border: 3px solid var(--mainColorDark);
-    border-radius: 1.5em;
-    background-color: var(--mainBackgroundColor);
-    color: var(--mainColor);
-    transition-duration: 0.5s;
-    text-decoration: underline;
-    padding: 1em;
-    margin-bottom: .5em;
-}
-
-button.vai-a-profilo:hover {
-    background-color: var(--mainColorLight);
-    border: 3px solid var(--mainColorLight);
-    color: var(--mainBackgroundColorDark);
-    transition-duration: 0.5s;
-}
