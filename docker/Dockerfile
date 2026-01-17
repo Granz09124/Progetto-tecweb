@@ -7,6 +7,8 @@ WORKDIR /var/www/html
 # Copy the project files to the container
 COPY .. /var/www/html
 
+RUN docker-php-ext-install mysqli
+
 # Enable mod_rewrite for Apache (useful for dynamic sites)
 RUN a2enmod rewrite
 

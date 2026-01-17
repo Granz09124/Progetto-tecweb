@@ -18,15 +18,12 @@ services:
       - palestra-network
 
   db:
-    image: postgres:15
+    image: mariadb
     environment:
-      POSTGRES_DB: palestra_db
-      POSTGRES_USER: palestra_user
-      POSTGRES_PASSWORD: palestra_password
+      MARIADB_ROOT_PASSWORD: example
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
       - ../Database/db.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - palestra-network
