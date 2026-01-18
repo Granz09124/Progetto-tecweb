@@ -5,7 +5,6 @@ FROM php:8.4.11-apache
 WORKDIR /var/www/html
 
 # Copy the project files to the container
-COPY .. /var/www/html
 
 RUN docker-php-ext-install mysqli
 

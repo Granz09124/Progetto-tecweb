@@ -23,6 +23,7 @@ BLOCCHI E SEZIONI
     border-radius: 1em;
     padding: 2em;
     box-shadow: 0 0 10px var(--mainColor);
+    overflow-x: auto;
 }
 
 .user-section h2 {
