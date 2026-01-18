@@ -67,6 +67,7 @@ LISTE DATI E INPUT
     font-family: inherit;
     font-size: 1em;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .data-item input[readonly],
@@ -128,34 +129,51 @@ LISTE DOCUMENTI E LINK
 
 /*
 ========================================================================
-MODIFICA DATI TECNICI
+MODIFICA DATI TECNICI (Allineato ma con stile Originale)
 ========================================================================
 */
 .tech-form-group {
     display: flex;
+    flex-direction: row;
     align-items: flex-end;
-    gap: 1em;
-    margin-bottom: 1em;
+    gap: 10px;
+    margin-bottom: 1.5em;
 }
 
 .tech-input-wrapper {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tech-form-group input,
+.btn-modify {
+    height: 45px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    font-size: 1rem;
+    vertical-align: bottom;
 }
 
 .btn-modify {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    white-space: nowrap;
     background-color: var(--mainBackgroundColorLight);
     color: var(--textColor);
     border: 1px solid var(--mainColorDark);
-    padding: 10px 15px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.9em;
-    height: 44px;
+    transition: all 0.3s ease;
 }
 
 .btn-modify:hover {
     background-color: var(--mainColorDark);
     color: var(--mainBackgroundColorDark);
+    border-color: var(--mainColorDark);
 }
 
 /*

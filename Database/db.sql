@@ -23,7 +23,8 @@ CREATE TABLE Cliente (
 CREATE TABLE Istruttore (
     id_utente BIGINT UNSIGNED PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE,
     specializzazione VARCHAR(100),
-    qualifica VARCHAR(100)
+    qualifica VARCHAR(100),
+    telefono VARCHAR(20)
 );
 
 CREATE TABLE Personal_Trainer (
@@ -51,6 +52,21 @@ CREATE TABLE Messaggio_Contattaci (
     telefono VARCHAR(20),
     messaggio TEXT NOT NULL,
     data_invio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Scheda_Allenamento (
+    id_scheda SERIAL PRIMARY KEY,
+    id_pt BIGINT UNSIGNED REFERENCES Istruttore(id_utente) ON DELETE SET NULL,
+    id_cliente BIGINT UNSIGNED REFERENCES Cliente(id_utente) ON DELETE CASCADE,
+    nome_file VARCHAR(255) NOT NULL,
+    percorso_file VARCHAR(255) NOT NULL,
+    data_caricamento TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Assegnazione_PT (
+    id_pt BIGINT UNSIGNED REFERENCES Istruttore(id_utente) ON DELETE CASCADE,
+    id_cliente BIGINT UNSIGNED REFERENCES Cliente(id_utente) ON DELETE CASCADE,
+    PRIMARY KEY (id_pt, id_cliente)
 );
 
 -- ============================================
@@ -168,3 +184,6 @@ INSERT INTO Sottoscrizione (id_utente, id_abbonamento, data_inizio, data_fine) V
 (11, 20, '2024-01-01', '2025-12-31'), -- Luca - Crossfit Annuale
 (12, 16, '2024-01-01', '2025-12-31'), -- Elena - Pilates Annuale
 (13, 8, '2024-01-01', '2025-12-31');  -- Davide - Arrampicata Annuale
+
+-- Assegna Mario Rossi (id 3) al PT Marco Colombo (id 9)
+INSERT INTO Assegnazione_PT (id_pt, id_cliente) VALUES (9, 3);

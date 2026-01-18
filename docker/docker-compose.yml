@@ -12,6 +12,7 @@ services:
       - ../css:/var/www/html/css
       - ../javascript:/var/www/html/javascript
       - ../immagini:/var/www/html/immagini
+      - ../uploads:/var/www/html/uploads
     depends_on:
       - db
     networks:

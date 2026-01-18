@@ -1,3 +1,57 @@
+<?php
+require_once 'config.php';
+
+// TEST
+$_SESSION['user_id'] = 9; 
+
+$id_utente = $_SESSION['user_id'] ?? 0;
+$messaggio = "";
+
+if ($id_utente == 0) {
+    header("Location: home.html");
+    exit;
+}
+
+// 1. AGGIORNAMENTO DATI
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['action'] == 'update_info') {
+    $new_email = $_POST['email'];
+    $new_phone = $_POST['telefono'];
+    $new_pass = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : null;
+
+    try {
+        if ($new_pass) {
+            $stmt = $conn->prepare("UPDATE Utente SET email = ?, password_hash = ? WHERE id_utente = ?");
+            $stmt->bind_param("ssi", $new_email, $new_pass, $id_utente);
+        } else {
+            $stmt = $conn->prepare("UPDATE Utente SET email = ? WHERE id_utente = ?");
+            $stmt->bind_param("si", $new_email, $id_utente);
+        }
+        $stmt->execute();
+        $stmt->close();
+
+        $stmt = $conn->prepare("UPDATE Istruttore SET telefono = ? WHERE id_utente = ?");
+        $stmt->bind_param("si", $new_phone, $id_utente);
+        
+        if($stmt->execute()) {
+            $messaggio = "Dati aggiornati con successo!";
+        } else {
+            $messaggio = "Errore database: " . $stmt->error;
+        }
+        $stmt->close();
+    } catch (Exception $e) {
+        $messaggio = "Errore: " . $e->getMessage();
+    }
+}
+
+// 2. RECUPERO DATI DEL PT
+$stmt = $conn->prepare("SELECT u.*, i.telefono, i.specializzazione, i.qualifica FROM Utente u JOIN Istruttore i ON u.id_utente = i.id_utente WHERE u.id_utente = ?");
+$stmt->bind_param("i", $id_utente);
+$stmt->execute();
+$result = $stmt->get_result();
+$userData = $result->fetch_assoc();
+$stmt->close();
+?>
+
 <!doctype html>
 <html lang="it">
 
@@ -7,10 +61,10 @@
     <title>Palestra - Area Utente PT</title>
     <meta name="description" content="Area Trainer Il Tempio di Apollo, gestione clienti, caricamento schede e diete, agenda appuntamenti e monitoraggio progressi." />
     <meta name="keywords" content="area trainer, gestione clienti, agenda pt, caricamento schede, dashboard istruttore, personal trainer" />
+    
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/utente.css" />
-
     <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
     <link rel="stylesheet" media="print" href="../css/print-utenti.css">
 </head>
@@ -54,18 +108,24 @@
     <main class="contenuto-principale">
 
         <section class="area-personale">
-            <h1>Profilo Trainer</h1>
+            <h1>Profilo Trainer: <?php echo htmlspecialchars($userData['nome'] . " " . $userData['cognome']); ?></h1>
+
+            <?php if($messaggio): ?>
+                <div style="background:#fc0; color:black; padding:1em; margin-bottom:1em; border-radius:8px; text-align:center; font-weight:bold;">
+                    <?php echo $messaggio; ?>
+                </div>
+            <?php endif; ?>
 
             <section class="user-section">
                 <h2>Informazioni Personali</h2>
                 <form class="data-list-group">
                     <div class="data-item">
                         <label>Nome</label>
-                        <input type="text" value="Luca" readonly>
+                        <input type="text" value="<?php echo htmlspecialchars($userData['nome']); ?>" readonly>
                     </div>
                     <div class="data-item">
                         <label>Cognome</label>
-                        <input type="text" value="Neri" readonly>
+                        <input type="text" value="<?php echo htmlspecialchars($userData['cognome']); ?>" readonly>
                     </div>
                     <div class="data-item">
                         <label>Data di Nascita</label>
@@ -77,11 +137,11 @@
                     </div>
                     <div class="data-item full-width">
                         <label>Educazione / Certificazioni</label>
-                        <textarea readonly rows="2">Laurea in Scienze Motorie, Certificazione CONI 2° Livello</textarea>
+                        <textarea readonly rows="2"><?php echo htmlspecialchars($userData['qualifica'] ?? 'Laurea in Scienze Motorie, Certificazione CONI'); ?></textarea>
                     </div>
                     <div class="data-item full-width">
-                        <label>Skills</label>
-                        <input type="text" value="Ipertrofia, Riabilitazione, Calisthenics" readonly>
+                        <label>Skills / Specializzazione</label>
+                        <input type="text" value="<?php echo htmlspecialchars($userData['specializzazione'] ?? 'Bodybuilding'); ?>" readonly>
                     </div>
                     <div class="data-item full-width">
                         <label>Presentazione</label>
@@ -95,7 +155,7 @@
                 <ul class="links-list">
                     <li>
                         <span>👥 Lista Clienti Attivi</span>
-                        <a href="#" class="btn-link">Visualizza Lista</a>
+                        <a href="lista-clienti-pt.php" class="btn-link">Gestisci</a>
                     </li>
                     <li>
                         <span>📅 Calendario dei Corsi</span>
@@ -106,36 +166,37 @@
 
             <section class="user-section">
                 <h2>Info Tecniche</h2>
-                <form action="#" method="POST">
+                <form action="" method="POST">
+                    <input type="hidden" name="action" value="update_info">
+                    
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
                             <label>E-mail</label>
-                            <input type="email" value="luca.pt@tempio.it" name="email">
+                            <input type="email" name="email" value="<?php echo htmlspecialchars($userData['email']); ?>" required>
                         </div>
-                        <button type="button" class="btn-modify">Modifica</button>
                     </div>
 
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
-                            <label>Password</label>
-                            <input type="password" value="********" name="password">
+                            <label>Nuova Password (lascia vuoto per non cambiare)</label>
+                            <input type="password" name="password" placeholder="********">
                         </div>
-                        <button type="button" class="btn-modify">Cambia</button>
                     </div>
 
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
                             <label>Numero Telefono</label>
-                            <input type="tel" value="+39 340 9876543" name="telefono">
+                            <input type="tel" name="telefono" value="<?php echo htmlspecialchars($userData['telefono'] ?? ''); ?>">
                         </div>
-                        <button type="button" class="btn-modify">Modifica</button>
                     </div>
+                    
+                    <button type="submit" class="btn-modify" style="width:100%; margin-top:1em;">Salva Modifiche</button>
                 </form>
             </section>
 
             <section class="account-actions" aria-label="Gestione Account">
                 <a href="./home.html" class="btn-logout">Logout</a>
-                <button class="btn-delete" onclick="alert('Contattare l\'amministrazione per cancellare un account PT.')">Cancella Account</button>
+                <button type="button" class="btn-delete" onclick="alert('Contattare l\'amministrazione per cancellare un account PT.')">Cancella Account</button>
             </section>
         </section>
 
@@ -153,3 +214,6 @@
 </body>
 
 </html>
+<?php 
+$conn->close(); 
+?>
