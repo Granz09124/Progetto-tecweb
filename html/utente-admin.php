@@ -24,7 +24,6 @@ if ($conn->connect_error) {
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/utente.css" />
-
     <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
     <link rel="stylesheet" media="print" href="../css/print-utenti.css">
 </head>

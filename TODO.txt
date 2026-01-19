@@ -244,7 +244,7 @@ DECISIONI: controllare per lo screen reader per quando si ha tempo le proprie pa
 
 
 TODO:
-- rifare pagina corsi, cambiando-> 3x2 con i vari corsi con la descrizione e tabella degli orari sotto. (LUCA)
+- rifare pagina corsi, cambiando-> 3x2 con i vari corsi con la descrizione e tabella degli orari sotto. (LUCA) OK
 - MERGE DEI CSS (Alessandro)
 - CANCELLAZIONE PAGINE NON STYLE e RINOMINAZIONE DELLE PAGINE TOGLIENDO IL _STYLE. (Ognuno le sue pagine)
 - METTERE FOOTER CENTRATO
@@ -264,6 +264,31 @@ Il server a vostra disposizione per il progetto ha installato:
     PHP 8.4.11
     database MariaDB 11.8.3
 https://stem.elearning.unipd.it/mod/page/view.php?id=719281
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+TODO 19/01/2026
+
+
+LUCA: modificare pagine utente-admin.php, credenziali di accesso modificabili senza premere modifica, tabelle solo con nome
+cognome e email e aziona, colonna aziona con solo il pulsante modifica e spostare il pulsante elimina alla fine del form che compare
+dopo aver premuto modifica, togliere aggiungi cliente e utente, aggiungi nuovo pt rimane. sistemare bottoni "torna al pannello" 
+e i bottoni "modifica" in utente-admin.php, aggiungere text-overflow: ellipsis; overflow: hidden per tutti i campi in modo che non sforino. Fare mini e il print delle pagine lista, sistemare
+print di utente-admin.
+
+
+ALESSANDRO: fare error404.php, sicurezza riguardante il caricamento del pdf , creazione contattaci.php, sistemazione caso error403
+per le pagine di area personale. 
+
+
+
+ARMANDO: creazione mini e print di lista-clienti-pt, aiutare LUCA con la sua parte 
+
+
+
+MARCO: Sistemazione sistema sessione per il login , cancellare la possibilità di registrarsi una volta che si è loggati                          
+
 
 
 

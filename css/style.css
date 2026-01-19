@@ -1486,8 +1486,8 @@ form {
     font-size: 1em;
 
     margin-bottom: 1em;
-.user-section button:hover {
 }
+.user-section button:hover {
     background-color: var(--mainColorLight);
 }
 
