@@ -8,7 +8,7 @@ $id_utente = $_SESSION['user_id'] ?? 0;
 $messaggio = "";
 
 if ($id_utente == 0) {
-    header("Location: home.html");
+    header("Location: error403.html");
     exit;
 }
 
