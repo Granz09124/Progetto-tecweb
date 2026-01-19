@@ -16,7 +16,7 @@ CREATE TABLE Admin (
 
 CREATE TABLE Cliente (
     id_utente BIGINT UNSIGNED PRIMARY KEY REFERENCES Utente(id_utente) ON DELETE CASCADE,
-    codice_fiscale CHAR(16) UNIQUE NOT NULL,
+    codice_fiscale CHAR(16) UNIQUE,
     telefono VARCHAR(20)
 );
 
