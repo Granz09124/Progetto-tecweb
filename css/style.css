@@ -22,7 +22,6 @@
     --mainBackgroundColorDark: #111;
     --mainBackgroundColor: #181211;
     --mainBackgroundColorLight: #332;
-    /* inutilizzato */
 
     --headerGradient: linear-gradient(to right,
             var(--mainColor) 25%,
@@ -388,13 +387,13 @@ a.bottone-dettagli:visited {
     cursor: pointer;
     width: 100%;
     text-align: center;
-    text-decoration: underline; 
+    text-decoration: underline;
     display: inline-block;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     transition: background-color 0.3s, color 0.3s;
     background-color: transparent;
     border: 2px solid var(--mainColorDark);
-    color: var(--mainColorDark); 
+    color: var(--mainColorDark);
 }
 
 a.bottone-dettagli:hover,
@@ -500,7 +499,7 @@ h2 {
 .orari-corsi th {
     background: var(--headerGradient);
     background-clip: text;
-  
+
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1173,6 +1172,7 @@ textarea {
  ================ */
 .dati-pt {
     padding: 1em;
+    overflow: auto;
 }
 
 .dati-pt dt:not(:first-child) {
@@ -1306,24 +1306,207 @@ ul#risultati-ricerca {
 /* ===================
  * Ricerca Utente
  =================== */
-button.vai-a-profilo {
-    display: block;
-    margin-left: auto;
-    margin-right: 1em;
-    padding: 0.5em;
-    border: 3px solid var(--mainColorDark);
-    border-radius: 1.5em;
+
+/* ==================
+ * Admin Tables and Forms
+ =================== */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
     background-color: var(--mainBackgroundColor);
-    color: var(--mainColor);
-    transition-duration: 0.5s;
-    text-decoration: underline;
-    padding: 1em;
-    margin-bottom: .5em;
+    border: 2px solid var(--mainColor);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--mainColor);
+    table-layout: fixed;
 }
 
-button.vai-a-profilo:hover {
-    background-color: var(--mainColorLight);
-    border: 3px solid var(--mainColorLight);
+.admin-table th,
+.admin-table td {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom: 1px solid var(--mainColorDark);
+    font-size: 0.9em;
+}
+
+.admin-table th:nth-child(1),
+.admin-table td:nth-child(1) {
+    width: 5%;
+    padding-right: 1em;
+}
+
+.admin-table th:nth-child(2),
+.admin-table td:nth-child(2) {
+    width: 15%;
+}
+
+.admin-table th {
+    background: var(--headerGradient);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.admin-table tbody tr:nth-child(even) {
+    background-color: var(--mainBackgroundColorLight);
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(254, 205, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.admin-table button {
+    background-color: var(--mainColor);
     color: var(--mainBackgroundColorDark);
-    transition-duration: 0.5s;
+    border: 1px solid var(--mainColorDark);
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.admin-table button:hover {
+    background-color: var(--mainColorLight);
+}
+
+.admin-table a {
+    color: var(--mainColor);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-table a:hover {
+    color: var(--mainColorLight);
+}
+
+#userForm {
+    display: block;
+    background-color: var(--mainBackgroundColor);
+    border: 2px solid var(--mainColor);
+    border-radius: 8px;
+    padding: 2em;
+    margin-top: 2em;
+    box-shadow: 0 0 10px var(--mainColor);
+    text-align: center;
+}
+
+#userForm form {
+    display: block !important;
+    flex-direction: unset !important;
+    gap: unset !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#userForm h2 {
+    margin-bottom: 1.5em;
+    color: var(--mainColor);
+    text-align: center;
+}
+
+#userForm label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: var(--textColor);
+    text-align: left;
+}
+
+#userForm input[type="text"],
+#userForm input[type="email"],
+#userForm input[type="password"] {
+    width: 100%;
+    padding: 0.6em;
+    margin-bottom: 0.8em;
+    border: 1px solid var(--mainColorDark);
+    border-radius: 4px;
+    background-color: var(--mainBackgroundColorLight);
+    color: var(--textColor);
+    font-family: inherit;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#userForm input:focus {
+    outline: none;
+    border-color: var(--mainColor);
+    box-shadow: 0 0 5px rgba(254, 205, 0, 0.5);
+}
+
+#userForm button[type="submit"],
+#userForm button[type="button"] {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#userForm button[type="submit"] {
+    background-color: var(--mainColor);
+    color: var(--mainBackgroundColorDark);
+}
+
+#userForm button[type="submit"]:hover {
+    background-color: var(--mainColorLight);
+}
+
+#userForm button[type="button"] {
+    background-color: transparent;
+    border: 1px solid var(--mainColorDark);
+    color: var(--mainColorDark);
+}
+
+#userForm button[type="button"]:hover {
+    background-color: var(--mainColorDark);
+    color: var(--mainBackgroundColor);
+}
+
+.user-section button {
+    background-color: var(--mainColor);
+    color: var(--mainBackgroundColorDark);
+    border: 1px solid var(--mainColorDark);
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+
+    margin-bottom: 1em;
+.user-section button:hover {
+}
+    background-color: var(--mainColorLight);
+}
+
+@media (max-width: 768px) {
+    .admin-table th,
+    .admin-table td {
+        padding: 0.5em;
+        font-size: 0.9em;
+    }
+
+    .admin-table {
+        font-size: 0.9em;
+    }
+
+    #userForm {
+        padding: 1em;
+    }
+
+    #userForm input {
+        padding: 0.5em;
+    }
 }

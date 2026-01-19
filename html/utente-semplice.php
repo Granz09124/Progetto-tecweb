@@ -1,3 +1,62 @@
+<?php
+require_once 'config.php';
+
+// TEST
+$_SESSION['user_id'] = 3;
+
+$id_utente = $_SESSION['user_id'] ?? 0;
+$messaggio = "";
+
+if ($id_utente == 0) {
+    header("Location: home.html");
+    exit;
+}
+
+// 1. UPDATE DATI
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['action'] == 'update_info') {
+    $new_email = $_POST['email'];
+    $new_phone = $_POST['telefono'];
+    $new_pass = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : null;
+
+    if ($new_pass) {
+        $stmt = $conn->prepare("UPDATE Utente SET email = ?, password_hash = ? WHERE id_utente = ?");
+        $stmt->bind_param("ssi", $new_email, $new_pass, $id_utente);
+    } else {
+        $stmt = $conn->prepare("UPDATE Utente SET email = ? WHERE id_utente = ?");
+        $stmt->bind_param("si", $new_email, $id_utente);
+    }
+    $stmt->execute();
+    $stmt->close();
+
+    $stmt = $conn->prepare("UPDATE Cliente SET telefono = ? WHERE id_utente = ?");
+    $stmt->bind_param("si", $new_phone, $id_utente);
+    
+    if($stmt->execute()) {
+        $messaggio = "Dati aggiornati!";
+    }
+    $stmt->close();
+}
+
+// 2. GET USER DATA
+$stmt = $conn->prepare("SELECT u.*, c.telefono, c.codice_fiscale FROM Utente u JOIN Cliente c ON u.id_utente = c.id_utente WHERE u.id_utente = ?");
+$stmt->bind_param("i", $id_utente);
+$stmt->execute();
+$userData = $stmt->get_result()->fetch_assoc();
+$stmt->close();
+
+// 3. GET SCHEDE
+$stmtSchede = $conn->prepare("
+    SELECT s.*, u.nome as nome_pt, u.cognome as cognome_pt 
+    FROM Scheda_Allenamento s
+    LEFT JOIN Utente u ON s.id_pt = u.id_utente
+    WHERE s.id_cliente = ? 
+    ORDER BY s.data_caricamento DESC
+");
+$stmtSchede->bind_param("i", $id_utente);
+$stmtSchede->execute();
+$resultSchede = $stmtSchede->get_result();
+?>
+
 <!doctype html>
 <html lang="it">
 
@@ -54,18 +113,24 @@
     <main class="contenuto-principale">
 
         <section class="area-personale">
-            <h1>Profilo Utente</h1>
+            <h1>Profilo Utente: <?php echo htmlspecialchars($userData['nome']); ?></h1>
+
+            <?php if($messaggio): ?>
+                <div style="background:#fc0; color:black; padding:1em; margin-bottom:1em; border-radius:8px;">
+                    <?php echo $messaggio; ?>
+                </div>
+            <?php endif; ?>
 
             <section class="user-section">
                 <h2>Informazioni Personali</h2>
                 <form class="data-list-group">
                     <div class="data-item">
                         <label>Nome</label>
-                        <input type="text" value="Mario" readonly>
+                        <input type="text" value="<?php echo htmlspecialchars($userData['nome']); ?>" readonly>
                     </div>
                     <div class="data-item">
                         <label>Cognome</label>
-                        <input type="text" value="Rossi" readonly>
+                        <input type="text" value="<?php echo htmlspecialchars($userData['cognome']); ?>" readonly>
                     </div>
                     <div class="data-item">
                         <label>Data di Nascita</label>
@@ -85,10 +150,20 @@
             <section class="user-section">
                 <h2>I tuoi Documenti & Attività</h2>
                 <ul class="links-list">
-                    <li>
-                        <span>🏋️ Assegnazione PT (Scheda Esercizi)</span>
-                        <a href="#" class="btn-link">Scarica PDF</a>
-                    </li>
+                    <?php if ($resultSchede->num_rows > 0): ?>
+                        <?php while($scheda = $resultSchede->fetch_assoc()): ?>
+                        <li>
+                            <span>
+                                📄 <strong><?php echo htmlspecialchars($scheda['nome_file']); ?></strong>
+                                <br><small>PT: <?php echo htmlspecialchars($scheda['nome_pt']); ?></small>
+                            </span>
+                            <a href="<?php echo htmlspecialchars($scheda['percorso_file']); ?>" class="btn-link" download>Scarica</a>
+                        </li>
+                        <?php endwhile; ?>
+                    <?php else: ?>
+                        <li><span>Nessuna scheda caricata al momento.</span></li>
+                    <?php endif; ?>
+
                     <li>
                         <span>ℹ️ Info Personal Trainer</span>
                         <a href="./cerca-istruttore.php" class="btn-link">Vai al Profilo</a>
@@ -102,30 +177,29 @@
 
             <section class="user-section">
                 <h2>Info Tecniche</h2>
-                <form action="#" method="POST">
+                <form action="" method="POST">
+                    <input type="hidden" name="action" value="update_info">
+                    
                     <div class="tech-form-group">
-                        <div class="data-item tech-input-wrapper">
+                        <div class="tech-input-wrapper">
                             <label>E-mail</label>
-                            <input type="email" value="mario.rossi@email.com" name="email">
+                            <input type="email" name="email" value="<?php echo htmlspecialchars($userData['email']); ?>">
                         </div>
-                        <button type="button" class="btn-modify">Modifica</button>
                     </div>
-
                     <div class="tech-form-group">
-                        <div class="data-item tech-input-wrapper">
-                            <label>Password</label>
-                            <input type="password" value="********" name="password">
+                        <div class="tech-input-wrapper">
+                            <label>Nuova Password</label>
+                            <input type="password" name="password" placeholder="********">
                         </div>
-                        <button type="button" class="btn-modify">Cambia</button>
                     </div>
-
                     <div class="tech-form-group">
-                        <div class="data-item tech-input-wrapper">
+                        <div class="tech-input-wrapper">
                             <label>Numero Telefono</label>
-                            <input type="tel" value="+39 333 1234567" name="telefono">
+                            <input type="tel" name="telefono" value="<?php echo htmlspecialchars($userData['telefono']); ?>">
                         </div>
-                        <button type="button" class="btn-modify">Modifica</button>
                     </div>
+                    
+                    <button type="submit" class="btn-modify">Salva Modifiche</button>
                 </form>
             </section>
 
@@ -147,5 +221,8 @@
 
     <script src="../javascript/torna-su.js"></script>
 </body>
-
 </html>
+<?php 
+$stmtSchede->close();
+$conn->close(); 
+?>

@@ -1,12 +1,26 @@
+<?php
+/*
+session_start();
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+    header("Location: error403.html");
+    exit;
+}
+*/
+
+$conn = new mysqli("db", "root", "example", "palestra_db", 3306);
+if ($conn->connect_error) {
+    die("Connessione fallita: " . $conn->connect_error);
+}
+?>
 <!doctype html>
 <html lang="it">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Palestra - Area Utente</title>
-    <meta name="description" content="Area Utente Il Tempio di Apollo, consulta la tua scheda, la dieta, prenota i corsi e controlla la scadenza del tuo abbonamento." />
-    <meta name="keywords" content="profilo utente, scheda allenamento, dieta, prenotazione corsi, scadenza abbonamento, area clienti" />
+    <title>Palestra - Area Utente Admin</title>
+    <meta name="description" content="Pannello di Amministrazione Il Tempio di Apollo, gestione iscritti, abbonamenti, corsi, staff e statistiche della palestra." />
+    <meta name="keywords" content="pannello admin, gestione palestra, database utenti, amministrazione, statistiche" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/utente.css" />
@@ -47,66 +61,41 @@
     <nav id="breadcrumb">
         <p>
             Ti trovi in:
-            <a lang="en" href="./home.html">Home</a> &gt; &gt; Area personale
+            <a lang="en" href="./home.html">Home</a> > > Area personale
         </p>
     </nav>
 
     <main class="contenuto-principale">
 
         <section class="area-personale">
-            <h1>Profilo Utente</h1>
+            <h1>Pannello Amministrazione</h1>
 
             <section class="user-section">
-                <h2>Informazioni Personali</h2>
-                <form class="data-list-group">
-                    <div class="data-item">
-                        <label>Nome</label>
-                        <input type="text" value="Mario" readonly>
-                    </div>
-                    <div class="data-item">
-                        <label>Cognome</label>
-                        <input type="text" value="Rossi" readonly>
-                    </div>
-                    <div class="data-item">
-                        <label>Data di Nascita</label>
-                        <input type="date" value="1990-05-15" readonly>
-                    </div>
-                    <div class="data-item">
-                        <label>Peso (kg)</label>
-                        <input type="number" value="78" readonly>
-                    </div>
-                    <div class="data-item full-width">
-                        <label>Tipologia Iscrizione</label>
-                        <input type="text" value="Abbonamento Premium Annuale" readonly>
-                    </div>
-                </form>
-            </section>
-
-            <section class="user-section">
-                <h2>I tuoi Documenti & Attività</h2>
+                <h2>Gestione Palestra</h2>
+                <p style="margin-bottom: 1em;">Seleziona una lista per visualizzare, modificare o eliminare i record dal database.</p>
                 <ul class="links-list">
                     <li>
-                        <span>🏋️ Assegnazione PT (Scheda Esercizi)</span>
-                        <a href="#" class="btn-link">Scarica PDF</a>
+                        <span>📝 Visualizza Lista Iscritti (Clienti)</span>
+                        <a href="lista-clienti.php" class="btn-link">Gestisci</a>
                     </li>
                     <li>
-                        <span>ℹ️ Info Personal Trainer</span>
-                        <a href="./cerca-istruttore.php" class="btn-link">Vai al Profilo</a>
+                        <span>💪 Visualizza Lista Personal Trainer</span>
+                        <a href="lista-pt.php" class="btn-link">Gestisci</a>
                     </li>
                     <li>
-                        <span>📅 Calendario Corsi</span>
-                        <a href="./corsi.html" class="btn-link">Visualizza</a>
+                        <span>👥 Visualizza Lista Utenti Totali</span>
+                        <a href="lista-utenti.php" class="btn-link">Gestisci</a>
                     </li>
                 </ul>
             </section>
 
             <section class="user-section">
-                <h2>Info Tecniche</h2>
+                <h2>Credenziali Accesso</h2>
                 <form action="#" method="POST">
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
-                            <label>E-mail</label>
-                            <input type="email" value="mario.rossi@email.com" name="email">
+                            <label>E-mail Amministratore</label>
+                            <input type="email" value="admin@tempioapollo.it" name="email">
                         </div>
                         <button type="button" class="btn-modify">Modifica</button>
                     </div>
@@ -118,20 +107,11 @@
                         </div>
                         <button type="button" class="btn-modify">Cambia</button>
                     </div>
-
-                    <div class="tech-form-group">
-                        <div class="data-item tech-input-wrapper">
-                            <label>Numero Telefono</label>
-                            <input type="tel" value="+39 333 1234567" name="telefono">
-                        </div>
-                        <button type="button" class="btn-modify">Modifica</button>
-                    </div>
                 </form>
             </section>
 
             <section class="account-actions" aria-label="Gestione Account">
                 <a href="./home.html" class="btn-logout">Logout</a>
-                <button class="btn-delete" onclick="alert('Sei sicuro di voler cancellare l\'account?')">Cancella Account</button>
             </section>
         </section>
 
@@ -149,3 +129,6 @@
 </body>
 
 </html>
+<?php
+$conn->close();
+?>
