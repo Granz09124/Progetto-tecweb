@@ -1,0 +1,43 @@
+<section class="area-personale">
+    <h1>Profilo Utente: [Nome]</h1>
+    [MessaggioFeedback]
+    
+    <section class="user-section">
+        <h2>Informazioni Personali</h2>
+        <form class="data-list-group">
+            <div class="data-item"><label>Nome</label><input type="text" value="[Nome]" readonly></div>
+            <div class="data-item"><label>Cognome</label><input type="text" value="[Cognome]" readonly></div>
+            <div class="data-item"><label>Tipologia</label><input type="text" value="Premium Annuale" readonly></div>
+        </form>
+    </section>
+
+    <section class="user-section">
+        <h2>Documenti & Attività</h2>
+        <ul class="links-list">
+            [ListaSchede]
+            <li><span>ℹ️ Info Personal Trainer</span><a href="./cerca-istruttore.php" class="btn-link">Vai al Profilo</a></li>
+            <li><span>📅 Calendario Corsi</span><a href="./corsi.html" class="btn-link">Visualizza</a></li>
+        </ul>
+    </section>
+
+    <section class="user-section">
+        <h2>Info Tecniche</h2>
+        <form action="" method="POST">
+            <input type="hidden" name="action" value="update_info">
+            <div class="tech-form-group">
+                <div class="data-item tech-input-wrapper"><label>E-mail</label><input type="email" name="email" value="[Email]"></div>
+            </div>
+            <div class="tech-form-group">
+                <div class="data-item tech-input-wrapper"><label>Nuova Password</label><input type="password" name="password" placeholder="********"></div>
+            </div>
+            <div class="tech-form-group">
+                <div class="data-item tech-input-wrapper"><label>Telefono</label><input type="tel" name="telefono" value="[Telefono]"></div>
+            </div>
+            <button type="submit" class="btn-modify">Salva Modifiche</button>
+        </form>
+    </section>
+
+    <section class="account-actions">
+         <a href="./home.html" class="btn-logout">Logout</a>
+    </section>
+</section>

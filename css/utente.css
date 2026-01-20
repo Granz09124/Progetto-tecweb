@@ -40,7 +40,7 @@ LISTE DATI E INPUT
 */
 .data-list-group {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1em;
 }
 
@@ -78,6 +78,10 @@ LISTE DATI E INPUT
     font-weight: normal;
     color: var(--textColor);
     cursor: default;
+}
+
+.data-item.full-width {
+    grid-column: span 2;
 }
 
 /*
@@ -129,7 +133,7 @@ LISTE DOCUMENTI E LINK
 
 /*
 ========================================================================
-MODIFICA DATI TECNICI (Allineato ma con stile Originale)
+MODIFICA DATI TECNICI
 ========================================================================
 */
 .tech-form-group {
@@ -227,15 +231,56 @@ AZIONI ACCOUNT
 
 /*
 ========================================================================
-RESPONSIVE
+FEEDBACK MESSAGES
 ========================================================================
 */
-@media (min-width: 768px) {
-    .data-list-group {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .data-item.full-width {
-        grid-column: span 2;
-    }
+.feedback-message {
+    background-color: var(--mainColor);
+    color: black;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--mainColorDark);
+}
+
+/*
+========================================================================
+TABELLA CLIENTI (Override)
+========================================================================
+*/
+.admin-table.clients-table th:nth-child(1) { width: 20%; } /* Cliente */
+.admin-table.clients-table th:nth-child(2) { width: 25%; } /* CF */
+.admin-table.clients-table th:nth-child(3) { width: 15%; } /* Telefono */
+.admin-table.clients-table th:nth-child(4) { width: 40%; } /* Carica Scheda */
+
+.empty-message {
+    text-align: center;
+    padding: 2em;
+    font-style: italic;
+    color: var(--textColor);
+}
+
+/*
+========================================================================
+FORM UPLOAD
+========================================================================
+*/
+.upload-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-file-custom {
+    background-color: var(--mainBackgroundColorLight);
+    border: 1px solid var(--mainColorDark);
+    color: var(--textColor);
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    width: 100%;
+    cursor: pointer;
 }
