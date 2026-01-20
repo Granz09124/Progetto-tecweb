@@ -39,7 +39,7 @@ LISTE DATI E INPUT
 */
 .data-list-group {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1em;
 }
 
@@ -77,6 +77,10 @@ LISTE DATI E INPUT
     font-weight: normal;
     color: var(--textColor);
     cursor: default;
+}
+
+.data-item.full-width {
+    grid-column: span 2;
 }
 
 /*
@@ -128,7 +132,7 @@ LISTE DOCUMENTI E LINK
 
 /*
 ========================================================================
-MODIFICA DATI TECNICI (Allineato ma con stile Originale)
+MODIFICA DATI TECNICI
 ========================================================================
 */
 .tech-form-group {
@@ -228,14 +232,30 @@ AZIONI ACCOUNT
 
 /*
 ========================================================================
-RESPONSIVE
+FEEDBACK MESSAGES
+========================================================================
+*/
+.feedback-message {
+    background-color: var(--mainColor);
+    color: black;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid var(--mainColorDark);
+}
+
+/*
+========================================================================
+TABELLA CLIENTI (Override)
 ========================================================================
 */
 @media (min-width: 768px) {
     .data-list-group {
         grid-template-columns: 1fr 1fr;
     }
-
+    
     .data-item.full-width {
         grid-column: span 2;
     }
