@@ -128,39 +128,6 @@ if (isset($_GET['edit'])) {
             <h1>Lista Utenti Totali</h1>
 
             <section class="user-section">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th>Azioni</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $queryUtenti = "SELECT id_utente, nome, cognome, email FROM Utente";
-                        $resultUtenti = $conn->query($queryUtenti);
-                        if ($resultUtenti->num_rows > 0) {
-                            while ($row = $resultUtenti->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['id_utente']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['cognome']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                echo "<td><button onclick='editUser(" . $row['id_utente'] . ")'>Modifica</button> <a href='?delete=" . $row['id_utente'] . "' onclick='return confirm(\"Sei sicuro di voler eliminare questo utente?\")'>Elimina</a></td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo "<tr><td colspan='5'>Nessun utente trovato.</td></tr>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
-
-                <button onclick="showForm()">Aggiungi Nuovo Utente</button>
-
                 <div id="userForm" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ccc;">
                     <h2 id="formTitle">Aggiungi Utente</h2>
                     <form method="POST" action="">
@@ -174,6 +141,7 @@ if (isset($_GET['edit'])) {
                         <label for="password">Password:</label>
                         <input type="password" id="password" name="password" required><br><br>
                         <button type="submit">Salva</button>
+                        <button type="button" onclick="deleteUser()">Elimina</button>
                         <button type="button" onclick="hideForm()">Annulla</button>
                     </form>
                 </div>
@@ -220,6 +188,13 @@ if (isset($_GET['edit'])) {
                     document.getElementById('password').value = ''; // Don't pre-fill password
                     document.getElementById('userForm').style.display = 'block';
                 });
+        }
+
+        function deleteUser() {
+            const id = document.getElementById('userId').value;
+            if (id && confirm("Sei sicuro di voler eliminare questo utente?")) {
+                window.location.href = '?delete=' + id;
+            }
         }
 
         function hideForm() {

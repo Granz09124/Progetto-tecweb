@@ -144,45 +144,6 @@ if (isset($_GET['edit'])) {
             <h1>Lista Iscritti (Clienti)</h1>
 
             <section class="user-section">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th>Codice Fiscale</th>
-                            <th>Telefono</th>
-                            <th>Azioni</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $queryClienti = "SELECT Utente.id_utente, Utente.nome, Utente.cognome, Utente.email, Cliente.codice_fiscale, Cliente.telefono
-                                         FROM Utente
-                                         JOIN Cliente ON Utente.id_utente = Cliente.id_utente";
-                        $resultClienti = $conn->query($queryClienti);
-                        if ($resultClienti->num_rows > 0) {
-                            while ($row = $resultClienti->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['id_utente']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['cognome']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['codice_fiscale']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['telefono']) . "</td>";
-                                echo "<td><button onclick='editUser(" . $row['id_utente'] . ")'>Modifica</button> <a href='?delete=" . $row['id_utente'] . "' onclick='return confirm(\"Sei sicuro di voler eliminare questo cliente?\")'>Elimina</a></td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo "<tr><td colspan='7'>Nessun cliente trovato.</td></tr>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
-
-                <button onclick="showForm()">Aggiungi Nuovo Cliente</button>
-
                 <div id="userForm" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ccc;">
                     <h2 id="formTitle">Aggiungi Cliente</h2>
                     <form method="POST" action="">
@@ -200,6 +161,7 @@ if (isset($_GET['edit'])) {
                         <label for="telefono">Telefono:</label>
                         <input type="text" id="telefono" name="telefono"><br><br>
                         <button type="submit">Salva</button>
+                        <button type="button" onclick="deleteUser()">Elimina</button>
                         <button type="button" onclick="hideForm()">Annulla</button>
                     </form>
                 </div>
@@ -248,6 +210,13 @@ if (isset($_GET['edit'])) {
                     document.getElementById('telefono').value = data.telefono;
                     document.getElementById('userForm').style.display = 'block';
                 });
+        }
+
+        function deleteUser() {
+            const id = document.getElementById('userId').value;
+            if (id && confirm("Sei sicuro di voler eliminare questo cliente?")) {
+                window.location.href = '?delete=' + id;
+            }
         }
 
         function hideForm() {

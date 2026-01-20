@@ -23,7 +23,6 @@ BLOCCHI E SEZIONI
     border-radius: 1em;
     padding: 2em;
     box-shadow: 0 0 10px var(--mainColor);
-    overflow-x: auto;
 }
 
 .user-section h2 {
@@ -225,6 +224,8 @@ AZIONI ACCOUNT
     color: var(--mainBackgroundColorDark);
 }
 
+
+
 /*
 ========================================================================
 RESPONSIVE
@@ -234,7 +235,7 @@ RESPONSIVE
     .data-list-group {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .data-item.full-width {
         grid-column: span 2;
     }

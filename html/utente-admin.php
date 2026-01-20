@@ -90,21 +90,26 @@ if ($conn->connect_error) {
 
             <section class="user-section">
                 <h2>Credenziali Accesso</h2>
-                <form action="#" method="POST">
+                <form action="#" method="POST" id="credentialsForm">
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
                             <label>E-mail Amministratore</label>
-                            <input type="email" value="admin@tempioapollo.it" name="email">
+                            <input type="email" value="admin@tempioapollo.it" name="email" readonly id="emailInput">
                         </div>
-                        <button type="button" class="btn-modify">Modifica</button>
+                        <button type="button" class="btn-modify" id="editEmailBtn">Modifica</button>
                     </div>
 
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
                             <label>Password</label>
-                            <input type="password" value="********" name="password">
+                            <input type="password" value="********" name="password" readonly id="passwordInput">
                         </div>
-                        <button type="button" class="btn-modify">Cambia</button>
+                        <button type="button" class="btn-modify" id="editPasswordBtn">Cambia</button>
+                    </div>
+
+                    <div id="saveCancelButtons" style="display: none;">
+                        <button type="submit" class="btn-modify save-btn">Salva</button>
+                        <button type="button" class="btn-modify cancel-btn" id="cancelBtn">Annulla</button>
                     </div>
                 </form>
             </section>
@@ -125,6 +130,52 @@ if ($conn->connect_error) {
     </footer>
 
     <script src="../javascript/torna-su.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const editEmailBtn = document.getElementById('editEmailBtn');
+            const editPasswordBtn = document.getElementById('editPasswordBtn');
+            const emailInput = document.getElementById('emailInput');
+            const passwordInput = document.getElementById('passwordInput');
+            const saveCancelButtons = document.getElementById('saveCancelButtons');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const credentialsForm = document.getElementById('credentialsForm');
+
+            let originalEmail = emailInput.value;
+            let originalPassword = passwordInput.value;
+
+            editEmailBtn.addEventListener('click', function() {
+                emailInput.removeAttribute('readonly');
+                emailInput.focus();
+                saveCancelButtons.style.display = 'block';
+            });
+
+            editPasswordBtn.addEventListener('click', function() {
+                passwordInput.removeAttribute('readonly');
+                passwordInput.value = '';
+                passwordInput.focus();
+                saveCancelButtons.style.display = 'block';
+            });
+
+            cancelBtn.addEventListener('click', function() {
+                emailInput.setAttribute('readonly', 'readonly');
+                passwordInput.setAttribute('readonly', 'readonly');
+                emailInput.value = originalEmail;
+                passwordInput.value = originalPassword;
+                saveCancelButtons.style.display = 'none';
+            });
+
+            credentialsForm.addEventListener('submit', function(e) {
+                // Prevent default form submission for demo purposes
+                e.preventDefault();
+                alert('Credenziali salvate con successo!');
+                emailInput.setAttribute('readonly', 'readonly');
+                passwordInput.setAttribute('readonly', 'readonly');
+                originalEmail = emailInput.value;
+                originalPassword = passwordInput.value;
+                saveCancelButtons.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 
 </html>

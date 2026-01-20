@@ -148,44 +148,6 @@ if (isset($_GET['edit'])) {
             <h1>Lista Personal Trainer</h1>
 
             <section class="user-section">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th>Specializzazione</th>
-                            <th>Qualifica</th>
-                            <th>Azioni</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $queryPT = "SELECT Utente.id_utente, Utente.nome, Utente.cognome, Utente.email, Istruttore.specializzazione, Istruttore.qualifica
-                                    FROM Utente
-                                    JOIN Istruttore ON Utente.id_utente = Istruttore.id_utente
-                                    JOIN Personal_Trainer ON Utente.id_utente = Personal_Trainer.id_istruttore";
-                        $resultPT = $conn->query($queryPT);
-                        if ($resultPT->num_rows > 0) {
-                            while ($row = $resultPT->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['id_utente']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['nome']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['cognome']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['specializzazione']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['qualifica']) . "</td>";
-                                echo "<td><button onclick='editUser(" . $row['id_utente'] . ")'>Modifica</button> <a href='?delete=" . $row['id_utente'] . "' onclick='return confirm(\"Sei sicuro di voler eliminare questo personal trainer?\")'>Elimina</a></td>";
-                                echo "</tr>";
-                            }
-                        } else {
-                            echo "<tr><td colspan='7'>Nessun personal trainer trovato.</td></tr>";
-                        }
-                        ?>
-                    </tbody>
-                </table>
-
                 <button onclick="showForm()">Aggiungi Nuovo Personal Trainer</button>
 
                 <div id="userForm" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ccc;">
@@ -205,6 +167,7 @@ if (isset($_GET['edit'])) {
                         <label for="qualifica">Qualifica:</label>
                         <input type="text" id="qualifica" name="qualifica" required><br><br>
                         <button type="submit">Salva</button>
+                        <button type="button" onclick="deleteUser()">Elimina</button>
                         <button type="button" onclick="hideForm()">Annulla</button>
                     </form>
                 </div>
@@ -253,6 +216,13 @@ if (isset($_GET['edit'])) {
                     document.getElementById('qualifica').value = data.qualifica;
                     document.getElementById('userForm').style.display = 'block';
                 });
+        }
+
+        function deleteUser() {
+            const id = document.getElementById('userId').value;
+            if (id && confirm("Sei sicuro di voler eliminare questo personal trainer?")) {
+                window.location.href = '?delete=' + id;
+            }
         }
 
         function hideForm() {

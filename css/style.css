@@ -1307,84 +1307,6 @@ ul#risultati-ricerca {
  * Ricerca Utente
  =================== */
 
-/* ==================
- * Admin Tables and Forms
- =================== */
-
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1em 0;
-    background-color: var(--mainBackgroundColor);
-    border: 2px solid var(--mainColor);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px var(--mainColor);
-    table-layout: fixed;
-}
-
-.admin-table th,
-.admin-table td {
-    padding: 0.5em;
-    text-align: left;
-    border-bottom: 1px solid var(--mainColorDark);
-    font-size: 0.9em;
-}
-
-.admin-table th:nth-child(1),
-.admin-table td:nth-child(1) {
-    width: 5%;
-    padding-right: 1em;
-}
-
-.admin-table th:nth-child(2),
-.admin-table td:nth-child(2) {
-    width: 15%;
-}
-
-.admin-table th {
-    background: var(--headerGradient);
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.admin-table tbody tr:nth-child(even) {
-    background-color: var(--mainBackgroundColorLight);
-}
-
-.admin-table tbody tr:hover {
-    background-color: rgba(254, 205, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-.admin-table button {
-    background-color: var(--mainColor);
-    color: var(--mainBackgroundColorDark);
-    border: 1px solid var(--mainColorDark);
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-}
-
-.admin-table button:hover {
-    background-color: var(--mainColorLight);
-}
-
-.admin-table a {
-    color: var(--mainColor);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.admin-table a:hover {
-    color: var(--mainColorLight);
-}
 
 #userForm {
     display: block;
@@ -1510,3 +1432,29 @@ form {
         padding: 0.5em;
     }
 }
+
+/*
+========================================================================
+INPUT STYLING
+========================================================================
+*/
+.data-item input,
+.data-item textarea {
+    background-color: var(--mainBackgroundColorLight) !important;
+}
+
+.data-item input[readonly],
+.data-item textarea[readonly] {
+    border-color: transparent;
+    padding-left: 0;
+    font-weight: normal;
+    color: var(--textColor);
+    cursor: default;
+}
+
+/*
+========================================================================
+SAVE CANCEL BUTTONS
+========================================================================
+*/
+

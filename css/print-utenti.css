@@ -32,7 +32,7 @@
     FIX TITOLI
     ========================================================================
     */
-    h1, h2, h3, h4, h5, h6, 
+    h1, h2, h3, h4, h5, h6,
     .area-personale > h1, 
     .user-section h2 {
         -webkit-text-fill-color: #000 !important;
@@ -243,4 +243,6 @@
         font-size: 9pt !important;
         color: #000 !important;
     }
+
+
 }
