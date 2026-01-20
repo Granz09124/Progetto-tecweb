@@ -1,4 +1,9 @@
 <?php
+
+// se non sono admin...
+require './error/403.php';
+exit;
+
 $conn = new mysqli("db", "root", "example", "palestra_db", 3306);
 
 $top = file_get_contents("internal/cerca-istruttore/top.html");
