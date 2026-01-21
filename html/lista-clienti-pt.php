@@ -19,7 +19,7 @@ $stmtClienti->bind_param("i", $id_pt);
 $stmtClienti->execute();
 $resultClienti = $stmtClienti->get_result();
 
-$top = file_get_contents("internal/utente/lista-clienti-pt/top.html");
+$top = file_get_contents("internal/utente/top.html");
 $body = file_get_contents("internal/utente/lista-clienti-pt/body.html");
 $tableTemplate = file_get_contents("internal/utente/lista-clienti-pt/table-template.html");
 $rowTemplate = file_get_contents("internal/utente/lista-clienti-pt/client-row.html");
