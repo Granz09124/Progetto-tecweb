@@ -3,12 +3,15 @@
     <td>[CF]</td>
     <td>[Telefono]</td>
     <td>
-        <form action="" method="POST" enctype="multipart/form-data" class="upload-form">
+        <form class="upload-form" enctype="multipart/form-data">
             <input type="hidden" name="id_cliente" value="[IDCliente]">
-            
-            <input type="file" name="scheda_file" required class="input-file-custom">
-            
+
+            <aside>Max. grandezza file: 1MB</aside>
+            <input type="hidden" name="MAX_FILE_SIZE" value="1048576">
+            <input name="scheda_file" type="file" accept="application/pdf" class="input-file-custom" required>
+
             <button type="submit">⬆️ Carica</button>
         </form>
+        <span></span>
     </td>
 </tr>
