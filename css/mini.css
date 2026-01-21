@@ -709,3 +709,69 @@ button.vai-a-profilo {
     justify-content: center;
     margin-top: 1em;
 }
+
+/*
+========================================================================
+Lista clienti PT
+========================================================================
+*/
+
+.admin-table.clients-table th,
+.admin-table.clients-table td {
+    width: auto !important;
+    white-space: normal;
+    min-width: 100px;
+}
+
+.admin-table.clients-table th:nth-child(1),
+.admin-table.clients-table td:nth-child(1),
+.admin-table.clients-table th:nth-child(2),
+.admin-table.clients-table td:nth-child(2) {
+    min-width: 140px;
+}
+
+.admin-table.clients-table th:nth-child(4),
+.admin-table.clients-table td:nth-child(4) {
+    min-width: 220px;
+}
+
+.upload-form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px;
+}
+
+.upload-form button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.input-file-custom {
+    font-size: 0.85em;
+    padding: 8px;
+}
+
+.account-actions {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    margin-top: 2em;
+    gap: 0 !important;
+}
+
+.account-actions .btn-logout {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    min-width: 200px;
+    max-width: 80%;
+    margin: 0 auto !important;
+    height: 48px;
+}
+
+.admin-table.clients-table td:nth-child(2) {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    min-width: 140px;
+}
