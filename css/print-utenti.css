@@ -244,30 +244,28 @@
         color: #000 !important;
     }
 
-<<<<<<< Updated upstream
-
-=======
     /*
     ========================================================================
     Lista Clienti PT
     ========================================================================
     */
     .admin-table {
+
         width: 100% !important;
         border-collapse: collapse !important;
         border: 1px solid #000 !important;
         box-shadow: none !important;
         background-color: transparent !important;
         margin-top: 20px !important;
+        table-layout: fixed !important; 
     }
 
     .admin-table th, 
     .admin-table td {
         border: 1px solid #000 !important;
-        padding: 8px !important;
+        padding: 8px 15px !important;
         color: #000 !important;
         text-align: left !important;
-        width: auto !important;
         background: transparent !important;
     }
 
@@ -287,6 +285,7 @@
     .admin-table.clients-table th:nth-child(4),
     .admin-table.clients-table td:nth-child(4) {
         display: none !important;
+        width: 0 !important;
     }
 
     .upload-form {
@@ -294,13 +293,14 @@
     }
 
     .admin-table.clients-table th:nth-child(1),
-    .admin-table.clients-table td:nth-child(1) { width: 40% !important; }
+    .admin-table.clients-table td:nth-child(1) { width: 40% !important; } /* Nome e Cognome */
     
     .admin-table.clients-table th:nth-child(2),
-    .admin-table.clients-table td:nth-child(2) { width: 35% !important; }
+    .admin-table.clients-table td:nth-child(2) { width: 35% !important; } /* Codice Fiscale */
     
     .admin-table.clients-table th:nth-child(3),
-    .admin-table.clients-table td:nth-child(3) { width: 25% !important; }
+    .admin-table.clients-table td:nth-child(3) { width: 25% !important; } /* Telefono */
+
 
     .feedback-message {
         border: 1px solid #000 !important;
@@ -311,5 +311,4 @@
         font-style: italic !important;
         color: #000 !important;
     }
->>>>>>> Stashed changes
 }

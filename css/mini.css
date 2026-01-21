@@ -720,25 +720,32 @@ Lista clienti PT
 .admin-table.clients-table td {
     width: auto !important;
     white-space: normal;
-    min-width: 100px;
+    min-width: 0 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
 }
 
 .admin-table.clients-table th:nth-child(1),
 .admin-table.clients-table td:nth-child(1),
 .admin-table.clients-table th:nth-child(2),
 .admin-table.clients-table td:nth-child(2) {
-    min-width: 140px;
+    min-width: 100px;
 }
 
 .admin-table.clients-table th:nth-child(4),
 .admin-table.clients-table td:nth-child(4) {
-    min-width: 220px;
+    min-width: 0 !important;
+    width: 100% !important;
+    display: block !important;
 }
 
 .upload-form {
+    display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
     gap: 8px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .upload-form button {
@@ -749,6 +756,10 @@ Lista clienti PT
 .input-file-custom {
     font-size: 0.85em;
     padding: 8px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
 }
 
 .account-actions {
@@ -773,5 +784,4 @@ Lista clienti PT
 .admin-table.clients-table td:nth-child(2) {
     word-break: break-all;
     overflow-wrap: break-word;
-    min-width: 140px;
 }
