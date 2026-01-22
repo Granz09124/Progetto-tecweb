@@ -251,12 +251,43 @@ FEEDBACK MESSAGES
 TABELLA CLIENTI (Override)
 ========================================================================
 */
-@media (min-width: 768px) {
-    .data-list-group {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .data-item.full-width {
-        grid-column: span 2;
-    }
+.admin-table.clients-table th,
+.admin-table.clients-table td {
+    padding: 12px 15px !important;
+}
+
+.admin-table.clients-table th:nth-child(1) { width: 25%; } /* Cliente*/
+.admin-table.clients-table th:nth-child(2) { width: 25%; } /* CF*/
+.admin-table.clients-table th:nth-child(3) { width: 15%; } /* Telefono*/
+.admin-table.clients-table th:nth-child(4) { width: 35%; } /* Carica Scheda */
+
+/*
+========================================================================
+FORM UPLOAD
+========================================================================
+*/
+.upload-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.input-file-custom {
+    background-color: var(--mainBackgroundColorLight);
+    border: 1px solid var(--mainColorDark);
+    color: var(--textColor);
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    width: auto;
+    flex-grow: 1;
+    min-width: 0;      
+}
+
+.upload-form button {
+    flex-shrink: 0;
+    white-space: nowrap;
 }

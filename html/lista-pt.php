@@ -12,6 +12,7 @@ if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 }
 
+// LOGICA CANCELLAZIONE
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
     $stmt = $conn->prepare("DELETE FROM Utente WHERE id_utente = ?");
@@ -22,6 +23,7 @@ if (isset($_GET['delete'])) {
     exit;
 }
 
+// LOGICA SALVATAGGIO (ADD / EDIT)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];
@@ -29,8 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $specializzazione = $_POST['specializzazione'];
     $qualifica = $_POST['qualifica'];
-    if (isset($_POST['id'])) {
-        // edit
+    
+    if (!empty($_POST['id'])) {
+        // Modifica esistente
         $id = intval($_POST['id']);
         if (!empty($password)) {
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
@@ -42,22 +45,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         $stmt->execute();
         $stmt->close();
+        
         $stmt = $conn->prepare("UPDATE Istruttore SET specializzazione = ?, qualifica = ? WHERE id_utente = ?");
         $stmt->bind_param("ssi", $specializzazione, $qualifica, $id);
         $stmt->execute();
         $stmt->close();
     } else {
-        // add
+        // Aggiunta nuovo
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $stmt = $conn->prepare("INSERT INTO Utente (nome, cognome, email, password_hash) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $nome, $cognome, $email, $password_hash);
         $stmt->execute();
         $id_utente = $conn->insert_id;
         $stmt->close();
+        
         $stmt = $conn->prepare("INSERT INTO Istruttore (id_utente, specializzazione, qualifica) VALUES (?, ?, ?)");
         $stmt->bind_param("iss", $id_utente, $specializzazione, $qualifica);
         $stmt->execute();
         $stmt->close();
+        
         $stmt = $conn->prepare("INSERT INTO Personal_Trainer (id_istruttore) VALUES (?)");
         $stmt->bind_param("i", $id_utente);
         $stmt->execute();
@@ -67,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 
+// API PER RECUPERO DATI EDIT (JSON)
 if (isset($_GET['edit'])) {
     $id = intval($_GET['edit']);
     $stmt = $conn->prepare("SELECT Utente.id_utente, Utente.nome, Utente.cognome, Utente.email, Istruttore.specializzazione, Istruttore.qualifica
@@ -88,6 +95,12 @@ if (isset($_GET['edit'])) {
     $conn->close();
     exit;
 }
+
+// RECUPERO LISTA PER LA TABELLA
+$queryPT = "SELECT u.id_utente, u.nome, u.cognome, u.email 
+            FROM Utente u 
+            JOIN Personal_Trainer pt ON u.id_utente = pt.id_istruttore";
+$resultPT = $conn->query($queryPT);
 ?>
 <!doctype html>
 <html lang="it">
@@ -96,14 +109,10 @@ if (isset($_GET['edit'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palestra - Lista Personal Trainer</title>
-    <meta name="description" content="Lista personal trainer della palestra Il Tempio di Apollo." />
-    <meta name="keywords" content="lista personal trainer, istruttori palestra, amministrazione" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/utente.css" />
 
-    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
-    <link rel="stylesheet" media="print" href="../css/print-utenti.css">
 </head>
 
 <body id="layout-adhoc">
@@ -138,57 +147,101 @@ if (isset($_GET['edit'])) {
     <nav id="breadcrumb">
         <p>
             Ti trovi in:
-            <a lang="en" href="./home.html">Home</a> > > <a href="./utente-admin.php">Area personale</a> > > Lista Personal Trainer
+            <a lang="en" href="./home.html">Home</a> > > <a href="./utente-admin.php">Area personale</a> > > Lista Utenti Totali
         </p>
     </nav>
 
     <main class="contenuto-principale">
+    <section class="area-personale">
+        <h1>Gestione Personal Trainer</h1>
 
-        <section class="area-personale">
-            <h1>Lista Personal Trainer</h1>
+        <section class="user-section">
+            
+            <div class="table-container">
+                <table class="admin-table">
+                    <caption>Lista dei Personal Trainer registrati nel sistema</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cognome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Azione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if ($resultPT->num_rows > 0): ?>
+                            <?php while($row = $resultPT->fetch_assoc()): ?>
+                                <tr>
+                                    <td data-label="Nome"><?php echo htmlspecialchars($row['nome']); ?></td>
+                                    <td data-label="Cognome"><?php echo htmlspecialchars($row['cognome']); ?></td>
+                                    <td data-label="Email"><?php echo htmlspecialchars($row['email']); ?></td>
+                                    <td>
+                                        <button type="button" 
+                                                class="btn-edit-action" 
+                                                onclick="editUser(<?php echo $row['id_utente']; ?>)"
+                                                aria-label="Modifica <?php echo htmlspecialchars($row['nome'] . ' ' . $row['cognome']); ?>">
+                                            Modifica
+                                        </button>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <tr><td colspan="4" class="empty-msg">Nessun Personal Trainer trovato.</td></tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
 
-            <section class="user-section">
-                <button onclick="showForm()">Aggiungi Nuovo Personal Trainer</button>
+            <div class="actions-container">
+                <button class="btn-add" onclick="showForm()">+ Aggiungi Nuovo Personal Trainer</button>
+            </div>
 
-                <div id="userForm" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ccc;">
-                    <h2 id="formTitle">Aggiungi Personal Trainer</h2>
-                    <form method="POST" action="">
-                        <input type="hidden" id="userId" name="id" value="">
+            <div id="userForm" class="form-container">
+                <h2 id="formTitle">Aggiungi Personal Trainer</h2>
+                <form method="POST" action="">
+                    <input type="hidden" id="userId" name="id" value="">
+                    
+                    <div class="form-group">
                         <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required><br><br>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
                         <label for="cognome">Cognome:</label>
-                        <input type="text" id="cognome" name="cognome" required><br><br>
+                        <input type="text" id="cognome" name="cognome" required>
+                    </div>
+
+                    <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required><br><br>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" required><br><br>
+                        <input type="password" id="password" name="password">
+                    </div>
+
+                    <div class="form-group">
                         <label for="specializzazione">Specializzazione:</label>
-                        <input type="text" id="specializzazione" name="specializzazione" required><br><br>
+                        <input type="text" id="specializzazione" name="specializzazione" required>
+                    </div>
+
+                    <div class="form-group">
                         <label for="qualifica">Qualifica:</label>
-                        <input type="text" id="qualifica" name="qualifica" required><br><br>
-                        <button type="submit">Salva</button>
-                        <button type="button" onclick="deleteUser()">Elimina</button>
-                        <button type="button" onclick="hideForm()">Annulla</button>
-                    </form>
-                </div>
-            </section>
+                        <input type="text" id="qualifica" name="qualifica" required>
+                    </div>
 
-            <section class="account-actions" aria-label="Gestione Account">
-                <a href="./utente-admin.php" class="btn-logout">Torna al Pannello</a>
-            </section>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-save">Salva Dati</button>
+                        <button type="button" class="btn-delete" onclick="deleteUser()">Elimina Trainer</button>
+                        <button type="button" class="btn-cancel" onclick="hideForm()">Annulla</button>
+                    </div>
+                </form>
+            </div>
         </section>
+    </section>
+</main>
 
-    </main>
-
-    <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
-        <img src="../immagini/Icon/torna_su.webp" alt="Torna su" />
-    </button>
-
-    <footer>
-        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
-    </footer>
-
-    <script src="../javascript/torna-su.js"></script>
     <script>
         function showForm() {
             document.getElementById('formTitle').textContent = 'Aggiungi Personal Trainer';
@@ -196,10 +249,11 @@ if (isset($_GET['edit'])) {
             document.getElementById('nome').value = '';
             document.getElementById('cognome').value = '';
             document.getElementById('email').value = '';
-            document.getElementById('password').value = '';
+            document.getElementById('password').required = true;
             document.getElementById('specializzazione').value = '';
             document.getElementById('qualifica').value = '';
             document.getElementById('userForm').style.display = 'block';
+            document.getElementById('userForm').scrollIntoView();
         }
 
         function editUser(id) {
@@ -211,16 +265,17 @@ if (isset($_GET['edit'])) {
                     document.getElementById('nome').value = data.nome;
                     document.getElementById('cognome').value = data.cognome;
                     document.getElementById('email').value = data.email;
-                    document.getElementById('password').value = '';
+                    document.getElementById('password').required = false; // In modifica non è obbligatoria
                     document.getElementById('specializzazione').value = data.specializzazione;
                     document.getElementById('qualifica').value = data.qualifica;
                     document.getElementById('userForm').style.display = 'block';
+                    document.getElementById('userForm').scrollIntoView();
                 });
         }
 
         function deleteUser() {
             const id = document.getElementById('userId').value;
-            if (id && confirm("Sei sicuro di voler eliminare questo personal trainer?")) {
+            if (id && confirm("Sei sicuro di voler eliminare definitivamente questo trainer?")) {
                 window.location.href = '?delete=' + id;
             }
         }
@@ -230,8 +285,5 @@ if (isset($_GET['edit'])) {
         }
     </script>
 </body>
-
 </html>
-<?php
-$conn->close();
-?>
+<?php $conn->close(); ?>
