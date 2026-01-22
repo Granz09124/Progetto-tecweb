@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-
 $nome = trim($_POST['nome']);
 $cognome = trim($_POST['cognome']);
 $data_nascita = $_POST['data-nascita'];
