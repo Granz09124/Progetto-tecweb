@@ -291,3 +291,27 @@ FORM UPLOAD
     flex-shrink: 0;
     white-space: nowrap;
 }
+
+/*
+========================================================================
+GESTIONE ADMIN (Form e Bottoni)
+========================================================================
+*/
+
+#formSection {
+    display: none;
+    margin-top: 2em;
+}
+
+.btn-save {
+    background-color: var(--mainColor) !important;
+    color: var(--mainBackgroundColorDark) !important;
+    font-weight: bold !important;
+    border-color: var(--mainColor) !important;
+}
+
+.btn-save:hover {
+    background-color: var(--mainColorLight) !important;
+    color: var(--mainBackgroundColorDark) !important;
+    box-shadow: 0 0 10px var(--mainColor);
+}

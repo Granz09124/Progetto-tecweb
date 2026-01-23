@@ -1,16 +1,51 @@
 <?php
+require_once 'config.php';
+
+// Controllo accesso 
 /*
-session_start();
 if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
     header("Location: error403.html");
     exit;
 }
 */
 
-$conn = new mysqli("db", "root", "example", "palestra_db", 3306);
-if ($conn->connect_error) {
-    die("Connessione fallita: " . $conn->connect_error);
+//TEST
+$id_admin = 1; 
+
+$messaggio = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['action'] == 'update_credenziali') {
+    $new_email = $_POST['email'];
+    
+    $new_pass = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : null;
+    
+    try {
+        if ($new_pass) {
+            $stmt = $conn->prepare("UPDATE Utente SET email = ?, password_hash = ? WHERE id_utente = ?");
+            $stmt->bind_param("ssi", $new_email, $new_pass, $id_admin);
+        } else {
+            $stmt = $conn->prepare("UPDATE Utente SET email = ? WHERE id_utente = ?");
+            $stmt->bind_param("si", $new_email, $id_admin);
+        }
+        
+        if ($stmt->execute()) {
+            $messaggio = "Credenziali aggiornate con successo!";
+        } else {
+            $messaggio = "Errore durante l'aggiornamento: " . $stmt->error;
+        }
+        $stmt->close();
+    } catch (Exception $e) {
+        $messaggio = "Errore: " . $e->getMessage();
+    }
 }
+
+$stmt = $conn->prepare("SELECT email FROM Utente WHERE id_utente = ?");
+$stmt->bind_param("i", $id_admin);
+$stmt->execute();
+$result = $stmt->get_result();
+$adminData = $result->fetch_assoc();
+$currentEmail = $adminData['email'] ?? 'admin@email.it';
+$stmt->close();
 ?>
 <!doctype html>
 <html lang="it">
@@ -19,8 +54,7 @@ if ($conn->connect_error) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Palestra - Area Utente Admin</title>
-    <meta name="description" content="Pannello di Amministrazione Il Tempio di Apollo, gestione iscritti, abbonamenti, corsi, staff e statistiche della palestra." />
-    <meta name="keywords" content="pannello admin, gestione palestra, database utenti, amministrazione, statistiche" />
+    <meta name="description" content="Pannello di Amministrazione Il Tempio di Apollo." />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/utente.css" />
@@ -60,7 +94,7 @@ if ($conn->connect_error) {
     <nav id="breadcrumb">
         <p>
             Ti trovi in:
-            <a lang="en" href="./home.html">Home</a> > > Area personale
+            <a lang="en" href="./home.html">Home</a> >> Area personale
         </p>
     </nav>
 
@@ -90,27 +124,31 @@ if ($conn->connect_error) {
 
             <section class="user-section">
                 <h2>Credenziali Accesso</h2>
-                <form action="#" method="POST" id="credentialsForm">
+                
+                <?php if ($messaggio): ?>
+                    <div class="feedback-message"><?php echo $messaggio; ?></div>
+                <?php endif; ?>
+
+                <form action="" method="POST">
+                    <input type="hidden" name="action" value="update_credenziali">
+                    
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
                             <label>E-mail Amministratore</label>
-                            <input type="email" value="admin@tempioapollo.it" name="email" readonly id="emailInput">
+                            <input type="email" name="email" value="<?php echo htmlspecialchars($currentEmail); ?>" required>
                         </div>
-                        <button type="button" class="btn-modify" id="editEmailBtn">Modifica</button>
                     </div>
 
                     <div class="tech-form-group">
                         <div class="data-item tech-input-wrapper">
-                            <label>Password</label>
-                            <input type="password" value="********" name="password" readonly id="passwordInput">
+                            <label>Nuova Password</label>
+                            <input type="password" name="password" placeholder="Lascia vuoto per non cambiare">
                         </div>
-                        <button type="button" class="btn-modify" id="editPasswordBtn">Cambia</button>
                     </div>
 
-                    <div id="saveCancelButtons" style="display: none;">
-                        <button type="submit" class="btn-modify save-btn">Salva</button>
-                        <button type="button" class="btn-modify cancel-btn" id="cancelBtn">Annulla</button>
-                    </div>
+                    <button type="submit" class="btn-modify">
+                        Salva Credenziali
+                    </button>
                 </form>
             </section>
 
@@ -130,52 +168,6 @@ if ($conn->connect_error) {
     </footer>
 
     <script src="../javascript/torna-su.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const editEmailBtn = document.getElementById('editEmailBtn');
-            const editPasswordBtn = document.getElementById('editPasswordBtn');
-            const emailInput = document.getElementById('emailInput');
-            const passwordInput = document.getElementById('passwordInput');
-            const saveCancelButtons = document.getElementById('saveCancelButtons');
-            const cancelBtn = document.getElementById('cancelBtn');
-            const credentialsForm = document.getElementById('credentialsForm');
-
-            let originalEmail = emailInput.value;
-            let originalPassword = passwordInput.value;
-
-            editEmailBtn.addEventListener('click', function() {
-                emailInput.removeAttribute('readonly');
-                emailInput.focus();
-                saveCancelButtons.style.display = 'block';
-            });
-
-            editPasswordBtn.addEventListener('click', function() {
-                passwordInput.removeAttribute('readonly');
-                passwordInput.value = '';
-                passwordInput.focus();
-                saveCancelButtons.style.display = 'block';
-            });
-
-            cancelBtn.addEventListener('click', function() {
-                emailInput.setAttribute('readonly', 'readonly');
-                passwordInput.setAttribute('readonly', 'readonly');
-                emailInput.value = originalEmail;
-                passwordInput.value = originalPassword;
-                saveCancelButtons.style.display = 'none';
-            });
-
-            credentialsForm.addEventListener('submit', function(e) {
-                // Prevent default form submission for demo purposes
-                e.preventDefault();
-                alert('Credenziali salvate con successo!');
-                emailInput.setAttribute('readonly', 'readonly');
-                passwordInput.setAttribute('readonly', 'readonly');
-                originalEmail = emailInput.value;
-                originalPassword = passwordInput.value;
-                saveCancelButtons.style.display = 'none';
-            });
-        });
-    </script>
 </body>
 
 </html>
