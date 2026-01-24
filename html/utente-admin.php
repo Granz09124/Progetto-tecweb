@@ -51,7 +51,8 @@ $body = file_get_contents("internal/utente/utente-admin/body.html");
 $bottom = file_get_contents("internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Palestra - Area Utente Admin", $top);
-$top = str_replace("[Breadcrumb]", "Ti trovi in: <a href='./home.html'>Home</a> >> Area personale", $top);
+$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> Area Amministrazione";
+$top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $messaggioHtml = $messaggio ? "<div class='feedback-message'>$messaggio</div>" : "";
 $body = str_replace("[MessaggioFeedback]", $messaggioHtml, $body);

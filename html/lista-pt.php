@@ -85,7 +85,8 @@ $body = file_get_contents("internal/utente/lista-pt/body.html");
 $bottom = file_get_contents("internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Gestione PT - Admin", $top);
-$top = str_replace("[Breadcrumb]", "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Admin</a> >> Gestione PT", $top);
+$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Amministrazione</a> >> Gestione PT";
+$top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[TableRows]", $tableRows, $body);
 

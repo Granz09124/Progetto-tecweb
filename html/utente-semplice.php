@@ -58,7 +58,8 @@ if ($resultSchede->num_rows > 0) {
 }
 
 $top = str_replace("[PageTitle]", "Area Utente", $top);
-$top = str_replace("[Breadcrumb]", "Ti trovi in: Home >> Area Personale", $top);
+$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> Area Personale";
+$top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[Nome]", htmlspecialchars($userData['nome']), $body);
 $body = str_replace("[Cognome]", htmlspecialchars($userData['cognome']), $body);

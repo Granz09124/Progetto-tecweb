@@ -66,7 +66,8 @@ $body = file_get_contents("internal/utente/lista-clienti/body.html"); // Percors
 $bottom = file_get_contents("internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Gestione Clienti - Admin", $top);
-$top = str_replace("[Breadcrumb]", "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Admin</a> >> Gestione Clienti", $top);
+$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Amministrazione</a> >> Gestione Clienti";
+$top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[TableRows]", $tableRows, $body);
 
