@@ -10,6 +10,11 @@ require_once 'db_connection.php';
 // Test Marco Colombo
 $_SESSION['user_id'] = 9;
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require "internal/utente/lista-clienti-pt/upload-scheda.php";
+    exit();
+}
+
 $id_pt = $_SESSION['user_id'] ?? 0;
 $messaggio = "";
 if ($id_pt == 0) { header("Location: home.html"); exit; }
