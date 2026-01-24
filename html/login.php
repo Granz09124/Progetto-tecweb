@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 
 function redirect_based_on_type() {
+    /*
     if (!isset($_SESSION['user_tipo'])) {
         header("Location: login.php");
         exit();
@@ -25,6 +26,8 @@ function redirect_based_on_type() {
             header("Location: utente-semplice.php");
             break;
     }
+    */
+    header("Location: area-personale.php");
     exit();
 }
 
