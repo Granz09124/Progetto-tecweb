@@ -87,6 +87,7 @@ if ($user = $result->fetch_assoc()) {
 
         // Reindirizza in base al tipo di utente
         redirect_based_on_type();
+    }
 }
 
 $_SESSION['errori_login'] = ["Email o password non corretti."];
