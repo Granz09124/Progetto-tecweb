@@ -115,13 +115,15 @@ $result = $conn->query("SELECT u.id_utente, u.nome, u.cognome, u.email FROM Uten
             <h1>Lista Personal Trainer</h1>
 
             <section class="user-section">
-                <table class="admin-table">
+                <p id="sum">Tabella contenente l'elenco dei Personal Trainer, con nome, cognome, email e comandi per la modifica.</p>
+
+                <table class="admin-table" aria-describedby="sum">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th>Azione</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cognome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Azione</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -26,10 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $conn->prepare("UPDATE Utente SET nome = ?, cognome = ?, email = ? WHERE id_utente = ?");
             $stmt->bind_param("sssi", $nome, $cognome, $email, $id);
         }
-    } else {
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $conn->prepare("INSERT INTO Utente (nome, cognome, email, password_hash) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $nome, $cognome, $email, $password_hash);
     }
     $stmt->execute(); $stmt->close();
     header("Location: " . $_SERVER['PHP_SELF']);
@@ -92,13 +88,15 @@ $result = $conn->query("SELECT id_utente, nome, cognome, email FROM Utente");
             <h1>Lista Utenti Totali (Database)</h1>
 
             <section class="user-section">
-                <table class="admin-table">
+                <p id="sum">Tabella contenente l'elenco di tutti gli utenti registrati nel sistema, con nome, cognome, email e comandi per la modifica.</p>
+
+                <table class="admin-table" aria-describedby="sum">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th>Azione</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cognome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Azione</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -114,9 +112,6 @@ $result = $conn->query("SELECT id_utente, nome, cognome, email FROM Utente");
                         <?php endwhile; ?>
                     </tbody>
                 </table>
-                <section class="account-actions">
-                    <button class="btn-modify" onclick="showAddForm('Utente')">+ Aggiungi Nuovo Utente</button>
-                </section>
             </section>
 
             <section class="user-section" id="formSection" style="display: none;">
