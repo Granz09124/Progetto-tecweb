@@ -35,19 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $conn->prepare("UPDATE Cliente SET codice_fiscale = ?, telefono = ? WHERE id_utente = ?");
         $stmt->bind_param("ssi", $codice_fiscale, $telefono, $id);
         $stmt->execute(); $stmt->close();
-    } else {
-
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $conn->prepare("INSERT INTO Utente (nome, cognome, email, password_hash) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $nome, $cognome, $email, $password_hash);
-        $stmt->execute();
-        $id_utente = $conn->insert_id;
-        $stmt->close();
-
-        $stmt = $conn->prepare("INSERT INTO Cliente (id_utente, codice_fiscale, telefono) VALUES (?, ?, ?)");
-        $stmt->bind_param("iss", $id_utente, $codice_fiscale, $telefono);
-        $stmt->execute(); $stmt->close();
-    }
+    } 
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
@@ -110,13 +98,16 @@ $result = $conn->query("SELECT u.id_utente, u.nome, u.cognome, u.email FROM Uten
             <h1>Lista Iscritti (Clienti)</h1>
 
             <section class="user-section">
-                <table class="admin-table">
+                <p id="sum">La tabella contiene l’elenco degli iscritti attuali alla palestra.
+                    Per ogni iscritto ci sono le varie colonne che indicano il nome, il cognome e l’indirizzo email.
+                    Accanto ai dati di ogni persona è disponibile una colonna azione dove si trova un pulsante chiamato “Modifica”, che consente di aggiornare le informazioni dell’iscritto selezionato.
+                <table aria-describedby="sum" class="admin-table">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th>Azione</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Cognome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Azione</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -132,10 +123,6 @@ $result = $conn->query("SELECT u.id_utente, u.nome, u.cognome, u.email FROM Uten
                         <?php endwhile; ?>
                     </tbody>
                 </table>
-                
-                <section class="account-actions">
-                    <button class="btn-modify" onclick="showAddForm('Cliente')">+ Aggiungi Nuovo Cliente</button>
-                </section>
             </section>
 
             <section class="user-section" id="formSection" style="display: none;">
