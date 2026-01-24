@@ -1,0 +1,60 @@
+<section class="area-personale">
+    <h1>Lista Utenti Totali (Database)</h1>
+
+    <section class="user-section">
+        <p id="sum">Tabella contenente l'elenco di tutti gli utenti registrati nel sistema, con nome, cognome, email e comandi per la modifica.</p>
+
+        <table aria-describedby="sum" class="admin-table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Cognome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Azione</th>
+                </tr>
+            </thead>
+            <tbody>
+                [TableRows]
+            </tbody>
+        </table>
+    </section>
+
+    <section class="user-section" id="formSection" style="display: none;">
+        <h2 id="formTitle">Modifica Utente</h2>
+        <form method="POST" action="">
+            <input type="hidden" id="userId" name="id" value="">
+            
+            <div class="tech-form-group">
+                <div class="data-item tech-input-wrapper">
+                    <label>Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="data-item tech-input-wrapper">
+                    <label>Cognome</label>
+                    <input type="text" id="cognome" name="cognome" required>
+                </div>
+            </div>
+
+            <div class="tech-form-group">
+                <div class="data-item tech-input-wrapper">
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="data-item tech-input-wrapper">
+                    <label>Password (Opzionale)</label>
+                    <input type="password" id="password" name="password">
+                </div>
+            </div>
+
+            <section class="account-actions">
+                <button type="submit" class="btn-modify btn-save">Salva</button>
+                <button type="button" class="btn-delete" onclick="deleteUser('Utente')" id="btnDelete">Elimina</button>
+                <button type="button" class="btn-modify" onclick="hideForm()">Annulla</button>
+            </section>
+        </form>
+    </section>
+
+    <section class="account-actions">
+        <a href="./utente-admin.php" class="btn-logout">Torna al Pannello</a>
+    </section>
+</section>

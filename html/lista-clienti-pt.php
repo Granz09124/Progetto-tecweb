@@ -47,6 +47,10 @@ if ($resultClienti->num_rows > 0) {
 }
 
 $body = str_replace("[ListaClienti]", $righeHTML, $body);
+$top = str_replace("[PageTitle]", "I Miei Clienti - Area PT", $top);
+
+$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='utente-pt.php'>Area Personale</a> >> I Miei Clienti";
+$top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 echo $top . $body . $bottom;
 $stmtClienti->close(); $conn->close();

@@ -1,0 +1,54 @@
+<section class="area-personale">
+    <h1>Pannello Amministrazione</h1>
+
+    <section class="user-section">
+        <h2>Gestione Palestra</h2>
+        <p style="margin-bottom: 1em;">Seleziona una lista per visualizzare, modificare o eliminare i record dal database.</p>
+        <ul class="links-list">
+            <li>
+                <span>📝 Visualizza Lista Iscritti (Clienti)</span>
+                <a href="lista-clienti.php" class="btn-link">Gestisci</a>
+            </li>
+            <li>
+                <span>💪 Visualizza Lista Personal Trainer</span>
+                <a href="lista-pt.php" class="btn-link">Gestisci</a>
+            </li>
+            <li>
+                <span>👥 Visualizza Lista Utenti Totali</span>
+                <a href="lista-utenti.php" class="btn-link">Gestisci</a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="user-section">
+        <h2>Credenziali Accesso</h2>
+        
+        [MessaggioFeedback]
+
+        <form action="" method="POST">
+            <input type="hidden" name="action" value="update_credenziali">
+            
+            <div class="tech-form-group">
+                <div class="data-item tech-input-wrapper">
+                    <label>E-mail Amministratore</label>
+                    <input type="email" name="email" value="[Email]" required>
+                </div>
+            </div>
+
+            <div class="tech-form-group">
+                <div class="data-item tech-input-wrapper">
+                    <label>Nuova Password</label>
+                    <input type="password" name="password" placeholder="Lascia vuoto per non cambiare">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-modify" style="width:100%; margin-top:1em;">
+                Salva Credenziali
+            </button>
+        </form>
+    </section>
+
+    <section class="account-actions" aria-label="Gestione Account">
+        <a href="./home.html" class="btn-logout">Logout</a>
+    </section>
+</section>
