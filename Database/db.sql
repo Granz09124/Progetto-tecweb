@@ -54,18 +54,16 @@ CREATE TABLE Messaggio_Contattaci (
     data_invio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE Scheda_Allenamento (
-    id_scheda SERIAL PRIMARY KEY,
-    id_pt BIGINT UNSIGNED REFERENCES Istruttore(id_utente) ON DELETE SET NULL,
-    id_cliente BIGINT UNSIGNED REFERENCES Cliente(id_utente) ON DELETE CASCADE,
-    nome_file VARCHAR(255) NOT NULL,
-    percorso_file VARCHAR(255) NOT NULL,
-    data_caricamento TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
 CREATE TABLE Assegnazione_PT (
     id_pt BIGINT UNSIGNED REFERENCES Istruttore(id_utente) ON DELETE CASCADE,
     id_cliente BIGINT UNSIGNED REFERENCES Cliente(id_utente) ON DELETE CASCADE,
+    dimensione_file BIGINT UNSIGNED DEFAULT NULL,
+    data_caricamento TIMESTAMP DEFAULT NULL,
+    CONSTRAINT caricamento_scheda CHECK (
+        (dimensione_file IS NULL AND data_caricamento IS NULL)
+        OR
+        (dimensione_file IS NOT NULL AND data_caricamento IS NOT NULL)
+    ),
     PRIMARY KEY (id_pt, id_cliente)
 );
 
