@@ -1,8 +1,6 @@
 <?php
 
 // se non sono admin...
-require './error/403.php';
-exit;
 
 $conn = new mysqli("db", "root", "example", "palestra_db", 3306);
 
