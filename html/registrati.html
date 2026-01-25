@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" media="print" href="../css/print-contattaci-registrati-login.css">
+    <script src="/javascript/caricaRegistrazione.js"></script>
 </head>
 
 <body>
@@ -53,8 +54,8 @@
                 <label for="cognome">Cognome *</label>
                 <input type="text" id="cognome" name="cognome" required autocomplete="family-name">
 
-                <label for="data-nascita">Data di nascita *</label>
-                <input type="date" id="data-nascita" name="data-nascita" required>
+                <label for="codice-fiscale">Codice Fiscale *</label>
+                <input type="text" id="codice-fiscale" name="codice-fiscale" required autocomplete="off" minlength="16" maxlength="16">
             </fieldset>
 
             <fieldset>
@@ -66,14 +67,14 @@
                 <label for="new-password">Password *</label>
 
                 <input type="password" id="new-password" name="new-password" required autocomplete="new-password" aria-describedby="pwd-info">
-                <small id="pwd-info" class="info-password">La password deve contenere almeno 8 caratteri.</small>
-
+                
                 <label for="confirm-password">Conferma Password *</label>
                 <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password">
             </fieldset>
 
             <button type="submit" class="btn-invia">Crea Account</button>
-
+            <span></span>
+            
             <p class="link-login">
                 Hai già un account? <a href="login.html">Accedi qui</a>
             </p>

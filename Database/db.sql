@@ -1,7 +1,6 @@
 CREATE DATABASE IF NOT EXISTS palestra_db;
 USE palestra_db;
 
---ricordarsi di hashare la password (e modificare le password già inserite)
 CREATE TABLE Utente (
     id_utente SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
