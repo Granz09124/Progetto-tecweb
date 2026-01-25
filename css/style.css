@@ -175,7 +175,7 @@ header.intestazione {
     border-bottom: 2px solid var(--mainColorDark);
 }
 
-#content>article,
+/* #content>article, */
 .topic {
     border: 2px solid var(--mainColor);
     box-shadow: 0 0 10px var(--mainColor);
@@ -231,9 +231,10 @@ header.intestazione {
     flex-basis: 100%;
 }
 
+/* 
 #presentazione-servizi a::after {
     content: " ⇨";
-}
+} */
 
 #presentazione-servizi img {
     display: block;
@@ -1318,6 +1319,7 @@ ul#risultati-ricerca {
 
     margin-bottom: 1em;
 }
+
 .user-section button:hover {
     background-color: var(--mainColorLight);
 }
@@ -1394,4 +1396,3 @@ SAVE CANCEL BUTTONS
     justify-content: center;
     gap: 1em;
 }
-
