@@ -26,10 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $conn->prepare("UPDATE Utente SET nome = ?, cognome = ?, email = ? WHERE id_utente = ?");
             $stmt->bind_param("sssi", $nome, $cognome, $email, $id);
         }
-    } else {
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $conn->prepare("INSERT INTO Utente (nome, cognome, email, password_hash) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $nome, $cognome, $email, $password_hash);
     }
     $stmt->execute(); $stmt->close();
     header("Location: " . $_SERVER['PHP_SELF']);
@@ -47,128 +43,30 @@ if (isset($_GET['edit'])) {
     exit;
 }
 
+$tableRows = "";
 $result = $conn->query("SELECT id_utente, nome, cognome, email FROM Utente");
+while($row = $result->fetch_assoc()) {
+    $tableRows .= "<tr>";
+    $tableRows .= "<td>" . htmlspecialchars($row['nome']) . "</td>";
+    $tableRows .= "<td>" . htmlspecialchars($row['cognome']) . "</td>";
+    $tableRows .= "<td>" . htmlspecialchars($row['email']) . "</td>";
+    $tableRows .= "<td><button type='button' class='btn-modify' onclick='editUser(" . $row['id_utente'] . ")'>Modifica</button></td>";
+    $tableRows .= "</tr>";
+}
+
+$top = file_get_contents("internal/utente/top.html");
+$body = file_get_contents("internal/utente/lista-utenti/body.html");
+$bottom = file_get_contents("internal/utente/bottom.html");
+
+$top = str_replace("[PageTitle]", "Lista Utenti Totali - Admin", $top);
+$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Amministrazione</a> >> Lista Utenti Totali";
+$top = str_replace("[Breadcrumb]", $breadcrumb, $top);
+
+$body = str_replace("[TableRows]", $tableRows, $body);
+
+$customScript = '<script src="../javascript/formLista.js"></script>';
+$bottom = str_replace("</body>", $customScript . "</body>", $bottom);
+
+echo $top . $body . $bottom;
+$conn->close();
 ?>
-<!doctype html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lista Utenti Totali - Admin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/utente.css" />
-    <link rel="stylesheet" media="screen and (max-width:768px)" href="../css/mini.css">
-</head>
-<body id="layout-adhoc">
-    <header class="intestazione">
-        <div class="intestazione-bg">
-            <a href="./home.html"><img src="../immagini/Logo_palestra.png" alt="Home" class="logo"></a>
-            <h1>Il Tempio di Apollo</h1>
-        </div>
-        <nav id="menu" aria-label="menu">
-            <input type="checkbox" id="menu-toggle">
-            <div id="hamburger-menu">
-                <span id="ham-line1"></span><span id="ham-line2"></span><span id="ham-line3"></span>
-            </div>
-            <ul>
-                <li><a lang="en" href="./home.html">Home</a></li>
-                <li><a href="./Palestra.html"><strong>Palestra</strong></a></li>
-                <li><a href="./abbonamenti.html">Abbonamenti</a></li>
-                <li><a href="./cerca-pt.html">Ricerca Istruttori</a></li>
-                <li><a href="./Contattaci.html">Contattaci</a></li>
-                <li>Area Utente</li>
-                <li><a href="./home.html">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="./home.html">Home</a> >> <a href="./utente-admin.php">Area Admin</a> >> Lista Utenti Totali</p>
-    </nav>
-
-    <main class="contenuto-principale">
-        <section class="area-personale">
-            <h1>Lista Utenti Totali (Database)</h1>
-
-            <section class="user-section">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Cognome</th>
-                            <th>Email</th>
-                            <th>Azione</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php while($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($row['nome']); ?></td>
-                            <td><?php echo htmlspecialchars($row['cognome']); ?></td>
-                            <td><?php echo htmlspecialchars($row['email']); ?></td>
-                            <td>
-                                <button type="button" class="btn-modify" onclick="editUser(<?php echo $row['id_utente']; ?>)">Modifica</button>
-                            </td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </tbody>
-                </table>
-                <section class="account-actions">
-                    <button class="btn-modify" onclick="showAddForm('Utente')">+ Aggiungi Nuovo Utente</button>
-                </section>
-            </section>
-
-            <section class="user-section" id="formSection" style="display: none;">
-                <h2 id="formTitle">Modifica Utente</h2>
-                <form method="POST" action="">
-                    <input type="hidden" id="userId" name="id" value="">
-                    
-                    <div class="tech-form-group">
-                        <div class="data-item tech-input-wrapper">
-                            <label>Nome</label>
-                            <input type="text" id="nome" name="nome" required>
-                        </div>
-                        <div class="data-item tech-input-wrapper">
-                            <label>Cognome</label>
-                            <input type="text" id="cognome" name="cognome" required>
-                        </div>
-                    </div>
-
-                    <div class="tech-form-group">
-                        <div class="data-item tech-input-wrapper">
-                            <label>Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="data-item tech-input-wrapper">
-                            <label>Password (Opzionale)</label>
-                            <input type="password" id="password" name="password">
-                        </div>
-                    </div>
-
-                    <section class="account-actions">
-                        <button type="submit" class="btn-modify btn-save">Salva</button>
-                        <button type="button" class="btn-delete" onclick="deleteUser('Utente')" id="btnDelete">Elimina</button>
-                        <button type="button" class="btn-modify" onclick="hideForm()">Annulla</button>
-                    </section>
-                </form>
-            </section>
-
-            <section class="account-actions">
-                <a href="./utente-admin.php" class="btn-logout">Torna al Pannello</a>
-            </section>
-        </section>
-    </main>
-
-    <button id="torna-su" onclick="scrollToTop()" aria-label="Torna su">
-        <img src="../immagini/Icon/torna_su.webp" alt="Torna su" />
-    </button>
-    <footer>
-        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
-    </footer>
-    <script src="../javascript/torna-su.js"></script>
-    <script src="../javascript/formLista.js"></script>
-    
-</body>
-</html>
-<?php $conn->close(); ?>

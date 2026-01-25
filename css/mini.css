@@ -299,7 +299,7 @@ a:link:has(.logo) {
     content: attr(data-title) ": \00A0";
 }
 
-.orari-corsi td:not(:has(span)) {
+.orari-corsi td.mobile-hide {
     display: none;
 }
 

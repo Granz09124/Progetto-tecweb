@@ -1,5 +1,6 @@
 :root {
     --textColor: #000;
+    --bordo-sezione: .5mm solid black;
 }
 
 html,
@@ -93,7 +94,7 @@ header.intestazione {
 
 #content>article,
 .topic {
-    border: none;
+    border: var(--bordo-sezione);
     box-shadow: none;
     background-color: none;
     margin: .4cm;
@@ -101,7 +102,7 @@ header.intestazione {
 }
 
 .light-topic {
-    border: none;
+    border: var(--bordo-sezione);
     box-shadow: none;
     background-color: none;
     margin: 0.4cm;
@@ -602,9 +603,13 @@ script {
 /* ============
   * Ricerca
   ============ */
-button.vai-a-profilo,
 #form-ricerca-istruttore button {
     display: none;
+}
+
+.barra-ricerca {
+    width: 95%;
+    margin: auto;
 }
 
 .img-pt-small {

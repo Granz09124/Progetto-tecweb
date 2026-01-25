@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contattaci</title>
+    <meta name="description" content="Contatta la palestra per informazioni su corsi, abbonamenti e orari. Sede di Padova." />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- <link rel="stylesheet" media="screen and (max-width:768px)" href="../css/mini-contattaci.css"> -->
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="/css/mini.css">
+    <link rel="stylesheet" media="print" href="/css/print-contattaci-registrati-login.css">
+    <script src="/javascript/caricaMessaggio.js"></script>
+</head>
+
+<body>
+    <a class="vai-al-contenuto" href="#contenuto">Vai al contenuto</a>
+    <header class="intestazione">
+        <a href="./home.html">
+            <img src="../immagini/Logo_palestra.png" alt="Home" class="logo" />
+        </a>
+        <h1>Il Tempio di Apollo</h1>
+
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a lang="en" href="./home.html">Home</a>
+                </li>
+                <li>
+                    <a href="./Palestra.html"><strong>Palestra</strong></a>
+                </li>
+                <li><a href="./Abbonamenti.html">Abbonamenti</a></li>
+                <li>
+                    <a href="./cerca-pt.html">Ricerca Istruttori</a>
+                </li>
+                <li>Contattaci</li>
+                <li><a href="./Login.html">Login</a></li>
+                <li><a href="./Registrati.html">Registrati</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav id="breadcrumb">
+        <p>
+            Ti trovi in:
+            <a lang="en" href="./home.html">Home</a> &gt; &gt; Contattaci
+        </p>
+    </nav>
+
+    <main class="contenuto-principale">
+        <section class="contatti-sede">
+            <h2>Sede di Padova</h2>
+
+            <ul>
+                <li>
+                    <strong>Indirizzo:</strong> 96100 Siracusa SR
+                </li>
+                <li><strong>Telefono:</strong> 049 8762439</li>
+                <li><strong>Email:</strong> supporto@tempio.apollo.it</li>
+                <li><strong>Orari:</strong> Lun-Dom 7:00-22:00</li>
+            </ul>
+        </section>
+
+        <section class="contatti-interazione">
+            <div class="form-contatto">
+                <h2>Scrivici</h2>
+
+                <form>
+                    <label for="nome">Nome *</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}">
+
+                    <label for="messaggio">Messaggio *</label>
+                    <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
+
+                    <button type="submit" class="btn-invia">Invia</button>
+                </form>
+                <span></span>
+            </div>
+
+            <div class="mappa" aria-label="Posizione della palestra su mappa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4470.551727820019!2d15.291661621995575!3d37.06300641943253!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313cc1e34c07d79%3A0x798822c0b2ac27ad!2sTempio%20di%20Apollo%20(Apollonion)!5e1!3m2!1sit!2sit!4v1768321273419!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-di-pagina">
+        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+
+</html>
