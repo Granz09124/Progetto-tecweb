@@ -315,3 +315,43 @@ GESTIONE ADMIN (Form e Bottoni)
     color: var(--mainBackgroundColorDark) !important;
     box-shadow: 0 0 10px var(--mainColor);
 }
+
+/* ========================================================================
+   FIX PULSANTI NEL FORM Salva, Elimina e Annulla
+   ======================================================================== */
+#formSection .account-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#formSection .account-actions button,
+#formSection .account-actions .btn-modify,
+#formSection .account-actions .btn-delete,
+#formSection .account-actions .btn-save {
+    width: 120px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--mainColor);
+    color: var(--mainBackgroundColorDark);
+    border: 1px solid var(--mainColorDark);
+    box-shadow: none;
+}
+
+#formSection .account-actions button:hover,
+#formSection .account-actions .btn-modify:hover,
+#formSection .account-actions .btn-delete:hover,
+#formSection .account-actions .btn-save:hover {
+    background-color: var(--mainColorLight);
+    color: var(--mainBackgroundColorDark);
+    border-color: var(--mainColorDark);
+}
