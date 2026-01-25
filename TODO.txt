@@ -287,11 +287,36 @@ ARMANDO: creazione mini e print di lista-clienti-pt, aiutare LUCA con la sua par
 
 
 
-MARCO: Sistemazione sistema sessione per il login , cancellare la possibilità di registrarsi una volta che si è loggati                          
+MARCO: Sistemazione sistema sessione per il login , cancellare la possibilità di registrarsi una volta che si è loggati  
 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------
 
+TODO 25/01/2026
 
+COSE DA SISTEMARE:
+
+Paragrafi delle tabelle devono essere nascosti, togliere bordo esterno  (LUCA E ARMANDO)
+
+rendere tutti i breadcrumb come lista (ALESSANDRO)
+
+colori dei link visitati e non (cercare di capire il contrasto deve esserci) (ARMANDO)
+
+colori bottoni crea account e accedi non rossi (MARCO)
+
+cambiare credenziali di log come da scritto nella relazione: account admin-> username=admin pass=admin... (MARCO)
+
+merge degli ultimi css di print mini e style (TUTTI)
+
+creare le ultime cartelle di internal per gli ultimi file html: abbonamenti, corsi, home, login, registrati, palestra, salapesi. (TUTTI)
+
+creare pagina salapesi.html con css e print, molto semplice, con foto di alcuni macchinari e sale. (LUCA)
+
+sistema logout per le varie pagine che non sono area personale (MARCO)
+
+togliere dal menu la voce "ricerca istruttori" il collegamento per arrivarci (breadcrumb) è home>>palestra>>ricerca istruttori (ALESSANDRO)
+
+Test di accessibilità su tutto (ARMANDO)
 
 
