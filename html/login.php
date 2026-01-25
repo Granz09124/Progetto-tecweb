@@ -7,43 +7,32 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-
-function redirect_based_on_type() {
-    /*
-    if (!isset($_SESSION['user_tipo'])) {
-        header("Location: login.php");
-        exit();
-    }
-
-    switch ($_SESSION['user_tipo']) {
-        case 'admin':
-            header("Location: utente-admin.php");
-            break;
-        case 'pt':
-            header("Location: utente-pt.php");
-            break;
-        default:
-            header("Location: utente-semplice.php");
-            break;
-    }
-    */
-    header("Location: area-personale.php");
-    exit();
-}
-
 if (isset($_SESSION['user_id'])) {
-    redirect_based_on_type(); // Se già loggato, reindirizza
-}
-
-$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-$password = $_POST['password'];
-
-if (!$email) {
-    $_SESSION['errori_login'] = ["Inserisci un'email valida."];
-    header("Location: login.html");
+    http_response_code(200);
+    echo 'area-personale.php';
     exit();
 }
 
+$email = trim($_POST['email'] ?? '');
+$password = $_POST['password'] ?? '';
+
+$errori = [];
+
+if (empty($email)) {
+    $errori[] = "Inserisci un'email valida.";
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errori[] = "Formato email non valido.";
+}
+
+if (empty($password)) {
+    $errori[] = "Inserisci la password.";
+}
+
+if (!empty($errori)) {
+    http_response_code(400);
+    echo $errori[0];
+    exit();
+}
 
 $stmt = $conn->prepare("SELECT id_utente, password_hash, nome, cognome FROM Utente WHERE email = ?");
 $stmt->bind_param("s", $email);
@@ -55,7 +44,7 @@ if ($user = $result->fetch_assoc()) {
         
         $id_utente = $user['id_utente'];
 
-        // Default (Non faccio check istruttore perchè viene trattato allo stesso modo per semplicità)
+        // Default (Non faccio check istruttore perché viene trattato allo stesso modo per semplicità)
         $tipo_utente = 'cliente'; 
         
         // Controlla se è Admin
@@ -88,13 +77,14 @@ if ($user = $result->fetch_assoc()) {
         $_SESSION['user_email'] = $email;
         $_SESSION['user_tipo'] = $tipo_utente; // 'admin', 'pt' o 'cliente' usato per capire se può accedere a certe pagine
 
-        // Reindirizza in base al tipo di utente
-        redirect_based_on_type();
+        // Ritorna URL di redirect
+        http_response_code(200);
+        echo 'area-personale.php';
+        exit();
     }
 }
 
-$_SESSION['errori_login'] = ["Email o password non corretti."];
-echo $_SESSION['errori_login'][0];
-header("Location: login.html");
+http_response_code(400);
+echo "Email o password non corretti.";
 exit();
 ?>
