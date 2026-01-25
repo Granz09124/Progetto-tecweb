@@ -1,8 +1,6 @@
 <?php
 
-// se non sono admin...
-
-$conn = new mysqli("db", "root", "example", "palestra_db", 3306);
+require "db_connection.php";
 
 $top = file_get_contents("internal/cerca-istruttore/top.html");
 $templateResult = file_get_contents("internal/cerca-istruttore/stack.html");
