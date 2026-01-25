@@ -253,35 +253,7 @@ a:link:has(.logo) {
     margin-bottom: 0.5em;
 }
 
-.corso button {
-    display: block;
-    width: 100%;
-    box-sizing: border-box !important;
-    background-color: #fecd00;
-    color: #161717;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.25em;
-    min-height: 44px;
-    font-size: 1em;
-    text-align: center;
-}
 
-.corso-orari {
-    position: static;
-    margin-top: 0.5em;
-    padding: 0.5em;
-    border-radius: 0.25em;
-}
-
-.corso-orari h3 {
-    margin: 0 0 0.5em 0;
-    font-size: 1.1em;
-}
-
-.corso-orari p {
-    margin: 0.25em 0;
-}
 
 .orari-corsi thead,
 .orari-corsi tfoot {
@@ -712,9 +684,125 @@ button.vai-a-profilo {
 
 /*
 ========================================================================
+Lista clienti
+========================================================================
+*/
+
+
+.admin-table, 
+.admin-table thead, 
+.admin-table tbody, 
+.admin-table tr {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+}
+
+/* 2. Nascondiamo l'intestazione originale */
+.admin-table thead tr {
+    position: absolute !important;
+    top: -9999px;
+    left: -9999px;
+}
+
+/* 3. Trasformazione delle celle (TD) */
+.admin-table td {
+    display: block !important; /* Forza ogni cella a riga intera */
+    width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    word-break: break-all !important; /* Cruciale per le email */
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+    border: none !important;
+    text-align: right !important;
+    position: relative !important;
+    min-height: 40px;
+}
+
+/* 4. Aggiunta delle etichette (Nome, Cognome, ecc.) */
+.admin-table td::before {
+    position: absolute !important;
+    left: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 40% !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    content: attr(data-label); /* Se usi data-label nell'HTML */
+}
+
+/* Se NON usi data-label nell'HTML, usiamo questi selettori */
+.admin-table td:nth-child(1)::before { content: "Nome"; }
+.admin-table td:nth-child(2)::before { content: "Cognome"; }
+.admin-table td:nth-child(3)::before { content: "Email"; }
+.admin-table td:nth-child(4)::before { content: "Azione"; }
+
+/* 5. Stile della riga come card */
+.admin-table tr {
+    border: var(--bordo-sezione, .5mm solid black) !important;
+    margin-bottom: 1.5em !important;
+    padding: 5px !important;
+}
+
+/* 6. Adattamento Form e Input (seguendo il tuo riferimento) */
+.tech-form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.tech-input-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.tech-input-wrapper input {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    padding: 10px !important;
+}
+
+/* 7. Pulsanti e Azioni (seguendo il riferimento .btn-logout) */
+.account-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 2em !important;
+    gap: 10px !important;
+}
+
+.account-actions .btn-logout,
+.account-actions .btn-modify,
+.account-actions .btn-delete {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    min-width: 200px !important;
+    max-width: 80% !important;
+    height: 48px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/*
+========================================================================
 Lista clienti PT
 ========================================================================
 */
+
+
+
 
 .admin-table.clients-table th,
 .admin-table.clients-table td {
