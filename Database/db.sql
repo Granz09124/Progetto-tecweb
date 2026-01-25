@@ -73,23 +73,23 @@ CREATE TABLE Assegnazione_PT (
 
 INSERT INTO Utente (nome, cognome, email, password_hash) VALUES
 -- Admin e User base
-('admin', 'admin', 'admin@email.it', 'admin'),
-('user', 'user', 'user@email.it', 'user'),
+('admin', 'admin', 'admin@email.it', '$2y$10$MOgMUGhexKnJFh3dgUI7C.KIHKr2ISlgtI2pgrCMssPcyrY9L3o4K'),
+('user', 'user', 'user@email.it', '$2y$10$5IHAhSlYq8ToQCSjwT0NkuB53Z5YiXL9pkrtjjMWMJxgX25OBP8jy'),
 
 -- Clienti
-('Mario', 'Rossi', 'mario.rossi@email.it', 'password123'),
-('Laura', 'Bianchi', 'laura.bianchi@email.it', 'password123'),
-('Giuseppe', 'Verdi', 'giuseppe.verdi@email.it', 'password123'),
-('Francesca', 'Neri', 'francesca.neri@email.it', 'password123'),
-('Alessandro', 'Ferrari', 'alessandro.ferrari@email.it', 'password123'),
-('Giulia', 'Romano', 'giulia.romano@email.it', 'password123'),
+('Mario', 'Rossi', 'mario.rossi@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Laura', 'Bianchi', 'laura.bianchi@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Giuseppe', 'Verdi', 'giuseppe.verdi@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Francesca', 'Neri', 'francesca.neri@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Alessandro', 'Ferrari', 'alessandro.ferrari@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Giulia', 'Romano', 'giulia.romano@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
 
 -- Istruttori e Personal Trainer
-('Marco', 'Colombo', 'marco.colombo@tempio.apollo.it', 'trainer123'),
-('Sofia', 'Ricci', 'sofia.ricci@tempio.apollo.it', 'trainer123'),
-('Luca', 'Marino', 'luca.marino@tempio.apollo.it', 'trainer123'),
-('Elena', 'Greco', 'elena.greco@tempio.apollo.it', 'trainer123'),
-('Davide', 'Bruno', 'davide.bruno@tempio.apollo.it', 'trainer123');
+('Marco', 'Colombo', 'marco.colombo@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Sofia', 'Ricci', 'sofia.ricci@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Luca', 'Marino', 'luca.marino@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Elena', 'Greco', 'elena.greco@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('Davide', 'Bruno', 'davide.bruno@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy');
 
 
 INSERT INTO Admin (id_utente) VALUES 
