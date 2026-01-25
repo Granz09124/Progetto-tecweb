@@ -1,6 +1,7 @@
 <?php
 
-$conn = new mysqli("db", "root", "example", "palestra_db", 3306);
+require "db_connection.php";
+
 $templateIstruttore = file_get_contents('internal/profilo-istruttore.html');
 
 $idIstruttore = -1;

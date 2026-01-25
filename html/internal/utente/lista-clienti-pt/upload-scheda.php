@@ -30,9 +30,14 @@ if (!isset($_POST["id_cliente"])) {
     echo "Non è stato specificato il cliente destinatario";
     exit();
 }
+$idCliente = filter_input(INPUT_POST, 'id_cliente', FILTER_VALIDATE_INT);
+if (!$idCliente) {
+    http_response_code(400);
+    echo "L'ID del cliente non è un numero";
+    exit();
+}
 
 $idUtente = $_SESSION["user_id"];
-$idCliente = $_POST["id_cliente"];
 $file = $_FILES["scheda_file"];
 $fileSize = $file["size"];
 $maxFileSize = 1_048_576; // 1MiB
@@ -61,7 +66,7 @@ if ($extension !== $allowedFileType || $mimeType !== $allowedMimeType) {
     exit();
 }
 
-$uploadedFileName = $_POST["id_cliente"] . ".pdf";
+$uploadedFileName = $idCliente . ".pdf";
 
 if (move_uploaded_file($file["tmp_name"], $target_dir . $uploadedFileName)) {
     // Se è presente una scheda per il cliente, cancellala
