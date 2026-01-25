@@ -699,20 +699,19 @@ Lista clienti
     min-width: 0 !important;
 }
 
-/* 2. Nascondiamo l'intestazione originale */
 .admin-table thead tr {
     position: absolute !important;
     top: -9999px;
     left: -9999px;
 }
 
-/* 3. Trasformazione delle celle (TD) */
+
 .admin-table td {
-    display: block !important; /* Forza ogni cella a riga intera */
+    display: block !important;
     width: 100% !important;
     min-width: 0 !important;
     white-space: normal !important;
-    word-break: break-all !important; /* Cruciale per le email */
+    word-break: break-all !important; 
     overflow-wrap: break-word !important;
     box-sizing: border-box !important;
     padding: 10px !important;
@@ -722,7 +721,6 @@ Lista clienti
     min-height: 40px;
 }
 
-/* 4. Aggiunta delle etichette (Nome, Cognome, ecc.) */
 .admin-table td::before {
     position: absolute !important;
     left: 10px !important;
@@ -731,23 +729,19 @@ Lista clienti
     width: 40% !important;
     font-weight: bold !important;
     text-align: left !important;
-    content: attr(data-label); /* Se usi data-label nell'HTML */
+    content: attr(data-label); 
 }
 
-/* Se NON usi data-label nell'HTML, usiamo questi selettori */
+
 .admin-table td:nth-child(1)::before { content: "Nome"; }
 .admin-table td:nth-child(2)::before { content: "Cognome"; }
 .admin-table td:nth-child(3)::before { content: "Email"; }
 .admin-table td:nth-child(4)::before { content: "Azione"; }
 
-/* 5. Stile della riga come card */
 .admin-table tr {
-    border: var(--bordo-sezione, .5mm solid black) !important;
-    margin-bottom: 1.5em !important;
     padding: 5px !important;
 }
 
-/* 6. Adattamento Form e Input (seguendo il tuo riferimento) */
 .tech-form-group {
     display: flex !important;
     flex-direction: column !important;
@@ -771,7 +765,7 @@ Lista clienti
     padding: 10px !important;
 }
 
-/* 7. Pulsanti e Azioni (seguendo il riferimento .btn-logout) */
+
 .account-actions {
     display: flex !important;
     flex-direction: column !important;
@@ -792,6 +786,7 @@ Lista clienti
     max-width: 80% !important;
     height: 48px !important;
     margin: 0 auto !important;
+    margin-bottom: 0.5em !important;
     box-sizing: border-box !important;
 }
 
