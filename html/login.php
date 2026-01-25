@@ -1,11 +1,13 @@
 <?php
 session_start();
-require_once 'db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo 'login.html';
-    exit;
+    http_response_code(405);
+    header('Location: login.html');
+    exit();
 }
+    
+require_once 'db_connection.php';
 
 if (isset($_SESSION['user_id'])) {
     http_response_code(200);
