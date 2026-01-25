@@ -9,22 +9,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
-    
     <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../css/mini.css">
-    <link rel="stylesheet" media="print" href="../css/print-contattaci-registrati-login.css">
+    <link rel="stylesheet" media="print" href="../css/print.css">
     <script src="/javascript/caricaLogin.js"></script>
+    <script src="/javascript/mostraPassword.js"></script>
 </head>
 
 <body>
     <a class="vai-al-contenuto" href="#contenuto-principale">Vai al contenuto principale</a>
 
     <header class="intestazione">
-        <a href="home.html" class="logo-container">
-            <img src="../immagini/Logo_palestra.png" alt="Torna alla Home" class="logo">
-        </a>
-        <h1>Il Tempio di Apollo</h1>
+        <div class="intestazione-bg">
+            <a href="home.html" class="logo-container">
+                <img src="../immagini/Logo_palestra.png" alt="Torna alla Home" class="logo">
+            </a>
+            <h1>Il Tempio di Apollo</h1>
+        </div>
 
         <nav id="menu" aria-label="Menu principale">
+            <input type="checkbox">
+            <div id="hamburger-menu">
+                <span id="ham-line1"></span>
+                <span id="ham-line2"></span>
+                <span id="ham-line3"></span>
+            </div>
+
             <ul>
                 <li><a lang="en" href="home.html">Home</a></li>
                 <li><a href="palestra.html">Palestra</a></li>
@@ -49,7 +58,7 @@
             <form action="login.php" method="post">
 
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email" required autocomplete="email" placeholder="es. mario.rossi@email.it">
+                <input type="text" id="email" name="email" required autocomplete="email">
 
                 <div class="password-wrapper">
                     <label for="password">Password</label>
@@ -72,22 +81,6 @@
         <p>&copy; 2025 Palestra Il Tempio di Apollo. Tutti i diritti riservati.</p>
     </footer>
 
-    <script>
-        function mostraPassword() {
-            const inputPass = document.getElementById("password");
-            const btn = document.querySelector(".toggle-password");
-
-            if (inputPass.type === "password") {
-                inputPass.type = "text";
-                btn.textContent = "Nascondi password";
-                btn.setAttribute("aria-label", "Nascondi la password");
-            } else {
-                inputPass.type = "password";
-                btn.textContent = "Mostra password";
-                btn.setAttribute("aria-label", "Mostra la password in chiaro");
-            }
-        }
-    </script>
 </body>
 
 </html>

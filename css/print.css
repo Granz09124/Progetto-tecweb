@@ -379,6 +379,8 @@ textarea {
     display: none;
 }
 
+
+
 /* ============
  * LOGIN
  ============ */
@@ -392,6 +394,11 @@ textarea {
 
 .password-wrapper input {
     margin-bottom: .4cm;
+}
+
+.password-wrapper label,
+.form-container label {
+    color: var(--textColor) !important;
 }
 
 .toggle-password {
@@ -411,6 +418,11 @@ textarea {
     text-decoration: underline;
 }
 
+.form-container h2 {
+    color: var(--textColor);
+}
+
+
 /* ============
  * REGISTRATI
  ============ */
@@ -418,10 +430,30 @@ textarea {
     text-align: center;
     margin: .8cm 0;
     font-weight: bold;
+    color: var(--textColor);
 }
 
 .form-registrazione {
     margin-left: .5cm;
+    margin: 0 auto;
+}
+
+.titolo-registrazione {
+    color: var(--textColor);
+}
+
+.form-registrazione legend,
+.form-registrazione label {
+    color: var(--textColor);
+}
+
+.info-password {
+    display: block;
+    font-size: 85%;
+    margin-top: .1cm;
+    margin-left: .2cm;
+    font-style: italic;
+    color: var(--textColor);
 }
 
 fieldset {
@@ -437,16 +469,6 @@ legend {
     padding: 0 .3cm;
     color: var(--textColor);
 }
-
-.info-password {
-    display: block;
-    font-size: 85%;
-    margin-top: .1cm;
-    margin-left: .2cm;
-    font-style: italic;
-    color: var(--textColor);
-}
-
 
 button:not(.btn-invia) {
     display: none;
@@ -706,3 +728,4 @@ script {
         display: none !important;
     }
 }
+

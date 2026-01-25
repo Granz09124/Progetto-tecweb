@@ -868,3 +868,205 @@ Lista clienti PT
     word-break: break-all;
     overflow-wrap: break-word;
 }
+
+/* ============
+ * Contattaci
+ ============ */
+.contatti-sede {
+    width: 95%;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+.contatti-sede ul {
+    padding-left: 1em;
+}
+
+.contatti-interazione {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2em;
+}
+
+.form-contatto {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.form-contatto form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-contatto label {
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.form-contatto input,
+.form-contatto textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8em;
+    min-height: 44px;
+}
+
+.form-contatto textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-contatto .btn-invia {
+    width: 100%;
+    padding: 1em;
+    min-height: 48px;
+}
+
+.form-contatto span {
+    display: block;
+    margin-top: 1em;
+    text-align: center;
+    min-height: 1.5em;
+}
+
+.mappa {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.mappa iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+/* ============
+ * Login
+ ============ */
+.form-container {
+    width: 95%;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.form-container input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8em;
+    min-height: 44px;
+}
+
+.password-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-password {
+    margin-top: 0.5em;
+    padding: 0.6em;
+    min-height: 44px;
+}
+
+.form-container .btn-invia {
+    width: 100%;
+    padding: 1em;
+    min-height: 48px;
+    margin-top: 0.5em;
+}
+
+.form-container span {
+    display: block;
+    margin-top: 1em;
+    text-align: center;
+    min-height: 1.5em;
+}
+
+.link-registrazione {
+    text-align: center;
+    margin-top: 1em;
+}
+
+/* ============
+ * Registrati
+ ============ */
+.titolo-registrazione {
+    text-align: center;
+    margin: 1.5em 0;
+}
+
+.form-registrazione {
+    width: 95%;
+    margin: 0 auto 2em auto;
+    padding: 1em;
+}
+
+.form-registrazione fieldset {
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1.5em;
+}
+
+.form-registrazione legend {
+    padding: 0 0.5em;
+}
+
+.form-registrazione label {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+.form-registrazione label:first-of-type {
+    margin-top: 0;
+}
+
+.form-registrazione input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8em;
+    min-height: 44px;
+}
+
+.form-registrazione .btn-invia {
+    width: 100%;
+    padding: 1em;
+    min-height: 48px;
+    margin-top: 1em;
+}
+
+.form-registrazione span {
+    display: block;
+    margin-top: 1em;
+    text-align: center;
+    min-height: 1.5em;
+}
+
+.link-login {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.info-password {
+    display: block;
+    margin-top: 0.3em;
+    font-size: 0.9em;
+}
