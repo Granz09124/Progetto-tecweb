@@ -3,7 +3,7 @@ session_start();
 require_once 'db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
+    echo 'login.html';
     exit;
 }
 
