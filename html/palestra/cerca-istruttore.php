@@ -1,19 +1,26 @@
 <?php
+session_start();
 
-require "db_connection.php";
+require "../db_connection.php";
 
-$top = file_get_contents("internal/cerca-istruttore/top.html");
-$templateResult = file_get_contents("internal/cerca-istruttore/stack.html");
-$bottom = file_get_contents("internal/cerca-istruttore/bottom.html");
+$internal = "../internal/cerca-istruttore/";
+
+$top = file_get_contents($internal . "top.html");
+$menuFile = isset($_SESSION['user_id'])
+    ? $internal . "menu-user.html"
+    : $internal . "menu-guest.html";
+$menuContent = file_get_contents($menuFile);
+$templateResult = file_get_contents($internal . "stack.html");
+$bottom = file_get_contents($internal . "bottom.html");
 
 $nome = '';
 if (isset($_GET['nome'])) {
     $nome = $_GET['nome'];
     $nome = trim($nome);
-    $nome = htmlspecialchars($nome);
 }
 
-$top = str_replace("[Valore Ricerca]", $nome, $top);
+$top = str_replace("[Menu]", $menuContent, $top);
+$top = str_replace("[Valore Ricerca]", htmlspecialchars($nome), $top);
 
 echo $top;
 
