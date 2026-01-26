@@ -4,25 +4,25 @@ require_once 'config.php';
 // =============================================================
 // TEST DA TOGLIERE DOPO
 // =============================================================
-$ruolo_test = 'admin'; 
+// $ruolo_test = 'admin'; 
 
-if ($ruolo_test === 'admin') {
-    $_SESSION['user_id'] = 1;
-    $_SESSION['user_tipo'] = 'admin';
-    $_SESSION['user_nome'] = 'Admin';
-} 
-elseif ($ruolo_test === 'pt') {
-    $_SESSION['user_id'] = 9;
-    $_SESSION['user_tipo'] = 'pt';
-    $_SESSION['user_nome'] = 'Marco';
-    $_SESSION['user_cognome'] = 'Colombo';
-} 
-elseif ($ruolo_test === 'cliente') {
-    $_SESSION['user_id'] = 3;
-    $_SESSION['user_tipo'] = 'cliente';
-    $_SESSION['user_nome'] = 'Mario';
-    $_SESSION['user_cognome'] = 'Rossi';
-}
+// if ($ruolo_test === 'admin') {
+//     $_SESSION['user_id'] = 1;
+//     $_SESSION['user_tipo'] = 'admin';
+//     $_SESSION['user_nome'] = 'Admin';
+// } 
+// elseif ($ruolo_test === 'pt') {
+//     $_SESSION['user_id'] = 9;
+//     $_SESSION['user_tipo'] = 'pt';
+//     $_SESSION['user_nome'] = 'Marco';
+//     $_SESSION['user_cognome'] = 'Colombo';
+// } 
+// elseif ($ruolo_test === 'cliente') {
+//     $_SESSION['user_id'] = 3;
+//     $_SESSION['user_tipo'] = 'cliente';
+//     $_SESSION['user_nome'] = 'Mario';
+//     $_SESSION['user_cognome'] = 'Rossi';
+// }
 // =============================================================
 
 if (!isset($_SESSION['user_id'])) {

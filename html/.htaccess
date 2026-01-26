@@ -6,4 +6,4 @@ RewriteEngine On
 RewriteBase /
 
 RewriteCond %{REQUEST_URI} ^/?$ [NC]
-RewriteRule ^/?$ /home.html [L]
+RewriteRule ^/?$ /home.php [L]
