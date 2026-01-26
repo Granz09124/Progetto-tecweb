@@ -25,7 +25,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
-    echo file_get_contents('error404.html');
+    require "error/404.php";
 }
 
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
