@@ -960,8 +960,8 @@ textarea {
     padding: 0.8rem;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #b30000;
-    color: #ffffff;
+    background-color: var(--mainColor);
+    color: var(--mainBackgroundColorDark);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -969,7 +969,8 @@ textarea {
 }
 
 .btn-invia:hover {
-    background-color: #d40000;
+    background-color: var(--mainColorDark);
+    color: var(--mainBackgroundColorDark);
 }
 
 .mappa {
@@ -1027,7 +1028,7 @@ textarea {
     display: block;
     margin-bottom: 0.5em;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--textColor);
 }
 
 .form-container input {
@@ -1038,7 +1039,7 @@ textarea {
     border: 1px solid #555;
     border-radius: 6px;
     background-color: #333;
-    color: #fff;
+    color: var(--textColor);
     font-family: inherit;
 }
 
@@ -1121,7 +1122,7 @@ textarea {
     margin-bottom: 0.5em;
     margin-top: 1.2em;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--textColor);
 }
 
 /* Rimuove il margine superiore solo per la prima label di ogni fieldset */
@@ -1141,7 +1142,7 @@ textarea {
     border: 1px solid #555;
     border-radius: 6px;
     background-color: #333;
-    color: #fff;
+    color: var(--textColor);
     display: block;
     font-family: inherit;
 }
