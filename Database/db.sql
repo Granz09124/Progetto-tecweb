@@ -73,8 +73,8 @@ CREATE TABLE Assegnazione_PT (
 
 INSERT INTO Utente (nome, cognome, email, password_hash) VALUES
 -- Admin e User base
-('admin', 'admin', 'admin@email.it', '$2y$10$MOgMUGhexKnJFh3dgUI7C.KIHKr2ISlgtI2pgrCMssPcyrY9L3o4K'),
-('user', 'user', 'user@email.it', '$2y$10$5IHAhSlYq8ToQCSjwT0NkuB53Z5YiXL9pkrtjjMWMJxgX25OBP8jy'),
+('admin', 'admin', 'admin', '$2y$10$MOgMUGhexKnJFh3dgUI7C.KIHKr2ISlgtI2pgrCMssPcyrY9L3o4K'),
+('user', 'user', 'user', '$2y$10$5IHAhSlYq8ToQCSjwT0NkuB53Z5YiXL9pkrtjjMWMJxgX25OBP8jy'),
 
 -- Clienti
 ('Mario', 'Rossi', 'mario.rossi@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),

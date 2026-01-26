@@ -22,7 +22,7 @@ $errori = [];
 
 if (empty($email)) {
     $errori[] = "Inserisci un'email valida.";
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && $email !== 'admin' && $email !== 'pt' && $email !== 'user') {
     $errori[] = "Formato email non valido.";
 }
 
