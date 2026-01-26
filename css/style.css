@@ -175,6 +175,27 @@ header.intestazione {
     border-bottom: 2px solid var(--mainColorDark);
 }
 
+#breadcrumb>ol::before {
+    content: "Ti trovi in: ";
+    margin-right: .25em;
+}
+
+#breadcrumb>ol {
+    list-style: none;
+    align-items: baseline;
+    display: flex;
+}
+
+#breadcrumb>ol>li+li::before {
+    content: "> >";
+    margin-right: .25em;
+}
+
+#breadcrumb>ol>li::after {
+    content: "";
+    margin-right: .25em;
+}
+
 /* #content>article, */
 .topic {
     border: 2px solid var(--mainColor);
