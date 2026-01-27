@@ -869,6 +869,22 @@ Lista clienti PT
     overflow-wrap: break-word;
 }
 
+
+/* ============
+ * Sala Pesi
+ ============ */
+
+
+.descrizioni-sala-pesi article {
+        flex-direction: column;
+    }
+
+    .descrizioni-sala-pesi article img {
+        flex: none;
+        width: 100%;
+    }
+
+
 /* ============
  * Contattaci
  ============ */

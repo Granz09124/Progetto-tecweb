@@ -430,6 +430,28 @@ a.bottone-dettagli:active {
 }
 
 /* =================
+ * Sala Pesi
+ ================= */
+.descrizioni-sala-pesi article {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 3.5em;
+}
+
+.descrizioni-sala-pesi article img {
+    width: 40%;
+    height: auto;
+}
+
+.descrizioni-sala-pesi article p {
+    flex: 1;
+    margin: 0;
+}
+
+
+/* =================
  * Corsi
  ================== */
 h2 {
