@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'header.php';
+require 'header.php';
 
 renderPage("internal/registrati/registrati.html");
 
