@@ -10,17 +10,19 @@ window.onload = () => {
 
             const formData = new FormData(form);
 
-            fetch('login.php', {
+            fetch('/internal/login/processa-login.php', {
                 method: 'POST',
                 body: formData
             }).then((response) => {
                 response.text().then(text => {
                     if (response.ok) {
-                        window.location.href = text;
+                        window.location.href = '/area-personale.php';
                     } else {
                         feedback.textContent = text;
                     }
                 });
+            }).catch(error => {
+                console.error('Errore fetch:', error);
             });
         });
     }

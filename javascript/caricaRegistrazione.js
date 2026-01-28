@@ -10,15 +10,19 @@ window.onload = () => {
 
             const formData = new FormData(form);
 
-            fetch('registrati.php', {
+            fetch('/internal/registrati/processa-registrazione.php', {
                 method: 'POST',
                 body: formData
             }).then((response) => {
-                if (response.ok) {
-                    window.location.href = 'login.html';
-                } else {
-                    response.text().then(text => feedback.textContent = text);
-                }
+                response.text().then(text => {
+                    if (response.ok) {
+                        window.location.href = '/login.php';
+                    } else {
+                        feedback.textContent = text;
+                    }
+                });
+            }).catch(error => {
+                console.error('Errore fetch:', error);
             });
         });
     }

@@ -1,8 +1,13 @@
 <?php
 
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require "internal/contattaci/upload-messaggio.php";
     exit();
 }
+include "header.php";
 
-include "internal/contattaci/contattaci.html";
+renderPage("internal/contattaci/contattaci.html");
+
+?>
