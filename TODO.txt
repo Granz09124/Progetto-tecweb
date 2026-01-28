@@ -320,3 +320,12 @@ togliere dal menu la voce "ricerca istruttori" il collegamento per arrivarci (br
 Test di accessibilità su tutto (ARMANDO)
 
 
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TODO 25/01/2026
+
+COSE DA SISTEMARE:
+togliere bordo giallo print registrati e login ( MARCO)
+Sistemare i menu in tutti gli html (MARCO)
+
