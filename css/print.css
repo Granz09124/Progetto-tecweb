@@ -487,127 +487,131 @@ script {
 }
 
 /* =============
- * Palestra, Abbonamenti
- ============ */
-.sezione-sala-pesi,
-.sezione-corsi,
-.sezione-personal-trainers {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid #000 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    margin-bottom: 20px !important;
-    padding: 0 0 20px 0 !important;
-    page-break-inside: avoid;
-    color: #000 !important;
-    height: auto !important;
-    display: block !important;
-}
+   Palestra, Abbonamenti
+   ============ */
+    .tab-menu, 
+    .badge-posizione,
+    .bottone-dettagli {
+        display: none !important;
+    }
 
-.sezione-sala-pesi::before,
-.sezione-corsi::before,
-.sezione-personal-trainers::before {
-    display: none !important;
-}
+    .sezione-sala-pesi,
+    .sezione-corsi,
+    .sezione-personal-trainers {
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid #000 !important;
+        box-shadow: none !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 20px !important;
+        page-break-inside: avoid;
+        display: block !important;
+        color: #000 !important;
+    }
 
-.layout-palestra ul,
-.abbonamento-card ul {
-    margin-left: 20px !important;
-    color: #000 !important;
-}
+    .sezione-sala-pesi::before,
+    .sezione-corsi::before,
+    .sezione-personal-trainers::before {
+        display: none !important;
+    }
 
-.layout-palestra ul li {
-    list-style-type: disc !important;
-    color: #000 !important;
-}
+    .layout-palestra ul, 
+    .abbonamento-card ul {
+        margin-left: 20px !important;
+        color: #000 !important;
+    }
+    .layout-palestra ul li {
+        list-style-type: disc !important;
+        color: #000 !important;
+    }
 
-.layout-abbonamenti {
-    display: block !important;
-}
+    .layout-abbonamenti { 
+        display: block !important; 
+        padding-top: 0 !important;
+    }
 
-.tab-content-area {
-    border: none !important;
-    padding: 0 !important;
-    background: transparent !important;
-}
+    .tab-content-area {
+        border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
 
-.tab-panel {
-    display: none !important;
-}
+    .tab-panel { 
+        display: block !important; 
+        opacity: 1 !important;
+        animation: none !important;
+    }
 
-.tab-panel.active {
-    display: block !important;
-}
+    .abbonamento-card {
+        border: 1px solid #000 !important;
+        background: transparent !important;
+        color: #000 !important;
+        border-radius: 4px !important;
+        margin-bottom: 15px !important;
+        padding: 15px !important;
+        page-break-inside: avoid;
+        display: block !important;
+    }
 
-.abbonamento-card {
-    border: 1px solid #ccc !important;
-    background: transparent !important;
-    color: #000 !important;
-    border-radius: 4px !important;
-    margin-bottom: 15px !important;
-    padding: 15px !important;
-    page-break-inside: avoid;
-    display: block !important;
-}
+    .abbonamento-card h3 {
+        border-bottom: 1px solid #000 !important;
+        margin-bottom: 10px !important;
+        color: #000 !important;
+    }
 
-.abbonamento-card h3 {
-    border-bottom: 1px solid #000 !important;
-    margin-bottom: 10px !important;
-    color: #000 !important;
-}
+    .abbonamento-card .prezzo {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+    
+    .abbonamento-card small { 
+        color: #000 !important; 
+    }
 
-.abbonamento-card .prezzo {
-    font-size: 14pt !important;
-    font-weight: bold !important;
-    color: #000 !important;
-}
+    .sezione-bundles {
+        margin-top: 30px !important;
+        page-break-before: auto;
+    }
+    
+    .sezione-bundles h2 {
+        color: #000 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .bundle-podio { 
+        display: block !important; 
+    }
 
-.abbonamento-card small {
-    color: #444 !important;
-}
+    .bundle {
+        border: 1px solid #000 !important;
+        background: transparent !important;
+        margin-bottom: 15px !important;
+        padding: 15px !important;
+        border-radius: 4px !important;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+        color: #000 !important;
+        transform: none !important;
+    }
+    
+    .bundle h3 {
+        color: #000 !important;
+    }
 
-.sezione-bundles {
-    margin-top: 30px !important;
-    page-break-before: auto;
-}
-
-.sezione-bundles h2 {
-    display: block !important;
-    color: #000 !important;
-    text-align: center !important;
-    margin-bottom: 20px !important;
-}
-
-.bundle-podio {
-    display: block !important;
-}
-
-.bundle {
-    border: 1px solid #000 !important;
-    background: transparent !important;
-    margin-bottom: 15px !important;
-    padding: 15px !important;
-    border-radius: 4px !important;
-    transform: none !important;
-    page-break-inside: avoid;
-}
-
-.bundle-primo,
-.bundle-secondo,
-.bundle-terzo {
-    border: 1px solid #000 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    width: 100% !important;
-    flex: none !important;
-    order: initial !important;
-}
-
-.prezzo-originale {
-    text-decoration: line-through !important;
-    color: #666 !important;
-}
+    .bundle-primo, .bundle-secondo, .bundle-terzo {
+        border: 1px solid #000 !important;
+        background: transparent !important;
+        width: 100% !important;
+        flex: none !important;
+        order: initial !important;
+    }
+    
+    .prezzo-originale {
+        text-decoration: line-through !important;
+        color: #666 !important;
+    }
 
 /* ============
   * Ricerca
@@ -632,100 +636,148 @@ script {
 }
 
 /* ==========
- * Utenti
- ========= */
-.area-personale {
-    display: block !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.area-personale>h1 {
-    text-align: left !important;
-    font-size: 18pt !important;
-    border-bottom: 2px solid #000;
-    margin-bottom: 20px;
-    padding-left: 0;
-    display: block !important;
-}
-
-.role-badge {
-    border: 1px solid #000 !important;
-    color: #000 !important;
-    font-weight: bold;
-    background: transparent !important;
-}
-
-.user-section {
-    border: 1px solid #000 !important;
-    margin-bottom: 25px !important;
-    padding: 15px !important;
-    page-break-inside: avoid;
-}
-
-.user-section h2 {
-    font-size: 14pt !important;
-    border-bottom: 1px solid #000 !important;
-    margin-bottom: 15px !important;
-    color: #000 !important;
-    display: block !important;
-}
-
-.data-list-group {
-    grid-template-columns: 1fr 1fr !important;
-}
-
-.data-item label {
-    color: #000 !important;
-    font-size: 10pt !important;
-    font-weight: bold !important;
-    text-transform: uppercase;
-}
-
-.data-item input,
-.data-item textarea {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px dotted #ccc !important;
-    padding: 5px 0 !important;
-    font-size: 11pt !important;
-    color: #000 !important;
-    resize: none !important;
-    font-weight: normal !important;
-}
-
-.data-item input[readonly] {
-    border-bottom: none !important;
-    font-weight: normal !important;
-}
-
-.tech-form-group {
-    display: block !important;
-    margin-bottom: 10px !important;
-}
-
-.links-list li {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid #ddd !important;
-    padding: 10px 0 !important;
-    color: #000 !important;
-}
-
-.links-list strong,
-.links-list span {
-    color: #000 !important;
-    font-weight: normal !important;
-
-
-    .btn-link,
-    .btn-modify,
-    .account-actions,
+   Utenti
+   ========= */
+    .btn-link,          
+    .btn-modify,        
+    .account-actions,   
     .btn-logout,
     .btn-delete,
-    #torna-su {
+    .btn-save,
+    #torna-su,
+    .upload-form, 
+    #formSection, 
+    .feedback-message,
+    #form-ricerca-istruttore button {
         display: none !important;
     }
-}
 
+    .area-personale {
+        display: block !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .area-personale > h1 {
+        text-align: left !important;
+        font-size: 18pt !important;
+        border-bottom: 2px solid #000;
+        margin-bottom: 20px;
+        color: #000 !important;
+    }
+
+    .user-section {
+        border: 1px solid #000 !important;
+        margin-bottom: 25px !important;
+        padding: 15px !important;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+    }
+
+    .user-section h2 {
+        font-size: 14pt !important;
+        border-bottom: 1px solid #000 !important;
+        margin-bottom: 15px !important;
+        color: #000 !important;
+    }
+
+    .data-list-group {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1em;
+    }
+
+    .data-item label {
+        color: #000 !important;
+        font-size: 10pt !important;
+        font-weight: bold !important;
+        text-transform: uppercase;
+    }
+
+    .data-item input, 
+    .data-item textarea {
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px dotted #000 !important;
+        padding: 5px 0 !important;
+        font-size: 11pt !important;
+        color: #000 !important;
+        resize: none !important;
+    }
+
+    .links-list li {
+        border-bottom: 1px solid #000 !important;
+        color: #000 !important;
+        background: transparent !important;
+    }
+    .links-list strong, .links-list span {
+        color: #000 !important;
+    }
+
+    .admin-table {
+        display: table !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+        background-color: transparent !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        border: 2px solid #000 !important;
+    }
+
+    .admin-table th, 
+    .admin-table td {
+        border-right: 1px solid #000 !important;
+        border-bottom: 1px solid #000 !important;
+        border-left: none !important;
+        border-top: none !important;
+        padding: 6px 8px !important;
+        color: #000 !important;
+        font-size: 11pt !important;
+        text-align: left !important;
+        vertical-align: middle !important;
+    }
+
+    .admin-table th {
+        font-weight: bold !important;
+        text-transform: uppercase !important;
+        background-color: #e0e0e0 !important;
+        border-bottom: 2px solid #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .admin-table th:last-child,
+    .admin-table td:last-child {
+        border-right: none !important;
+    }
+    .admin-table tr:last-child td {
+        border-bottom: none !important;
+    }
+
+    .admin-table tr {
+        page-break-inside: avoid !important;
+    }
+
+    .admin-table th:nth-child(4),
+    .admin-table td:nth-child(4) {
+        display: none !important;
+        width: 0 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .admin-table.clients-table th:nth-child(1), .admin-table.clients-table td:nth-child(1) { width: 40% !important; }
+    .admin-table.clients-table th:nth-child(2), .admin-table.clients-table td:nth-child(2) { width: 35% !important; }
+    .admin-table.clients-table th:nth-child(3), .admin-table.clients-table td:nth-child(3) { width: 25% !important; }
+
+    .admin-table:not(.clients-table) th:nth-child(1), .admin-table:not(.clients-table) td:nth-child(1) { width: 30% !important; }
+    .admin-table:not(.clients-table) th:nth-child(2), .admin-table:not(.clients-table) td:nth-child(2) { width: 30% !important; }
+    .admin-table:not(.clients-table) th:nth-child(3), .admin-table:not(.clients-table) td:nth-child(3) { width: 40% !important; }
+
+    .empty-message {
+        border: 1px solid #000 !important;
+        padding: 20px !important;
+        text-align: center !important;
+        color: #000 !important;
+    }
