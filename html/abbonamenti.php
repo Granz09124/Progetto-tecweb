@@ -1,5 +1,5 @@
 <?php
-    include 'internal/abbonamento/top.html';
-    include 'internal/abbonamento/body.html';
-    include 'internal/abbonamento/bottom.html';
+    include 'internal/abbonamenti/top.html';
+    include 'internal/abbonamenti/body.html';
+    include 'internal/abbonamenti/bottom.html';
 ?>
