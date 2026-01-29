@@ -907,12 +907,6 @@ h2 {
     display: flex;
 }
 
-/*
- ========================================================================
- FOOTER
- ========================================================================
- */
-
 
 /* ================
  * Contattaci
@@ -1147,11 +1141,9 @@ textarea {
     color: var(--textColor);
 }
 
-/* Rimuove il margine superiore solo per la prima label di ogni fieldset */
 .form-registrazione label:first-of-type {
     margin-top: 0;
 }
-
 
 .form-registrazione input[type="text"],
 .form-registrazione input[type="email"],

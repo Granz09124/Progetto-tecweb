@@ -3,7 +3,7 @@ function renderPage($htmlFile) {
 
     // Aggiunge se manca / all'inizio del percorso
     if ($htmlFile[0] !== '/') {
-        $htmlFile = $_SERVER['DOCUMENT_ROOT'] . '/' . $htmlFile;
+        $htmlFile = __DIR__ . '/' . $htmlFile;
     }
     $content = file_get_contents($htmlFile);
     
@@ -38,8 +38,8 @@ function renderPage($htmlFile) {
 
 function renderFromHtml($htmlContent) {
     $menuFile = isset($_SESSION['user_id'])
-        ? $_SERVER['DOCUMENT_ROOT'] . "/internal/home/menu-user.html"
-        : $_SERVER['DOCUMENT_ROOT'] . "/internal/home/menu-guest.html";
+        ? __DIR__ . "/internal/home/menu-user.html"
+        : __DIR__ . "/internal/home/menu-guest.html";
     
     $menuContent = file_get_contents($menuFile);
     $currentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
