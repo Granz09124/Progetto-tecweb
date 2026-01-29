@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require "header.php";
 
 // Controllo accesso
 /*
@@ -59,6 +60,8 @@ $body = str_replace("[MessaggioFeedback]", $messaggioHtml, $body);
 
 $body = str_replace("[Email]", htmlspecialchars($currentEmail), $body);
 
-echo $top . $body . $bottom;
+
+renderFromHtml($top . $body . $bottom);
+
 $conn->close();
 ?>

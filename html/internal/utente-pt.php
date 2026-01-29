@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require "header.php";
 
 // Test Marco Colombo
 $_SESSION['user_id'] = 9; 
@@ -52,6 +53,8 @@ $body = str_replace("[Specializzazione]", htmlspecialchars($userData['specializz
 $body = str_replace("[Email]", htmlspecialchars($userData['email']), $body);
 $body = str_replace("[Telefono]", htmlspecialchars($userData['telefono'] ?? ''), $body);
 
-echo $top . $body . $bottom;
+
+renderFromHtml($top . $body . $bottom);
+
 $conn->close();
 ?>
