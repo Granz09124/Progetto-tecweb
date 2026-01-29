@@ -1,5 +1,9 @@
 <?php
-    include 'internal/abbonamenti/top.html';
-    include 'internal/abbonamenti/body.html';
-    include 'internal/abbonamenti/bottom.html';
+session_start();
+require 'header.php';
+
+renderPage('internal/abbonamenti/top.html');
+renderPage('internal/abbonamenti/body.html');
+renderPage('internal/abbonamenti/bottom.html');
+
 ?>
