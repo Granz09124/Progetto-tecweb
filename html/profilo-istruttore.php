@@ -1,6 +1,5 @@
 <?php
-session_start();
-require "header.php";
+require 'header.php';
 require "db_connection.php";
 
 $templateIstruttore = file_get_contents('internal/profilo-istruttore.html');
