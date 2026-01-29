@@ -329,3 +329,10 @@ COSE DA SISTEMARE:
 togliere bordo giallo print registrati e login ( MARCO)
 Sistemare i menu in tutti gli html (MARCO)
 Sistemare i percorsi (TUTTI)
+
+
+
+
+Appunti:
+
+- login.html e registrati.html, devo togliero lo sfondo ai container?

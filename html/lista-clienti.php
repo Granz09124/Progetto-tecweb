@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require 'header.php';
 
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
@@ -74,6 +75,6 @@ $body = str_replace("[TableRows]", $tableRows, $body);
 $customScript = '<script src="../javascript/formLista.js"></script>';
 $bottom = str_replace("</body>", $customScript . "</body>", $bottom);
 
-echo $top . $body . $bottom;
+renderFromHtml($top . $body . $bottom);
 $conn->close();
 ?>
