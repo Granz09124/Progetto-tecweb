@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require 'header.php';
 
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
@@ -85,7 +86,7 @@ $body = file_get_contents("internal/utente/lista-pt/body.html");
 $bottom = file_get_contents("internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Gestione PT - Admin", $top);
-$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Amministrazione</a> >> Gestione PT";
+$breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> <a href='./utente-admin.php'>Area Amministrazione</a> >> Gestione PT";
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[TableRows]", $tableRows, $body);
@@ -93,6 +94,6 @@ $body = str_replace("[TableRows]", $tableRows, $body);
 $customScript = '<script src="../javascript/formLista.js"></script>';
 $bottom = str_replace("</body>", $customScript . "</body>", $bottom);
 
-echo $top . $body . $bottom;
+renderFromHtml($top . $body . $bottom);
 $conn->close();
 ?>
