@@ -215,6 +215,18 @@ header.intestazione {
     padding: 0.3em 1em;
 }
 
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ===================
  * Home
  * ================= */
@@ -499,30 +511,13 @@ h2 {
 }
 
 
-@media (max-width: 768px) {
-    .corso {
-        flex-direction: column;
-    }
-
-    .corso img,
-    .corso-descrizione {
-        width: 100%;
-    }
-
-    .corso button {
-        position: static;
-        margin-top: 0.625em;
-        width: 100%;
-    }
-
-}
-
 /* =================
  * Orari Corsi
  ================== */
 .orari-corsi {
     margin: 2em 2em;
 }
+
 
 .orari-corsi table {
     width: 100%;
