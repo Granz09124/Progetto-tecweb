@@ -62,11 +62,11 @@ while($row = $result->fetch_assoc()) {
 }
 
 $top = file_get_contents("internal/utente/top.html");
-$body = file_get_contents("internal/utente/lista-clienti/body.html"); // Percorso corretto
+$body = file_get_contents("internal/utente/lista-clienti/body.html");
 $bottom = file_get_contents("internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Gestione Clienti - Admin", $top);
-$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Amministrazione</a> >> Gestione Clienti";
+$breadcrumb = "Ti trovi in: <a href='./home.'>Home</a> >> <a href='./utente-admin.php'>Area Amministrazione</a> >> Gestione Clienti";
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[TableRows]", $tableRows, $body);

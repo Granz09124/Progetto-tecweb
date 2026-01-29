@@ -1,14 +1,10 @@
 <?php
 require_once 'db_connection.php';
 
-// if (!isset($_SESSION['ruolo']) || $_SESSION['ruolo'] !== 'pt') {
-//     header('Location: /login.html');
-//     exit;
-// }
-
-
-// Test Marco Colombo
-$_SESSION['user_id'] = 9;
+if (!isset($_SESSION['ruolo']) || $_SESSION['ruolo'] !== 'pt') {
+    header('Location: /login.php');
+    exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require "internal/utente/lista-clienti-pt/upload-scheda.php";
@@ -17,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 $id_pt = $_SESSION['user_id'] ?? 0;
 $messaggio = "";
-if ($id_pt == 0) { header("Location: home.html"); exit; }
+if ($id_pt == 0) { header("Location: home.php"); exit; }
 
 $stmtClienti = $conn->prepare("SELECT u.id_utente, u.nome, u.cognome, c.codice_fiscale, c.telefono FROM Utente u JOIN Cliente c ON u.id_utente = c.id_utente JOIN Assegnazione_PT apt ON c.id_utente = apt.id_cliente WHERE apt.id_pt = ?");
 $stmtClienti->bind_param("i", $id_pt);
@@ -49,7 +45,7 @@ if ($resultClienti->num_rows > 0) {
 $body = str_replace("[ListaClienti]", $righeHTML, $body);
 $top = str_replace("[PageTitle]", "I Miei Clienti - Area PT", $top);
 
-$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='utente-pt.php'>Area Personale</a> >> I Miei Clienti";
+$breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> <a href='utente-pt.php'>Area Personale</a> >> I Miei Clienti";
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 echo $top . $body . $bottom;
