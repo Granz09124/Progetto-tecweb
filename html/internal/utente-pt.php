@@ -41,7 +41,7 @@ $body = file_get_contents("internal/utente/utente-pt/body.html");
 $bottom = file_get_contents("internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Area PT - " . $userData['nome'], $top);
-$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./area-personale.php'>Area Personale</a>";
+$breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> Area Personale";
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[NomeCompleto]", htmlspecialchars($userData['nome'] . " " . $userData['cognome']), $body);

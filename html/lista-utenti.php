@@ -60,7 +60,7 @@ $body = file_get_contents("internal/utente/lista-utenti/body.html");
 $bottom = file_get_contents("internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Lista Utenti Totali - Admin", $top);
-$breadcrumb = "Ti trovi in: <a href='./home.html'>Home</a> >> <a href='./utente-admin.php'>Area Personale</a> >> Lista Utenti Totali";
+$breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> <a href='./area-personale.php'>Area Personale</a> >> Lista Utenti Totali";
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[TableRows]", $tableRows, $body);
