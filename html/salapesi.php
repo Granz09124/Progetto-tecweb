@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'header.php';
+require __DIR__ . '/../header.php';
 
-renderPage("internal/palestra/salapesi/salapesi.html");
+renderPage(__DIR__ . "/../internal/palestra/salapesi/salapesi.html");
 
 ?>
