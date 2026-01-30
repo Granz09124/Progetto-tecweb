@@ -1,8 +1,8 @@
 <?php
-$host = "db";
-$user = "root";
-$pass = "example";
-$db   = "palestra_db"; 
+$host = "localhost";
+$user = "nomeutente";
+$pass = "";
+$db   = "nomeutente";
 
 $conn = new mysqli($host, $user, $pass, $db);
 

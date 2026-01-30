@@ -1,15 +1,12 @@
 <?php
 session_start();
 
-require "../db_connection.php";
+include "../internal/db_connection.php";
+include "../internal/header.php";
 
-$internal = "../internal/cerca-istruttore/";
+$internal = __DIR__ . "/../internal/cerca-istruttore/";
 
 $top = file_get_contents($internal . "top.html");
-$menuFile = isset($_SESSION['user_id'])
-    ? $internal . "menu-user.html"
-    : $internal . "menu-guest.html";
-$menuContent = file_get_contents($menuFile);
 $templateResult = file_get_contents($internal . "stack.html");
 $bottom = file_get_contents($internal . "bottom.html");
 
@@ -19,10 +16,9 @@ if (isset($_GET['nome'])) {
     $nome = trim($nome);
 }
 
-$top = str_replace("[Menu]", $menuContent, $top);
 $top = str_replace("[Valore Ricerca]", htmlspecialchars($nome), $top);
 
-echo $top;
+echo renderFromHtml($top);
 
 $query = "SELECT *
     FROM Utente
