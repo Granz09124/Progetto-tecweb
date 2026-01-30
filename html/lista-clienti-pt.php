@@ -1,5 +1,5 @@
 <?php
-require_once 'db_connection.php';
+require_once __DIR__ . '/../internal/db_connection.php';
 
 if (!isset($_SESSION['ruolo']) || $_SESSION['ruolo'] !== 'pt') {
     header('Location: /login.php');
@@ -7,12 +7,11 @@ if (!isset($_SESSION['ruolo']) || $_SESSION['ruolo'] !== 'pt') {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    require "internal/utente/lista-clienti-pt/upload-scheda.php";
+    require __DIR__ . "/../internal/utente/lista-clienti-pt/upload-scheda.php";
     exit();
 }
 
 $id_pt = $_SESSION['user_id'] ?? 0;
-$messaggio = "";
 if ($id_pt == 0) { header("Location: home.php"); exit; }
 
 $stmtClienti = $conn->prepare("SELECT u.id_utente, u.nome, u.cognome, c.codice_fiscale, c.telefono FROM Utente u JOIN Cliente c ON u.id_utente = c.id_utente JOIN Assegnazione_PT apt ON c.id_utente = apt.id_cliente WHERE apt.id_pt = ?");
@@ -20,12 +19,11 @@ $stmtClienti->bind_param("i", $id_pt);
 $stmtClienti->execute();
 $resultClienti = $stmtClienti->get_result();
 
-$top = file_get_contents("internal/utente/top.html");
-$body = file_get_contents("internal/utente/lista-clienti-pt/body.html");
-$tableTemplate = file_get_contents("internal/utente/lista-clienti-pt/table-template.html");
-$rowTemplate = file_get_contents("internal/utente/lista-clienti-pt/client-row.html");
-$bottom = file_get_contents("internal/utente/bottom.html");
-
+$top = file_get_contents(__DIR__ . "/../internal/utente/top.html");
+$body = file_get_contents(__DIR__ . "/../internal/utente/lista-clienti-pt/body.html");
+$tableTemplate = file_get_contents(__DIR__ . "/../internal/utente/lista-clienti-pt/table-template.html");
+$rowTemplate = file_get_contents(__DIR__ . "/../internal/utente/lista-clienti-pt/client-row.html");
+$bottom = file_get_contents(__DIR__ . "/../internal/utente/bottom.html");
 
 if ($resultClienti->num_rows > 0) {
     $righeHTML = $tableTemplate;

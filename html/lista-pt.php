@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';
-require 'header.php';
+require_once __DIR__ . '/config.php';
+require __DIR__ . '/../internal/header.php';
 
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
@@ -81,9 +81,9 @@ while($row = $result->fetch_assoc()) {
     $tableRows .= "</tr>";
 }
 
-$top = file_get_contents("internal/utente/top.html");
-$body = file_get_contents("internal/utente/lista-pt/body.html");
-$bottom = file_get_contents("internal/utente/bottom.html");
+$top = file_get_contents(__DIR__ . "/../internal/utente/top.html");
+$body = file_get_contents(__DIR__ . "/../internal/utente/lista-pt/body.html");
+$bottom = file_get_contents(__DIR__ . "/../internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Gestione PT - Admin", $top);
 $breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> <a href='./area-personale.php'>Area Personale</a> >> Gestione PT";

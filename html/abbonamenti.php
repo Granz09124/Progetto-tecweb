@@ -1,9 +1,8 @@
 <?php
 session_start();
-require 'header.php';
+require __DIR__ . '/../internal/header.php';
 
-renderPage('internal/abbonamenti/top.html');
-renderPage('internal/abbonamenti/body.html');
-renderPage('internal/abbonamenti/bottom.html');
-
+renderPage(__DIR__ . '/../internal/abbonamenti/top.html');
+renderPage(__DIR__ . '/../internal/abbonamenti/body.html');
+renderPage(__DIR__ . '/../internal/abbonamenti/bottom.html');
 ?>

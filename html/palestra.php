@@ -1,9 +1,8 @@
 <?php
 session_start();
-require 'header.php';
+require __DIR__ . '/../internal/header.php';
 
-renderPage('internal/palestra1/top.html');
-renderPage('internal/palestra1/body.html');
-renderPage('internal/palestra1/bottom.html');
-
+renderPage(__DIR__ . '/../internal/palestra1/top.html');
+renderPage(__DIR__ . '/../internal/palestra1/body.html');
+renderPage(__DIR__ . '/../internal/palestra1/bottom.html');
 ?>
