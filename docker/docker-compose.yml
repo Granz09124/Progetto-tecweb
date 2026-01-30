@@ -9,10 +9,7 @@ services:
       - "8080:80"
     volumes:
       - ../html:/var/www/html
-      - ../css:/var/www/html/css
-      - ../javascript:/var/www/html/javascript
-      - ../immagini:/var/www/html/immagini
-      - ../uploads:/var/www/html/uploads
+      - ../internal:/var/www/internal
     depends_on:
       - db
     networks:

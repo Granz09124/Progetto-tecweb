@@ -8,8 +8,8 @@ function renderPage($htmlFile) {
     $content = file_get_contents($htmlFile);
     
     $menuFile = isset($_SESSION['user_id'])
-        ? __DIR__ . "/internal/home/menu-user.html"
-        : __DIR__ . "/internal/home/menu-guest.html";
+        ? __DIR__ . "/home/menu-user.html"
+        : __DIR__ . "/home/menu-guest.html";
 
     $menuContent = file_get_contents($menuFile);
     $currentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
@@ -38,8 +38,8 @@ function renderPage($htmlFile) {
 
 function renderFromHtml($htmlContent) {
     $menuFile = isset($_SESSION['user_id'])
-        ? __DIR__ . "/internal/home/menu-user.html"
-        : __DIR__ . "/internal/home/menu-guest.html";
+        ? __DIR__ . "/home/menu-user.html"
+        : __DIR__ . "/home/menu-guest.html";
     
     $menuContent = file_get_contents($menuFile);
     $currentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
