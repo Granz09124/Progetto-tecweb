@@ -520,7 +520,7 @@ a:link:has(.logo) {
  ============ */
 .img-pt-small {
     float: none;
-    width: 60%;
+    width: 50%;
     min-width: initial;
     display: block;
     margin: 1em auto;

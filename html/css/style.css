@@ -1257,8 +1257,8 @@ textarea {
 
 .img-pt-small {
     float: left;
-    width: 20%;
-    min-width: 256px;
+    width: 15%;
+    min-width: 192px;
     margin: 1em;
     border-radius: 50%;
 }

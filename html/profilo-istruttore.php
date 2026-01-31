@@ -31,6 +31,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
     $isPt = $row['id_istruttore'] == null ? '&cross;' : '&check;';
 
+    $output = str_replace("[ID Istruttore]", $idIstruttore, $output);
     $output = str_replace("[Nome Istruttore]", htmlspecialchars($row['nome'] . ' ' . $row['cognome']), $output);
     $output = str_replace("[È PT]", $isPt, $output);
     $output = str_replace("[Specializzazione Istruttore]", htmlspecialchars($row['specializzazione']), $output);
