@@ -32,7 +32,7 @@ if (empty($messageFormData['telefono'])) {
     $messageFormData['telefono'] = null;
 }
 
-require 'db_connection.php';
+require __DIR__ . '/../db_connection.php';
 $stmt = $conn->prepare("INSERT INTO Messaggio_Contattaci (nome, email, telefono, messaggio) VALUES (?, ?, ?, ?)");
     
 $stmt->bind_param("ssss", $messageFormData['nome'], $messageFormData['email'], $messageFormData['telefono'], $messageFormData['messaggio']);

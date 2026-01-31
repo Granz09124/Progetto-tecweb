@@ -3,11 +3,13 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    require "internal/contattaci/upload-messaggio.php";
+    echo 'b';
+    require __DIR__ . "/../internal/contattaci/upload-messaggio.php";
+    echo 'a';
     exit();
 }
-require "header.php";
+require __DIR__ . "/../internal/header.php";
 
-renderPage("internal/contattaci/contattaci.html");
+renderPage(__DIR__ . "/../internal/contattaci/contattaci.html");
 
 ?>
