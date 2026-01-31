@@ -1,8 +1,9 @@
 <?php
+session_start();
 require_once __DIR__ . '/../internal/db_connection.php';
 
-if (!isset($_SESSION['ruolo']) || $_SESSION['ruolo'] !== 'pt') {
-    header('Location: /login.php');
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_tipo']) || $_SESSION['user_tipo'] !== 'pt') {
+    header('Location: login.php');
     exit;
 }
 
@@ -46,6 +47,8 @@ $top = str_replace("[PageTitle]", "I Miei Clienti - Area PT", $top);
 $breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> <a href='area-personale.php'>Area Personale</a> >> I Miei Clienti";
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
-echo $top . $body . $bottom;
+require_once __DIR__ . '/../internal/header.php';
+renderFromHtml($top . $body . $bottom);
+
 $stmtClienti->close(); $conn->close();
 ?>

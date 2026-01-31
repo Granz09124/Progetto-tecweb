@@ -1,5 +1,12 @@
 <?php
+session_start();
 require_once __DIR__ . '/config.php';
+
+if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] !== 'admin') {
+    header("Location: login.php");
+    exit();
+}
+
 require __DIR__ . '/../internal/header.php';
 
 if (isset($_GET['delete'])) {
@@ -13,17 +20,87 @@ if (isset($_GET['delete'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $cognome = $_POST['cognome'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $codice_fiscale = $_POST['codice_fiscale'];
-    $telefono = $_POST['telefono'];
+    $id = !empty($_POST['id']) ? intval($_POST['id']) : 0;
+    $nome = trim($_POST['nome'] ?? '');
+    $cognome = trim($_POST['cognome'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    $codice_fiscale = strtoupper(trim($_POST['codice_fiscale'] ?? ''));
+    $telefono = trim($_POST['telefono'] ?? '');
 
-    if (!empty($_POST['id'])) {
-        $id = intval($_POST['id']);
+    $errori = [];
+
+    if (empty($nome) || strlen($nome) < 2) {
+        $errori[] = "Il nome deve contenere almeno 2 caratteri.";
+    } elseif (!preg_match("/^[a-zA-ZÀ-ÿ' -]+$/u", $nome)) {
+        $errori[] = "Il nome contiene caratteri non validi.";
+    } elseif (strlen($nome) > 50) {
+        $errori[] = "Il nome è troppo lungo.";
+    }
+
+    if (empty($cognome) || strlen($cognome) < 2) {
+        $errori[] = "Il cognome deve contenere almeno 2 caratteri.";
+    } elseif (!preg_match("/^[a-zA-ZÀ-ÿ' -]+$/u", $cognome)) {
+        $errori[] = "Il cognome contiene caratteri non validi.";
+    } elseif (strlen($cognome) > 50) {
+        $errori[] = "Il cognome è troppo lungo.";
+    }
+
+    if (empty($email)) {
+        $errori[] = "L'email è obbligatoria.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errori[] = "Formato email non valido.";
+    } elseif (strlen($email) > 100) {
+        $errori[] = "L'email è troppo lunga.";
+    }
+
+    if (empty($codice_fiscale)) {
+        $errori[] = "Il codice fiscale è obbligatorio.";
+    } elseif (!preg_match("/^[A-Z0-9]{16}$/", $codice_fiscale)) {
+        $errori[] = "Il codice fiscale deve essere di esattamente 16 caratteri alfanumerici.";
+    }
+
+    if ($id == 0 && empty($password)) {
+        $errori[] = "La password è obbligatoria per i nuovi utenti.";
+    }
+    if (!empty($password)) {
+        if (strlen($password) < 8) {
+            $errori[] = "La password deve essere di almeno 8 caratteri.";
+        } elseif (strlen($password) > 72) {
+            $errori[] = "La password è troppo lunga.";
+        } elseif (!preg_match("/^[\x20-\x7E]+$/", $password)) {
+            $errori[] = "La password contiene caratteri non validi.";
+        }
+    }
+
+    if (empty($errori)) {
+        $sqlEmail = "SELECT id_utente FROM Utente WHERE email = ? AND id_utente != ?";
+        $stmtEmail = $conn->prepare($sqlEmail);
+        $stmtEmail->bind_param("si", $email, $id);
+        $stmtEmail->execute();
+        if ($stmtEmail->get_result()->num_rows > 0) {
+            $errori[] = "Questa email è già registrata.";
+        }
+        $stmtEmail->close();
+
+        $sqlCF = "SELECT id_utente FROM Cliente WHERE codice_fiscale = ? AND id_utente != ?";
+        $stmtCF = $conn->prepare($sqlCF);
+        $stmtCF->bind_param("si", $codice_fiscale, $id);
+        $stmtCF->execute();
+        if ($stmtCF->get_result()->num_rows > 0) {
+            $errori[] = "Questo codice fiscale è già registrato.";
+        }
+        $stmtCF->close();
+    }
+
+    if (!empty($errori)) {
+        echo "<script>alert('" . addslashes($errori[0]) . "'); window.history.back();</script>";
+        exit;
+    }
+
+    if ($id > 0) {
         if (!empty($password)) {
-            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $password_hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
             $stmt = $conn->prepare("UPDATE Utente SET nome = ?, cognome = ?, email = ?, password_hash = ? WHERE id_utente = ?");
             $stmt->bind_param("ssssi", $nome, $cognome, $email, $password_hash, $id);
         } else {
@@ -35,7 +112,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $conn->prepare("UPDATE Cliente SET codice_fiscale = ?, telefono = ? WHERE id_utente = ?");
         $stmt->bind_param("ssi", $codice_fiscale, $telefono, $id);
         $stmt->execute(); $stmt->close();
-    } 
+
+    }
+    
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }

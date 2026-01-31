@@ -1,5 +1,12 @@
 <?php
+session_start();
 require_once __DIR__ . '/config.php';
+
+if (!isset($_SESSION['user_id']) || $_SESSION['user_tipo'] !== 'admin') {
+    header("Location: login.php");
+    exit();
+}
+
 require __DIR__ . '/../internal/header.php';
 
 if (isset($_GET['delete'])) {
@@ -13,18 +20,52 @@ if (isset($_GET['delete'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $cognome = $_POST['cognome'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $specializzazione = $_POST['specializzazione'];
-    $qualifica = $_POST['qualifica'];
-    $telefono = $_POST['telefono'];
+    $id = !empty($_POST['id']) ? intval($_POST['id']) : 0;
+    $nome = trim($_POST['nome'] ?? '');
+    $cognome = trim($_POST['cognome'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    $specializzazione = trim($_POST['specializzazione'] ?? '');
+    $qualifica = trim($_POST['qualifica'] ?? '');
+    $telefono = trim($_POST['telefono'] ?? '');
 
-    if (!empty($_POST['id'])) {
-        $id = intval($_POST['id']);
+    $errori = [];
+
+    if (empty($nome) || strlen($nome) < 2 || !preg_match("/^[a-zA-ZÀ-ÿ' -]+$/u", $nome)) $errori[] = "Nome non valido.";
+    elseif (strlen($nome) > 50) $errori[] = "Nome troppo lungo.";
+    
+    if (empty($cognome) || strlen($cognome) < 2 || !preg_match("/^[a-zA-ZÀ-ÿ' -]+$/u", $cognome)) $errori[] = "Cognome non valido.";
+    elseif (strlen($cognome) > 50) $errori[] = "Cognome troppo lungo.";
+
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errori[] = "Email non valida.";
+    elseif (strlen($email) > 100) $errori[] = "Email troppo lunga.";
+
+    if ($id == 0 && empty($password)) $errori[] = "Password obbligatoria per nuovi PT.";
+    if (!empty($password)) {
+        if (strlen($password) < 8 || strlen($password) > 72 || !preg_match("/^[\x20-\x7E]+$/", $password)) {
+            $errori[] = "Password non valida (min 8 char).";
+        }
+    }
+
+    if (empty($specializzazione) || strlen($specializzazione) > 50) $errori[] = "Specializzazione non valida o troppo lunga.";
+    if (empty($qualifica) || strlen($qualifica) > 50) $errori[] = "Qualifica non valida o troppo lunga.";
+
+    if (empty($errori)) {
+        $stmtCheck = $conn->prepare("SELECT id_utente FROM Utente WHERE email = ? AND id_utente != ?");
+        $stmtCheck->bind_param("si", $email, $id);
+        $stmtCheck->execute();
+        if ($stmtCheck->get_result()->num_rows > 0) $errori[] = "Email già in uso.";
+        $stmtCheck->close();
+    }
+
+    if (!empty($errori)) {
+        echo "<script>alert('" . addslashes($errori[0]) . "'); window.history.back();</script>";
+        exit;
+    }
+
+    if ($id > 0) {
         if (!empty($password)) {
-            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $password_hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
             $stmt = $conn->prepare("UPDATE Utente SET nome = ?, cognome = ?, email = ?, password_hash = ? WHERE id_utente = ?");
             $stmt->bind_param("ssssi", $nome, $cognome, $email, $password_hash, $id);
         } else {
@@ -37,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("sssi", $specializzazione, $qualifica, $telefono, $id);
         $stmt->execute(); $stmt->close();
     } else {
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+        $password_hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
         
         $stmt = $conn->prepare("INSERT INTO Utente (nome, cognome, email, password_hash) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $nome, $cognome, $email, $password_hash);
