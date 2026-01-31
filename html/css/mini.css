@@ -169,10 +169,8 @@ a:link:has(.logo) {
     display: block;
 }
 
-#presentazione-servizi section article {
-    text-align: center;
-    margin: auto;
-    width: 95%;
+#presentazione-servizi dl {
+    display: block;
 }
 
 #presentazione-servizi img {
@@ -190,7 +188,7 @@ a:link:has(.logo) {
 
 #recensioni .recensione dd:has(img) {
     margin: 1em auto;
-    width: 100%;
+    width: 50%;
 }
 
 #recensioni img {
@@ -689,9 +687,9 @@ Lista clienti
 */
 
 
-.admin-table, 
-.admin-table thead, 
-.admin-table tbody, 
+.admin-table,
+.admin-table thead,
+.admin-table tbody,
 .admin-table tr {
     display: block !important;
     width: 100% !important;
@@ -711,7 +709,7 @@ Lista clienti
     width: 100% !important;
     min-width: 0 !important;
     white-space: normal !important;
-    word-break: break-all !important; 
+    word-break: break-all !important;
     overflow-wrap: break-word !important;
     box-sizing: border-box !important;
     padding: 10px !important;
@@ -729,14 +727,25 @@ Lista clienti
     width: 40% !important;
     font-weight: bold !important;
     text-align: left !important;
-    content: attr(data-label); 
+    content: attr(data-label);
 }
 
 
-.admin-table td:nth-child(1)::before { content: "Nome"; }
-.admin-table td:nth-child(2)::before { content: "Cognome"; }
-.admin-table td:nth-child(3)::before { content: "Email"; }
-.admin-table td:nth-child(4)::before { content: "Azione"; }
+.admin-table td:nth-child(1)::before {
+    content: "Nome";
+}
+
+.admin-table td:nth-child(2)::before {
+    content: "Cognome";
+}
+
+.admin-table td:nth-child(3)::before {
+    content: "Email";
+}
+
+.admin-table td:nth-child(4)::before {
+    content: "Azione";
+}
 
 .admin-table tr {
     padding: 5px !important;
@@ -876,13 +885,13 @@ Lista clienti PT
 
 
 .descrizioni-sala-pesi article {
-        flex-direction: column;
-    }
+    flex-direction: column;
+}
 
-    .descrizioni-sala-pesi article img {
-        flex: none;
-        width: 100%;
-    }
+.descrizioni-sala-pesi article img {
+    flex: none;
+    width: 100%;
+}
 
 
 /* ============

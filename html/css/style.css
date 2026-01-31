@@ -216,15 +216,15 @@ header.intestazione {
 }
 
 .hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ===================
@@ -259,15 +259,29 @@ header.intestazione {
     padding-bottom: 0.5em;
 }
 
-#presentazione-servizi h2,
-#presentazione-servizi h3 {
+#presentazione-servizi h2 {
     flex-basis: 100%;
 }
 
-/* 
-#presentazione-servizi a::after {
-    content: " ⇨";
-} */
+#presentazione-servizi dt {
+    text-align: center;
+}
+
+#presentazione-servizi :nth-child(1) {
+    order: 1;
+}
+
+#presentazione-servizi :nth-child(2) {
+    order: 3;
+}
+
+#presentazione-servizi :nth-child(3) {
+    order: 2;
+}
+
+#presentazione-servizi :nth-child(4) {
+    order: 4;
+}
 
 #presentazione-servizi img {
     display: block;
@@ -277,8 +291,9 @@ header.intestazione {
     padding: 0;
 }
 
-#presentazione-servizi section:nth-child(3) {
-    display: flex;
+#presentazione-servizi dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: auto;
 }
 
@@ -1543,7 +1558,7 @@ LISTE DOCUMENTI E LINK
     border: 1px solid var(--mainColorDark);
 }
 
-.links-list strong, 
+.links-list strong,
 .links-list span {
     color: var(--textColor);
 }
@@ -1562,9 +1577,9 @@ LISTE DOCUMENTI E LINK
 
 .btn-link:hover {
     background-color: var(--mainBackgroundColorLight);
-    color: var(--mainColorLight); 
+    color: var(--mainColorLight);
     border-color: var(--mainColorLight);
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /*
@@ -1693,10 +1708,26 @@ TABELLA CLIENTI (Override)
     padding: 12px 15px !important;
 }
 
-.admin-table.clients-table th:nth-child(1) { width: 25%; } /* Cliente*/
-.admin-table.clients-table th:nth-child(2) { width: 25%; } /* CF*/
-.admin-table.clients-table th:nth-child(3) { width: 15%; } /* Telefono*/
-.admin-table.clients-table th:nth-child(4) { width: 35%; } /* Carica Scheda */
+.admin-table.clients-table th:nth-child(1) {
+    width: 25%;
+}
+
+/* Cliente*/
+.admin-table.clients-table th:nth-child(2) {
+    width: 25%;
+}
+
+/* CF*/
+.admin-table.clients-table th:nth-child(3) {
+    width: 15%;
+}
+
+/* Telefono*/
+.admin-table.clients-table th:nth-child(4) {
+    width: 35%;
+}
+
+/* Carica Scheda */
 
 /*
 ========================================================================
@@ -1721,7 +1752,7 @@ FORM UPLOAD
     cursor: pointer;
     width: auto;
     flex-grow: 1;
-    min-width: 0;      
+    min-width: 0;
 }
 
 .upload-form button {
