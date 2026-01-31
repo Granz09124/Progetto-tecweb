@@ -1,14 +1,13 @@
 <?php
-require "db_connection.php";
+require "../internal/db_connection.php";
 
-$templateIstruttore = file_get_contents('internal/profilo-istruttore.html');
+$templateIstruttore = file_get_contents('../internal/profilo-istruttore.html');
 
 $idIstruttore = -1;
 
 if (isset($_GET['id'])) {
     $idIstruttore = (int)$_GET['id'];
 }
-
 
 $query = "SELECT *
     FROM Istruttore
@@ -32,10 +31,11 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 
     $isPt = $row['id_istruttore'] == null ? '&cross;' : '&check;';
 
-    $output = str_replace("[Nome Istruttore]", $row['nome'] . ' ' . $row['cognome'], $output);
+    $output = str_replace("[Nome Istruttore]", htmlspecialchars($row['nome'] . ' ' . $row['cognome']), $output);
     $output = str_replace("[È PT]", $isPt, $output);
-    $output = str_replace("[Specializzazione Istruttore]", $row['specializzazione'], $output);
-    $output = str_replace("[Qualifica Istruttore]", $row['qualifica'], $output);
+    $output = str_replace("[Specializzazione Istruttore]", htmlspecialchars($row['specializzazione']), $output);
+    $output = str_replace("[Qualifica Istruttore]", htmlspecialchars($row['qualifica']), $output);
+    $output = str_replace("[Presentazione Istruttore]", htmlspecialchars($row['presentazione']), $output);
     
     echo $output;
 }
