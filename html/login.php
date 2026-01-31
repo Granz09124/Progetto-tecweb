@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'header.php';
+require __DIR__ . '/../internal/header.php';
 
-renderPage("internal/login/login.html");
+renderPage(__DIR__ . "/../internal/login/login.html");
 
 ?>
