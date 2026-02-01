@@ -337,7 +337,7 @@ Appunti:
 
 - login.html e registrati.html, devo togliero lo sfondo ai container?
 ---------------------------------------------------------------------------------------------------------------------------------------------
-⁨⁨TODO
+TODO
 Chiunque fa le propie pagine
 
 - lasciate alla fine breadcrumb con <ol> come in contattaci potenzialmente ovunque
@@ -346,121 +346,142 @@ Chiunque fa le propie pagine
 - nessun riferimento a file in "internal/" da js o html
 - solo link relativi
 
-abbonamenti.php [ARMANDO]
+abbonamenti.php [ARMANDO]   OK
 - pulsanti come in contattaci
 - controllare contrasti delle scritte per i bundle
 - breadcrumb con <ol> come in contattaci
 
-area-personale.php [ARMANDO/LUCA]
-- pulsante logout che non sia redirect ma faccia fare logout
-- breadcrumb con <ol> come in contattaci
-- togliere il bordo ai vari <a>
+area-personale.php [ARMANDO/LUCA]   CHECK
+- pulsante logout che non sia redirect ma faccia fare logout    CHECK
+- breadcrumb con <ol> come in contattaci    OK
+- togliere il bordo ai vari <a>     CHECK
 
-cerca-istruttore.php [ALESSANDRO]
-- aggiunta immagini
-- accessibilità [è pt]
-- pulsante come in contattaci
+cerca-istruttore.php [ALESSANDRO]   OK
+- aggiunta immagini     OK
+- accessibilità [è pt]  OK
+- pulsante come in contattaci   OK
 
-contattaci.php [ALESSANDRO/MARCO]
+contattaci.php [ALESSANDRO/MARCO] DA FARE
 - controllare tag per email, numero di telefono, etc
 - espressione regolare telefono più lasca
 - autocomplete, guardare info su ispeziona elemento condizionatamente a come viene autocompletato il campo
 
-corsi.php [LUCA] OK
-- <time datetime="12:00">12:00</time>-<time datetime="13:30">13:30</time> se non si può esprimere come durata/lasso temporale
-- breadcrumb con <ol> come in contattaci
-[- tagliare le immagini in modo che abbiano lo stesso rapporto larghezza/altezza]
+corsi.php [LUCA] CHECK
+- <time datetime="12:00">12:00</time>-<time datetime="13:30">13:30</time> se non si può esprimere come durata/lasso temporale CHECK
+- breadcrumb con <ol> come in contattaci OK
+[- tagliare le immagini in modo che abbiano lo stesso rapporto larghezza/altezza]   OK
 
-error/403.php, error/404.php [LUCA/ALESSANDRO]
-- modificare menu in modo che faccia ../file.php al posto di ./file.php per palestra, abbonamenti
-- breadcrumb con <ol> come in contattaci
+error/403.php, error/404.php [LUCA/ALESSANDRO] DA FARE
+- modificare menu in modo che faccia ../file.php al posto di ./file.php per palestra, abbonamenti OK
+- controllare link immaigni DA FARE
 
-home.php [ALESSANDRO]
-- trasformare h3 in lista per i link
-- rivedere recensioni
-- breadcrumb con <ol> come in contattaci
+home.php [ALESSANDRO] DA FARE
+- trasformare h3 in lista per i link OK
+- rivedere recensioni DA FARE
+- breadcrumb con <ol> come in contattaci OK
 
-lista-clienti-pt.php [ARMANDO/LUCA]
-[- puntini su mobile]
-- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php)
-- restrizione per chi può visualizzare la pagina
-- breadcrumb con <ol> come in contattaci
+lista-clienti-pt.php [ARMANDO/LUCA] DA FARE
+[- puntini su mobile] DA FARE
+- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php) CHECK
+- restrizione per chi può visualizzare la pagina OK
+- breadcrumb con <ol> come in contattaci OK
 
-lista-clienti.php [ARMANDO/LUCA]
-[- puntini su mobile]
-- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php)
-- restrizione per chi può visualizzare la 
-- breadcrumb con <ol> come in contattaci
+lista-clienti.php [ARMANDO/LUCA] DA FARE
+[- puntini su mobile] DA FARE
+- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php) CHECK
+- restrizione per chi può visualizzare la pagina OK
+- breadcrumb con <ol> come in contattaci OK
 
 lista-pt.php [ARMANDO/LUCA]
-[- puntini su mobile]
-- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php)
-- restrizione per chi può visualizzare la pagina
-- breadcrumb con <ol> come in contattaci
+[- puntini su mobile] DA FARE
+- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php) CHECK
+- restrizione per chi può visualizzare la pagina OK
+- breadcrumb con <ol> come in contattaci OK
 
 lista-utenti.php [ARMANDO/LUCA]
-[- puntini su mobile]
-- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php)
-- restrizione per chi può visualizzare la pagina
-- breadcrumb con <ol> come in contattaci
+[- puntini su mobile] DA FARE
+- controllare vincoli in modo che corrispondano a quelli di registrazione (in internal/registrati/processa-registrazione.php) CHECK
+- restrizione per chi può visualizzare la pagina OK
+- breadcrumb con <ol> come in contattaci OK
 
-login.php [MARCO]
-- check utente loggato. in caso redirect ad area personale
-[- guardare tra sfondi per normalizzare]
-- breadcrumb con <ol> come in contattaci
+login.php [MARCO] DA FARE
+- check utente loggato. in caso redirect ad area personale OK
+[- guardare tra sfondi per normalizzare] DA FARE
+- breadcrumb con <ol> come in contattaci OK
 
 logout.php [MARCO]
-[- guardare pulizia ottimale sessione]
+[- guardare pulizia ottimale sessione] CHECK session_start()?
 
-palestra.php [ARMANDO]
-- controllare i 3 link, sono tutti alla stessa altezza
-- togliere quello che fa sembrare <a> un <button>
-- breadcrumb con <ol> come in contattaci
+palestra.php [ARMANDO] OK
+- controllare i 3 link, sono tutti alla stessa altezza  OK
+- togliere quello che fa sembrare <a> un <button>   OK
+- breadcrumb con <ol> come in contattaci    OK
 
-profilo-istruttore.php [ALESSANDRO]
-- aggiunta presentazione istruttore in db
-- controllo errore 404
-- lettura di è pt
-- mettere header classico
-- breadcrumb con <ol> come in contattaci
+profilo-istruttore.php [ALESSANDRO] DA FARE
+- aggiunta presentazione istruttore in db OK
+- controllo errore 404 CHECK
+- lettura di è pt OK
+- mettere header classico OK
+- breadcrumb con <ol> come in contattaci CHECK
+- modificare descrizioni e termini stranieri DA FARE
 
-registrati.php [MARCO]
-- check utente loggato. in caso redirect ad area personale
-- scrivere forma che ci si aspetta
-- scrivere vincoli per la password
-- password hash
-- breadcrumb con <ol> come in contattaci
-[- modificare varchar nel db in modo che rifletta la lunghezza esatta dell'hash con char)
-[- guardare tra sfondi per normalizzare]
+registrati.php [MARCO] DA FARE
+- check utente loggato. in caso redirect ad area personale CHECK
+- scrivere forma che ci si aspetta OK
+- scrivere vincoli per la password OK
+- password hash CHECK
+- breadcrumb con <ol> come in contattaci OK
+[- modificare varchar nel db in modo che rifletta la lunghezza esatta dell'hash con char] OK
+[- guardare tra sfondi per normalizzare] DA FARE
 
-salapesi.php [LUCA] ok 
-- incrociare immagini
-- diminuire testo
-- breadcrumb con <ol> come in contattaci
+salapesi.php [LUCA] DA FARE
+- incrociare immagini OK 
+- diminuire testo OK
+- breadcrumb con <ol> come in contattaci OK 
+- lista dumbbell DA FARE
 
 [TUTTI]
-- colori bottoni (gialli)
+- colori bottoni (gialli) CHECK
 
 [TUTTI]
-- colori link
+- colori link CHECK
 
-utente-semplice.php [ARMANDO]
-- query
+utente-semplice.php [ARMANDO] CHECK
+- query CHECK
 
-utente-*.php [ARMANDO]
-- rimozione test
+utente-*.php [ARMANDO] OK
+- rimozione test OK
 
-[ALESSANDRO]
-- torna-su.js su tutte le pagine
-- vai al contenuto ovunque
-- resize della icona
+[ALESSANDRO] DA FARE
+- torna-su.js su tutte le pagine OK
+- vai al contenuto ovunque OK
+- resize della icona OK
+- favicon.ico DA FARE
 
-[ALESSANDRO]
+[ALESSANDRO] DA FARE
 creazione utenti per database # non penso si possa fare nel server dell'uni
 permessi in database # serve sopra
 (varie db connection) # idem
-permessi file php
-template di menu deve includere anche header completo. aggiungere box sizing border box per logo
-menu input name/id
-profilo-istruttore.html sistemare le cose in modo che l'<h1> non sia in <dt> che non è legale
+permessi file php DA FARE
+template di menu deve includere anche header completo. aggiungere box sizing border box per logo OK
+menu input name/id DA FARE
+profilo-istruttore.html sistemare le cose in modo che l'<h1> non sia in <dt> che non è legale DA FARE
+accessibilità menu e breadcrumb tab DA FARE
 
+--------------------
+
+- lasciate alla fine breadcrumb con <ol> come in contattaci potenzialmente ovunque
+- modificare id="contenuto" a id="contenuto-principale"
+- nessun riferimento a file html
+- nessun riferimento a file in "internal/" da js o html
+- solo link relativi
+- test con screen reader
+- relazione
+- togliere / alla fine di < ... />
+- togliere riferimenti a config.phpe s sostituire con db_connection.php
+- controllare se admin può modificare specializzazione o qualche informazione pubblica dell'utente
+- modificare <meta> per pagine non raggiungibili da motori di ricerca
+- controllare link relativi
+- controllare style.css per ordine o cose responsive da togliere
+- controllare residui di cose
+- controllare che funzioni upload delle schede
