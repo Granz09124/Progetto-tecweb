@@ -371,9 +371,9 @@ corsi.php [LUCA] CHECK
 - breadcrumb con <ol> come in contattaci OK
 [- tagliare le immagini in modo che abbiano lo stesso rapporto larghezza/altezza]   OK
 
-error/403.php, error/404.php [LUCA/ALESSANDRO] DA FARE
+error/403.php, error/404.php [LUCA/ALESSANDRO] OK
 - modificare menu in modo che faccia ../file.php al posto di ./file.php per palestra, abbonamenti OK
-- controllare link immaigni DA FARE
+- controllare link immaigni OK
 
 home.php [ALESSANDRO] DA FARE
 - trasformare h3 in lista per i link OK
@@ -419,10 +419,10 @@ palestra.php [ARMANDO] OK
 
 profilo-istruttore.php [ALESSANDRO] DA FARE
 - aggiunta presentazione istruttore in db OK
-- controllo errore 404 CHECK
+- controllo errore 404 OK
 - lettura di è pt OK
 - mettere header classico OK
-- breadcrumb con <ol> come in contattaci CHECK
+- breadcrumb con <ol> come in contattaci OK
 - modificare descrizioni e termini stranieri DA FARE
 
 registrati.php [MARCO] DA FARE
