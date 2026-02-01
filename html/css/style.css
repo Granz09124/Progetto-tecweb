@@ -458,6 +458,11 @@ a.bottone-dettagli:active {
 /* =================
  * Sala Pesi
  ================= */
+
+.descrizioni-sala-pesi strong {
+    font-weight: 800;
+}
+
 .descrizioni-sala-pesi article {
     display: flex;
     align-items: center;
