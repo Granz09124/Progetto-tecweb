@@ -1,9 +1,7 @@
-ErrorDocument 403 /error/403.php
-ErrorDocument 404 /error/404.php
-ErrorDocument 500 /error/500.php
+ErrorDocument 403 /amorabit/error/403.php
+ErrorDocument 404 /amorabit/error/404.php
 
 RewriteEngine On
-RewriteBase /
+RewriteBase /amorabit/
 
-RewriteCond %{REQUEST_URI} ^/?$ [NC]
-RewriteRule ^/?$ /home.php [L]
+RewriteRule ^/?$ /amorabit/home.php [R=301,L]
