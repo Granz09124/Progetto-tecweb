@@ -1,5 +1,16 @@
-CREATE DATABASE IF NOT EXISTS palestra_db;
-USE palestra_db;
+-- CREATE DATABASE IF NOT EXISTS palestra_db;
+-- USE palestra_db;
+use <nome_utente>;
+
+DROP TABLE IF EXISTS Assegnazione_PT;
+DROP TABLE IF EXISTS Messaggio_Contattaci;
+DROP TABLE IF EXISTS Sottoscrizione;
+DROP TABLE IF EXISTS Abbonamento;
+DROP TABLE IF EXISTS Personal_Trainer;
+DROP TABLE IF EXISTS Istruttore;
+DROP TABLE IF EXISTS Cliente;
+DROP TABLE IF EXISTS Admin;
+DROP TABLE IF EXISTS Utente;
 
 CREATE TABLE Utente (
     id_utente SERIAL PRIMARY KEY,

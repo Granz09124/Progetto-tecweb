@@ -1,5 +1,6 @@
 <?php
 require "../internal/db_connection.php";
+require '../internal/header.php';
 
 $templateIstruttore = file_get_contents('../internal/profilo-istruttore.html');
 
@@ -38,5 +39,5 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     $output = str_replace("[Qualifica Istruttore]", htmlspecialchars($row['qualifica']), $output);
     $output = str_replace("[Presentazione Istruttore]", htmlspecialchars($row['presentazione']), $output);
     
-    echo $output;
+    renderFromHtml($output);
 }
