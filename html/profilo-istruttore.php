@@ -24,7 +24,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
-    require_once "error/404.php";
+    header('Location: error/404.php');
 }
 
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
