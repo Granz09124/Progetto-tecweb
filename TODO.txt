@@ -456,11 +456,11 @@ utente-*.php [ARMANDO]
 - resize della icona
 
 [ALESSANDRO]
-creazione utenti per database
-permessi in database
+creazione utenti per database # non penso si possa fare nel server dell'uni
+permessi in database # serve sopra
+(varie db connection) # idem
 permessi file php
-(varie db connection)
-
-[ALESSANDRO]
 template di menu deve includere anche header completo. aggiungere box sizing border box per logo
 menu input name/id
+profilo-istruttore.html sistemare le cose in modo che l'<h1> non sia in <dt> che non è legale
+
