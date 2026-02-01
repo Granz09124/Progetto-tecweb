@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -69,7 +68,6 @@ if (!empty($errori)) {
 // Controlla se l'email esiste già
 $checkEmail = $conn->prepare("SELECT email FROM Utente WHERE email = ?");
 if (!$checkEmail) {
-    error_log("Errore preparazione query email: " . $conn->error);
     http_response_code(500);
     echo "Si è verificato un errore tecnico. Riprova più tardi.";
     exit();
@@ -90,7 +88,6 @@ $checkEmail->close();
 // Controlla se il codice fiscale esiste già
 $checkCF = $conn->prepare("SELECT codice_fiscale FROM Cliente WHERE codice_fiscale = ?");
 if (!$checkCF) {
-    error_log("Errore preparazione query CF: " . $conn->error);
     http_response_code(500);
     echo "Si è verificato un errore tecnico. Riprova più tardi.";
     exit();
@@ -146,19 +143,17 @@ try {
     
 
     $conn->commit();
-
-    $_SESSION['successo'] = "Registrazione completata! Ora puoi effettuare il login.";
     
     http_response_code(200);
+    echo "Success";
     exit();
     
 } catch (Exception $e) {
     // Rollback in caso di errore
     $conn->rollback();
     
-    error_log("Errore registrazione: " . $e->getMessage());
-    
     http_response_code(500);
+
     echo "Si è verificato un errore tecnico. Riprova più tardi.";
     exit();
 }
