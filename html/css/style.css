@@ -137,6 +137,7 @@ header.intestazione {
 
 .intestazione .logo {
     width: 156px;
+    box-sizing: border-box;
     display: inline;
     vertical-align: middle;
     padding: .2em .5em;
@@ -428,13 +429,13 @@ header.intestazione {
 }
 
 a.bottone-dettagli {
-    margin-top: auto;  
+    margin-top: auto;
     display: inline-block;
     width: fit-content;
     padding: 0;
     border: none;
     background-color: transparent;
-    align-self: flex-end; 
+    align-self: flex-end;
     margin-bottom: 0.5em;
     text-decoration: underline;
     color: var(--urlColor);
@@ -449,7 +450,7 @@ a.bottone-dettagli:visited {
 a.bottone-dettagli:hover,
 a.bottone-dettagli:active {
     background-color: transparent;
-    color: var(--mainColorLight); 
+    color: var(--mainColorLight);
     box-shadow: none;
     transform: none;
     cursor: pointer;
@@ -1577,21 +1578,26 @@ LISTE DOCUMENTI E LINK
 
 .btn-link {
     background-color: transparent;
+    border: none;
+    padding: 0;
     color: var(--mainColor);
-    border: 1px solid var(--mainColor);
-    padding: 0.5em 1em;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: all 0.3s ease;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s ease;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .btn-link:hover {
-    background-color: var(--mainBackgroundColorLight);
     color: var(--mainColorLight);
-    border-color: var(--mainColorLight);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.btn-link:visited {
+    color: var(--visitedUrlColor);
 }
 
 /*
@@ -1656,21 +1662,21 @@ AZIONI ACCOUNT
 }
 
 .btn-logout {
-    padding: 1em 2em;
-    border: 1px solid var(--mainColor);
-    border-radius: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--mainColor);
+    text-decoration: underline;
     font-weight: bold;
+    font-size: 1.1em;
     cursor: pointer;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    background-color: var(--mainColor);
-    color: var(--mainBackgroundColorDark);
+    display: inline-block; 
+    width: auto;
 }
 
 .btn-logout:hover {
-    background-color: var(--mainColorLight);
+    color: var(--mainColorLight);
+    background: transparent;
 }
 
 .btn-delete {
