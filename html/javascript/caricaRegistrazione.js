@@ -1,10 +1,14 @@
 window.onload = () => {
-    const form = document.querySelector('form-registrazione');
+    const form = document.querySelector('.form-registrazione');
     
     if (form) {
         const button = form.querySelector('.btn-invia');
         const feedback = button.nextElementSibling;
         
+        console.log("Form registrazione trovata. ", form);
+        console.log("Button: ", button);
+        console.log("Feedback: ", feedback);
+
         form.addEventListener('submit', (event) => {
             event.preventDefault();
 

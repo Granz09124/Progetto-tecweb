@@ -6,7 +6,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
-require_once 'db_connection.php';
+if (isset($_SESSION['user_id'])) {
+    http_response_code(200);
+    header('Location: /area-personale.php');  
+    exit();
+}
+
+require __DIR__ . '/../db_connection.php';
 
 $nome = trim($_POST['nome'] ?? '');
 $cognome = trim($_POST['cognome'] ?? '');
