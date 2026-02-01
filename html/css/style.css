@@ -188,7 +188,7 @@ header.intestazione {
 }
 
 #breadcrumb>ol>li+li::before {
-    content: "> >";
+    content: "> >"/ "";
     margin-right: .25em;
 }
 
