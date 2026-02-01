@@ -1,19 +1,19 @@
 <?php
-session_start();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     header('Location: /login.php');
     exit();
 }
-    
-require_once 'db_connection.php';
 
 if (isset($_SESSION['user_id'])) {
     http_response_code(200);
     header('Location: /area-personale.php');  
     exit();
 }
+    
+require __DIR__ . '/../db_connection.php';
+
 
 $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
@@ -81,7 +81,7 @@ if ($user = $result->fetch_assoc()) {
 
         
         http_response_code(200);
-        header('Location: /area-personale.php');  
+        echo "Success";
         exit();
     }
 }

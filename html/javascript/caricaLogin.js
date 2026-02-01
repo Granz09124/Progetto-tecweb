@@ -10,13 +10,13 @@ window.onload = () => {
 
             const formData = new FormData(form);
 
-            fetch('/internal/login/processa-login.php', {
+            fetch(window.location.pathname, {
                 method: 'POST',
                 body: formData
             }).then((response) => {
                 response.text().then(text => {
-                    if (response.ok) {
-                        window.location.href = '/area-personale.php';
+                    if (response.ok && text.trim() === "Success") {
+                        window.location.href = 'area-personale.php';
                     } else {
                         feedback.textContent = text;
                     }

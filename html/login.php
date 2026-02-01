@@ -6,6 +6,11 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    require __DIR__ . "/../internal/login/processa-login.php";
+    exit();
+}
+
 require __DIR__ . '/../internal/header.php';
 
 renderPage(__DIR__ . "/../internal/login/login.html");
