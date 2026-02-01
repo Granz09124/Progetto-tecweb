@@ -467,6 +467,11 @@ a.bottone-dettagli:active {
     margin-bottom: 3.5em;
 }
 
+
+.descrizioni-sala-pesi article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
 .descrizioni-sala-pesi article img {
     width: 40%;
     height: auto;
@@ -476,7 +481,6 @@ a.bottone-dettagli:active {
     flex: 1;
     margin: 0;
 }
-
 
 /* =================
  * Corsi
@@ -1212,6 +1216,10 @@ textarea {
 
 .error-image~* {
     text-align: center;
+}
+
+.contenuto-errore {
+    margin-top: 1.5em;
 }
 
 /* ================
