@@ -1572,21 +1572,26 @@ LISTE DOCUMENTI E LINK
 
 .btn-link {
     background-color: transparent;
+    border: none;
+    padding: 0;
     color: var(--mainColor);
-    border: 1px solid var(--mainColor);
-    padding: 0.5em 1em;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: all 0.3s ease;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1em;
+    transition: color 0.3s ease;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 .btn-link:hover {
-    background-color: var(--mainBackgroundColorLight);
     color: var(--mainColorLight);
-    border-color: var(--mainColorLight);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: transparent; 
+    border: none;
+    box-shadow: none;
+}
+
+.btn-link:visited {
+    color: var(--visitedUrlColor); 
 }
 
 /*
