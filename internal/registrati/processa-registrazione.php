@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
-require_once '../../db_connection.php';
+require_once 'db_connection.php';
 
 $nome = trim($_POST['nome'] ?? '');
 $cognome = trim($_POST['cognome'] ?? '');
@@ -52,8 +52,6 @@ if (empty($password)) {
     $errori[] = "La password è obbligatoria.";
 } elseif (strlen($password) < 8) {
     $errori[] = "La password deve essere di almeno 8 caratteri.";
-} elseif (strlen($password) > 72) {
-    $errori[] = "La password è troppo lunga (massimo 72 caratteri).";
 } elseif (!preg_match("/^[\x20-\x7E]+$/", $password)) {
     $errori[] = "La password contiene caratteri non validi.";
 }

@@ -2,13 +2,14 @@
 
 session_start();
 
-setcookie(session_name(), '', 100);
 
 session_unset();
 
 session_destroy();
 
-$_SESSION = array();
+setcookie(name: session_name(), value: '',   expires_or_options: time() - 3600);
 
 header('Location: home.php');
+    
+exit();
 ?>

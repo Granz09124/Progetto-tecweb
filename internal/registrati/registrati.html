@@ -7,11 +7,10 @@
     <title>Registrati - Il Tempio di Apollo</title>
     <meta name="description" content="Crea un nuovo account per accedere ai servizi del Tempio di Apollo.">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="../../../css/mini.css">
-    <link rel="stylesheet" media="print" href="../../../css/print.css">
-    <script src="../../../javascript/caricaRegistrazione.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="css/mini.css">
+    <link rel="stylesheet" media="print" href="css/print.css">
+    <script src="javascript/caricaRegistrazione.js"></script>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
     <header class="intestazione">
         <div class="intestazione-bg">
             <a href="home.php" class="logo-container">
-                <img src="../immagini/Logo_palestra.png" alt="Torna alla Home" class="logo">
+                <img src="/immagini/Logo_palestra.png" alt="Torna alla Home" class="logo">
             </a>
             <h1>Il Tempio di Apollo</h1>
         </div>
@@ -29,8 +28,12 @@
     </header>
 
     <nav id="breadcrumb" aria-label="Percorso di navigazione">
-        <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt;&gt; Registrati</p>
+        <ol>
+            <li><a lang="en" href="home.php">Home</a></li>
+            <li aria-current="page">Registrati</li>
+        </ol>
     </nav>
+
 
     <main id="contenuto-principale" class="contenuto-principale">
 
@@ -58,11 +61,11 @@
                 <input type="email" id="email" name="email" required autocomplete="email">
 
                 <label for="new-password">Password *</label>
-
                 <input type="password" id="new-password" name="new-password" required autocomplete="new-password" aria-describedby="pwd-info">
                 
                 <label for="confirm-password">Conferma Password *</label>
                 <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password">
+                <small id="pwd-info">Almeno 8 caratteri, massimo 72. Usa lettere, numeri e simboli.</small>
             </fieldset>
 
             <button type="submit" class="btn-invia">Crea Account</button>

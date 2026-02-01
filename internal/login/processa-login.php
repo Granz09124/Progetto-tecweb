@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
     
-require_once '../../db_connection.php';
+require_once 'db_connection.php';
 
 if (isset($_SESSION['user_id'])) {
     http_response_code(200);
