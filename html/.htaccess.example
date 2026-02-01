@@ -1,0 +1,7 @@
+ErrorDocument 403 /nome_utente/error/403.php
+ErrorDocument 404 /nome_utente/error/404.php
+
+RewriteEngine On
+RewriteBase /nome_utente/
+
+RewriteRule ^/?$ /nome_utente/home.php [R=301,L]
