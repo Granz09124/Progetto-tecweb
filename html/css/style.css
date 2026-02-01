@@ -1661,21 +1661,21 @@ AZIONI ACCOUNT
 }
 
 .btn-logout {
-    padding: 1em 2em;
-    border: 1px solid var(--mainColor);
-    border-radius: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--mainColor);
+    text-decoration: underline;
     font-weight: bold;
+    font-size: 1.1em;
     cursor: pointer;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    background-color: var(--mainColor);
-    color: var(--mainBackgroundColorDark);
+    display: inline-block; 
+    width: auto;
 }
 
 .btn-logout:hover {
-    background-color: var(--mainColorLight);
+    color: var(--mainColorLight);
+    background: transparent;
 }
 
 .btn-delete {
