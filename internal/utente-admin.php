@@ -56,7 +56,7 @@ $bottom = file_get_contents(__DIR__ . "/../internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Palestra - Area Utente Admin", $top);
 $breadcrumb = '<li><a lang="en" href="./home.php">Home</a></li>';
-$breadcrumb .= '<li aria-current="page">Area Personale</li>';
+$breadcrumb .= '<li aria-current="page" tabindex="0">Area Personale</li>';
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $messaggioHtml = $messaggio ? "<div class='feedback-message'>$messaggio</div>" : "";
