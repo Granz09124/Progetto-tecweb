@@ -46,7 +46,11 @@ function renderFromHtml($htmlContent) {
     
     $menuContent = file_get_contents($menuFile);
     $currentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
-    
+    $currentPath = pathinfo($_SERVER['PHP_SELF'], PATHINFO_DIRNAME);
+
+    $currentPath = str_replace("/error", "", $currentPath);
+    $menuContent = str_replace("[CWD]", $currentPath, $menuContent);
+        
     $pattern = '/<li>\s*<a ([^>]*data-page="' . preg_quote($currentPage, '/') . '"[^>]*)>(.*?)<\/a>\s*<\/li>/';
     
     if (preg_match($pattern, $menuContent, $matches)) {
