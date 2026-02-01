@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/db_connection.php';
 
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_tipo']) || $_SESSION['user_tipo'] !== 'cliente') {
     header("Location: login.php");
@@ -96,7 +96,7 @@ if ($resultSchede->num_rows > 0) {
 
 $top = str_replace("[PageTitle]", "Area Utente - " . htmlspecialchars($userData['nome']), $top);
 $breadcrumb = '<li><a lang="en" href="./home.php">Home</a></li>';
-$breadcrumb .= '<li aria-current="page">Area Personale</li>';
+$breadcrumb .= '<li aria-current="page" tabindex="0">Area Personale</li>';
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[Nome]", htmlspecialchars($userData['nome']), $body);
