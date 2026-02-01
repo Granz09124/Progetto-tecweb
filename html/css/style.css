@@ -1304,42 +1304,12 @@ textarea {
 
 #form-ricerca-istruttore div {
     margin: 1em 0 0.2em;
+    justify-content: center;
     display: flex;
 }
 
 #form-ricerca-istruttore button {
-    padding: .4em 1%;
-    min-width: 64px;
-    font-size: 1em;
-    display: inline-flex;
-    flex: 1 1 64px;
-    justify-content: center;
-    margin-right: 1%;
-
-    border: 3px solid var(--mainColorDark);
-    border-radius: 1.5em;
-    background-color: var(--mainBackgroundColor);
-    color: var(--mainColor);
-    transition-duration: 0.5s;
-}
-
-#form-ricerca-istruttore button:hover {
-    background-color: var(--mainColorLight);
-    border: 3px solid var(--mainColorLight);
-    color: var(--mainBackgroundColorDark);
-    transition-duration: 0.5s;
-}
-
-
-#form-ricerca-istruttore button::after {
-    content: "";
-    background-image: url('../immagini/lenses.svg');
-    background-size: 15px 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
+    margin-top: 0;
 }
 
 .ricerca-esempio {
@@ -1354,11 +1324,9 @@ ul#risultati-ricerca {
 }
 
 #risultati-ricerca h2 {
-    /*     padding-left: 20%; */
     text-align: left;
 }
 
-/* #risultati-ricerca-pt dl, */
 #barra-ricerca li {
     display: flex;
 }
@@ -1800,7 +1768,7 @@ td .btn-modify {
 #formSection .account-actions button,
 #formSection .account-actions .btn-save,
 #formSection .account-actions .btn-delete {
-    width: 150px; 
-    height: auto; 
+    width: 150px;
+    height: auto;
     margin: 0;
 }

@@ -430,7 +430,7 @@ registrati.php [MARCO]
 - scrivere vincoli per la password
 - password hash
 - breadcrumb con <ol> come in contattaci
-[- modificare varchar nel db in modo che rifletta la lunghezza esatta dell'hash con char)
+[- modificare varchar nel db in modo che rifletta la lunghezza esatta dell'hash con char]
 [- guardare tra sfondi per normalizzare]
 
 salapesi.php [LUCA] ok 
