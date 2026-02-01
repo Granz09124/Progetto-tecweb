@@ -108,7 +108,9 @@ $body = file_get_contents(__DIR__ . "/../internal/utente/lista-utenti/body.html"
 $bottom = file_get_contents(__DIR__ . "/../internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Lista Utenti Totali - Admin", $top);
-$breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> <a href='./area-personale.php'>Area Personale</a> >> Lista Utenti Totali";
+$breadcrumb = '<li><a lang="en" href="./home.php">Home</a></li>';
+$breadcrumb .= '<li><a href="./area-personale.php">Area Personale</a></li>';
+$breadcrumb .= '<li aria-current="page">Lista Utenti Totali</li>';
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[TableRows]", $tableRows, $body);

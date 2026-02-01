@@ -102,7 +102,7 @@ if ($resultClienti->num_rows > 0) {
 $body = str_replace("[ListaClienti]", $righeHTML, $body);
 $top = str_replace("[PageTitle]", "I Miei Clienti - Area PT", $top);
 
-$breadcrumb = "Ti trovi in: <a href='./home.php'>Home</a> >> <a href='area-personale.php'>Area Personale</a> >> I Miei Clienti";
+$breadcrumb = '<li><a lang="en" href="./home.php">Home</a></li><li><a href="area-personale.php">Area Personale</a></li><li aria-current="page">I Miei Clienti</li>';
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 require_once __DIR__ . '/../internal/header.php';
