@@ -15,6 +15,7 @@ function renderPage($htmlFile) {
     $currentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
     $currentPath = pathinfo($_SERVER['PHP_SELF'], PATHINFO_DIRNAME);
 
+    $currentPath = htmlspecialchars($currentPath, ENT_QUOTES);
     $currentPath = str_replace("/error", "", $currentPath);
     $menuContent = str_replace("[CWD]", $currentPath, $menuContent);
     
@@ -48,6 +49,7 @@ function renderFromHtml($htmlContent) {
     $currentPage = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
     $currentPath = pathinfo($_SERVER['PHP_SELF'], PATHINFO_DIRNAME);
 
+    $currentPath = htmlspecialchars($currentPath, ENT_QUOTES);
     $currentPath = str_replace("/error", "", $currentPath);
     $menuContent = str_replace("[CWD]", $currentPath, $menuContent);
         
