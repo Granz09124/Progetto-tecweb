@@ -1,6 +1,6 @@
 <?php
-require "../internal/db_connection.php";
-require '../internal/header.php';
+require_once "../internal/db_connection.php";
+require_once '../internal/header.php';
 
 $templateIstruttore = file_get_contents('../internal/profilo-istruttore.html');
 
@@ -24,7 +24,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows == 0) {
-    require "error/404.php";
+    require_once "error/404.php";
 }
 
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
