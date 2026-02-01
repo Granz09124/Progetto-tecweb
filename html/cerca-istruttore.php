@@ -41,7 +41,9 @@ if ($result->num_rows == 0) {
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     $output = $templateResult;
 
-    $isPt = $row['id_istruttore'] == null ? '&cross;' : '&check;';
+    $isPt = $row['id_istruttore'] == null
+        ? '<abbr title="no" aria-hidden="true">&cross;</abbr><span class="hidden">no</span>'
+        : '<abbr title="si" aria-hidden="true">&check;</abbr><span class="hidden">si</span>';
 
     $output = str_replace("[Nome Istruttore]", $row['nome'] . ' ' . $row['cognome'], $output);
     $output = str_replace("[È PT]", $isPt, $output);

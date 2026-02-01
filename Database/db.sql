@@ -17,7 +17,7 @@ CREATE TABLE Utente (
     nome VARCHAR(100) NOT NULL,
     cognome VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL 
+    password_hash CHAR(60) NOT NULL 
 );
 
 CREATE TABLE Admin (
