@@ -366,7 +366,7 @@ contattaci.php [ALESSANDRO/MARCO]
 - espressione regolare telefono più lasca
 - autocomplete, guardare info su ispeziona elemento condizionatamente a come viene autocompletato il campo
 
-corsi.php [LUCA]
+corsi.php [LUCA] OK
 - <time datetime="12:00">12:00</time>-<time datetime="13:30">13:30</time> se non si può esprimere come durata/lasso temporale
 - breadcrumb con <ol> come in contattaci
 [- tagliare le immagini in modo che abbiano lo stesso rapporto larghezza/altezza]
@@ -433,7 +433,7 @@ registrati.php [MARCO]
 [- modificare varchar nel db in modo che rifletta la lunghezza esatta dell'hash con char)
 [- guardare tra sfondi per normalizzare]
 
-salapesi.php [LUCA]
+salapesi.php [LUCA] ok 
 - incrociare immagini
 - diminuire testo
 - breadcrumb con <ol> come in contattaci
