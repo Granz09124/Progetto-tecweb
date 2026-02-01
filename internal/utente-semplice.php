@@ -58,7 +58,13 @@ if (!$userData) {
     die("Errore: Impossibile recuperare il profilo utente.");
 }
 
-$stmtSchede = $conn->prepare("SELECT s.*, u.nome as nome_pt FROM Scheda_Allenamento s LEFT JOIN Utente u ON s.id_pt = u.id_utente WHERE s.id_cliente = ? ORDER BY s.data_caricamento DESC");
+$stmtSchede = $conn->prepare("
+    SELECT apt.data_caricamento, apt.id_pt, u.nome, u.cognome 
+    FROM Assegnazione_PT apt 
+    JOIN Utente u ON apt.id_pt = u.id_utente 
+    WHERE apt.id_cliente = ? AND apt.data_caricamento IS NOT NULL 
+    ORDER BY apt.data_caricamento DESC
+");
 $stmtSchede->bind_param("i", $id_utente);
 $stmtSchede->execute();
 $resultSchede = $stmtSchede->get_result();
@@ -72,11 +78,16 @@ $lista = "";
 if ($resultSchede->num_rows > 0) {
     while($scheda = $resultSchede->fetch_assoc()) {
         $item = $itemTemplate;
-        $item = str_replace("[NomeFile]", htmlspecialchars($scheda['nome_file']), $item);
-
-        $nomePT = $scheda['nome_pt'] ? $scheda['nome_pt'] : "Sistema"; 
+        
+        $nomePT = $scheda['nome'] . " " . $scheda['cognome'];
+        
+        $nomeFileDisplay = "Scheda Allenamento (" . date("d/m/Y", strtotime($scheda['data_caricamento'])) . ")";
+        
+        $percorsoFile = "../uploads/schede/" . $id_utente . "_" . $scheda['id_pt'] . ".pdf";
+        
+        $item = str_replace("[NomeFile]", htmlspecialchars($nomeFileDisplay), $item);
         $item = str_replace("[NomePT]", htmlspecialchars($nomePT), $item);
-        $item = str_replace("[PercorsoFile]", htmlspecialchars($scheda['percorso_file']), $item);
+        $item = str_replace("[PercorsoFile]", htmlspecialchars($percorsoFile), $item);
         $lista .= $item;
     }
 } else {
