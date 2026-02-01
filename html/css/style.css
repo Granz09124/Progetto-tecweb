@@ -450,7 +450,7 @@ a.bottone-dettagli:visited {
 a.bottone-dettagli:hover,
 a.bottone-dettagli:active {
     background-color: transparent;
-    color: var(--mainColorLight);
+    color: var(--mainColorDark);
     box-shadow: none;
     transform: none;
     cursor: pointer;
@@ -1558,7 +1558,7 @@ LISTE DOCUMENTI E LINK
 }
 
 .btn-link:hover {
-    color: var(--mainColorLight);
+    color: var(--mainColorDark);
     background-color: transparent;
     border: none;
     box-shadow: none;
