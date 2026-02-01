@@ -65,7 +65,7 @@ $bottom = file_get_contents(__DIR__ . "/../internal/utente/bottom.html");
 
 $top = str_replace("[PageTitle]", "Area PT - " . htmlspecialchars($userData['nome']), $top);
 $breadcrumb = '<li><a lang="en" href="./home.php">Home</a></li>';
-$breadcrumb .= '<li aria-current="page">Area Personale</li>';
+$breadcrumb .= '<li aria-current="page" tabindex="0">Area Personale</li>';
 $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[NomeCompleto]", htmlspecialchars($userData['nome'] . " " . $userData['cognome']), $body);

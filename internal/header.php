@@ -30,7 +30,7 @@ function renderPage($htmlFile) {
             $keepLang = ' lang="en"';
         }
         
-        $span = '<li><span' . $keepLang . ' aria-current="page">' . $contentInside . '</span></li>';
+        $span = '<li><span' . $keepLang . ' aria-current="page" tabindex="0">' . $contentInside . '</span></li>';
         
         $menuContent = preg_replace($pattern, $span, $menuContent);
     }
@@ -64,7 +64,7 @@ function renderFromHtml($htmlContent) {
             $keepLang = ' lang="en"';
         }
         
-        $span = '<li><span' . $keepLang . ' aria-current="page">' . $contentInside . '</span></li>';
+        $span = '<li><span' . $keepLang . ' aria-current="page" tabindex="0">' . $contentInside . '</span></li>';
         $menuContent = preg_replace($pattern, $span, $menuContent);
     }
     
