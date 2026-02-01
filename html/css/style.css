@@ -427,33 +427,32 @@ header.intestazione {
     color: var(--text-main);
 }
 
-a.bottone-dettagli,
-a.bottone-dettagli:visited {
-    margin-top: auto;
-    padding: 1em 2em;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    text-decoration: underline;
+a.bottone-dettagli {
+    margin-top: auto;  
     display: inline-block;
-    box-sizing: border-box;
-    transition: background-color 0.3s, color 0.3s;
+    width: fit-content;
+    padding: 0;
+    border: none;
     background-color: transparent;
-    border: 2px solid var(--mainColorDark);
-    color: var(--mainColorDark);
+    align-self: flex-end; 
+    margin-bottom: 0.5em;
+    text-decoration: underline;
+    color: var(--urlColor);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+a.bottone-dettagli:visited {
+    color: var(--visitedUrlColor);
 }
 
 a.bottone-dettagli:hover,
-a.bottone-dettagli:visited:hover,
 a.bottone-dettagli:active {
-    background-color: var(--mainColorDark);
-    color: var(--mainBackgroundColorDark);
-    text-decoration: underline;
+    background-color: transparent;
+    color: var(--mainColorLight); 
     box-shadow: none;
     transform: none;
-    filter: none;
+    cursor: pointer;
 }
 
 /* =================
