@@ -417,13 +417,13 @@ palestra.php [ARMANDO] OK
 - togliere quello che fa sembrare <a> un <button>   OK
 - breadcrumb con <ol> come in contattaci    OK
 
-profilo-istruttore.php [ALESSANDRO] DA FARE
+profilo-istruttore.php [ALESSANDRO] OK
 - aggiunta presentazione istruttore in db OK
 - controllo errore 404 OK
 - lettura di è pt OK
 - mettere header classico OK
 - breadcrumb con <ol> come in contattaci OK
-- modificare descrizioni e termini stranieri DA FARE
+- modificare descrizioni e termini stranieri OK
 
 registrati.php [MARCO] DA FARE
 - check utente loggato. in caso redirect ad area personale CHECK
@@ -462,11 +462,11 @@ utente-*.php [ARMANDO] OK
 creazione utenti per database # non penso si possa fare nel server dell'uni
 permessi in database # serve sopra
 (varie db connection) # idem
-permessi file php DA FARE
+permessi file php OK
 template di menu deve includere anche header completo. aggiungere box sizing border box per logo OK
 menu input name/id DA FARE
-profilo-istruttore.html sistemare le cose in modo che l'<h1> non sia in <dt> che non è legale DA FARE
-accessibilità menu e breadcrumb tab DA FARE
+profilo-istruttore.html sistemare le cose in modo che l'<h1> non sia in <dt> che non è legale OK
+accessibilità menu e breadcrumb tab OK
 
 --------------------
 

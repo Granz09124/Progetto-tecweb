@@ -264,16 +264,22 @@ a:link:has(.logo) {
     display: block;
 }
 
-.orari-corsi th[data-title]:before,
-.orari-corsi td[data-title]:before {
+.orari-corsi th[data-title]:not(.cell-mobile-hidden):before,
+.orari-corsi td[data-title]:not(.cell-mobile-hidden):before {
     content: attr(data-title) ": \00A0";
 }
 
-.orari-corsi td.mobile-hide {
-    display: none;
+.orari-corsi .cell-mobile-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
-
-
 
 /* ============
  * Istruttore
