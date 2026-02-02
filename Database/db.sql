@@ -97,12 +97,12 @@ INSERT INTO Utente (nome, cognome, email, password_hash) VALUES
 ('Giulia', 'Romano', 'giulia.romano@email.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
 
 -- Istruttori e Personal Trainer
-('pt', 'pt', 'pt', '$2y$10$iVSg/2pEdSCzXf.tUPQ0deY2yxjwAp./RQrgfN7QS/aQvWy7RiKfK'),
 ('Marco', 'Colombo', 'marco.colombo@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
 ('Sofia', 'Ricci', 'sofia.ricci@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
 ('Luca', 'Marino', 'luca.marino@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
 ('Elena', 'Greco', 'elena.greco@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
-('Davide', 'Bruno', 'davide.bruno@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy');
+('Davide', 'Bruno', 'davide.bruno@tempio.apollo.it', '$2y$10$T8.sGrRVSpkYvEGR4LyZyu/CoMJweu2n7Nvv/5ZB/EURwH699X1qy'),
+('pt', 'pt', 'pt', '$2y$10$iVSg/2pEdSCzXf.tUPQ0deY2yxjwAp./RQrgfN7QS/aQvWy7RiKfK');
 
 
 INSERT INTO Admin (id_utente) VALUES 
@@ -124,13 +124,15 @@ INSERT INTO Istruttore (id_utente, specializzazione, qualifica, presentazione) V
 (10, 'Yoga e Meditazione', 'Istruttrice Yoga', 'Il tuo successo è il mio obiettivo. Ti accompagno in un percorso di cambiamento fisico e mentale, passo dopo passo. Niente schede copia-incolla, solo supporto costante.'),
 (11, 'Functional Training e Crossfit', 'Preparatore Atletico', "Preparazione atletica specifica per calciatori e atleti d'élite. Sviluppo potenza, velocità e prevenzione infortuni per portarti al livello superiore. Allenati da professionista"),
 (12, 'Pilates', 'Istruttrice Pilates Certificata', "Riscopri il tuo corpo con il Pilates: <script>alert()</script>. Un percorso di benessere per una schiena sana e una mente rilassata"),
-(13, 'Arrampicata e Fit Box', 'Coach Certificato', "Allenamenti di Fit Box ad alta energia: il mix perfetto tra tecnica, musica e sudore. Brucia calorie divertendoti e tira fuori la grinta. Ti aspetto al sacco!");
+(13, 'Arrampicata e Fit Box', 'Coach Certificato', "Allenamenti di Fit Box ad alta energia: il mix perfetto tra tecnica, musica e sudore. Brucia calorie divertendoti e tira fuori la grinta. Ti aspetto al sacco!"),
+(14, 'Personal trainer di esempio', 'Personal trainer di esempio', 'Personal trainer di esempio');
 
 -- Inserimento Personal Trainer
 INSERT INTO Personal_Trainer (id_istruttore) VALUES
 (9),  -- Marco Colombo
 (10), -- Sofia Ricci
-(13); -- Davide Bruno
+(13), -- Davide Bruno
+(14); -- Personal trainer di esempio
 
 
 -- Inserimento Abbonamenti

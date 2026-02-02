@@ -478,10 +478,10 @@ accessibilità menu e breadcrumb tab DA FARE
 - test con screen reader
 - relazione
 - togliere / alla fine di < ... />
-- togliere riferimenti a config.phpe s sostituire con db_connection.php
+- togliere riferimenti a config.phpe s sostituire con db_connection.php OK
 - controllare se admin può modificare specializzazione o qualche informazione pubblica dell'utente
 - modificare <meta> per pagine non raggiungibili da motori di ricerca
 - controllare link relativi
 - controllare style.css per ordine o cose responsive da togliere
 - controllare residui di cose
-- controllare che funzioni upload delle schede
+- controllare che funzioni upload delle schede OK
