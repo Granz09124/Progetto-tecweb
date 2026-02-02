@@ -13,7 +13,7 @@
 \begin{titlepage}
     \centering
     \vspace*{1cm}
-   \includegraphics[width=0.5\textwidth]{Logo_Università_Padova.svg.png} 
+%   \includegraphics[width=0.5\textwidth]{Logo_Università_Padova.svg.png} 
     
     \vspace{1.5cm}
     {\Huge \textbf{Tempio di Apollo - Sito Web} \par}
@@ -295,7 +295,20 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 \end{itemize}
 \textbf{Alessandro}
 \begin{itemize}
-    \item Creazione e gestione delle pagine: \texttt{home.html},  \texttt{lista-utenti.html},  \texttt{pt.html},  \texttt{cerca-pt.html}
+    \item Creazione e gestione dei file:
+    \begin{itemize}
+        \item \texttt{cerca-istruttore.php} (con css mobile, dekstop e stampa)
+        \item \texttt{profilo-istruttore.php} (con css mobile, dekstop e stampa)
+        \item \texttt{home.php} (con css mobile, dekstop e stampa)
+        \item \texttt{download-scheda.php}
+        \item \texttt{upload-messaggio.php} (utilizzato solamente per dare un significato al form contattaci. I dati vengono in realtà salvati nel database)
+        \item \texttt{lista-clienti-pt.php} i controlli sul file pdf (scheda da parte del personal trainer) caricato (grandezza posta a 1MiB in quanto possibilmente vincolato da configurazione php, controllo estensione file, controllo MIME file)
+        \item \texttt{utente-semplice.php} pulsante \texttt{Visualizza PDF (...)} per la visualizzazione della scheda caricata da un personal trainer
+        \item \texttt{caricaScheda.js}
+        \item \texttt{caricaMessaggio.js}
+        \item menù mobile (css puro)
+        \item \texttt{.htaccess}
+    \end{itemize}
     \item Gestione in css delle stesse 
     \item conclusione e revisione della relazione
 \end{itemize}
