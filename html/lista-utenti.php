@@ -115,7 +115,7 @@ $top = str_replace("[Breadcrumb]", $breadcrumb, $top);
 
 $body = str_replace("[TableRows]", $tableRows, $body);
 
-$customScript = '<script src="../javascript/formLista.js"></script>';
+$customScript = '<script src="javascript/formLista.js"></script>';
 $bottom = str_replace("</body>", $customScript . "</body>", $bottom);
 
 renderFromHtml($top . $body . $bottom);

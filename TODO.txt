@@ -484,4 +484,4 @@ accessibilità menu e breadcrumb tab DA FARE
 - controllare link relativi
 - controllare style.css per ordine o cose responsive da togliere
 - controllare residui di cose
-- controllare che funzioni upload delle schede
+- controllare che funzioni upload delle schede OK
