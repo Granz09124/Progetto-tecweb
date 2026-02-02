@@ -487,7 +487,7 @@ accessibilità menu e breadcrumb tab OK
 - controllare che funzioni upload delle schede OK
 
 -----------------------------------------------------
-Non bisogna sentire apri menu mobile da desktop PER QUALCHE MOTIVO SEMBRA OK
+Non bisogna sentire apri menu mobile da desktop OK
 Breadcrubm legge troppa roba OK
 rivedere liste home
 cambiare recensione

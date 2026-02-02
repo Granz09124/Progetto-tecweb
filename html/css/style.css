@@ -169,6 +169,10 @@ header.intestazione {
     margin: .2em .5em;
 }
 
+#hamburger-menu {
+    display: none;
+}
+
 #breadcrumb {
     color: var(--mainColor);
     padding: 0.8em 2em;
