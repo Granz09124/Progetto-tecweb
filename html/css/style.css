@@ -249,6 +249,7 @@ header.intestazione {
 
 #presentazione>section {
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     padding: 1em;
 }
@@ -318,6 +319,10 @@ header.intestazione {
     flex-wrap: wrap;
     width: 80%;
     justify-content: center;
+}
+
+#presentazione-servizi .hidden {
+    width: 1px;
 }
 
 #recensioni strong {
