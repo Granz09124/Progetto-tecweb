@@ -5,7 +5,9 @@
 \usepackage[table]{xcolor}
 \usepackage{hyperref}
 \usepackage[a4paper, margin=2.5cm]{geometry}
-
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
 \begin{document}
 
 \begin{titlepage}
@@ -152,11 +154,6 @@ Il sito è composto da: \\
     \item immagini dei profili dei vari istruttori e personal trainer
 \end{itemize}
 
-\section{Struttura del sito}
-\begin{center}
-	\includegraphics[width=.8\linewidth]{struttura_sito.png}
-\end{center}
-
 \section{Tecnologie Utilizzate}
 \begin{itemize}
     \item \textbf{HTML5}: Utilizzato per definire la struttura semantica delle pagine web, fornendo elementi come header, nav, section e footer per una migliore accessibilità e SEO.
@@ -208,6 +205,22 @@ Di seguito sono riportate le funzionalità disponibili per i ruoli User e Admin:
     \item Cancellazione account (sia utente che PT) tramite dashboard.
     \item Possibilità di gestione dei corsi (modifica della capienza e degli orari).
 \end{itemize}
+
+
+\section{Struttura del sito}
+Alla fine del capitolo è presente lo schema della struttura del sito, visualizzata in base ai link che può seguire l'utente. I breadcrumb sono sempre relativi al primo livello (quello della homepage), ad eccezione delle 3 possibili aree personali, una per tipologia di utenza. L'utente visualizza sempre lo stesso indirizzo sulla barra del browser, ma la schermata varia in base al suo ruolo.
+
+Il motivo per cui abbiamo deciso questa struttura (con collegamenti circolari) è che volevamo permettere all'utente di raggiungere pagine utili direttamente dalla sua area personale.
+
+Si fa notare che "Logout" non è effettivamente una pagina, ma semplicemente un link che fa effettuare l'operazione di logout e reindirizza l'utente, ora non autenticato, alla homepage del sito. Inoltre, "Area Personale" e "Logout" prendono il posto di "Login" e "Registrati" nel menu principale, una volta effettuato il login.
+
+Si fa presente, inoltre, che non sono presenti le pagine php pubbliche che permettono di effettuare le varie operazioni di cui si è parlato nel capitolo precedente. Le pagine invece che abbiamo ritenuto non dover essere accessibili (come quelle delle aree personali della singola tipologia di utente) sono state inserite all'interno della cartella \texttt{internal/}, non visualizzabile pubblicamente in quanto esterna a \texttt{public\textunderscore html/}.
+
+\begin{center}
+	\includegraphics[width=.8\linewidth]{struttura_sito.png}
+\end{center}
+
+\section{Progettazione}
 
 \section{Accessibilità}
 \subsection{Separazione della struttura, presentazione e contenuto}
