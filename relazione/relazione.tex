@@ -208,6 +208,7 @@ Di seguito sono riportate le funzionalità disponibili per i ruoli User e Admin:
 
 
 \section{Struttura del sito}
+\subsection{Procedimento generale}
 Alla fine del capitolo è presente lo schema della struttura del sito, visualizzata in base ai link che può seguire l'utente. I breadcrumb sono sempre relativi al primo livello (quello della homepage), ad eccezione delle 3 possibili aree personali, una per tipologia di utenza. L'utente visualizza sempre lo stesso indirizzo sulla barra del browser, ma la schermata varia in base al suo ruolo.
 
 Il motivo per cui abbiamo deciso questa struttura (con collegamenti circolari) è che volevamo permettere all'utente di raggiungere pagine utili direttamente dalla sua area personale.
@@ -216,11 +217,20 @@ Si fa notare che "Logout" non è effettivamente una pagina, ma semplicemente un 
 
 Si fa presente, inoltre, che non sono presenti le pagine php pubbliche che permettono di effettuare le varie operazioni di cui si è parlato nel capitolo precedente. Le pagine invece che abbiamo ritenuto non dover essere accessibili (come quelle delle aree personali della singola tipologia di utente) sono state inserite all'interno della cartella \texttt{internal/}, non visualizzabile pubblicamente in quanto esterna a \texttt{public\textunderscore html/}.
 
+\subsection{Convenzioni interne}
+
 \begin{center}
 	\includegraphics[width=.8\linewidth]{struttura_sito.png}
 \end{center}
 
 \section{Progettazione}
+La progettazione è iniziata poco dopo l'inizio dell'assegnazione dei gruppi.
+
+Si è rapidamente deciso che l'argomento del sito sarebbe stata una palestra. Dopo aver deciso il nome, abbiamo iniziato a stilare una lista di operazioni che avremmo potuto permettere agli utenti. Successivamente, ci siamo focalizzati sul contenuto e lo stile del site, nonché sulla struttura generale. È stato in quest'occasione che abbiamo deciso di introdurre dei cicli nella struttura gerarchica e le breadcrumb.
+
+Abbiamo riscontrato problemi quando abbiamo dovuto aggiungere del comportamento al sito, in particolare nella parte di backend: nell'analisi dei requisiti non abbiamo incluso le funzionalità che avrebbero dovuto effettivamente essere presenti in quanto progetto, e questo ci si è ritorto contro verso la fine del progetto, che abbiamo dovuto aggiungere ulteriori funzionalità.
+
+Ad ogni incontro sincrono abbiamo messo per iscritto quello che era stato fatto, quello che avremmo dovuto fare tra quell'incontro e quello successivo, e quali sarebbero stati gli argomenti da affrontare in seguito. Questo ci ha permesso di tenere un buon ritmo ed effettuare modifiche rapidamente quando ci siamo accorti de essere finiti fuori scope.
 
 \section{Accessibilità}
 \subsection{Separazione della struttura, presentazione e contenuto}
