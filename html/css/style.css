@@ -433,7 +433,7 @@ header.intestazione {
 
 .layout-palestra ul li {
     margin-bottom: 0.5em;
-    color: var(--text-main);
+    color: var(--textColor);
     position: relative;
     padding-left: 1.2em;
 }
@@ -444,7 +444,7 @@ header.intestazione {
     display: block;
     width: 6px;
     height: 6px;
-    background-color: var(--text-main);
+    background-color: var(--textColor);
     
     position: absolute;
     left: 0;
