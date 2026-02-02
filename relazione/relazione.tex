@@ -1,22 +1,67 @@
-\documentclass{article}
+\documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
-
-\title{Tempio di Apollo - Sito Web}
-\author{Armando Moda Scarati - 2082864, Granziero Luca - 2075512, \\ Alessandro Morabito 2137991, Marco Beltrame 2111021}
-\date{\today}
+\usepackage{hyperref}
+\usepackage[a4paper, margin=2.5cm]{geometry}
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    \includegraphics[width=0.5\textwidth]{Logo_Università_Padova.svg.png} 
+    
+    \vspace{1.5cm}
+    {\Huge \textbf{Tempio di Apollo - Sito Web} \par}
+    \vspace{1cm}
+    
+    {\Large Armando Moda Scarati - 2082864 \par}
+    {\Large Granziero Luca - 2075512 \par}
+    {\Large Alessandro Morabito - 2137991 \par}
+    {\Large Marco Beltrame - 2111021 \par}
+    
+    \vspace{1cm}
+    {\large \today \par}
+    
+    \vspace{2cm}
+    \textbf{Credenziali account del sito:}
+    \vspace{0.5cm}
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \rowcolor{lightgray}\textbf{Ruolo} & \textbf{Username} & \textbf{Password} \\
+    \hline
+    USER  & user  & user  \\
+    \hline
+    PT & pt & pt \\
+    \hline
+    ADMIN & admin & admin \\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\newpage
 
 \section{Introduzione}
-Questo documento presenta il progetto per la realizzazione del sito web di un’associazione che gestisce diverse palestre dotate di sala pesi, corsi fitness e un’area spa. Il sito prevede una struttura completa, con pagine dedicate agli abbonamenti, ai corsi, ai servizi della spa, alla sezione Contatti e una pagina Home che offra una panoramica introduttiva chiara.
+Questo documento presenta il progetto per la realizzazione del sito web di una palestra che offre i seguenti servizi: sala pesi, corsi fitness e piani personalizzati da un personal trainer. Il sito prevede pagine che offrono una panoramica introduttiva chiara sui servizi che offre.
+Prevede inoltre le seguenti tipologie di area personale: per i clienti, per gli istruttori, personal trainer, e per gli admin.  
 
 \section{Analisi del target}
-Il sito web è destinato a due principali categorie di utenti: gli utenti finali, che sono iscritti alla palestra e utilizzano i servizi offerti, e i personal trainer (PT), che forniscono servizi di coaching personalizzato. Gli utenti finali possono essere persone interessate al fitness, al benessere e ai servizi spa, mentre i PT sono professionisti che gestiscono sessioni di allenamento e piani alimentari personalizzati.
+Il sito web è destinato:
+\begin{itemize}
+    \item ai potenziali clienti che, non ancora registrati, possono informarsi sui servizi che la palestra offre.
+    \item ai clienti che tramite un area personale, possono visualizzare le proprie informazioni. 
+    \item agli istruttori: 
+    \item ai personal trainer: 
+    \item agli amministratori 
+\end{itemize}
 
 \section{Struttura del Sito}
 Il sito è composto da: \\
@@ -24,65 +69,87 @@ Il sito è composto da: \\
 \textbf{Pagine html:}
 \begin{itemize}
     \item \texttt{home.html}: Pagina principale che introduce la palestra: mostrando servizi, sedi e recensioni di alcuni clienti.
-    
     \item \texttt{corsi.html:} Pagina che espone i vari corsi disponibili.
-    
     \item \texttt{abbonamenti.html:} Pagina che raffigura i vari abbonamenti offerti.
-    
     \item \texttt{palestra.html:} Pagina di intermissione tra home e i servizi che la palestra offre, ovvero la sala pesi, i corsi e i pt/coaching.
-
     \item \texttt{error404.html:} Pagina che mostra un messaggio quando la pagina richiesta non esiste.
-
     \item \texttt{error403.html:} Pagina che mostra un messaggio quando non si hanno i permessi necessari per accedere a quella pagina.
-    
     \item \texttt{contattaci.html:} Pagina che permette agli utenti di inviare richieste o messaggi all'associazione.
-
     \item \texttt{pt.html:} Pagina che permette agli admin di trovare un preciso PT registrato.
-
     \item \texttt{cerca-pt.html:} Pagina che permette agli utenti di cercare tra i vari PT quello che più gli aggrada.
-
     \item \texttt{cerca-utenti.html:} Pagina che permette agli admin di trovare un preciso utente registrato
-
     \item \texttt{registrati.html:} Pagina che permette agli utenti di registrarsi al sito.
-
     \item \texttt{login.html:} Pagina che permette agli utenti di accedere alla loro area riservata.
-
     \item \texttt{utente-admin.html:} Pagina di area personale dell'admin.    
-    
     \item \texttt{utente-pt.html:} Pagina di area personale del Personal Trainer.  
-
-    \item \texttt{utente-semplice.html:} Pagina di area personale dell'utente.  .
-    
+    \item \texttt{utente-semplice.html:} Pagina di area personale dell'utente.
+    \item \texttt{salapesi.html:} Pagina che parla delle varie attrezzature e macchinari presenti nella palestra.
 \end{itemize} 
-    \textbf{Pagine css:}
+
+\textbf{Pagine css:}
 \begin{itemize}
     \item \texttt{style.css}: Foglio di stile per il design base.
     \item \texttt{mini.css}: Foglio di stile per il design mobile. 
     \item \texttt{print.css} Foglio di stile per il design da stampante.
 \end{itemize}
- \textbf{Pagine javascript:}
+
+\textbf{Pagine javascript:}
 \begin{itemize}
     \item \texttt{torna-su.js:} abilità il bottone per tornare in cima alla pagina riposto in basso a destra di ogni pagina.
-
-    \item \texttt{toggle-descrizione-orari.js:} abilità lo "switch" tra descrizione e un calendario orario nella pagina dei corsi
-
     \item \texttt{selettoreAbbonamenti.js:}  
-    
-    \item \texttt{dashboard.js:}  
+    \item \texttt{caricaLogin:}  
+    \item \texttt{caricaMessaggio.js:}  
+    \item \texttt{caricaRegistrazione.js:}  
+    \item \texttt{caricaScheda.js:}  
+    \item \texttt{dashboard.js:}
+    \item \texttt{formLista.js:}
+    \item \texttt{mostraPassword.js:}
 
-    
 \end{itemize}
+
 \textbf{Pagine php:}
 \begin{itemize}
-    \item 
+    \item \texttt{abbonamenti.php:} 
+    \item \texttt{area-personale.php:} 
+    \item \texttt{cerca-istruttore.php:} 
+    \item \texttt{contattaci.php:} 
+    \item \texttt{corsi.php:} 
+    \item \texttt{home.php:} 
+    \item \texttt{lista-clienti-pt.php:} 
+    \item \texttt{lista-clienti.php:} 
+    \item \texttt{lista-pt.php:} 
+    \item \texttt{lista-utenti.php:} 
+    \item \texttt{login.php:} 
+    \item \texttt{logout.php:}
+    \item \texttt{palestra.php:} 
+    \item \texttt{profilo-istruttore.php:} 
+    \item \texttt{registrati.php:} 
+    \item \texttt{salapesi.php:}
+    \item \texttt{403.php:} 
+    \item \texttt{404.php:} 
+    \item \texttt{upload-messaggio.php:} 
+    \item \texttt{processa-login.php:}
+    \item \texttt{processa-registrazione.php:} 
+    \item \texttt{profilo-istruttore.php:} 
+    \item \texttt{upload-scheda.php:} 
+    \item \texttt{header.php:}
+    \item \texttt{palestra.php:} 
+    \item \texttt{utente-admin.php:} 
+    \item \texttt{utente-pt.php:} 
+    \item \texttt{utente-semplice.php:}
+    
 \end{itemize}
-\noindent
-\\
+
+\textbf{Database:}
+\begin{itemize}
+    \item \texttt{db.sql:}
+\end{itemize}
+
 \textbf{Infine una cartella immagini con all'interno:}
 \begin{itemize}
-    \item immagine logo palestra.
-    \item Immagini dei corsi presenti
-    \item 
+    \item varie immagini utilizzate all'interno del sito.
+    \item icon per rendere più apprezzabili alcune liste
+    \item immagini dei profili dei vari istruttori e personal trainer
 \end{itemize}
 
 \section{Tecnologie Utilizzate}
@@ -93,32 +160,17 @@ Il sito è composto da: \\
     \item \textbf{PHP}: Utilizzato per generare contenuti dinamici lato server, come la gestione di sessioni utente e l'interazione con database per funzionalità avanzate.
     \item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
     \item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
-    \item \textbf{LLM:} Utilizzati per la generazione di immagini come: il logo, le immagini di sfondo presenti nelle pagine di error403 e error404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni (PT) 
-    
+    \item \textbf{LLM}: Utilizzati per la generazione di immagini come: il logo, le immagini di sfondo presenti nelle pagine di error403 e error404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni (PT) 
 \end{itemize}
 
-\section{Attori presenti nel sito}
-All'interno del sito troviamo tre attori:\\
+\section{Utenti presenti nel sito}
+All'interno del sito troviamo tre tipi di utenti:\\
 \texttt{utente/user} \\
-\texttt{utente personal trainerr} \\
+\texttt{istruttori e personal trainer} \\
 \texttt{admin/amministratore}. \\
 \noindent
 \\
-Le credenziali necessarie per il login dei rispettivi sono: \\
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\rowcolor{lightgray}\textbf{Ruolo} & \textbf{Username} & \textbf{Password} \\
-\hline
-USER  & user  & user  \\
-\hline
-PT & pt & pt \\
-\hline
-ADMIN & admin & admin \\
-\hline
-\end{tabular}
-\end{center} 
-\bigskip
+
 Di seguito sono riportate le funzionalità disponibili per i ruoli User e Admin:
 \subsection{USER}
 \begin{itemize}
@@ -178,6 +230,8 @@ La palette dei colori è stata scelta per garantire un elevato contrasto tra tes
 \hline
 \cellcolor[HTML]{ee8800}\hspace{2cm} & \texttt{\#ee8800}  & Testo \\
 \hline
+\cellcolor[HTML]{333322}\hspace{2cm} & \texttt{\#333322} &  Sfondo per tabelle \\
+\hline 
 \cellcolor[HTML]{181211}\hspace{2cm} & \texttt{\#181211}  & Sfondo \\
 \hline
 \cellcolor[HTML]{111111}\hspace{2cm} & \texttt{\#111111}  & Sfondo header\\
@@ -186,7 +240,8 @@ La palette dei colori è stata scelta per garantire un elevato contrasto tra tes
 \hline
 \end{tabular}
 \end{center}
-
+\bigskip 
+I colori principali utilizzati nel sito sono riportati nella tabella; eventuali altri colori, impiegati in modo occasionale, sono stati comunque scelti e verificati nel rispetto dei principi di accessibilità.
 
 
 \subsection{Lingue straniere}
