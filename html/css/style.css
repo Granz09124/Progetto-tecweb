@@ -777,11 +777,24 @@ h2 {
     font-size: 0.9em;
     color: var(--text-muted);
     flex: 1;
+    list-style: none;
 }
 
 .abbonamento-card ul li {
-    list-style-type: square;
     margin-bottom: 2px;
+    position: relative;
+    padding-left: 1.2em;
+}
+
+.abbonamento-card ul li::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-muted);
+    position: absolute;
+    left: 0;
+    top: 0.5em;
 }
 
 .pt-card {
