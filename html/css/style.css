@@ -380,6 +380,13 @@ header.intestazione {
     margin-bottom: 3em;
 }
 
+#layout-adhoc h1 {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
 .sezione-sala-pesi,
 .sezione-corsi,
 .sezione-personal-trainers {
