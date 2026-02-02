@@ -1,3 +1,8 @@
 .vscode/
 internal/db_connection.php
 html/.htaccess
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.aux
