@@ -278,25 +278,19 @@ a:link:has(.logo) {
 /* ============
  * Istruttore
  =========== */
-.dati-pt dd .img-pt {
+.img-pt {
     float: initial;
     display: block;
     margin: 1em auto 2em;
     width: 60%;
 }
 
-.dati-pt dt:not(:first-child) {
+.dati-pt dt, 
+.dati-pt dd {
     display: block;
     margin: auto;
     width: 90%;
 }
-
-.dati-pt dd:not(:first-child) {
-    display: block;
-    margin: auto;
-    width: 90%;
-}
-
 
 /* =========================================
    SISTEMA TAB (Layout Verticale)

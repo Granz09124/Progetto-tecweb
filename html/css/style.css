@@ -1258,38 +1258,32 @@ textarea {
 /* ================
  * Profilo pt
  ================ */
-.dati-pt {
+.presentazione-pt {
     padding: 1em;
     overflow: auto;
 }
 
-.dati-pt dt:not(:first-child) {
+.dati-pt dt {
     display: inline-block;
     font-weight: bold;
     width: 20%;
 }
 
-.dati-pt dt:not(:first-child)::after,
+.dati-pt dt::after,
 .dati-risultato-short dt:not(:first-child)::after {
     content: ":";
 }
 
-.dati-pt dd:not(:nth-child(2)) {
+.dati-pt dd {
     display: inline-block;
     width: 35%;
     vertical-align: top;
 }
 
-.dati-pt dd .img-pt {
+.img-pt {
     float: right;
     width: 30%;
     border-radius: 50%;
-}
-
-
-.dati-pt ul {
-    list-style: lower-greek;
-    list-style-position: inside;
 }
 
 .dati-risultato-short {
