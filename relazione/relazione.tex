@@ -8,45 +8,46 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{textcomp}
+\usepackage{dirtree}
 \begin{document}
 
 \begin{titlepage}
-    \centering
-    \vspace*{1cm}
-%   \includegraphics[width=0.5\textwidth]{Logo_Università_Padova.svg.png} 
-    
-    \vspace{1.5cm}
-    {\Huge \textbf{Tempio di Apollo - Sito Web} \par}
-    \vspace{1cm}
-    
-    {\Large Armando Moda Scarati - 2082864 \par}
-    {\Large Granziero Luca - 2075512 \par}
-    {\Large Alessandro Morabito - 2137991 \textit{(referente)} \par} 
-    {\Large Marco Beltrame - 2111021 \par}
-    
-    \vspace{1cm}
-    {\large \today \par}
-    \vspace{1cm}
-    \textbf{Sito Web:} \\
-    tecweb.studenti.math.unipd.it/amorabit \\
-    \vspace{1cm}
-    \textbf{Credenziali account del sito:}
-    
-    \begin{center}
-    \begin{tabular}{|c|c|c|}
-    \hline
-    \rowcolor{lightgray}\textbf{Ruolo} & \textbf{Username} & \textbf{Password} \\
-    \hline
-    USER  & user  & user  \\
-    \hline
-    PT & pt & pt \\
-    \hline
-    ADMIN & admin & admin \\
-    \hline
-    \end{tabular}
-    \end{center}
-    
-    \vfill
+	\centering
+	\vspace*{1cm}
+	%   \includegraphics[width=0.5\textwidth]{Logo_Università_Padova.svg.png} 
+	
+	\vspace{1.5cm}
+	{\Huge \textbf{Tempio di Apollo - Sito Web} \par}
+	\vspace{1cm}
+	
+	{\Large Armando Moda Scarati - 2082864 \par}
+	{\Large Granziero Luca - 2075512 \par}
+	{\Large Alessandro Morabito - 2137991 \textit{(referente)} \par} 
+	{\Large Marco Beltrame - 2111021 \par}
+	
+	\vspace{1cm}
+	{\large \today \par}
+	\vspace{1cm}
+	\textbf{Sito Web:} \\
+	tecweb.studenti.math.unipd.it/amorabit \\
+	\vspace{1cm}
+	\textbf{Credenziali account del sito:}
+	
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\rowcolor{lightgray}\textbf{Ruolo} & \textbf{Username} & \textbf{Password} \\
+			\hline
+			USER  & user  & user  \\
+			\hline
+			PT & pt & pt \\
+			\hline
+			ADMIN & admin & admin \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\vfill
 \end{titlepage}
 
 \tableofcontents
@@ -54,25 +55,35 @@
 
 \section{Introduzione}
 Questo documento presenta il progetto per la realizzazione del sito web di una palestra che offre i seguenti servizi: sala pesi, corsi fitness e piani personalizzati da un personal trainer. Il sito prevede pagine che offrono una panoramica introduttiva chiara sui servizi che offre.
-Prevede inoltre le seguenti tipologie di area personale: per i clienti, per gli istruttori, personal trainer, e per gli admin.  
+Prevede inoltre le seguenti tipologie di area personale: per i clienti, per gli istruttori, personal trainer, e per gli admin.
+
+All'interno dei vari file abbiamo utilizzato sempre link relativi, salvo alcune occasioni in cui ci è tornato comodo scrivere link assoluti in maniera dinamica (tramite php) e il file \texttt{.htaccess}, che invece richiede di utilizzare percorsi assoluti.
+
+La relazione, in termini di profondità nell'albero, che ci si aspetta tra le cartelle è la seguente:
+\dirtree{%
+	.1 /(amorabit/).
+	.2 public\_html/.
+	.2 internal/.
+}
+
 
 \section{Analisi del target}
 Il sito web è destinato:
 \begin{itemize}
-    \item ai potenziali clienti che, non ancora registrati, possono informarsi sui servizi che la palestra offre.
-    \item ai clienti che tramite un area personale, possono visualizzare le proprie informazioni. 
-    \item agli istruttori, la cui area personale è come quella dei clienti, ma possiedono un profilo pubblico
-    \item ai personal trainer, tutti anche istruttori, che possono caricare per i propri clienti una scheda tecnica in formato pdf, di grandezza minore di 1MiB
-    \item agli amministratori, che possono visualizzare la lista degli utenti iscritti e modificare le loro informazioni
+	\item ai potenziali clienti che, non ancora registrati, possono informarsi sui servizi che la palestra offre.
+	\item ai clienti che tramite un area personale, possono visualizzare le proprie informazioni. 
+	\item agli istruttori, la cui area personale è come quella dei clienti, ma possiedono un profilo pubblico
+	\item ai personal trainer, tutti anche istruttori, che possono caricare per i propri clienti una scheda tecnica in formato pdf, di grandezza minore di 1MiB
+	\item agli amministratori, che possono visualizzare la lista degli utenti iscritti e modificare le loro informazioni
 \end{itemize}
 
 \subsection{SEO}
 Il sito vuole rispondere alle seguenti ricerche:
 \begin{itemize}
-    \item il nome del sito 
-    \item tutte le varie ricerche mirate all'argomento palestra, come: salapesi, corsi, personal trainer, pt, attrezzi e bodybuilding
-    \item ricerche più generali su argomenti come: allenamento, salute o motivaizione.
-    
+	\item il nome del sito 
+	\item tutte le varie ricerche mirate all'argomento palestra, come: salapesi, corsi, personal trainer, pt, attrezzi e bodybuilding
+	\item ricerche più generali su argomenti come: allenamento, salute o motivaizione.
+	
 \end{itemize}
 \noindent
 Le parole chiave che sono state selezionate per rivolgersi sia ad utenti che hanno già frequentato una palestra e che quindi sanno già cosa stanno cercando, sia ai nuovi utenti che non hanno una grande idea di cosa stiano effettivamente cercando.
@@ -81,28 +92,28 @@ Le parole chiave che sono state selezionate per rivolgersi sia ad utenti che han
 \\
 Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 \begin{itemize}
-    \item Ogni pagina presenta un tag <title> univoco che segue una logica descrittiva (es. "Home - Tempio di Apollo" o "Palestra - Offre").
-Sono stati inseriti meta tag description dettagliati per migliorare il CTR (Click-Through Rate) nella SERP, descrivendo l'offerta della palestra (es. "una palestra con sala pesi e corsi di gruppo, nonché percorsi su misura"), e meta tag keywords per definire il campo semantico della pagina.
-
-    \item La separazione tra struttura (HTML), presentazione (CSS) e contenuto garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistive. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
-    \item Poiché l’accessibilità rappresenta un fattore indiretto di posizionamento, sono state implementate diverse soluzioni tecniche volte a migliorare sia l’esperienza degli utenti che utilizzano screen reader, sia l’indicizzazione da parte dei motori di ricerca. In particolare:
-
-Gestione della lingua: affrontata in modo approfondito nella sezione dedicata all’accessibilità.
-
-Attributi alt: tutte le immagini con valore informativo sono corredate da testi alternativi descrittivi (ad esempio: “Foto di una statua greca che lancia un disco…”), consentendo la comprensione del contenuto visivo e favorendone l’indicizzazione. (SPOSTARE MAGARI IN SEZIONE SCREEN READER E DIRE SOLAMENTE CHE VIENE AFFRONTATA ANCHE QUI DOPO COME PER LA GESTIONE DELLA LINGUA?)
-
-    \item Ogni pagina include, attraverso il metatag keywords, le parole chiave che ne descrivono il contenuto.
+	\item Ogni pagina presenta un tag <title> univoco che segue una logica descrittiva (es. "Home - Tempio di Apollo" o "Palestra - Offre").
+	Sono stati inseriti meta tag description dettagliati per migliorare il CTR (Click-Through Rate) nella SERP, descrivendo l'offerta della palestra (es. "una palestra con sala pesi e corsi di gruppo, nonché percorsi su misura"), e meta tag keywords per definire il campo semantico della pagina.
+	
+	\item La separazione tra struttura (HTML), presentazione (CSS) e contenuto garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistive. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
+	\item Poiché l’accessibilità rappresenta un fattore indiretto di posizionamento, sono state implementate diverse soluzioni tecniche volte a migliorare sia l’esperienza degli utenti che utilizzano screen reader, sia l’indicizzazione da parte dei motori di ricerca. In particolare:
+	
+	Gestione della lingua: affrontata in modo approfondito nella sezione dedicata all’accessibilità.
+	
+	Attributi alt: tutte le immagini con valore informativo sono corredate da testi alternativi descrittivi (ad esempio: “Foto di una statua greca che lancia un disco…”), consentendo la comprensione del contenuto visivo e favorendone l’indicizzazione. (SPOSTARE MAGARI IN SEZIONE SCREEN READER E DIRE SOLAMENTE CHE VIENE AFFRONTATA ANCHE QUI DOPO COME PER LA GESTIONE DELLA LINGUA?)
+	
+	\item Ogni pagina include, attraverso il metatag keywords, le parole chiave che ne descrivono il contenuto.
 \end{itemize}
 
 \section{Tecnologie Utilizzate}
 \begin{itemize}
-    \item \textbf{HTML5}: Utilizzato per definire la struttura semantica delle pagine web, fornendo elementi come header, nav, section e footer per una migliore accessibilità e SEO.
-    \item \textbf{CSS}: Impiegato per lo styling e il layout delle pagine, garantendo un design responsive e adattabile a diversi dispositivi.
-    \item \textbf{JavaScript}: Integrato per aggiungere interattività e animazioni dinamiche, migliorando l'esperienza utente senza ricaricare la pagina.
-    \item \textbf{PHP}: Utilizzato per generare contenuti dinamici lato server, come la gestione di sessioni utente e l'interazione con database per funzionalità avanzate.
-    \item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
-    \item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
-    \item \textbf{LLM}: Utilizzati per la generazione di immagini come: il logo, le immagini di sfondo presenti nelle pagine di error403 e error404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni dei PT, delle recensioni presenti della pagina home e del database. (CONTROLLATE SE VA BENE COSI!!!!!!!)
+	\item \textbf{HTML5}: Utilizzato per definire la struttura semantica delle pagine web, fornendo elementi come header, nav, section e footer per una migliore accessibilità e SEO.
+	\item \textbf{CSS}: Impiegato per lo styling e il layout delle pagine, garantendo un design responsive e adattabile a diversi dispositivi.
+	\item \textbf{JavaScript}: Integrato per aggiungere interattività e animazioni dinamiche, migliorando l'esperienza utente senza ricaricare la pagina.
+	\item \textbf{PHP}: Utilizzato per generare contenuti dinamici lato server, come la gestione di sessioni utente e l'interazione con database per funzionalità avanzate.
+	\item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
+	\item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
+	\item \textbf{LLM}: Utilizzati per la generazione di immagini come: il logo, le immagini di sfondo presenti nelle pagine di error403 e error404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni dei PT, delle recensioni presenti della pagina home e del database. (CONTROLLATE SE VA BENE COSI!!!!!!!)
 \end{itemize}
 
 \section{Utenti presenti nel sito}
@@ -116,34 +127,34 @@ All'interno del sito troviamo tre tipi di utenti:\\
 Di seguito sono riportate le funzionalità disponibili per i ruoli User e Admin:
 \subsection{USER}
 \begin{itemize}
-    \item Gestione semplice della disdetta dell’abbonamento (valutare se mantenere).
-    \item Visualizzazione della data di attivazione, scadenza e dello stato attuale dell’abbonamento (attivo, in scadenza, scaduto).
-    \item Visualizzazione orari, posti disponibili e istruttori dei corsi a cui    l’utente è iscritto.
-    \item Calendario dei corsi a cui si è iscritti e degli appuntamenti con il personal trainer.
-    \item Visualizzazione della scheda di allenamento personalizzata (se presente personal trainer).
-    \item Visualizzazione del piano alimentare personalizzato (se presente personal trainer).
-    \item Possibilità di lasciare recensioni (da valutare per questioni di sicurezza).
-    \item Gestione del proprio account (cancellazione account, modifica dei dati).
+	\item Gestione semplice della disdetta dell’abbonamento (valutare se mantenere).
+	\item Visualizzazione della data di attivazione, scadenza e dello stato attuale dell’abbonamento (attivo, in scadenza, scaduto).
+	\item Visualizzazione orari, posti disponibili e istruttori dei corsi a cui    l’utente è iscritto.
+	\item Calendario dei corsi a cui si è iscritti e degli appuntamenti con il personal trainer.
+	\item Visualizzazione della scheda di allenamento personalizzata (se presente personal trainer).
+	\item Visualizzazione del piano alimentare personalizzato (se presente personal trainer).
+	\item Possibilità di lasciare recensioni (da valutare per questioni di sicurezza).
+	\item Gestione del proprio account (cancellazione account, modifica dei dati).
 \end{itemize}
 
 \subsection{PT}
 \begin{itemize}
-    \item Profilo pubblico, visualizzabile da chiunque.
-    \item Calendario con le disponibilità e le fasce orarie già occupate da altri utenti.
-    \item Possibilità di caricare scheda di allenamento e piano alimentare per i clienti che lo richiedono.
-    \item Lista dei clienti (confermata), con possibilità di chat con ogni cliente non in tempo reale (da valutare).
+	\item Profilo pubblico, visualizzabile da chiunque.
+	\item Calendario con le disponibilità e le fasce orarie già occupate da altri utenti.
+	\item Possibilità di caricare scheda di allenamento e piano alimentare per i clienti che lo richiedono.
+	\item Lista dei clienti (confermata), con possibilità di chat con ogni cliente non in tempo reale (da valutare).
 \end{itemize}
 
 \subsection{ADMIN}
 \begin{itemize}
-    \item Possibilità di creare account personal trainer o convertire un account utente in account PT.
-    \item Visualizzazione e gestione di tutti gli abbonamenti attivi, sospesi o scaduti.
-    \item Gestione del profilo utente (schede, corsi, prenotazioni, PT assegnati, scadenze, ecc.).
-    \item Gestione degli istruttori/personal trainer: calendario, disponibilità, schede clienti, retribuzione (possibile).
-    \item Dashboard con panoramica di ricavi, abbonamenti attivi, nuovi iscritti e lista degli iscritti attivi.
-    \item Statistiche sull’utilizzo della palestra, corsi più frequentati e tassi di retention (possibile).
-    \item Cancellazione account (sia utente che PT) tramite dashboard.
-    \item Possibilità di gestione dei corsi (modifica della capienza e degli orari).
+	\item Possibilità di creare account personal trainer o convertire un account utente in account PT.
+	\item Visualizzazione e gestione di tutti gli abbonamenti attivi, sospesi o scaduti.
+	\item Gestione del profilo utente (schede, corsi, prenotazioni, PT assegnati, scadenze, ecc.).
+	\item Gestione degli istruttori/personal trainer: calendario, disponibilità, schede clienti, retribuzione (possibile).
+	\item Dashboard con panoramica di ricavi, abbonamenti attivi, nuovi iscritti e lista degli iscritti attivi.
+	\item Statistiche sull’utilizzo della palestra, corsi più frequentati e tassi di retention (possibile).
+	\item Cancellazione account (sia utente che PT) tramite dashboard.
+	\item Possibilità di gestione dei corsi (modifica della capienza e degli orari).
 \end{itemize}
 
 
@@ -165,8 +176,8 @@ Si fa presente, inoltre, che non sono presenti le pagine php pubbliche che perme
 \subsection{Convenzioni interne}
 Vengono riportate le convenzioni interne del sito:
 \begin{itemize}
-    \item I link, sia quelli visitati e non visitati, vengono presentati come sottolineati, in particolare i link non visitati hanno un colore di testo chiaro vicino all'azzurro, mentre i link visitati hanno un colore di testo viola, inoltre sono entrambi posti su sfondo nero. Questi colori sono stati scelti in quanto fanno parte della palette di colori utilizzata. 
-    \item (TABELLE?)
+	\item I link, sia quelli visitati e non visitati, vengono presentati come sottolineati, in particolare i link non visitati hanno un colore di testo chiaro vicino all'azzurro, mentre i link visitati hanno un colore di testo viola, inoltre sono entrambi posti su sfondo nero. Questi colori sono stati scelti in quanto fanno parte della palette di colori utilizzata. 
+	\item (TABELLE?)
 \end{itemize}
 
 \subsection{Schema database}
@@ -192,9 +203,9 @@ Ad ogni incontro sincrono abbiamo messo per iscritto quello che era stato fatto,
 All'interno del nostro CSS vengono utilizzate delle variabili, che vengono impostate all'inizio del file e riutilizzate successivamente, grazie a questo riusciamo a tenere sotto controllo i vari contrasti e i colori utilizzati.
 Vengono utilizzati tre diversi fogli di stile, ognuno con uno scopo diverso: 
 \begin{itemize}
-    \item style.css: per lo stile da desktop 
-    \item mini.css: per lo stile da mobile 
-    \item print.css: per lo stile da stampante
+	\item style.css: per lo stile da desktop 
+	\item mini.css: per lo stile da mobile 
+	\item print.css: per lo stile da stampante
 \end{itemize}
 \noindent
 È stata presa questa decisione è stata presa per gestire al meglio l'aspetto responsive del sito, oltre ad avere una propria organizzazione del css. 
@@ -217,29 +228,29 @@ La palette dei colori è stata scelta per garantire un elevato contrasto tra tes
 \textbf{Palette dei colori utilizzata:}
 
 \begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-\rowcolor{lightgray} \textbf{Colore} & \textbf{Codice HEX} & \textbf{Utilizzato per} \\
-\hline
-\cellcolor[HTML]{c0ebfb}\hspace{2cm} & \texttt{\#c0ebfb}  & Links non visitati \\
-\hline
-\cellcolor[HTML]{965cfd}\hspace{2cm} & \texttt{\#965cfd}  & Links non visitati \\
-\hline
-\cellcolor[HTML]{ffee55}\hspace{2cm} & \texttt{\#ffee55}  & Testo \\
-\hline
-\cellcolor[HTML]{ffcc00}\hspace{2cm} & \texttt{\#ffcc00}  & Testo \\
-\hline
-\cellcolor[HTML]{ee8800}\hspace{2cm} & \texttt{\#ee8800}  & Testo \\
-\hline
-\cellcolor[HTML]{333322}\hspace{2cm} & \texttt{\#333322} &  Sfondo per tabelle \\
-\hline 
-\cellcolor[HTML]{181211}\hspace{2cm} & \texttt{\#181211}  & Sfondo \\
-\hline
-\cellcolor[HTML]{111111}\hspace{2cm} & \texttt{\#111111}  & Sfondo header\\
-\hline
-\cellcolor[HTML]{dddddd}\hspace{2cm} & \texttt{\#dddddd}  & Testi secondari \\
-\hline
-\end{tabular}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\rowcolor{lightgray} \textbf{Colore} & \textbf{Codice HEX} & \textbf{Utilizzato per} \\
+		\hline
+		\cellcolor[HTML]{c0ebfb}\hspace{2cm} & \texttt{\#c0ebfb}  & Links non visitati \\
+		\hline
+		\cellcolor[HTML]{965cfd}\hspace{2cm} & \texttt{\#965cfd}  & Links non visitati \\
+		\hline
+		\cellcolor[HTML]{ffee55}\hspace{2cm} & \texttt{\#ffee55}  & Testo \\
+		\hline
+		\cellcolor[HTML]{ffcc00}\hspace{2cm} & \texttt{\#ffcc00}  & Testo \\
+		\hline
+		\cellcolor[HTML]{ee8800}\hspace{2cm} & \texttt{\#ee8800}  & Testo \\
+		\hline
+		\cellcolor[HTML]{333322}\hspace{2cm} & \texttt{\#333322} &  Sfondo per tabelle \\
+		\hline 
+		\cellcolor[HTML]{181211}\hspace{2cm} & \texttt{\#181211}  & Sfondo \\
+		\hline
+		\cellcolor[HTML]{111111}\hspace{2cm} & \texttt{\#111111}  & Sfondo header\\
+		\hline
+		\cellcolor[HTML]{dddddd}\hspace{2cm} & \texttt{\#dddddd}  & Testi secondari \\
+		\hline
+	\end{tabular}
 \end{center}
 \bigskip 
 I colori principali utilizzati nel sito sono riportati nella tabella; eventuali altri colori, impiegati in modo occasionale, sono stati comunque scelti e verificati nel rispetto dei principi di accessibilità.
@@ -260,8 +271,8 @@ Nessuno ama perdersi tra le pagine di un sito, quindi abbiamo aggiunto i breadcr
 \paragraph{Tabelle dati}
 Le tabelle utilizzate per visualizzare gli orari dei corsi sono state progettate per essere facilmente interpretabili dagli screen reader. In particolare:
 \begin{itemize}
-    \item al posto del tag \texttt{<caption>}, è stato utilizzato un paragrafo descrittivo nascosto visivamente, collegato alla tabella tramite l’attributo \texttt{aria-describedby}. Questo consente allo screen reader di leggere una descrizione introduttiva del contenuto della tabella prima della navigazione delle celle;
-    \item le celle di intestazione (\texttt{<th>}) utilizzano l’attributo \texttt{scope} per associare correttamente le celle di dati alle rispettive intestazioni di riga e di colonna, permettendo una lettura contestualizzata delle informazioni.
+	\item al posto del tag \texttt{<caption>}, è stato utilizzato un paragrafo descrittivo nascosto visivamente, collegato alla tabella tramite l’attributo \texttt{aria-describedby}. Questo consente allo screen reader di leggere una descrizione introduttiva del contenuto della tabella prima della navigazione delle celle;
+	\item le celle di intestazione (\texttt{<th>}) utilizzano l’attributo \texttt{scope} per associare correttamente le celle di dati alle rispettive intestazioni di riga e di colonna, permettendo una lettura contestualizzata delle informazioni.
 \end{itemize}
 
 \paragraph{Menu degli abbonamenti}
@@ -289,42 +300,43 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 \\
 \textbf{Armando Moda Scarati}
 \begin{itemize}
-    \item Creazione delle e gestione pagine: \texttt{abbonamenti.html}, \texttt{palestra.html},  \texttt{utente-admin.html},  \texttt{utente-pt.html},  \texttt{utente-semplice.html}
-    \item Gestione in css delle stesse 
-    \item conclusione e revisione della relazione
+	\item Creazione delle e gestione pagine: \texttt{abbonamenti.html}, \texttt{palestra.html},  \texttt{utente-admin.html},  \texttt{utente-pt.html},  \texttt{utente-semplice.html}
+	\item Gestione in css delle stesse 
+	\item conclusione e revisione della relazione
 \end{itemize}
-\textbf{Alessandro}
+\textbf{Alessandro Morabito}
 \begin{itemize}
-    \item Creazione e gestione dei file:
-    \begin{itemize}
-        \item \texttt{cerca-istruttore.php} (con css mobile, dekstop e stampa)
-        \item \texttt{profilo-istruttore.php} (con css mobile, dekstop e stampa)
-        \item \texttt{home.php} (con css mobile, dekstop e stampa)
-        \item \texttt{download-scheda.php}
-        \item \texttt{upload-messaggio.php} (utilizzato solamente per dare un significato al form contattaci. I dati vengono in realtà salvati nel database)
-        \item \texttt{lista-clienti-pt.php} i controlli sul file pdf (scheda da parte del personal trainer) caricato (grandezza posta a 1MiB in quanto possibilmente vincolato da configurazione php, controllo estensione file, controllo MIME file)
-        \item \texttt{utente-semplice.php} pulsante \texttt{Visualizza PDF (...)} per la visualizzazione della scheda caricata da un personal trainer
-        \item \texttt{caricaScheda.js}
-        \item \texttt{caricaMessaggio.js}
-        \item menù mobile (css puro)
-        \item \texttt{.htaccess}
-    \end{itemize}
-    \item Gestione in css delle stesse 
-    \item conclusione e revisione della relazione
+	\item Creazione e gestione dei file:
+	\begin{itemize}
+		\item \texttt{cerca-istruttore.php} (con css mobile, dekstop e stampa)
+		\item \texttt{profilo-istruttore.php} (con css mobile, dekstop e stampa)
+		\item \texttt{home.php} (con css mobile, dekstop e stampa)
+		\item \texttt{download-scheda.php}
+		\item \texttt{upload-messaggio.php} (utilizzato solamente per dare un significato al form contattaci. I dati vengono in realtà salvati nel database)
+		\item \texttt{lista-clienti-pt.php} i controlli sul file pdf (scheda da parte del personal trainer) caricato (grandezza posta a 1MiB in quanto possibilmente vincolato da configurazione php, controllo estensione file, controllo MIME file)
+		\item \texttt{utente-semplice.php} pulsante \texttt{Visualizza PDF (...)} per la visualizzazione della scheda caricata da un personal trainer
+		\item \texttt{caricaScheda.js}
+		\item \texttt{caricaMessaggio.js}
+		\item \texttt{cercaIstruttore.js}
+		\item menù mobile (css puro)
+		\item \texttt{.htaccess} (impostati riferimenti a errore 403 e 404, riscrittura condizionata URL: se si prova ad accedere alla \textit{root} del sito, viene aggiunto \texttt{/home.php} all'indirizzo)
+	\end{itemize}
+	\item Gestione in css delle stesse 
+	\item conclusione e revisione della relazione
 \end{itemize}
 \textbf{Granziero Luca}
 \begin{itemize}
-    \item Creazione e gestione delle pagine: \texttt{corsi.html}  \texttt{salapesi.html} \texttt{error404.html}, \texttt{erro403.html}
-    \item Gestione in css delle stesse
-    \item Creazione delle pagine js: toggle-descrizione-orari.js 
-    \item Stesura e aggiornamento della relazione 
+	\item Creazione e gestione delle pagine: \texttt{corsi.html}  \texttt{salapesi.html} \texttt{error404.html}, \texttt{erro403.html}
+	\item Gestione in css delle stesse
+	\item Creazione delle pagine js: toggle-descrizione-orari.js 
+	\item Stesura e aggiornamento della relazione 
 \end{itemize}
 \textbf{Marco}
 \begin{itemize}
-    \item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
-    \item Gestione in css delle stesse
-    \item Crezione prima versione del database
-    \item conclusione e revisione della relazione
+	\item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
+	\item Gestione in css delle stesse
+	\item Crezione prima versione del database
+	\item conclusione e revisione della relazione
 \end{itemize}
 
 \section{Conclusioni e sviluppi futuri}
