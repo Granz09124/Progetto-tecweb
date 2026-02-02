@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <a class="vai-al-contenuto" href="#contenuto-principale">Vai al contenuto</a>
     [Menu]
     <nav id="breadcrumb" aria-label="Percorso di navigazione">
         <ol>
@@ -24,8 +23,8 @@
 
     <main id="contenuto-principale">
         <article id="presentazione">
-            <h1>Benvenuti nel Tempio di Apollo</h1>
             <section>
+                <h1>Benvenuti nel Tempio di Apollo</h1>
                 <img src="immagini/uomo-donna-allenamento.jpg" alt="Foto di una statua greca che lancia un disco e un'altra che sta correndo">
                 <p id="catchphrase">
                     A Bellezza e Bontà le persone aspirano, l'Apollineo Splendore tutti ammirano.
@@ -35,43 +34,39 @@
 
         <article id="presentazione-servizi" class="topic">
             <h2>I nostri servizi</h2>
-            <section>
-                <p>
-                    Benvenuti al <strong>Tempio</strong>!
-                </p>
-                <p> Che tu sia un lupo solitario della <strong>sala pesi</strong> o che tu ami <strong>allenarti</strong> in compagnia, qui troverai il tuo spazio ideale.
-                    Al <strong>Tempio di Apollo</strong> puoi costruire la tua routine in autonomia, farti seguire passo dopo passo dai nostri <strong lang="en">Personal Trainer</strong>,
-                    oppure scoprire la carica dei nostri <strong>corsi di gruppo</strong>. Qualunque sia la tua strada, noi ti diamo gli strumenti per percorrerla.
-                </p>
-            </section>
-            <section>
-                <dl>
-                    <dt><a href="palestra.php">La nostra palestra</a></dt>
-                    <dd>
-                        <img src="immagini/la-nostra-palestra.jpg" alt="">
-                        <article class="hidden">
-                            Immagine di una palestra ben illuminata, ricca di macchine:
-                            <ul>
-                                <li lang='fr'>cyclette</li>
-                                <li lang='fr'>tapis roulant</li>
-                                <li>sbarre</li>
-                                <li>panche</li>
-                            </ul>
-                            Le ultime due sono sopra un tappeto per eventuali urti.
-                        </article>
-                    </dd>
-                    <dt><a href="cerca-istruttore.php">I nostri istruttori</a></dt>
-                    <dd><img src="immagini/i-nostri-istruttori.jpg" alt=""></dd>
-                </dl>
-            </section>
+            <p>
+                Benvenuti al <strong>Tempio</strong>!
+            </p>
+            <p> Che tu sia un lupo solitario della <strong>sala pesi</strong> o che tu ami <strong>allenarti</strong> in compagnia, qui troverai il tuo spazio ideale.
+                Al <strong>Tempio di Apollo</strong> puoi costruire la tua routine in autonomia, farti seguire passo dopo passo dai nostri <strong lang="en">Personal Trainer</strong>,
+                oppure scoprire la carica dei nostri <strong>corsi di gruppo</strong>. Qualunque sia la tua strada, noi ti diamo gli strumenti per percorrerla.
+            </p>
+            <dl>
+                <dt><a href="palestra.php">La nostra palestra</a></dt>
+                <dd>
+                    <img src="immagini/la-nostra-palestra.jpg" alt="">
+                    <article class="hidden">
+                        Immagine di una palestra ben illuminata, ricca di macchine:
+                        <ul>
+                            <li lang='fr'>cyclette</li>
+                            <li lang='fr'>tapis roulant</li>
+                            <li>sbarre</li>
+                            <li>panche</li>
+                        </ul>
+                        Le ultime due sono sopra un tappeto per eventuali urti.
+                    </article>
+                </dd>
+                <dt><a href="cerca-istruttore.php">I nostri istruttori</a></dt>
+                <dd><img src="immagini/i-nostri-istruttori.jpg" alt=""></dd>
+            </dl>
         </article>
 
         <aside id="recensioni">
-            <h2>Recensioni</h2>
-            <p>
-                Non serve interrogare gli dèi per sapere com'è <strong>allenarsi</strong> qui. Lasciamo la parola a chi ha già scelto Il <strong>Tempio di Apollo</strong> per trasformare il proprio corpo e la propria mente.
-            </p>
             <article>
+                <h2>Recensioni</h2>
+                <p>
+                    Non serve interrogare gli dèi per sapere com'è <strong>allenarsi</strong> qui. Lasciamo la parola a chi ha già scelto Il <strong>Tempio di Apollo</strong> per trasformare il proprio corpo e la propria mente.
+                </p>
                 <ul>
                     <li class="recensione light-topic">
                         <dl>
@@ -79,17 +74,22 @@
                             <dd class="img-recensore">
                                 <img src="immagini/utenti/marco.jpg" alt="">
                             </dd>
-                            <dt class="voto-recensione">★ ★ ★ ★ ★</dt>
+                            <dt class="voto-recensione">
+                                <span aria-hidden="true">★ ★ ★ ★ ★</span>
+                                <span class="hidden">5 stelle su 5</span>
+                            </dt>
                             <dd class="contenuto-recensione">
                                 <p>
-                                    Palestra top!! vado li da 2 mesi e mi
-                                    trovo super bene con il bundle fitness
-                                    completo. la sala pesi e enorme e ce
-                                    tutto quello che serve. ho fatto la
-                                    lezione di prova col PT gratis e stato
-                                    molto bravo a spiegarmi i macchinari.
-                                    Faccio anche Zumba x divertirmi un po...
-                                    consigliata
+                                    Palestra top!! Vado lì da 2 mesi e mi trovo
+                                    super bene con il <span lang="en">bundle
+                                    fitness</span> completo.
+                                    La sala pesi è enorme e c'è tutto quello che
+                                    serve. Ho fatto la lezione di prova col
+                                    <abbr title="Personal Trainer" lang="en">
+                                    <span lang="it">PT</span></abbr>
+                                    gratis ed è stato molto bravo a spiegarmi i
+                                    macchinari. Faccio anche Zumba per
+                                    divertirmi un po'... Consigliata!
                                 </p>
                             </dd>
                         </dl>
@@ -100,17 +100,21 @@
                             <dd class="img-recensore">
                                 <img src="immagini/utenti/elena.jpg" alt="">
                             </dd>
-                            <dt class="voto-recensione">★ ★ ★ ★ ★</dt>
+                            <dt class="voto-recensione">
+                                <span aria-hidden="true">★ ★ ★ ★ ★</span>
+                                <span class="hidden">5 stelle su 5</span>
+                            </dt>
                             <dd class="contenuto-recensione">
                                 <p>
-                                    Amo troppo i corsi di yoga e pilates di
-                                    questa palestra!!! pulizia ok e staff
-                                    gentile. Io ho fatto il Bundle Relax &
-                                    Benessere cosi faccio anche stretching
-                                    per la schiena che mi serve x il lavoro.
-                                    mi sento molto meglio da quando vengo
-                                    qui. 5 stelle meritatissime grazie a
-                                    tutti :
+                                    Amo troppo i corsi di yoga e pilates di questa
+                                    palestra!!! Pulizia ok e staff gentile. Io ho
+                                    fatto il <span lang="en">Bundle</span> Relax &amp;
+                                    Benessere, così faccio anche <span lang="en">
+                                    stretching</span> per la schiena che mi serve per
+                                    il lavoro. Mi sento molto meglio da quando vengo
+                                    qui. 5 stelle meritatissime, grazie a tutti! <span
+                                    aria-hidden="true">:)</span><span class="hidden">
+                                    faccina felice</span>
                                 </p>
                             </dd>
                         </dl>
@@ -121,18 +125,22 @@
                             <dd class="img-recensore">
                                 <img src="immagini/utenti/ahmed.jpg" alt="">
                             </dd>
-                            <dt class="voto-recensione">★ ★ ★ ★ ★</dt>
+                            <dt class="voto-recensione">
+                                <span aria-hidden="true">★ ★ ★ ★ ★</span>
+                                <span class="hidden">5 stelle su 5</span>
+                            </dt>
                             <dd class="contenuto-recensione">
                                 <p>
-                                    inizio adesso a lavorare qui come
-                                    personal e la palestra è veramente ok.
-                                    mi piace un sacco l'area crossfit e la
-                                    fit box!! peccato x il parcheggio che a
-                                    volte è un casino ma la qualità è
-                                    altissima. consiglio il Bundle Fitness
-                                    Completo x chi vuole iniziare... la
-                                    prima sessione di PT è gratis e magari
-                                    la facciamo insieme!
+                                    Inizio ora a lavorare qui come <span lang="en">personal
+                                    trainer</span> e la palestra è davvero valida. Mi piace
+                                    moltissimo l'area <span lang="en">CrossFit</span> e
+                                    la <span lang="en">Fit Box</span>! Peccato per il
+                                    parcheggio, che talvolta è caotico, ma la qualità
+                                    è altissima. Consiglio il <span lang="en">Bundle</span>
+                                    Fitness Completo per chi vuole iniziare: la prima
+                                    sessione di <abbr title="Personal Trainer" lang="en">
+                                    <span lang="it">PT</span></abbr> è gratuita e
+                                    potremmo farla insieme!
                                 </p>
                             </dd>
                         </dl>
@@ -143,17 +151,21 @@
                             <dd class="img-recensore">
                                 <img src="immagini/utenti/svetlana.jpg" alt="">
                             </dd>
-                            <dt class="voto-recensione">★ ★ ★ ★</dt>
+                            <dt class="voto-recensione">
+                                <span aria-hidden="true">★ ★ ★ ★ ★</span>
+                                <span class="hidden">5 stelle su 5</span>
+                            </dt>
                             <dd class="contenuto-recensione">
                                 <p>
-                                    Molto buona per arrampicata e crossfit,
-                                    istruttori preparati anche se a volte ce
-                                    troppa gente alle 18. Prendo il bundle
-                                    all inclusive premium che mi serve la
-                                    dieta e le lezioni col personal trainer
-                                    se no faccio casino da solo ahah. 4
-                                    stelle solo x il casino in spogliatoio
-                                    ma il resto spacca
+                                    Molto buona per arrampicata e <span lang="en">CrossFit
+                                    </span>, con istruttori preparati. A volte però alle
+                                    <time datetime="18:00">18</time> c'è troppa gente.
+                                    Prendo il bundle <span lang="en">all-inclusive
+                                    premium</span> perché mi serve la dieta e le
+                                    lezioni col <span lang="en">personal trainer</span>,
+                                    altrimenti combino solo pasticci da solo. 4 stelle
+                                    solo per il caos nello spogliatoio, ma il resto è
+                                    un sacco bello!
                                 </p>
                             </dd>
                         </dl>

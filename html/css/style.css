@@ -89,6 +89,10 @@ h3 {
     padding: 0.2em 0.5em;
 }
 
+h1 {
+    flex: 1 1 100%;
+}
+
 strong {
     font-weight: normal;
 }
@@ -255,6 +259,7 @@ header.intestazione {
     vertical-align: top;
     padding: 1em;
     margin: 0.5em;
+    flex: 1 1 40%;
 }
 
 #catchphrase {
@@ -262,6 +267,7 @@ header.intestazione {
     font-size: 120%;
     margin: auto;
     padding-bottom: 0.5em;
+    flex: 1 1 40%;
 }
 
 #presentazione-servizi h2 {
