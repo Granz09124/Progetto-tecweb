@@ -485,3 +485,12 @@ accessibilità menu e breadcrumb tab OK
 - controllare style.css per ordine o cose responsive da togliere
 - controllare residui di cose
 - controllare che funzioni upload delle schede OK
+
+-----------------------------------------------------
+Non bisogna sentire apri menu mobile da desktop
+Breadcrubm legge troppa roba
+rivedere liste home
+cambiare recensione
+cambiare titioli delle pagine tutti ad <h1>
+crossfit mettere in inglese orario corsi
+orario dei corsi viene letta due volte
