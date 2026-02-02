@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
-    $uploadDir = __DIR__ . '/uploads/schede/';
+    $uploadDir = __DIR__ . '/../internal/utente/utente-semplice/uploads/schede/';
     if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0755, true);
     }

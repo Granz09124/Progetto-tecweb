@@ -15,7 +15,7 @@ window.onload = () => {
         return;
       }
 
-      fetch("/lista-clienti-pt.php", {
+      fetch(window.location.pathname, {
         method: "POST",
         body: formData,
       }).then((response) => {
