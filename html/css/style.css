@@ -380,6 +380,13 @@ header.intestazione {
     margin-bottom: 3em;
 }
 
+#layout-adhoc h1 {
+    grid-column: 1 / -1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
 .sezione-sala-pesi,
 .sezione-corsi,
 .sezione-personal-trainers {
@@ -420,12 +427,28 @@ header.intestazione {
 .layout-palestra ul {
     margin-left: 1.5em;
     margin-bottom: 2em;
+    list-style: none;
+    padding-left: 0;
 }
 
 .layout-palestra ul li {
     margin-bottom: 0.5em;
-    list-style-type: square;
     color: var(--text-main);
+    position: relative;
+    padding-left: 1.2em;
+}
+
+.layout-palestra ul li::before {
+    content: "";
+    
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-main);
+    
+    position: absolute;
+    left: 0;
+    top: 0.5em;
 }
 
 a.bottone-dettagli {
@@ -761,11 +784,24 @@ h2 {
     font-size: 0.9em;
     color: var(--text-muted);
     flex: 1;
+    list-style: none;
 }
 
 .abbonamento-card ul li {
-    list-style-type: square;
     margin-bottom: 2px;
+    position: relative;
+    padding-left: 1.2em;
+}
+
+.abbonamento-card ul li::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-muted);
+    position: absolute;
+    left: 0;
+    top: 0.5em;
 }
 
 .pt-card {
@@ -1071,9 +1107,8 @@ textarea {
 .form-container {
     max-width: 400px;
     margin: 4em auto;
-    /* Spazio sopra e sotto */
     padding: 2.5em;
-    background-color: var(--backgroundLight, #202020);
+    background-color: #111;
     border: 1px solid var(--mainColor, #fecd00);
     border-radius: 1em;
     box-shadow: 0 0 20px rgba(254, 205, 0, 0.15);
@@ -1152,7 +1187,7 @@ textarea {
     max-width: 500px;
     margin: 2em auto;
     padding: 2.5em;
-    background-color: var(--backgroundLight, #202020);
+    background-color: #111;
     border: 2px solid var(--mainColor, #fecd00);
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

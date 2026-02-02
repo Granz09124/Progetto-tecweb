@@ -442,6 +442,13 @@ textarea {
     margin-bottom: .4cm;
 }
 
+.form-container {
+    margin-left: .5cm;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-shadow: none;
+}
+
 .password-wrapper label,
 .form-container label {
     color: var(--textColor) !important;
@@ -482,6 +489,8 @@ textarea {
 .form-registrazione {
     margin-left: .5cm;
     margin: 0 auto;
+    border: 1px solid black;
+    box-shadow: none;
 }
 
 .titolo-registrazione {

@@ -110,6 +110,25 @@ $body = str_replace("[ListaSchede]", $lista, $body);
 $body = str_replace("[Email]", htmlspecialchars($userData['email']), $body);
 $body = str_replace("[Telefono]", htmlspecialchars($userData['telefono']), $body);
 
+$abbonamento = $conn->prepare("
+    SELECT a.nome_tipo
+    FROM Sottoscrizione s
+    JOIN Abbonamento a ON s.id_abbonamento = a.id_abbonamento
+    WHERE s.id_utente = ? 
+    AND CURDATE() BETWEEN s.data_inizio AND s.data_fine
+    ORDER BY s.data_inizio DESC
+");
+$abbonamento->bind_param("i", $id_utente);
+$abbonamento->execute();
+$resultAbbonamento = $abbonamento->get_result();
+
+if ($resultAbbonamento->num_rows > 0) {
+    $datiAbbonamento = $resultAbbonamento->fetch_assoc();
+    $body = str_replace('[Abbonamento]', htmlspecialchars($datiAbbonamento['nome_tipo']), $body);
+} else {
+    $body = str_replace('[Abbonamento]', "Abbonamento scaduto!", $body);
+}
+
 renderFromHtml($top . $body . $bottom);
 
 $stmtSchede->close();
