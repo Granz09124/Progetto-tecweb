@@ -40,6 +40,10 @@ if ($result->num_rows == 0) {
 
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     $output = $templateResult;
+    $imageFile = $row['id_utente'];
+    if (!file_exists("immagini/istruttori/" . $imageFile . ".jpg")) {
+        $imageFile = "default";
+    }
 
     $isPt = $row['id_istruttore'] == null
         ? '<abbr title="no" aria-hidden="true">&cross;</abbr><span class="hidden">no</span>'
@@ -48,6 +52,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     $output = str_replace("[Nome Istruttore]", $row['nome'] . ' ' . $row['cognome'], $output);
     $output = str_replace("[È PT]", $isPt, $output);
     $output = str_replace("[Specializzazione Istruttore]", $row['specializzazione'], $output);
+    $output = str_replace("[Immagine Profilo]", $imageFile, $output);
     $output = str_replace("[ID Istruttore]", $row['id_utente'], $output);
     
     echo $output;
