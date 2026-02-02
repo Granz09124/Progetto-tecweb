@@ -59,7 +59,7 @@ if (!$userData) {
 }
 
 $stmtSchede = $conn->prepare("
-    SELECT apt.data_caricamento, apt.id_pt, u.nome, u.cognome 
+    SELECT apt.data_caricamento, apt.id_pt, apt.dimensione_file, u.nome, u.cognome 
     FROM Assegnazione_PT apt 
     JOIN Utente u ON apt.id_pt = u.id_utente 
     WHERE apt.id_cliente = ? AND apt.data_caricamento IS NOT NULL 
@@ -84,10 +84,12 @@ if ($resultSchede->num_rows > 0) {
         $nomeFileDisplay = "Scheda Allenamento (" . date("d/m/Y", strtotime($scheda['data_caricamento'])) . ")";
         
         $percorsoFile = "../uploads/schede/" . $id_utente . "_" . $scheda['id_pt'] . ".pdf";
+        $dimensioneFile = round($scheda['dimensione_file'] / 1_048_576, 2); // dimensione file in MiB
         
         $item = str_replace("[NomeFile]", htmlspecialchars($nomeFileDisplay), $item);
         $item = str_replace("[NomePT]", htmlspecialchars($nomePT), $item);
         $item = str_replace("[PercorsoFile]", htmlspecialchars($percorsoFile), $item);
+        $item = str_replace("[Grandezza File]", $dimensioneFile, $item);
         $lista .= $item;
     }
 } else {
