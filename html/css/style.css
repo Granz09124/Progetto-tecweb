@@ -420,12 +420,28 @@ header.intestazione {
 .layout-palestra ul {
     margin-left: 1.5em;
     margin-bottom: 2em;
+    list-style: none;
+    padding-left: 0;
 }
 
 .layout-palestra ul li {
     margin-bottom: 0.5em;
-    list-style-type: square;
     color: var(--text-main);
+    position: relative;
+    padding-left: 1.2em;
+}
+
+.layout-palestra ul li::before {
+    content: "";
+    
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-main);
+    
+    position: absolute;
+    left: 0;
+    top: 0.5em;
 }
 
 a.bottone-dettagli {
