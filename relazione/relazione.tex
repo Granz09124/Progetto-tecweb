@@ -12,8 +12,8 @@
 
 \begin{titlepage}
     \centering
-    \vspace*{2cm}
-%    \includegraphics[width=0.5\textwidth]{Logo_Università_Padova.svg.png} 
+    \vspace*{1cm}
+   \includegraphics[width=0.5\textwidth]{Logo_Università_Padova.svg.png} 
     
     \vspace{1.5cm}
     {\Huge \textbf{Tempio di Apollo - Sito Web} \par}
@@ -21,15 +21,16 @@
     
     {\Large Armando Moda Scarati - 2082864 \par}
     {\Large Granziero Luca - 2075512 \par}
-    {\Large Alessandro Morabito - 2137991 \par}
+    {\Large Alessandro Morabito - 2137991 \textit{(referente)} \par} 
     {\Large Marco Beltrame - 2111021 \par}
     
     \vspace{1cm}
     {\large \today \par}
-    
-    \vspace{2cm}
+    \vspace{1cm}
+    \textbf{Sito Web:} \\
+    tecweb.studenti.math.unipd.it/amorabit \\
+    \vspace{1cm}
     \textbf{Credenziali account del sito:}
-    \vspace{0.5cm}
     
     \begin{center}
     \begin{tabular}{|c|c|c|}
@@ -58,100 +59,39 @@ Prevede inoltre le seguenti tipologie di area personale: per i clienti, per gli 
 \section{Analisi del target}
 Il sito web è destinato:
 \begin{itemize}
-    \item ai potenziali clienti che, non ancora registrati, possono informarsi sui servizi che la palestra offre
-    \item ai clienti che, tramite un area personale, possono visualizzare le proprie informazioni.
+    \item ai potenziali clienti che, non ancora registrati, possono informarsi sui servizi che la palestra offre.
+    \item ai clienti che tramite un area personale, possono visualizzare le proprie informazioni. 
     \item agli istruttori, la cui area personale è come quella dei clienti, ma possiedono un profilo pubblico
-    \item ai personal trainer, tutti anche istruttori da un punto di vista logico, che possono caricare per i propri clienti una scheda tecnica in formato pdf, di grandezza minore di 1MiB
+    \item ai personal trainer, tutti anche istruttori, che possono caricare per i propri clienti una scheda tecnica in formato pdf, di grandezza minore di 1MiB
     \item agli amministratori, che possono visualizzare la lista degli utenti iscritti e modificare le loro informazioni
 \end{itemize}
 
-\section{Struttura del Sito}
-Il sito è composto da: \\
-\\
-\textbf{Pagine html:}
+\subsection{SEO}
+Il sito vuole rispondere alle seguenti ricerche:
 \begin{itemize}
-    \item \texttt{home.html}: Pagina principale che introduce la palestra: mostrando servizi, sedi e recensioni di alcuni clienti.
-    \item \texttt{corsi.html:} Pagina che espone i vari corsi disponibili.
-    \item \texttt{abbonamenti.html:} Pagina che raffigura i vari abbonamenti offerti.
-    \item \texttt{palestra.html:} Pagina di intermissione tra home e i servizi che la palestra offre, ovvero la sala pesi, i corsi e i pt/coaching.
-    \item \texttt{error404.html:} Pagina che mostra un messaggio quando la pagina richiesta non esiste.
-    \item \texttt{error403.html:} Pagina che mostra un messaggio quando non si hanno i permessi necessari per accedere a quella pagina.
-    \item \texttt{contattaci.html:} Pagina che permette agli utenti di inviare richieste o messaggi all'associazione.
-    \item \texttt{pt.html:} Pagina che permette agli admin di trovare un preciso PT registrato.
-    \item \texttt{cerca-pt.html:} Pagina che permette agli utenti di cercare tra i vari PT quello che più gli aggrada.
-    \item \texttt{cerca-utenti.html:} Pagina che permette agli admin di trovare un preciso utente registrato
-    \item \texttt{registrati.html:} Pagina che permette agli utenti di registrarsi al sito.
-    \item \texttt{login.html:} Pagina che permette agli utenti di accedere alla loro area riservata.
-    \item \texttt{utente-admin.html:} Pagina di area personale dell'admin.    
-    \item \texttt{utente-pt.html:} Pagina di area personale del Personal Trainer.  
-    \item \texttt{utente-semplice.html:} Pagina di area personale dell'utente.
-    \item \texttt{salapesi.html:} Pagina che parla delle varie attrezzature e macchinari presenti nella palestra.
-\end{itemize} 
-
-\textbf{Pagine css:}
-\begin{itemize}
-    \item \texttt{style.css}: Foglio di stile per il design base.
-    \item \texttt{mini.css}: Foglio di stile per il design mobile. 
-    \item \texttt{print.css} Foglio di stile per il design da stampante.
-\end{itemize}
-
-\textbf{Pagine javascript:}
-\begin{itemize}
-    \item \texttt{torna-su.js:} abilità il bottone per tornare in cima alla pagina riposto in basso a destra di ogni pagina.
-    \item \texttt{selettoreAbbonamenti.js:}  
-    \item \texttt{caricaLogin:}  
-    \item \texttt{caricaMessaggio.js:}  
-    \item \texttt{caricaRegistrazione.js:}  
-    \item \texttt{caricaScheda.js:}  
-    \item \texttt{dashboard.js:}
-    \item \texttt{formLista.js:}
-    \item \texttt{mostraPassword.js:}
-
-\end{itemize}
-
-\textbf{Pagine php:}
-\begin{itemize}
-    \item \texttt{abbonamenti.php:} 
-    \item \texttt{area-personale.php:} 
-    \item \texttt{cerca-istruttore.php:} 
-    \item \texttt{contattaci.php:} 
-    \item \texttt{corsi.php:} 
-    \item \texttt{home.php:} 
-    \item \texttt{lista-clienti-pt.php:} 
-    \item \texttt{lista-clienti.php:} 
-    \item \texttt{lista-pt.php:} 
-    \item \texttt{lista-utenti.php:} 
-    \item \texttt{login.php:} 
-    \item \texttt{logout.php:}
-    \item \texttt{palestra.php:} 
-    \item \texttt{profilo-istruttore.php:} 
-    \item \texttt{registrati.php:} 
-    \item \texttt{salapesi.php:}
-    \item \texttt{403.php:} 
-    \item \texttt{404.php:} 
-    \item \texttt{upload-messaggio.php:} 
-    \item \texttt{processa-login.php:}
-    \item \texttt{processa-registrazione.php:} 
-    \item \texttt{profilo-istruttore.php:} 
-    \item \texttt{upload-scheda.php:} 
-    \item \texttt{header.php:}
-    \item \texttt{palestra.php:} 
-    \item \texttt{utente-admin.php:} 
-    \item \texttt{utente-pt.php:} 
-    \item \texttt{utente-semplice.php:}
+    \item il nome del sito 
+    \item tutte le varie ricerche mirate all'argomento palestra, come: salapesi, corsi, personal trainer, pt, attrezzi e bodybuilding
+    \item ricerche più generali su argomenti come: allenamento, salute o motivaizione.
     
 \end{itemize}
-
-\textbf{Database:}
+\noindent
+Le parole chiave che sono state selezionate per rivolgersi sia ad utenti che hanno già frequentato una palestra e che quindi sanno già cosa stanno cercando, sia ai nuovi utenti che non hanno una grande idea di cosa stiano effettivamente cercando.
+\noindent
+\\
+\\
+Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 \begin{itemize}
-    \item \texttt{db.sql:}
-\end{itemize}
+    \item Ogni pagina presenta un tag <title> univoco che segue una logica descrittiva (es. "Home - Tempio di Apollo" o "Palestra - Offre").
+Sono stati inseriti meta tag description dettagliati per migliorare il CTR (Click-Through Rate) nella SERP, descrivendo l'offerta della palestra (es. "una palestra con sala pesi e corsi di gruppo, nonché percorsi su misura"), e meta tag keywords per definire il campo semantico della pagina.
 
-\textbf{Infine una cartella immagini con all'interno:}
-\begin{itemize}
-    \item varie immagini utilizzate all'interno del sito.
-    \item icon per rendere più apprezzabili alcune liste
-    \item immagini dei profili dei vari istruttori e personal trainer
+    \item La separazione tra struttura (HTML), presentazione (CSS) e contenuto garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistive. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
+    \item Poiché l’accessibilità rappresenta un fattore indiretto di posizionamento, sono state implementate diverse soluzioni tecniche volte a migliorare sia l’esperienza degli utenti che utilizzano screen reader, sia l’indicizzazione da parte dei motori di ricerca. In particolare:
+
+Gestione della lingua: affrontata in modo approfondito nella sezione dedicata all’accessibilità.
+
+Attributi alt: tutte le immagini con valore informativo sono corredate da testi alternativi descrittivi (ad esempio: “Foto di una statua greca che lancia un disco…”), consentendo la comprensione del contenuto visivo e favorendone l’indicizzazione. (SPOSTARE MAGARI IN SEZIONE SCREEN READER E DIRE SOLAMENTE CHE VIENE AFFRONTATA ANCHE QUI DOPO COME PER LA GESTIONE DELLA LINGUA?)
+
+    \item Ogni pagina include, attraverso il metatag keywords, le parole chiave che ne descrivono il contenuto.
 \end{itemize}
 
 \section{Tecnologie Utilizzate}
@@ -162,7 +102,7 @@ Il sito è composto da: \\
     \item \textbf{PHP}: Utilizzato per generare contenuti dinamici lato server, come la gestione di sessioni utente e l'interazione con database per funzionalità avanzate.
     \item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
     \item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
-    \item \textbf{LLM}: Utilizzati per la generazione di contenuti per evitare problemi di copyright.come: il logo, le immagini di sfondo presenti nelle pagine di errore 403 e 404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni (PT) 
+    \item \textbf{LLM}: Utilizzati per la generazione di immagini come: il logo, le immagini di sfondo presenti nelle pagine di error403 e error404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni dei PT, delle recensioni presenti della pagina home e del database. (CONTROLLATE SE VA BENE COSI!!!!!!!)
 \end{itemize}
 
 \section{Utenti presenti nel sito}
@@ -217,24 +157,57 @@ Si fa notare che "Logout" non è effettivamente una pagina, ma semplicemente un 
 
 Si fa presente, inoltre, che non sono presenti le pagine php pubbliche che permettono di effettuare le varie operazioni di cui si è parlato nel capitolo precedente. Le pagine invece che abbiamo ritenuto non dover essere accessibili (come quelle delle aree personali della singola tipologia di utente) sono state inserite all'interno della cartella \texttt{internal/}, non visualizzabile pubblicamente in quanto esterna a \texttt{public\textunderscore html/}.
 
-\subsection{Convenzioni interne}
 
 \begin{center}
 	\includegraphics[width=.8\linewidth]{struttura_sito.png}
 \end{center}
 
+\subsection{Convenzioni interne}
+Vengono riportate le convenzioni interne del sito:
+\begin{itemize}
+    \item I link, sia quelli visitati e non visitati, vengono presentati come sottolineati, in particolare i link non visitati hanno un colore di testo chiaro vicino all'azzurro, mentre i link visitati hanno un colore di testo viola, inoltre sono entrambi posti su sfondo nero. Questi colori sono stati scelti in quanto fanno parte della palette di colori utilizzata. 
+    \item (TABELLE?)
+\end{itemize}
+
+\subsection{Schema database}
+Schema relazionale del database:
+
+
+
 \section{Progettazione}
 La progettazione è iniziata poco dopo l'inizio dell'assegnazione dei gruppi.
-
+\noindent
+\\
 Si è rapidamente deciso che l'argomento del sito sarebbe stata una palestra. Dopo aver deciso il nome, abbiamo iniziato a stilare una lista di operazioni che avremmo potuto permettere agli utenti. Successivamente, ci siamo focalizzati sul contenuto e lo stile del site, nonché sulla struttura generale. È stato in quest'occasione che abbiamo deciso di introdurre dei cicli nella struttura gerarchica e le breadcrumb.
-
+\noindent
+\\
 Abbiamo riscontrato problemi quando abbiamo dovuto aggiungere del comportamento al sito, in particolare nella parte di backend: nell'analisi dei requisiti non abbiamo incluso le funzionalità che avrebbero dovuto effettivamente essere presenti in quanto progetto, e questo ci si è ritorto contro verso la fine del progetto, che abbiamo dovuto aggiungere ulteriori funzionalità.
-
+\noindent
+\\
 Ad ogni incontro sincrono abbiamo messo per iscritto quello che era stato fatto, quello che avremmo dovuto fare tra quell'incontro e quello successivo, e quali sarebbero stati gli argomenti da affrontare in seguito. Questo ci ha permesso di tenere un buon ritmo ed effettuare modifiche rapidamente quando ci siamo accorti de essere finiti fuori scope.
 
+
+\section{Presentazione}
+\subsection{CSS}
+All'interno del nostro CSS vengono utilizzate delle variabili, che vengono impostate all'inizio del file e riutilizzate successivamente, grazie a questo riusciamo a tenere sotto controllo i vari contrasti e i colori utilizzati.
+Vengono utilizzati tre diversi fogli di stile, ognuno con uno scopo diverso: 
+\begin{itemize}
+    \item style.css: per lo stile da desktop 
+    \item mini.css: per lo stile da mobile 
+    \item print.css: per lo stile da stampante
+\end{itemize}
+\noindent
+È stata presa questa decisione è stata presa per gestire al meglio l'aspetto responsive del sito, oltre ad avere una propria organizzazione del css. 
+
+In particolare, per quanto riguarda il css della stampa...
+(TODO: AGGIUNGERE SPIEGAZIONE DI COM'è IL CSS DELLA STAMPA?)
+
+
+\subsection{Immagini e icone}
+La maggior parte delle immagini vengono archiviate prevalentemente in formato JPG, con una dimensione massima che non supera il MB, ad eccezzione di questo troviamo le immagini generate per le pagine error e le icon, che vengono salvate in formato WEBP, e l'immagine del logo che è salvata in formato PNG ma non supera la grandezza di 1MB. Questa scelta è stata adottata per ridurre i tempi di caricamento delle pagine; tuttavia, l’utilizzo di questo formato potrebbe comportare possibili problemi di retrocompatibilità, dovuti alla sua introduzione relativamente recente.
+
+
 \section{Accessibilità}
-\subsection{Separazione della struttura, presentazione e contenuto}
-La separazione tra struttura (HTML), presentazione (CSS) e contenuto garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistive. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
 
 \subsection{Palette dei colori e contrasti}
 La palette dei colori è stata scelta per garantire un elevato contrasto tra testi e sfondi, rispettando le linee guida WCAG. Ad esempio, testi chiari su sfondi scuri per una migliore leggibilità, evitando combinazioni che potrebbero causare difficoltà a utenti con disabilità visive.
@@ -275,6 +248,41 @@ I colori principali utilizzati nel sito sono riportati nella tabella; eventuali 
 \subsection{Lingue straniere}
 Il sito supporta contenuti in italiano come lingua principale, ma è progettato per essere facilmente adattabile a lingue straniere attraverso l'uso di attributi lang e meccanismi di internazionalizzazione, permettendo una migliore accessibilità per utenti non italofoni.
 
+\subsection{Screen reader}
+L’accessibilità per gli utenti di screen reader è stata migliorata attraverso l’uso appropriato della semantica HTML5 e degli attributi ARIA. Questo è stato reso possibile attraverso l'uno di screen reader come NVDA che ci hanno aiutato a simulare l'esperienza di navigazione di un utente che ne necessita il bisogno.
+
+\paragraph{Aiuti alla navigazione}
+All’inizio di ogni pagina è presente un collegamento di salto al contenuto principale (“Vai al contenuto”), posizionato come primo elemento del DOM. Questo link è inizialmente nascosto e diventa visibile quando riceve il focus da tastiera, consentendo agli utenti che navigano senza mouse di bypassare elementi ripetitivi come l’intestazione e il menu di navigazione e raggiungere direttamente il contenuto principale racchiuso nel tag \texttt{<main>}.
+
+\paragraph{Breadcrumb}
+Per agevolare l’orientamento dell’utente all’interno della gerarchia del sito, ogni pagina interna presenta un percorso di navigazione (breadcrumb). Tale elemento è racchiuso in un contenitore semantico \texttt{<nav>} e identificato tramite l’attributo \texttt{aria-label="percorso di navigazione"}, rendendolo distinguibile dal menu principale per gli screen reader. L’ultimo elemento del percorso, corrispondente alla pagina corrente, è contrassegnato con l’attributo \texttt{aria-current="page"}, permettendo all’utente di riconoscere immediatamente la propria posizione nel sito.
+
+\paragraph{Tabelle dati}
+Le tabelle utilizzate per visualizzare gli orari dei corsi sono state progettate per essere facilmente interpretabili dagli screen reader. In particolare:
+\begin{itemize}
+    \item al posto del tag \texttt{<caption>}, è stato utilizzato un paragrafo descrittivo nascosto visivamente, collegato alla tabella tramite l’attributo \texttt{aria-describedby}. Questo consente allo screen reader di leggere una descrizione introduttiva del contenuto della tabella prima della navigazione delle celle;
+    \item le celle di intestazione (\texttt{<th>}) utilizzano l’attributo \texttt{scope} per associare correttamente le celle di dati alle rispettive intestazioni di riga e di colonna, permettendo una lettura contestualizzata delle informazioni.
+\end{itemize}
+
+\paragraph{Menu degli abbonamenti}
+Nella sezione dedicata agli abbonamenti, la selezione delle diverse categorie è implementata tramite un menu di navigazione semantico contenente pulsanti standard (\texttt{<button>}). L’utilizzo di elementi HTML nativi garantisce la corretta accessibilità da tastiera e una gestione automatica del focus, evitando l’uso di ruoli ARIA complessi e mantenendo il codice semplice e semanticamente corretto.
+
+\paragraph{Gestione della lingua}
+Per assicurare una corretta pronuncia da parte dei sintetizzatori vocali, i termini in lingua inglese presenti all’interno del testo italiano sono racchiusi in elementi \texttt{<span>} con attributo \texttt{lang="en"}.
+
+
+\subsection{Compatibilità}
+I contenuti di ogni pagina sono stati disposti in modo tale da essere facilmente accessibili indipendentemente dal dispositivo utilizzato.
+Abbiamo adottato un menù ad hamburger con css puro per gli utenti da mobile, facilitandone la navigazione; le varie tabelle presenti inoltre sono state rese responsive in modo fa facilitarne la lettura su diversi dispositivi.
+
+\section{TEST EFFETTUATI}
+
+\subsection{Sicurezza}
+
+
+\subsection{Accessibilità}
+
+
 \section{Divisione dei compiti}
 Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto: \\
 \noindent
@@ -283,15 +291,17 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 \begin{itemize}
     \item Creazione delle e gestione pagine: \texttt{abbonamenti.html}, \texttt{palestra.html},  \texttt{utente-admin.html},  \texttt{utente-pt.html},  \texttt{utente-semplice.html}
     \item Gestione in css delle stesse 
+    \item conclusione e revisione della relazione
 \end{itemize}
-\textbf{Alessandro Morabito}
+\textbf{Alessandro}
 \begin{itemize}
-    \item Creazione e gestione delle pagine: \texttt{home.php},  \texttt{lista-utenti.html},  \texttt{pt.html},  \texttt{cerca-pt.html}
+    \item Creazione e gestione delle pagine: \texttt{home.html},  \texttt{lista-utenti.html},  \texttt{pt.html},  \texttt{cerca-pt.html}
     \item Gestione in css delle stesse 
+    \item conclusione e revisione della relazione
 \end{itemize}
 \textbf{Granziero Luca}
 \begin{itemize}
-    \item Creazione e gestione delle pagine: \texttt{corsi.html} \texttt{error404.html}, \textit{erro403.html}
+    \item Creazione e gestione delle pagine: \texttt{corsi.html}  \texttt{salapesi.html} \texttt{error404.html}, \texttt{erro403.html}
     \item Gestione in css delle stesse
     \item Creazione delle pagine js: toggle-descrizione-orari.js 
     \item Stesura e aggiornamento della relazione 
@@ -301,6 +311,7 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
     \item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
     \item Gestione in css delle stesse
     \item Crezione prima versione del database
+    \item conclusione e revisione della relazione
 \end{itemize}
 
 \section{Conclusioni e sviluppi futuri}
