@@ -38,6 +38,32 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
     $output = str_replace("[Specializzazione Istruttore]", htmlspecialchars($row['specializzazione']), $output);
     $output = str_replace("[Qualifica Istruttore]", htmlspecialchars($row['qualifica']), $output);
     $output = str_replace("[Presentazione Istruttore]", htmlspecialchars($row['presentazione']), $output);
+
+    // qua bisognerebbe trovare una libreria che riesca a rilevare la lingua utilizzata
+    $foreignWords = [
+        'bodybuilding',
+        'personal trainer',
+        'functional training',
+    ];
+
+    preg_match('/<body>.*<\/body>/s', $output, $body);
+    $body = $body[0];
+
+    foreach ($foreignWords as $foreign) {
+        $body = preg_replace_callback(
+            '/' . $foreign . '/i',
+            function ($matches) {
+                return '<span lang="en">' . $matches[0] . '</span>';
+            },
+            $body
+        );
+    }
+
+    $output = preg_replace(
+        '/<body>.*<\/body>/s',
+        $body,
+        $output
+    );
     
     renderFromHtml($output);
 }

@@ -119,11 +119,11 @@ INSERT INTO Cliente (id_utente, codice_fiscale, telefono) VALUES
 
 -- Inserimento Istruttori
 INSERT INTO Istruttore (id_utente, specializzazione, qualifica, presentazione) VALUES
-(9, 'Bodybuilding e Sala Pesi', 'Personal Trainer Certificato ISSA', 'Basta allenarsi a caso. Ti guido passo dopo passo verso risultati concreti e duraturi. Massa, forza o ricomposizione corporea: il tuo percorso inizia ora.'),
-(10, 'Yoga e Meditazione', 'Istruttrice Yoga RYT-500', 'Il tuo successo è il mio obiettivo. Ti accompagno in un percorso di cambiamento fisico e mentale, passo dopo passo. Niente schede copia-incolla, solo supporto costante.'),
-(11, 'Functional Training e Crossfit', 'Preparatore Atletico FIGC', "Preparazione atletica specifica per calciatori e atleti d'élite. Sviluppo potenza, velocità e prevenzione infortuni per portarti al livello superiore. Allenati da professionista"),
+(9, 'Bodybuilding e Sala Pesi', 'Personal Trainer Certificato', 'Basta allenarsi a caso. Ti guido passo dopo passo verso risultati concreti e duraturi. Massa, forza o ricomposizione corporea: il tuo percorso inizia ora.'),
+(10, 'Yoga e Meditazione', 'Istruttrice Yoga', 'Il tuo successo è il mio obiettivo. Ti accompagno in un percorso di cambiamento fisico e mentale, passo dopo passo. Niente schede copia-incolla, solo supporto costante.'),
+(11, 'Functional Training e Crossfit', 'Preparatore Atletico', "Preparazione atletica specifica per calciatori e atleti d'élite. Sviluppo potenza, velocità e prevenzione infortuni per portarti al livello superiore. Allenati da professionista"),
 (12, 'Pilates', 'Istruttrice Pilates Certificata', "Riscopri il tuo corpo con il Pilates: <script>alert()</script>. Un percorso di benessere per una schiena sana e una mente rilassata"),
-(13, 'Arrampicata e Fit Box', 'Coach Certificato', "Allenamenti di Fit Boxe ad alta energia: il mix perfetto tra tecnica, musica e sudore. Brucia calorie divertendoti e tira fuori la grinta. Ti aspetto al sacco!");
+(13, 'Arrampicata e Fit Box', 'Coach Certificato', "Allenamenti di Fit Box ad alta energia: il mix perfetto tra tecnica, musica e sudore. Brucia calorie divertendoti e tira fuori la grinta. Ti aspetto al sacco!");
 
 -- Inserimento Personal Trainer
 INSERT INTO Personal_Trainer (id_istruttore) VALUES
