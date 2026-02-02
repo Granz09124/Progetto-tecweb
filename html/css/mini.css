@@ -883,16 +883,34 @@ Lista clienti PT
  * Sala Pesi
  ============ */
 
-
 .descrizioni-sala-pesi article {
+    flex-direction: column; 
+    gap: 1.5em;           
+}
+
+.descrizioni-sala-pesi article:nth-child(even) {
     flex-direction: column;
 }
 
 .descrizioni-sala-pesi article img {
-    flex: none;
     width: 100%;
+    flex: none;
 }
 
+.testo-contenitore {
+    width: 100%; 
+}
+
+.testo-contenitore .lista-attrezzi li {
+    padding-left: 2em; 
+    margin-bottom: 0.8em; 
+}
+
+.testo-contenitore .lista-attrezzi li::before {
+    width: 1.3em;  
+    height: 1.3em;
+    top: 0.1em;
+}
 
 /* ============
  * Contattaci

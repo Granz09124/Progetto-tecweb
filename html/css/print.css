@@ -296,6 +296,52 @@ header.intestazione {
     }
 
 /* ============
+ * Sala pesi 
+ ============ */
+
+.descrizioni-sala-pesi strong {
+    font-weight: normal;
+}
+
+ .descrizioni-sala-pesi article {
+        display: block;
+        page-break-inside: avoid;
+        margin-bottom: 2cm;
+    }
+
+    .descrizioni-sala-pesi article img {
+        display: block;
+        max-width: 40%;
+        float: left;
+        margin-right: 1cm;
+        margin-bottom: 0.5cm;
+    }
+
+    .testo-contenitore {
+        width: 100%;
+    }
+
+    .lista-attrezzi {   
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .lista-attrezzi li {
+        padding-left: 1.5em;
+        position: relative;
+    }
+
+    .lista-attrezzi li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #000;
+        font-size: 1.5em;
+        line-height: 1;
+    }
+
+
+/* ============
  * CONTATTACI
  ============ */
 

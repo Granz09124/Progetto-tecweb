@@ -466,26 +466,56 @@ a.bottone-dettagli:active {
 
 .descrizioni-sala-pesi article {
     display: flex;
-    align-items: center;
-    gap: 1.5em;
-    margin-top: 1.5em;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 2.5em;
     margin-bottom: 3.5em;
 }
-
 
 .descrizioni-sala-pesi article:nth-child(even) {
     flex-direction: row-reverse;
 }
 
 .descrizioni-sala-pesi article img {
-    width: 40%;
+    width: 50%;
+    flex-shrink: 0;
     height: auto;
 }
 
-.descrizioni-sala-pesi article p {
-    flex: 1;
+.testo-contenitore {
+    display: flex;
+    flex-direction: column; 
+    width: 60%;
+}
+
+.testo-contenitore p {
+    margin: 0 0 1em 0;
+}
+
+.testo-contenitore ul.lista-attrezzi {
+    list-style-type: none;
+    padding-left: 0;
     margin: 0;
 }
+
+.testo-contenitore .lista-attrezzi li {
+    position: relative;
+    padding-left: 1.8em;
+    width: 100%;
+}
+
+.testo-contenitore .lista-attrezzi li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url('../immagini/Icon/dumbbell.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 
 /* =================
  * Corsi
