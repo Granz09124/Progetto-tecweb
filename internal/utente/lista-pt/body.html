@@ -1,15 +1,15 @@
 <section class="area-personale">
-    <h1>Lista Personal Trainer</h1>
+    <h1>Lista <span lang="en">Personal Trainer</span></h1>
 
     <section class="user-section">
-        <p id="sum" class="hidden">Tabella contenente l'elenco dei Personal Trainer, con nome, cognome, email e comandi per la modifica.</p>
+        <p id="sum" class="hidden">Tabella contenente l'elenco dei <span lang="en">Personal Trainer</span>. Ogni riga riporta nome, cognome, <span lang="en">email</span> e i pulsanti per modificare le informazione del <span lang="en">Personal Trainer</span> o eliminarlo.</p>
 
         <table aria-describedby="sum" class="admin-table">
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Cognome</th>
-                    <th scope="col">Email</th>
+                    <th scope="col"><span lang="en">Email</span></th>
                     <th scope="col">Azione</th>
                 </tr>
             </thead>
@@ -19,12 +19,12 @@
         </table>
 
         <section class="account-actions">
-            <button class="btn-modify" onclick="showAddForm('Trainer')">+ Aggiungi Nuovo Trainer</button>
+            <button class="btn-modify" onclick="showAddForm('Trainer')">+ Aggiungi Nuovo <span lang="en">Trainer</span></button>
         </section>
     </section>
 
     <section class="user-section" id="formSection" style="display: none;">
-        <h2 id="formTitle">Modifica Personal Trainer</h2>
+        <h2 id="formTitle">Modifica <span lang="en">Personal Trainer</span></h2>
         <form method="POST" action="">
             <input type="hidden" id="userId" name="id" value="">
             
@@ -41,11 +41,11 @@
 
             <div class="tech-form-group">
                 <div class="data-item tech-input-wrapper">
-                    <label for="email">Email</label>
+                    <label for="email"><span lang="en">Email</span></label>
                     <input type="email" id="email" name="email" required maxlength="100" placeholder="mario@email.com">
                 </div>
                 <div class="data-item tech-input-wrapper">
-                    <label for="password">Password (Opzionale)</label>
+                    <label for="password"><span lang="en">Password</span> (Opzionale)</label>
                     <input type="password" id="password" name="password" minlength="8" maxlength="255" placeholder="Min. 8 caratteri">
                 </div>
             </div>
