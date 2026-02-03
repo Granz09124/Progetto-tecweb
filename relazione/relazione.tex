@@ -354,13 +354,28 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 	\item Creazione delle pagine js: toggle-descrizione-orari.js 
 	\item Stesura e aggiornamento della relazione 
 \end{itemize}
-\textbf{Marco}
+\textbf{Beltrame Marco}
 \begin{itemize}
-	\item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
-	\item Gestione in css delle stesse
-	\item Crezione prima versione del database
-	\item conclusione e revisione della relazione
+    \item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
+    \item Crezione della prima versione del database \texttt{db.sql} e mantenimento dello stesso
+	\item Creazione e gestione dei file:
+	\begin{itemize}
+		\item \texttt{login.php} (con css mobile, dekstop e stampa)
+		\item \texttt{registrati.php} (con css mobile, dekstop e stampa)
+		\item \texttt{contattaci.php} (con css mobile, dekstop e stampa)
+        \item \texttt{processa-registrazione.php} (gestisce la validazione lato server dei dati utente, verifica l'univocità di email e codice fiscale e finalizza l'iscrizione inserendo i dati nel database in modo sicuro)
+        \item \texttt{processa-login.php} (autentica l'utente verificando le credenziali e assegna il ruolo specifico tra cui: cliente, admin o pt)
+        \item \texttt{header.php} (inietta il template del menu di navigazione appropriato differenziando tra utente loggato o ospite, gestendo i relativi attributi tra cui aria-current e tabindex e lang)
+        \item \texttt{processa-registrazione.php} (gestisce la validazione lato server dei dati utente, verifica l'univocità di email e codice fiscale e finalizza l'iscrizione inserendo i dati nel database in modo sicuro)
+		\item \texttt{caricaLogin.js} (usato per mostrare eventuali errori sull'html)
+		\item \texttt{caricaRegistrazione.js} (usato per mostrare eventuali errori sull'html)
+		\item \texttt{mostraPassword.js}
+	\end{itemize}
+	\item Gestione in css delle stesse 
+	\item Conclusione e revisione della relazione
+    
 \end{itemize}
+
 
 \section{Conclusioni e sviluppi futuri}
 Il progetto costituisce una base strutturata per lo sviluppo di un sito web per una palestra, progettato in modo da consentire agevolmente future espansioni e l’implementazione di ulteriori funzionalità, quali ad esempio:
