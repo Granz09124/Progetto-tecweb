@@ -329,9 +329,25 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 \\
 \textbf{Armando Moda Scarati}
 \begin{itemize}
-	\item Creazione delle e gestione pagine: \texttt{abbonamenti.html}, \texttt{palestra.html},  \texttt{utente-admin.html},  \texttt{utente-pt.html},  \texttt{utente-semplice.html}
-	\item Gestione in css delle stesse 
-	\item conclusione e revisione della relazione
+    \item Gestione strutturale e logica delle pagine principali:
+    \begin{itemize}
+        \item \texttt{area-personale.php}: implementazione del sistema di \textit{routing} che indirizza l'utente alla dashboard corretta (admin, pt, cliente) in base al ruolo in sessione.
+        \item \texttt{palestra.php} e \texttt{abbonamenti.php}: assemblaggio modulare dei template HTML e gestione della logica di visualizzazione.
+    \end{itemize}
+    \item Sviluppo Backend (PHP) e gestione dati:
+    \begin{itemize}
+        \item Creazione delle pagine \texttt{utente-admin.php}, \texttt{utente-pt.php} e \texttt{utente-semplice.php} in collaborazione con Luca Granziero.
+        \item Creazione delle pagine \texttt{lista-clienti.php}, \texttt{lista-pt.php}, \texttt{lista-utenti.php} e \texttt{lista-clienti-pt.php} in collaborazione con Luca Granziero.
+        \item Implementazione delle logiche \textbf{CRUD} (Create, Read, Update, Delete) per la gestione degli utenti e delle assegnazioni.
+        \item Gestione delle risposte \textbf{JSON} per le richieste asincrone di modifica dati, permettendo il popolamento dinamico delle modali.
+    \end{itemize}
+    \item Sviluppo JavaScript:
+    \begin{itemize}
+        \item \texttt{dashboard.js}: gestione della navigazione interna (sidebar laterale) e dei filtri dinamici per le liste amministrative.
+        \item \texttt{selettoreAbbonamenti.js}: manipolazione del DOM per la gestione accessibile dei \textit{tabs} (schede), controllo delle classi \textit{active} e degli attributi ARIA.
+    \end{itemize}
+    \item Gestione CSS (desktop, mobile e print) per le rispettive pagine.
+    \item Conclusione e revisione della relazione.
 \end{itemize}
 \textbf{Alessandro Morabito}
 \begin{itemize}
