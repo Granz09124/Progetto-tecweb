@@ -471,7 +471,7 @@ textarea {
     text-decoration: underline;
 }
 
-.form-container h2 {
+.form-container h1 {
     color: var(--textColor);
 }
 
