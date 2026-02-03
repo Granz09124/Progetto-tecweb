@@ -1281,13 +1281,6 @@ textarea {
     color: #ccc;
 }
 
-.titolo-registrazione {
-    text-align: center;
-    margin-bottom: 0.5em;
-    color: var(--mainColor, #fecd00);
-    text-transform: uppercase;
-}
-
 .link-login {
     text-align: center;
     margin-top: 1.5em;
