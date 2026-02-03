@@ -9,6 +9,7 @@
 \usepackage{lmodern}
 \usepackage{textcomp}
 \usepackage{dirtree}
+\usepackage{listings}
 \begin{document}
 
 \begin{titlepage}
@@ -109,10 +110,12 @@ Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 	\item \textbf{HTML5}: Utilizzato per definire la struttura semantica delle pagine web, fornendo elementi come header, nav, section e footer per una migliore accessibilità e SEO.
 	\item \textbf{CSS}: Impiegato per lo styling e il layout delle pagine, garantendo un design responsive e adattabile a diversi dispositivi.
 	\item \textbf{JavaScript}: Integrato per aggiungere interattività e animazioni dinamiche, migliorando l'esperienza utente senza ricaricare la pagina.
-	\item \textbf{PHP}: Utilizzato per generare contenuti dinamici lato server, come la gestione di sessioni utente e l'interazione con database per funzionalità avanzate.
+	\item \textbf{PHP}: Utilizzato lato backend per la gestione di sessioni utente, l'interazione con il database e aggirare problematiche riscontrate in fase di upload del sito sul server.
 	\item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
 	\item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
-	\item \textbf{LLM}: Utilizzati per la generazione di immagini come: il logo, le immagini di sfondo presenti nelle pagine di error403 e error404 e le immagini dei vari PT presenti. Usato anche per la popolazione di alcune descrizioni dei PT, delle recensioni presenti della pagina home e del database. (CONTROLLATE SE VA BENE COSI!!!!!!!)
+	\item \textbf{LLM}: Utilizzati per la generazione di contenuto generico e talvolta di immagini, per evitare di far riferimento a persone specifiche e di avere problemi con i copyright. La maggior parte delle immagini generate tramite LLM presentano il classico rombo gemini nell'angolo inferiore destro. Sono un'eccezione il logo del sito, le immagini presenti nelle pagine di errore, e qualche personal trainer, che non hanno questo segno identificati. 
+	
+	Per quanto riguarda il contenuto non di immagine, i testi della pagina home e i dati presenti nel database sono stati prima generati, successivamente perfezionati manualmente.
 \end{itemize}
 
 \section{Utenti presenti nel sito}
@@ -296,6 +299,12 @@ Per quanto riguarda la sicurezza, abbiamo effettuato due tipologie di test:
 	\item test statici, utilizzando il tool "Snyk" come estensione di VSCode. Questo ha riportato alcune vulnerabilità in fase di sviluppo, che abbiamo risolto.
 	\item test dinamici, non automatizzati. Per quanto i test automatizzati siano incredibilmente più efficaci ed efficienti, dal momento che ci siamo trovati tardi ad effettuarli, avremmo dovuto farlo sui server dell'università. Questo non ci risulta essere legale, e comunque sarebbe rischioso dal momento che non abbiamo mai utilizzato strumenti di analisi dinamica prima (potenzialmente avremmo potuto congestionare il server oppure trovarci con una connessione limitata che ci avrebbe impedito di continuare lo sviluppo)
 \end{enumerate}
+Inoltre, a tutti i file php in \texttt{public\textunderscore html/} è stato assegnato un permesso 644, in modo che gli utenti esterni possano visualizzare la pagina (l'ideale sarebbe stato 640, ma non siamo sicuri del funzionamento in un server in condivisione come quello dell'università). I file php dentro \texttt{internal/} invece hanno assegnato permessi 600, in modo che solamente il server possa leggerli. Non siamo riusciti in realtà a effettuare test in merito a questa tipologia di permessi: le pagine pubbliche con permessi 600 risultano comunque raggiungibili tramite browser. Sospettiamo che il motivo sia la connessione ssh che viene utilizzata per la connessione al sito. In ogni caso, la cartella \texttt{internal/} non è presente all'interno di \texttt{public\textunderscore html} e quindi non è accessibile (salvo vulnerabilità) tramite browser. Per ripetibilità, lo shell script (\texttt{secure.sh}) che associa i permessi è il seguente:
+\begin{lstlisting}[language=bash]
+#!/bin/sh
+find public_html -name '*.php' -exec chmod 644 {} \;
+find internal -name '*.php' -exec chmod 600 {} \;
+\end{lstlisting}
 
 \subsubsection{Cosa non abbiamo fatto}
 Non siamo riusciti a mettere bene in sicurezza le tabelle del database: l'ideale sarebbe stato avere una connessione per database, ma questo non abbiamo potuto farlo in quanto non possiamo creare nuovi utenti tramite phpmyadmin. Un'alternativa che abbiamo considerato è stato limitare l'accesso al database in base all'indirizzo di connessione, permettendo l'accesso a certe tabelle solamente tramite connessione verso localhost. Tuttavia non avremmo potuto effettivamente sperimentare se le connessioni fossero sicure, potendoci collegare solamente tramite localhost. Infatti, non avremmo potuto confermare neanche il funzionamento del sito in caso di connessione da host remoto. Inoltre, il sito in questo modo non sarebbe più diventato trasportabile, come richiesto dalla specifica della consegna. Per questi motivi non ci siamo soffermati a pensare a come effettivamente avremmo potuto sfruttare questa tipologia di permessi.
