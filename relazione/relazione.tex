@@ -55,10 +55,9 @@
 \newpage
 
 \section{Introduzione}
-Questo documento presenta il progetto per la realizzazione del sito web di una palestra che offre i seguenti servizi: sala pesi, corsi fitness e piani personalizzati da un personal trainer. Il sito prevede pagine che offrono una panoramica introduttiva chiara sui servizi che offre.
-Prevede inoltre le seguenti tipologie di area personale: per i clienti, per gli istruttori, personal trainer, e per gli admin.
+Questo documento presenta il progetto per la realizzazione del sito web di una palestra che offre i seguenti servizi: sala pesi, corsi fitness e piani personalizzati da un personal trainer. Il sito prevede pagine che offrono una panoramica introduttiva chiara sui servizi che offre, e un'area personale per gli iscritti al sito, in base al loro ruolo all'internio della palestra.
 
-All'interno dei vari file abbiamo utilizzato sempre link relativi, salvo alcune occasioni in cui ci è tornato comodo scrivere link assoluti in maniera dinamica (tramite php) e il file \texttt{.htaccess}, che invece richiede l'utilizzo di percorsi assoluti.
+All'interno dei vari file abbiamo utilizzato sempre link relativi, salvo alcune occasioni in cui ci è tornato comodo scrivere link assoluti in maniera dinamica (tramite php, utilizzando \texttt{\textunderscore\textunderscore DIR\textunderscore\textunderscore}) e il file \texttt{.htaccess}, che invece richiede l'utilizzo di percorsi assoluti.
 
 La relazione che ci si aspetta tra le cartelle in termini di profondità nell'albero è la seguente:
 \dirtree{%
@@ -75,7 +74,7 @@ Il sito web è destinato:
 	\item ai potenziali clienti che, non ancora registrati, possono informarsi sui servizi che la palestra offre.
 	\item ai clienti che tramite un area personale, possono visualizzare le proprie informazioni. 
 	\item agli istruttori, la cui area personale è come quella dei clienti, ma possiedono un profilo pubblico
-	\item ai personal trainer, tutti anche istruttori, che possono caricare per i propri clienti una scheda tecnica in formato pdf, di grandezza minore di 1MiB
+	\item ai personal trainer, tutti anche istruttori, che possono caricare per i propri clienti una scheda tecnica in formato pdf
 	\item agli amministratori, che possono visualizzare la lista degli utenti iscritti e modificare le loro informazioni
 \end{itemize}
 
@@ -92,7 +91,7 @@ Le parole chiave che sono state selezionate per rivolgersi sia ad utenti che han
 
 Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 \begin{itemize}
-	\item Ogni pagina presenta un tag <title> univoco che segue una logica descrittiva (es. "Home - Tempio di Apollo" o "Palestra - Offre").
+	\item Ogni pagina presenta un tag <title> univoco che segue una logica descrittiva (es. "Home - Tempio di Apollo").
 	Sono stati inseriti meta tag description dettagliati per migliorare il CTR (Click-Through Rate) nella SERP, descrivendo l'offerta della palestra (es. "una palestra con sala pesi e corsi di gruppo, nonché percorsi su misura"), e meta tag keywords per definire il campo semantico della pagina.
 	
 	\item Utilizzo degli \texttt{<strong>} in base alle parole chiave della pagina
@@ -101,9 +100,9 @@ Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 		
 	\item È stata fatta attenzione all'accessibilità del sito, di conseguenza migliorandone la qualità e quindi il ranking
 	
-	\item Il codice HTML è sintatticamente corretto
+	\item Il codice HTML è sintatticamente corretto, e sfrutta la semantica HTML in modo appropriato
 	
-	\item Abbiamo cercato di rendere le pagine leggere mettendo le immagini con dimensioni più vicine possibile a quanto effettivamente utilizzate, favorendo i file \texttt{JPEG} e utilizzando immagini di grandezza diversa quando la grandezza attesa è diversa (ad es. come compare la foto profilo di un istruttore nella pagina di ricerca degli istruttori, con risultati  multipli, e come compare nel suo profilo pubblico, ove il risultato è singolo)
+	\item Abbiamo cercato di rendere le pagine leggere mettendo le immagini con dimensioni più vicine possibile a quanto effettivamente utilizzate, favorendo i file \texttt{JPEG} e utilizzando immagini di grandezza diversa quando la grandezza attesa è diversa (ad es. la foto profilo di un istruttore nella pagina di ricerca degli istruttori, che presenta risultati  multipli, e il foto profilo nel profilo pubblico in dettaglio, ove il risultato è singolo)
 \end{itemize}
 
 \section{Tecnologie Utilizzate}
@@ -114,7 +113,7 @@ Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 	\item \textbf{PHP}: Utilizzato lato backend per la gestione di sessioni utente, l'interazione con il database e aggirare problematiche riscontrate in fase di upload del sito sul server.
 	\item \textbf{SQL}: Linguaggio utilizzato per interrogare e gestire database relazionali, essenziale per archiviare e recuperare dati utente, abbonamenti e altre informazioni del sito.
 	\item \textbf{LaTeX}: Adottato per la stesura di questa relazione, permettendo la creazione di documenti di alta qualità con formattazione professionale.
-	\item \textbf{LLM}: Utilizzati per la generazione di contenuto generico e talvolta di immagini, per evitare di far riferimento a persone specifiche e di avere problemi con i copyright. La maggior parte delle immagini generate tramite LLM presentano il classico rombo gemini nell'angolo inferiore destro. Sono un'eccezione il logo del sito, le immagini presenti nelle pagine di errore, e qualche personal trainer, che non hanno questo segno identificati. 
+	\item \textbf{LLM}: Utilizzati per la generazione di contenuto generico e talvolta di immagini, per evitare di far riferimento a persone specifiche e di avere problemi con i copyright. La maggior parte delle immagini generate tramite LLM presentano la classica stella gemini nell'angolo inferiore destro. Sono un'eccezione il logo del sito, le immagini presenti nelle pagine di errore, e qualche personal trainer, che non hanno questo segno identificati. 
 	
 	Per quanto riguarda il contenuto non di immagine, i testi della pagina home e i dati presenti nel database sono stati prima generati, successivamente perfezionati manualmente.
 \end{itemize}
