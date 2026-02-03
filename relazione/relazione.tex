@@ -119,44 +119,36 @@ Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 \end{itemize}
 
 \section{Utenti presenti nel sito}
-All'interno del sito troviamo tre tipi di utenti:\\
-\texttt{utente/user} \\
-\texttt{istruttori e personal trainer} \\
-\texttt{admin/amministratore}. \\
-\noindent
-\\
+All'interno del sito troviamo i seguenti tipi di utenti:
+\begin{itemize}
+	\item \textbf{cliente}
+	\item \textbf{personal trainer}
+	\item \textbf{amministratore}
+\end{itemize}
+Anche se abbiamo distinto i personal trainer dagli istruttori, al lato pratico l'area personale degli istruttori risulta identica a quella di un cliente semplice: è solo l'\textbf{istruttore} che, come si vedrà, ha delle funzionalità aggiuntive. La differenza tra istruttori e clienti non sta nell'area personale, bensì nel fatto che gli istruttori possiedono un \textbf{profilo pubblico} raggiungibile tramite la pagina \texttt{cerca-istruttore.php}.
 
 Di seguito sono riportate le funzionalità disponibili per i ruoli User e Admin:
 \subsection{USER}
 \begin{itemize}
-	\item Gestione semplice della disdetta dell’abbonamento (valutare se mantenere).
-	\item Visualizzazione della data di attivazione, scadenza e dello stato attuale dell’abbonamento (attivo, in scadenza, scaduto).
-	\item Visualizzazione orari, posti disponibili e istruttori dei corsi a cui    l’utente è iscritto.
-	\item Calendario dei corsi a cui si è iscritti e degli appuntamenti con il personal trainer.
-	\item Visualizzazione della scheda di allenamento personalizzata (se presente personal trainer).
-	\item Visualizzazione del piano alimentare personalizzato (se presente personal trainer).
-	\item Possibilità di lasciare recensioni (da valutare per questioni di sicurezza).
-	\item Gestione del proprio account (cancellazione account, modifica dei dati).
+	\item Visualizzazione dell'abbonamento attuale, se attivo, oppure del fatto che l'abbonamento è scaduto
+	\item Se presente, visualizzazione della scheda caricata dal personal trainer (pdf)
+	\item Gestione del proprio account (modifica indirizzo e-mail, password, telefono).
 \end{itemize}
 
 \subsection{PT}
 \begin{itemize}
 	\item Profilo pubblico, visualizzabile da chiunque.
-	\item Calendario con le disponibilità e le fasce orarie già occupate da altri utenti.
-	\item Possibilità di caricare scheda di allenamento e piano alimentare per i clienti che lo richiedono.
-	\item Lista dei clienti (confermata), con possibilità di chat con ogni cliente non in tempo reale (da valutare).
+	\item Visualizzazione della lista dei clienti attivi
+	\item Possibilità di caricare file pdf per i clienti (schede tecniche)
+	\item Lista dei clienti che ha seguito e sta seguendo
 \end{itemize}
 
 \subsection{ADMIN}
 \begin{itemize}
-	\item Possibilità di creare account personal trainer o convertire un account utente in account PT.
-	\item Visualizzazione e gestione di tutti gli abbonamenti attivi, sospesi o scaduti.
-	\item Gestione del profilo utente (schede, corsi, prenotazioni, PT assegnati, scadenze, ecc.).
-	\item Gestione degli istruttori/personal trainer: calendario, disponibilità, schede clienti, retribuzione (possibile).
-	\item Dashboard con panoramica di ricavi, abbonamenti attivi, nuovi iscritti e lista degli iscritti attivi.
-	\item Statistiche sull’utilizzo della palestra, corsi più frequentati e tassi di retention (possibile).
-	\item Cancellazione account (sia utente che PT) tramite dashboard.
-	\item Possibilità di gestione dei corsi (modifica della capienza e degli orari).
+	\item Visualizzazione lista utenti, e modifica delle informazioni personali
+	\item Visualizzazione lista clienti, e modifica delle informazioni personali
+	\item Visualizzazione lista personal trainer, e modifica delle informazioni personali. Tra queste, \textit{specializzazione} e \textit{qualifica} vengono scritte a schermo sulla pagina del profilo del personal trainer
+	\item Modifica delle credenziali
 \end{itemize}
 
 
