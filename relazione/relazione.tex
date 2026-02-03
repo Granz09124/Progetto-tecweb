@@ -118,30 +118,15 @@ Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 	Per quanto riguarda il contenuto non di immagine, i testi della pagina home e i dati presenti nel database sono stati prima generati, successivamente perfezionati manualmente.
 \end{itemize}
 
-\section{Utenti presenti nel sito}
-All'interno del sito troviamo i seguenti tipi di utenti:
-\begin{itemize}
-	\item \textbf{cliente}
-	\item \textbf{personal trainer}
-	\item \textbf{amministratore}
-\end{itemize}
-Anche se abbiamo distinto i personal trainer dagli istruttori, al lato pratico l'area personale degli istruttori risulta identica a quella di un cliente semplice: è solo l'\textbf{istruttore} che, come si vedrà, ha delle funzionalità aggiuntive. La differenza tra istruttori e clienti non sta nell'area personale, bensì nel fatto che gli istruttori possiedono un \textbf{profilo pubblico} raggiungibile tramite la pagina \texttt{cerca-istruttore.php}.
+\section{Utenti presenti nel sito} All'interno del sito troviamo i seguenti tipi di utenti: \begin{itemize} \item \textbf{Cliente} \item \textbf{Personal Trainer} \item \textbf{Amministratore} \end{itemize} Tutti gli utenti accedono tramite un'area riservata che mantiene una coerenza grafica (layout "Dashboard"), ma che differisce nei contenuti e negli strumenti messi a disposizione in base al ruolo. Inoltre, i Personal Trainer dispongono di un \textbf{profilo pubblico} visibile a tutti nella sezione \texttt{cerca-istruttore.php}.
 
-Di seguito sono riportate le funzionalità disponibili per i ruoli:
-\subsection{Cliente}
-\begin{itemize}
-	\item Visualizzazione dell'abbonamento attuale, se attivo, oppure del fatto che l'abbonamento è scaduto
-	\item Se presente, visualizzazione della scheda caricata dal personal trainer (pdf)
-	\item Gestione del proprio account (modifica indirizzo e-mail, password, telefono).
-\end{itemize}
+Di seguito sono riportate le funzionalità specifiche:
 
-\subsection{Personal Trainer}
-\begin{itemize}
-	\item Profilo pubblico, visualizzabile da chiunque.
-	\item Visualizzazione della lista dei clienti attivi
-	\item Possibilità di caricare file pdf per i clienti (schede tecniche)
-	\item Lista dei clienti che ha seguito e sta seguendo
-\end{itemize}
+\subsection{Cliente} \begin{itemize} \item Visualizzazione dello stato dell'abbonamento e dei dati anagrafici. \item Download della scheda di allenamento (PDF) caricata dal proprio trainer. \item Accesso rapido al profilo del proprio Personal Trainer e al calendario corsi. \item Gestione del proprio account (modifica e-mail, password, telefono). \end{itemize}
+
+\subsection{Personal Trainer} \begin{itemize} \item Accesso alla lista dei Clienti assegnati. \item Funzionalità di upload per caricare le schede tecniche (PDF) associate ai clienti. \item Gestione del proprio account (modifica e-mail, password, telefono) e visualizzazione calendario corsi. \item (Il profilo pubblico viene generato automaticamente dai dati inseriti dall'amministratore). \end{itemize}
+
+\subsection{Amministratore} \begin{itemize} \item Gestione completa (visualizzazione, modifica ed eliminazione) delle liste: Clienti, Personal Trainer e Utenti Totali. \item Per i Personal Trainer: gestione di campi specifici come \textit{specializzazione} e \textit{qualifica}, che verranno mostrati nel lato pubblico. \item Modifica delle credenziali di accesso amministrativo. \end{itemize}
 
 \subsection{Amministratore}
 \begin{itemize}
