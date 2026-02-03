@@ -75,6 +75,50 @@ header.intestazione {
     text-transform: uppercase;
 }
 
+form {
+    display: block;
+    margin-left: .5cm;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: .4cm;
+    margin-bottom: .1cm;
+}
+
+fieldset {
+    border: .2mm solid var(--textColor);
+    padding: .5cm;
+    margin-bottom: .8cm;
+    page-break-inside: avoid;
+    background-color: white;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 .3cm;
+    color: var(--textColor);
+}
+
+input,
+textarea {
+    display: block;
+    width: 12cm;
+    padding: .2cm;
+    border: .5mm solid var(--textColor);
+    background-color: white;
+    color: var(--textColor);
+}
+
+input::placeholder {
+    color: #666;
+}
+
+textarea {
+    height: 3cm;
+}
+
 .intestazione .logo {
     width: 2.5cm;
     display: inline;
@@ -379,42 +423,6 @@ header.intestazione {
     page-break-inside: avoid;
 }
 
-.form-contatto h2,
-.form-container h2 {
-    margin-bottom: .5cm;
-}
-
-form {
-    display: block;
-    margin-left: .5cm;
-}
-
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: .4cm;
-    margin-bottom: .1cm;
-}
-
-input,
-textarea {
-    display: block;
-    width: 12cm;
-    padding: .2cm;
-    border: .5mm solid var(--textColor);
-    background-color: white;
-    color: var(--textColor);
-    font-family: "Times New Roman", "Times", serif;
-}
-
-input::placeholder {
-    color: #666;
-}
-
-textarea {
-    height: 3cm;
-}
-
 .btn-invia {
     display: inline-block;
     margin-top: .5cm;
@@ -431,20 +439,11 @@ textarea {
 }
 
 
-
 /* ============
  * LOGIN
  ============ */
 .password-wrapper {
     display: block;
-}
-
-.password-wrapper label {
-    display: block;
-}
-
-.password-wrapper input {
-    margin-bottom: .4cm;
 }
 
 .form-container {
@@ -456,6 +455,7 @@ textarea {
 
 .password-wrapper label,
 .form-container label {
+    display: block;
     color: var(--textColor) !important;
 }
 
@@ -468,12 +468,6 @@ textarea {
     margin-top: .5cm;
     font-size: 90%;
     color: var(--textColor);
-}
-
-.link-registrazione a,
-.link-login a {
-    color: var(--textColor);
-    text-decoration: underline;
 }
 
 .form-container h1 {
@@ -498,10 +492,6 @@ textarea {
     box-shadow: none;
 }
 
-.titolo-registrazione {
-    color: var(--textColor);
-}
-
 .form-registrazione legend,
 .form-registrazione label {
     color: var(--textColor);
@@ -516,35 +506,6 @@ textarea {
     color: var(--textColor);
 }
 
-fieldset {
-    border: .2mm solid var(--textColor);
-    padding: .5cm;
-    margin-bottom: .8cm;
-    page-break-inside: avoid;
-    background-color: white;
-}
-
-legend {
-    font-weight: bold;
-    padding: 0 .3cm;
-    color: var(--textColor);
-}
-
-button:not(.btn-invia) {
-    display: none;
-}
-
-iframe {
-    display: none;
-}
-
-script {
-    display: none;
-}
-
-@page {
-    margin: 1.5cm;
-}
 
 /* =============
    Palestra, Abbonamenti
