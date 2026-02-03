@@ -295,8 +295,11 @@ Per quanto riguarda la sicurezza, abbiamo effettuato due tipologie di test:
 	\item test dinamici, non automatizzati. Per quanto i test automatizzati siano incredibilmente più efficaci ed efficienti, dal momento che ci siamo trovati tardi ad effettuarli, avremmo dovuto farlo sui server dell'università. Questo non ci risulta essere legale, e comunque sarebbe rischioso dal momento che non abbiamo mai utilizzato strumenti di analisi dinamica prima (potenzialmente avremmo potuto congestionare il server oppure trovarci con una connessione limitata che ci avrebbe impedito di continuare lo sviluppo)
 \end{enumerate}
 
-\subsection{Accessibilità}
+\subsubsection{Cosa non abbiamo fatto}
+Non siamo riusciti a mettere bene in sicurezza le tabelle del database: l'ideale sarebbe stato avere una connessione per database, ma questo non abbiamo potuto farlo in quanto non possiamo creare nuovi utenti tramite phpmyadmin. Un'alternativa che abbiamo considerato è stato limitare l'accesso al database in base all'indirizzo di connessione, permettendo l'accesso a certe tabelle solamente tramite connessione verso localhost. Tuttavia non avremmo potuto effettivamente sperimentare se le connessioni fossero sicure, potendoci collegare solamente tramite localhost. Infatti, non avremmo potuto confermare neanche il funzionamento del sito in caso di connessione da host remoto. Inoltre, il sito in questo modo non sarebbe più diventato trasportabile, come richiesto dalla specifica della consegna. Per questi motivi non ci siamo soffermati a pensare a come effettivamente avremmo potuto sfruttare questa tipologia di permessi.
 
+\subsection{Accessibilità}
+Per quanto riguarda l'accessibilità
 
 \section{Divisione dei compiti}
 Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto: \\
