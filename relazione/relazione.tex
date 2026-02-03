@@ -127,7 +127,6 @@ All'interno del sito troviamo i seguenti tipi di utenti:
 \end{itemize}
 Anche se abbiamo distinto i personal trainer dagli istruttori, al lato pratico l'area personale degli istruttori risulta identica a quella di un cliente semplice: è solo l'\textbf{istruttore} che, come si vedrà, ha delle funzionalità aggiuntive. La differenza tra istruttori e clienti non sta nell'area personale, bensì nel fatto che gli istruttori possiedono un \textbf{profilo pubblico} raggiungibile tramite la pagina \texttt{cerca-istruttore.php}.
 
-Di seguito sono riportate le funzionalità disponibili per i ruoli:
 \subsection{Cliente}
 \begin{itemize}
 	\item Visualizzazione dell'abbonamento attuale, se attivo, oppure del fatto che l'abbonamento è scaduto
@@ -141,6 +140,7 @@ Di seguito sono riportate le funzionalità disponibili per i ruoli:
 	\item Visualizzazione della lista dei clienti attivi
 	\item Possibilità di caricare file pdf per i clienti (schede tecniche)
 	\item Lista dei clienti che ha seguito e sta seguendo
+	\item Gestione del proprio account (modifica indirizzo e-mail, password, telefono).
 \end{itemize}
 
 \subsection{Amministratore}
@@ -173,6 +173,7 @@ Vengono riportate le convenzioni interne del sito:
 	\item I link, sia quelli visitati e non visitati, vengono presentati come sottolineati, in particolare i link non visitati hanno un colore di testo chiaro vicino all'azzurro, mentre i link visitati hanno un colore di testo viola, inoltre sono entrambi posti su sfondo nero. Questi colori sono stati scelti in quanto fanno parte della palette di colori utilizzata. 
 	\item Nelle tabelle, i colori delle righe dispari e pari sono sempre diversi tra loro, e sempre gli stessi all'interno del sito
 	\item Tutte le voci del menu e del breadcrumb sono raggiungibili tramite \texttt{tab}, anche le voci che non sono link in quanto corrispondono alla pagina corrente. In questo modo, per passare dalla voce "Home" ad "Abbonamenti" bisogna premere il tasto \texttt{tab} due volte, anche se la pagina attuale è "Palestra", la cui voce si trova esattamente in mezzo tra le due.
+	\item In fase di stampa, il colore principale della palestra, il giallo, viene trasformato in nero per favorire la lettura.
 \end{itemize}
 
 \subsection{Struttura del database}
@@ -197,19 +198,15 @@ Ad ogni incontro sincrono abbiamo messo per iscritto quello che era stato fatto,
 
 \section{Presentazione}
 \subsection{CSS}
-All'interno del nostro CSS vengono utilizzate delle variabili, che vengono impostate all'inizio del file e riutilizzate successivamente, grazie a questo riusciamo a tenere sotto controllo i vari contrasti e i colori utilizzati.
+All'interno del nostro CSS vengono utilizzate delle variabili, che ci permettono controllare facilmente i vari contrasti e i colori utilizzati.
 Vengono utilizzati tre diversi fogli di stile, ognuno con uno scopo diverso: 
 \begin{itemize}
-	\item style.css: per lo stile da desktop 
-	\item mini.css: per lo stile da mobile 
-	\item print.css: per lo stile da stampante
+	\item \texttt{style.css}: per lo stile da desktop 
+	\item \texttt{mini.css}: per lo stile da mobile 
+	\item \texttt{print.css}: per lo stile da stampante
 \end{itemize}
 \noindent
-È stata presa questa decisione è stata presa per gestire al meglio l'aspetto responsive del sito, oltre ad avere una propria organizzazione del css. 
-
-In particolare, per quanto riguarda il css della stampa...
-(TODO: AGGIUNGERE SPIEGAZIONE DI COM'è IL CSS DELLA STAMPA?)
-
+È stata presa questa decisione è stata presa per gestire al meglio l'aspetto responsive del sito, oltre ad avere una propria organizzazione del css.
 
 \subsection{Immagini e icone}
 La maggior parte delle immagini vengono archiviate prevalentemente in formato JPG, con una dimensione massima che non supera il MB, ad eccezzione di questo troviamo le immagini generate per le pagine error e le icon, che vengono salvate in formato WEBP, e l'immagine del logo che è salvata in formato PNG ma non supera la grandezza di 1MB. Questa scelta è stata adottata per ridurre i tempi di caricamento delle pagine; tuttavia, l’utilizzo di questo formato potrebbe comportare possibili problemi di retrocompatibilità, dovuti alla sua introduzione relativamente recente.
@@ -284,25 +281,9 @@ Per assicurare una corretta pronuncia da parte dei sintetizzatori vocali, i term
 
 \subsection{Compatibilità}
 I contenuti di ogni pagina sono stati disposti in modo tale da essere facilmente accessibili indipendentemente dal dispositivo utilizzato.
-Abbiamo adottato un menù ad hamburger con css puro per gli utenti da mobile, facilitandone la navigazione; le varie tabelle presenti inoltre sono state rese responsive in modo fa facilitarne la lettura su diversi dispositivi.
+Abbiamo adottato un menù ad hamburger con css puro per gli utenti da mobile, facilitandone la navigazione; le varie tabelle presenti inoltre sono state linearizzate in modo fa facilitarne la lettura su diversi dispositivi.
 
 \section{TEST EFFETTUATI}
-
-\subsection{Sicurezza}
-Per quanto riguarda la sicurezza, abbiamo effettuato due tipologie di test:
-\begin{enumerate}
-	\item test statici, utilizzando il tool "Snyk" come estensione di VSCode. Questo ha riportato alcune vulnerabilità in fase di sviluppo, che abbiamo risolto.
-	\item test dinamici, non automatizzati. Per quanto i test automatizzati siano incredibilmente più efficaci ed efficienti, dal momento che ci siamo trovati tardi ad effettuarli, avremmo dovuto farlo sui server dell'università. Questo non ci risulta essere legale, e comunque sarebbe rischioso dal momento che non abbiamo mai utilizzato strumenti di analisi dinamica prima (potenzialmente avremmo potuto congestionare il server oppure trovarci con una connessione limitata che ci avrebbe impedito di continuare lo sviluppo)
-\end{enumerate}
-Inoltre, a tutti i file php in \texttt{public\textunderscore html/} è stato assegnato un permesso 644, in modo che gli utenti esterni possano visualizzare la pagina (l'ideale sarebbe stato 640, ma non siamo sicuri del funzionamento in un server in condivisione come quello dell'università). I file php dentro \texttt{internal/} invece hanno assegnato permessi 600, in modo che solamente il server possa leggerli. Non siamo riusciti in realtà a effettuare test in merito a questa tipologia di permessi: le pagine pubbliche con permessi 600 risultano comunque raggiungibili tramite browser. Sospettiamo che il motivo sia la connessione ssh che viene utilizzata per la connessione al sito. In ogni caso, la cartella \texttt{internal/} non è presente all'interno di \texttt{public\textunderscore html} e quindi non è accessibile (salvo vulnerabilità) tramite browser. Per ripetibilità, lo shell script (\texttt{secure.sh}) che associa i permessi è il seguente:
-\begin{lstlisting}[language=bash]
-#!/bin/sh
-find public_html -name '*.php' -exec chmod 644 {} \;
-find internal -name '*.php' -exec chmod 600 {} \;
-\end{lstlisting}
-
-\subsubsection{Cosa non abbiamo fatto}
-Non siamo riusciti a mettere bene in sicurezza le tabelle del database: l'ideale sarebbe stato avere una connessione per database, ma questo non abbiamo potuto farlo in quanto non possiamo creare nuovi utenti tramite phpmyadmin. Un'alternativa che abbiamo considerato è stato limitare l'accesso al database in base all'indirizzo di connessione, permettendo l'accesso a certe tabelle solamente tramite connessione verso localhost. Tuttavia non avremmo potuto effettivamente sperimentare se le connessioni fossero sicure, potendoci collegare solamente tramite localhost. Infatti, non avremmo potuto confermare neanche il funzionamento del sito in caso di connessione da host remoto. Inoltre, il sito in questo modo non sarebbe più diventato trasportabile, come richiesto dalla specifica della consegna. Per questi motivi non ci siamo soffermati a pensare a come effettivamente avremmo potuto sfruttare questa tipologia di permessi.
 
 \subsection{Accessibilità}
 Tutti i test sono stati effettuati sui seguenti browser:
@@ -320,6 +301,27 @@ Per quanto riguarda l'accessibilità, abbiamo effettuato:
 	\item test automatici utilizzando l'estensione \textbf{WCAG Contrast Checker}. Abbiamo rilevato contrasti livello AAA, con falsi positivi sugli heading che sembrano avere contrasto unitario. Il motivo è che è stato deciso di utilizzare un gradiente come colore del testo, e per farlo si è dovuto impostare lo sfondo di un certo colore, il testo trasparente, quindi applicare una maschera in modo che lo sfondo venga applicato solamente dove compare il testo. Abbiamo verificato che l'estensione \textbf{Dark Reader}\footnote{Dark reader: \url{https://darkreader.org/}}, se attivata, rende il colore dei titoli con contrasto insufficiente. Dal momento che il sito utilizza un tema scuro, tuttavia, e il fatto che l'estensione provoca questo tipo di problemi in molti siti, abbiamo deciso di focalizzarci su altri ostacoli per l'accessibilità.
 	\item test automatici utilizzando l'estensione \textbf{w3b1y}
 \end{enumerate}
+Abbiamo deciso di non utilizzare, quando possibile, la pagina di errore 403, in quanto non abbiamo ritenuto fosse utile per un utente nel nostro contesto. Abbiamo deciso di effettuare redirect all'area personale oppure alla pagina di login, qualora un utente dovesse cercare di raggiungere una pagina a lui irraggiungibile. La pagina di errore 403 è stata comunque impostata nel file \texttt{.htaccess}, e verrà utilizzata qualora il server chieda di accedere a pagine senza i permessi adatti. Questo succederebbe ad esempio provando ad accedere alla pagina (directory) \texttt{/amorabit}. Anche in questo caso, tuttavia, è stata utilizzata una regola di riscrittura dell'indirizzo, seppur a un differente livello. Provare ad accedere a \texttt{amorabit/} reindirizzerà a \texttt{amorabit/home.php}.
+
+\subsection{Privacy}
+Dal momento che abbiamo permesso ai personal trainer di caricare dei file da destinare a uno specifico utente, abbiamo deciso di porre quei file all'interno della cartella \texttt{internal/utente/utente-semplice/uploads/schede/}, non accessibile al pubblico. Gli utenti dopo aver cliccato sul link apposito, o accedendo a \texttt{/download-scheda.php} potranno visualizzare la propria, e solamente la propria, scheda.
+
+\subsection{Sicurezza}
+Per quanto riguarda la sicurezza, abbiamo effettuato due tipologie di test:
+\begin{enumerate}
+	\item test statici, utilizzando il tool "Snyk" come estensione di VSCode. Questo ha riportato alcune vulnerabilità in fase di sviluppo, che abbiamo risolto.
+	\item test dinamici, non automatizzati. Per quanto i test automatizzati siano incredibilmente più efficaci ed efficienti, dal momento che ci siamo trovati tardi ad effettuarli, avremmo dovuto farlo sui server dell'università. Questo non ci risulta essere legale, e comunque sarebbe rischioso dal momento che non abbiamo mai utilizzato strumenti di analisi dinamica prima (potenzialmente avremmo potuto congestionare il server oppure trovarci con una connessione limitata che ci avrebbe impedito di continuare lo sviluppo)
+\end{enumerate}
+Inoltre, a tutti i file php in \texttt{public\textunderscore html/} è stato assegnato un permesso 644, in modo che gli utenti esterni possano visualizzare la pagina (l'ideale sarebbe stato 640, ma non siamo sicuri del funzionamento in un server in condivisione come quello dell'università). I file php dentro \texttt{internal/} invece hanno assegnato permessi 600, in modo che solamente il server possa leggerli. Non siamo riusciti in realtà a effettuare test in merito a questa tipologia di permessi: le pagine pubbliche con permessi 600 risultano comunque raggiungibili tramite browser. Sospettiamo che il motivo sia la connessione ssh che viene utilizzata per la connessione al sito. In ogni caso, la cartella \texttt{internal/} non è presente all'interno di \texttt{public\textunderscore html} e quindi non è accessibile (salvo vulnerabilità) tramite browser. Per ripetibilità, lo shell script (\texttt{secure.sh}) che associa i permessi è il seguente:
+\begin{lstlisting}[language=bash]
+#!/bin/sh
+find public_html -name '*.php' -exec chmod 644 {} \;
+find internal -name '*.php' -exec chmod 600 {} \;
+\end{lstlisting}
+
+\subsubsection{Cosa non abbiamo fatto}
+Non siamo riusciti a mettere bene in sicurezza le tabelle del database: l'ideale sarebbe stato avere una connessione per database, ma questo non abbiamo potuto farlo in quanto non possiamo creare nuovi utenti tramite phpmyadmin. Un'alternativa che abbiamo considerato è stato limitare l'accesso al database in base all'indirizzo di connessione, permettendo l'accesso a certe tabelle solamente tramite connessione verso localhost. Tuttavia non avremmo potuto effettivamente sperimentare se le connessioni fossero sicure, potendoci collegare solamente tramite localhost. Infatti, non avremmo potuto confermare neanche il funzionamento del sito in caso di connessione da host remoto. Inoltre, il sito in questo modo non sarebbe più diventato trasportabile, come richiesto dalla specifica della consegna. Per questi motivi non ci siamo soffermati a pensare a come effettivamente avremmo potuto sfruttare questa tipologia di permessi.
+
 
 \section{Divisione dei compiti}
 Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto: \\
