@@ -175,11 +175,12 @@ Si fa presente, inoltre, che non sono presenti le pagine php pubbliche che perme
 	\includegraphics[width=.8\linewidth]{struttura_sito.png}
 \end{center}
 
-\subsection{Convenzioni interne}
+\subsection{Convenzioni interne} \label{conv-interne}
 Vengono riportate le convenzioni interne del sito:
 \begin{itemize}
 	\item I link, sia quelli visitati e non visitati, vengono presentati come sottolineati, in particolare i link non visitati hanno un colore di testo chiaro vicino all'azzurro, mentre i link visitati hanno un colore di testo viola, inoltre sono entrambi posti su sfondo nero. Questi colori sono stati scelti in quanto fanno parte della palette di colori utilizzata. 
-	\item (TABELLE?)
+	\item Nelle tabelle, i colori delle righe dispari e pari sono sempre diversi tra loro, e sempre gli stessi all'interno del sito
+	\item Tutte le voci del menu e del breadcrumb sono raggiungibili tramite \texttt{tab}, anche le voci che non sono link in quanto corrispondono alla pagina corrente. In questo modo, per passare dalla voce "Home" ad "Abbonamenti" bisogna premere il tasto \texttt{tab} due volte, anche se la pagina attuale è "Palestra", la cui voce si trova esattamente in mezzo tra le due.
 \end{itemize}
 
 \subsection{Struttura del database}
@@ -273,7 +274,7 @@ L’accessibilità per gli utenti di screen reader è stata migliorata attravers
 All’inizio di ogni pagina è presente un collegamento di salto al contenuto principale (“Vai al contenuto”), posizionato come primo elemento del DOM. Questo link è inizialmente nascosto e diventa visibile quando riceve il focus da tastiera, consentendo agli utenti che navigano senza mouse di bypassare elementi ripetitivi come l’intestazione e il menu di navigazione e raggiungere direttamente il contenuto principale racchiuso nel tag \texttt{<main>}.
 
 \paragraph{Breadcrumb}
-Nessuno ama perdersi tra le pagine di un sito, quindi abbiamo aggiunto i breadcrumb per dare un riferimento chiaro a chi naviga. Non è solo estetica: abbiamo usato il tag \texttt{<nav>} con l'etichetta \texttt{aria-label="percorso di navigazione"} proprio per non creare confusione a chi usa uno screen reader, distinguendo nettamente questo blocco dal menu principale. Un dettaglio fondamentale è l'uso di \texttt{aria-current="page"} sull'ultimo elemento: serve a dire chiaramente "sei qui", confermando la posizione attuale senza margini d'errore.
+Come scritto nella sezione \ref{conv-interne}, si può utilizzare \texttt{tab} all'interno delle breadcrumb per raggiungere anche il livello che comunica la pagina attuale. La decisione è stata dovuta anche al fatto che abbiamo deciso di esprimere i breadcrumb come lista ordinata, e ci sembrava controintuitivo che il tasto \texttt{tab} saltasse sempre l'ultimo livello.
 
 \paragraph{Tabelle dati}
 Le tabelle utilizzate per visualizzare gli orari dei corsi sono state progettate per essere facilmente interpretabili dagli screen reader. In particolare:
