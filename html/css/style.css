@@ -1139,7 +1139,7 @@ textarea {
     box-shadow: 0 0 20px rgba(254, 205, 0, 0.15);
 }
 
-.form-container h2 {
+.form-container h1 {
     text-align: center;
     margin-bottom: 1.5em;
     color: var(--mainColor, #fecd00);
@@ -1218,6 +1218,11 @@ textarea {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+.form-registrazione h1 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+}
 
 .form-registrazione fieldset {
     border: none;
