@@ -299,7 +299,21 @@ Per quanto riguarda la sicurezza, abbiamo effettuato due tipologie di test:
 Non siamo riusciti a mettere bene in sicurezza le tabelle del database: l'ideale sarebbe stato avere una connessione per database, ma questo non abbiamo potuto farlo in quanto non possiamo creare nuovi utenti tramite phpmyadmin. Un'alternativa che abbiamo considerato è stato limitare l'accesso al database in base all'indirizzo di connessione, permettendo l'accesso a certe tabelle solamente tramite connessione verso localhost. Tuttavia non avremmo potuto effettivamente sperimentare se le connessioni fossero sicure, potendoci collegare solamente tramite localhost. Infatti, non avremmo potuto confermare neanche il funzionamento del sito in caso di connessione da host remoto. Inoltre, il sito in questo modo non sarebbe più diventato trasportabile, come richiesto dalla specifica della consegna. Per questi motivi non ci siamo soffermati a pensare a come effettivamente avremmo potuto sfruttare questa tipologia di permessi.
 
 \subsection{Accessibilità}
-Per quanto riguarda l'accessibilità
+Tutti i test sono stati effettuati sui seguenti browser:
+\begin{itemize}
+	\item firefox
+	\item chrome
+	\item brave
+	\item microsoft edge
+\end{itemize}
+Per quanto riguarda l'accessibilità, abbiamo effettuato:
+\begin{enumerate}
+	\item test manuali per controllare la responsiveness del sito, tramite \texttt{Ispeziona elemento}
+	\item test manuali per controllare la navigabilità del sito tramite \texttt{<tab>}
+	\item test manuali per controllare la qualità di lettura del sito tramite \textbf{NVDA}, sia in modalità desktop sia in modalità \textit{mobile}
+	\item test automatici utilizzando l'estensione \textbf{WCAG Contrast Checker}. Abbiamo rilevato contrasti livello AAA, con falsi positivi sugli heading che sembrano avere contrasto unitario. Il motivo è che è stato deciso di utilizzare un gradiente come colore del testo, e per farlo si è dovuto impostare lo sfondo di un certo colore, il testo trasparente, quindi applicare una maschera in modo che lo sfondo venga applicato solamente dove compare il testo. Abbiamo verificato che l'estensione \textbf{Dark Reader}\footnote{Dark reader: \url{https://darkreader.org/}}, se attivata, rende il colore dei titoli con contrasto insufficiente. Dal momento che il sito utilizza un tema scuro, tuttavia, e il fatto che l'estensione provoca questo tipo di problemi in molti siti, abbiamo deciso di focalizzarci su altri ostacoli per l'accessibilità.
+	\item test automatici utilizzando l'estensione \textbf{w3b1y}
+\end{enumerate}
 
 \section{Divisione dei compiti}
 Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto: \\
