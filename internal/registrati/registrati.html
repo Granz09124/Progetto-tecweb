@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrati - Il Tempio di Apollo</title>
-    <meta name="description" content="Crea un nuovo account per accedere ai servizi del Tempio di Apollo.">
+    <title>Registrati all'Area Riservata - Il Tempio di Apollo</title>
+    <meta name="description" content="Iscriviti al Tempio di Apollo. Crea il tuo account per gestire abbonamenti, prenotare corsi e accedere ai servizi esclusivi della nostra palestra.">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" media="screen and (max-width:768px), only screen and (max-width:768px)" href="css/mini.css">
@@ -26,9 +26,12 @@
 
     <main id="contenuto-principale" class="contenuto-principale">
 
-        <section aria-label="Form di Registrazione">
+        <section aria-labelledby="titolo-registrazione">
             <form method="post" class="form-registrazione">
-                <h1>Registrati all'Area Riservata</h1>
+                <h1 id="titolo-registrazione">Registrati all'<strong>Area Riservata</strong></h1>
+                
+                <p>Compila il modulo per entrare nel mondo del <strong>Tempio di Apollo</strong>. La registrazione ti permette di gestire i tuoi corsi e monitorare i progressi nella nostra <strong>palestra a Siracusa</strong>.</p>
+                <p class="nota-campi"><span aria-hidden="true">*</span> I campi contrassegnati sono obbligatori.</p>
 
                 <fieldset>
                     <legend>Dati Personali</legend>
@@ -54,14 +57,14 @@
 
                     <label for="confirm-password">Conferma Password <span aria-hidden="true">*</span></label>
                     <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password">
-                    <small id="pwd-info">Almeno 8 caratteri</small>
+                    <small id="pwd-info">La password deve contenere <strong>almeno 8 caratteri</strong>.</small>
                 </fieldset>
 
                 <button type="submit" class="btn-invia">Crea Account</button>
                 <span></span>
 
                 <p class="link-login">
-                    Hai già un account? <a href="login.php">Accedi qui</a>
+                    Hai già un account? <a href="login.php"><strong>Accedi qui</strong></a>
                 </p>
             </form>
         </section>
@@ -72,10 +75,9 @@
     </button>
 
     <footer>
-        <p>&copy; 2025 Palestra. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Il Tempio di Apollo. Tutti i diritti riservati.</p>
     </footer>
 
     <script src="javascript/torna-su.js"></script>
 </body>
-
 </html>

@@ -27,8 +27,8 @@
 
     <main id="contenuto-principale" class="contenuto-principale">
 
-        <section class="form-container" aria-label="Form di Accesso">
-            <h1>Accedi all'Area Riservata</h1>
+        <section class="form-container" aria-labelledby="titolo-login">
+            <h1 id="titolo-login">Accedi all'<strong>Area Riservata</strong></h1>
 
             <form method="post">
                 <label for="email">Email</label>
@@ -37,14 +37,14 @@
                 <div class="password-wrapper">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required autocomplete="current-password">
-                    <button type="button" class="toggle-password" onclick="mostraPassword()" aria-label="Mostra la password in chiaro">Mostra password</button>
+                    <button type="button" class="toggle-password" onclick="mostraPassword()" aria-label="Mostra o nascondi la password">Mostra password</button>
                 </div>
 
                 <button type="submit" class="btn-invia">Accedi</button>
                 <span></span>
 
                 <p class="link-registrazione">
-                    Non hai un account? <a href="registrati.php">Registrati qui</a>
+                    Non hai un account? <a href="registrati.php"><strong>Registrati qui</strong></a>
                 </p>
             </form>
         </section>
@@ -61,5 +61,4 @@
 
     <script src="javascript/torna-su.js"></script>
 </body>
-
 </html>
