@@ -29,7 +29,7 @@
 	{\large \today \par}
 	\vspace{1cm}
 	\textbf{Sito Web:} \\
-	tecweb.studenti.math.unipd.it/amorabit \\
+	http://tecweb.studenti.math.unipd.it/amorabit \\
 	\vspace{1cm}
 	\textbf{Credenziali account del sito:}
 	
@@ -57,9 +57,9 @@
 Questo documento presenta il progetto per la realizzazione del sito web di una palestra che offre i seguenti servizi: sala pesi, corsi fitness e piani personalizzati da un personal trainer. Il sito prevede pagine che offrono una panoramica introduttiva chiara sui servizi che offre.
 Prevede inoltre le seguenti tipologie di area personale: per i clienti, per gli istruttori, personal trainer, e per gli admin.
 
-All'interno dei vari file abbiamo utilizzato sempre link relativi, salvo alcune occasioni in cui ci è tornato comodo scrivere link assoluti in maniera dinamica (tramite php) e il file \texttt{.htaccess}, che invece richiede di utilizzare percorsi assoluti.
+All'interno dei vari file abbiamo utilizzato sempre link relativi, salvo alcune occasioni in cui ci è tornato comodo scrivere link assoluti in maniera dinamica (tramite php) e il file \texttt{.htaccess}, che invece richiede l'utilizzo di percorsi assoluti.
 
-La relazione, in termini di profondità nell'albero, che ci si aspetta tra le cartelle è la seguente:
+La relazione che ci si aspetta tra le cartelle in termini di profondità nell'albero è la seguente:
 \dirtree{%
 	.1 /(amorabit/).
 	.2 public\_html/.
@@ -289,7 +289,11 @@ Abbiamo adottato un menù ad hamburger con css puro per gli utenti da mobile, fa
 \section{TEST EFFETTUATI}
 
 \subsection{Sicurezza}
-
+Per quanto riguarda la sicurezza, abbiamo effettuato due tipologie di test:
+\begin{enumerate}
+	\item test statici, utilizzando il tool "Snyk" come estensione di VSCode. Questo ha riportato alcune vulnerabilità in fase di sviluppo, che abbiamo risolto.
+	\item test dinamici, non automatizzati. Per quanto i test automatizzati siano incredibilmente più efficaci ed efficienti, dal momento che ci siamo trovati tardi ad effettuarli, avremmo dovuto farlo sui server dell'università. Questo non ci risulta essere legale, e comunque sarebbe rischioso dal momento che non abbiamo mai utilizzato strumenti di analisi dinamica prima (potenzialmente avremmo potuto congestionare il server oppure trovarci con una connessione limitata che ci avrebbe impedito di continuare lo sviluppo)
+\end{enumerate}
 
 \subsection{Accessibilità}
 
