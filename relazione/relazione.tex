@@ -230,11 +230,11 @@ La palette dei colori è stata scelta per garantire un elevato contrasto tra tes
 		\hline
 		\cellcolor[HTML]{965cfd}\hspace{2cm} & \texttt{\#965cfd}  & Links non visitati \\
 		\hline
-		\cellcolor[HTML]{ffee55}\hspace{2cm} & \texttt{\#ffee55}  & Testo \\
+		\cellcolor[HTML]{ffee55}\hspace{2cm} & \texttt{\#ffee55}  & Colore principale chiaro \\
 		\hline
-		\cellcolor[HTML]{ffcc00}\hspace{2cm} & \texttt{\#ffcc00}  & Testo \\
+		\cellcolor[HTML]{ffcc00}\hspace{2cm} & \texttt{\#ffcc00}  & Colore principale \\
 		\hline
-		\cellcolor[HTML]{ee8800}\hspace{2cm} & \texttt{\#ee8800}  & Testo \\
+		\cellcolor[HTML]{ee8800}\hspace{2cm} & \texttt{\#ee8800}  & Colore principale scuro\\
 		\hline
 		\cellcolor[HTML]{333322}\hspace{2cm} & \texttt{\#333322} &  Sfondo per tabelle \\
 		\hline 
@@ -242,13 +242,13 @@ La palette dei colori è stata scelta per garantire un elevato contrasto tra tes
 		\hline
 		\cellcolor[HTML]{111111}\hspace{2cm} & \texttt{\#111111}  & Sfondo header\\
 		\hline
-		\cellcolor[HTML]{dddddd}\hspace{2cm} & \texttt{\#dddddd}  & Testi secondari \\
+		\cellcolor[HTML]{dddddd}\hspace{2cm} & \texttt{\#dddddd}  & Testo generico \\
 		\hline
 	\end{tabular}
 \end{center}
+I colori principali sono stati utilizzati solamente in breadcrumb e heading. In quest'ultimo caso, come spiegato successivamente nella sezione \ref{sec-acc} dedicata ai test di accessibilità, è stato utilizzato un gradiente sul testo, che fa restituire a certi tool risultati incoerenti con quanto visualizzato effettivamente.
 \bigskip 
-I colori principali utilizzati nel sito sono riportati nella tabella; eventuali altri colori, impiegati in modo occasionale, sono stati comunque scelti e verificati nel rispetto dei principi di accessibilità.
-
+Eventuali altri colori, impiegati in modo occasionale, sono stati comunque scelti e verificati nel rispetto dei principi di accessibilità.
 
 \subsection{Lingue straniere}
 Il sito supporta contenuti in italiano come lingua principale, ma utilizza attributi \texttt{lang} per le parole straniere, permettendo una migliore accessibilità tramite screen reader.
@@ -283,9 +283,9 @@ Per assicurare una corretta pronuncia da parte dei sintetizzatori vocali, i term
 I contenuti di ogni pagina sono stati disposti in modo tale da essere facilmente accessibili indipendentemente dal dispositivo utilizzato.
 Abbiamo adottato un menù ad hamburger con css puro per gli utenti da mobile, facilitandone la navigazione; le varie tabelle presenti inoltre sono state linearizzate in modo fa facilitarne la lettura su diversi dispositivi.
 
-\section{TEST EFFETTUATI}
+\section{Test effettuati}
 
-\subsection{Accessibilità}
+\subsection{Accessibilità} \label{sec-acc}
 Tutti i test sono stati effettuati sui seguenti browser:
 \begin{itemize}
 	\item firefox
