@@ -597,11 +597,13 @@ script {
         animation: none !important;
     }
 
+    .tab-content-area .tab-panel h2,
     .tab-panel h2 {
         color: #000 !important;
+        background: none !important;
+        -webkit-text-fill-color: #000 !important;
+        -webkit-background-clip: initial !important;
         text-shadow: none !important;
-        border-bottom: 1px solid #000 !important;
-        margin-bottom: 15px !important;
     }
 
     .abbonamento-card {
