@@ -30,25 +30,24 @@
                 <p>Indirizzo: 96100 Siracusa SR</p>
                 <p>Telefono: <a href="tel:+390498762439">049 8762439</a></p>
                 <p>Email: <a href="mailto:supporto@tempio.apollo.it">supporto@tempio.apollo.it</a></p>
-                <p>Orari: Lun-Dom 7:00-22:00</p>
+                <p aria-label="Orari di apertura dal lunedi alla domenica, dalle 7:00 alle 22:00">Orari: Lun-Dom 7:00-22:00</p>
             </address>
         </section>
 
-        <section class="contatti-interazione">
-            <div class="form-contatto" aria-label="Form di Contatto e Mappa">
+        <section class="contatti-interazione" aria-label="Form di Contatto e Mappa">
+            <div class="form-contatto">
                 <h2>Scrivici</h2>
-
                 <form>
-                    <label for="nome">Nome *</label>
+                    <label for="nome">Nome <span aria-hidden="true">*</span></label>
                     <input type="text" id="nome" name="nome" required>
 
-                    <label for="email">Email *</label>
+                    <label for="email">Email <span aria-hidden="true">*</span></label>
                     <input type="email" id="email" name="email" required>
 
                     <label for="telefono">Telefono</label>
                     <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}">
 
-                    <label for="messaggio">Messaggio *</label>
+                    <label for="messaggio">Messaggio <span aria-hidden="true">*</span></label>
                     <textarea id="messaggio" name="messaggio" rows="5" required></textarea>
 
                     <button type="submit" class="btn-invia">Invia</button>
