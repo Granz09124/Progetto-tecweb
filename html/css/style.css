@@ -521,6 +521,7 @@ a.bottone-dettagli:active {
 }
 
 .testo-contenitore {
+    margin-top: 1em;
     display: flex;
     flex-direction: column; 
     width: 60%;
