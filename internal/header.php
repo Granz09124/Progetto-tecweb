@@ -22,6 +22,9 @@ function renderFromHtml($htmlContent) {
     $currentPath = str_replace("/error", "", $currentPath);
     $menuContent = str_replace("[CWD]", $currentPath, $menuContent);
         
+    // Regex che serve ad individuare l'intero elemento <li> contenente il link attivo, nel template del menu:
+    // cerca un tag <a> il cui attributo 'data-page' corrisponda esattamente alla variabile $currentPage (escapata con preg_quote),
+    // catturando nel primo gruppo tutti gli attributi del tag e nel secondo il testo visibile del link, gestendo eventuali spaziature variabili.
     $pattern = '/<li>\s*<a ([^>]*data-page="' . preg_quote($currentPage, '/') . '"[^>]*)>(.*?)<\/a>\s*<\/li>/';
     
     if (preg_match($pattern, $menuContent, $matches)) {
@@ -33,6 +36,7 @@ function renderFromHtml($htmlContent) {
             $keepLang = ' lang="en"';
         }
         
+        // Assicura che la pagina corrente abbia gli attributi corretti
         $span = '<li><span' . $keepLang . ' aria-current="page" tabindex="0">' . $contentInside . '</span></li>';
         $menuContent = preg_replace($pattern, $span, $menuContent);
     }
