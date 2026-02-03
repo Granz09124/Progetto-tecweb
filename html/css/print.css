@@ -597,6 +597,13 @@ script {
         animation: none !important;
     }
 
+    .tab-panel h2 {
+        color: #000 !important;
+        text-shadow: none !important;
+        border-bottom: 1px solid #000 !important;
+        margin-bottom: 15px !important;
+    }
+
     .abbonamento-card {
         border: 1px solid #000 !important;
         background: transparent !important;
