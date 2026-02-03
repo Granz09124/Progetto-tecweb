@@ -198,4 +198,4 @@ INSERT INTO Sottoscrizione (id_utente, id_abbonamento, data_inizio, data_fine) V
 (13, 8, '2024-01-01', '2025-12-31');  -- Davide - Arrampicata Annuale
 
 -- Assegna Mario Rossi (id 3) al PT Marco Colombo (id 9)
-INSERT INTO Assegnazione_PT (id_pt, id_cliente) VALUES (9, 3);
+INSERT INTO Assegnazione_PT (id_pt, id_cliente, dimensione_file, data_caricamento) VALUES (9, 3, 195843, '2026-02-03 12:47:20');
