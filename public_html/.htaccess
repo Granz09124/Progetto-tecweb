@@ -1,0 +1,7 @@
+ErrorDocument 403 /amorabit/error/403.php
+ErrorDocument 404 /amorabit/error/404.php
+
+RewriteEngine On
+RewriteBase /amorabit/
+
+RewriteRule ^/?$ /amorabit/home.php [R=301,L]

@@ -1,0 +1,863 @@
+:root {
+    --textColor: #000;
+    --bordo-sezione: .5mm solid black;
+}
+
+html,
+body {
+    font-size: 100%;
+    font-family: "Times New Roman", "Times", serif;
+    line-height: 1.6em;
+}
+
+body {
+    color: var(--textColor);
+    background-color: var(--mainBackgroundColor);
+    max-width: 100%;
+    margin: auto;
+}
+
+a:link {
+    text-decoration: underline;
+    color: var(--urlColor);
+}
+
+a:visited {
+    text-decoration: underline;
+    color: var(--visitedUrlColor);
+}
+
+a:link:has(.logo) {
+    text-decoration: none;
+    width: fit-content;
+    display: inline;
+}
+
+h1,
+#layout-adhoc h1,
+h2,
+#layout-adhoc h2,
+h3,
+#layout-adhoc h3,
+h4,
+#layout-adhoc h4,
+h5,
+#layout-adhoc h5,
+h6 {
+    background: initial;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    color: var(--textColor);
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+strong {
+    font-weight: normal;
+}
+
+footer {
+    margin-top: .5cm;
+    padding-left: 0 0 0 -.5cm;
+    font-size: small;
+    color: var(--textColor);
+    border-top: .2mm solid var(--textColor);
+}
+
+header.intestazione {
+    all: initial;
+    text-transform: uppercase;
+}
+
+form {
+    display: block;
+    margin-left: .5cm;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: .4cm;
+    margin-bottom: .1cm;
+}
+
+fieldset {
+    border: .2mm solid var(--textColor);
+    padding: .5cm;
+    margin-bottom: .8cm;
+    page-break-inside: avoid;
+    background-color: white;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 .3cm;
+    color: var(--textColor);
+}
+
+input,
+textarea {
+    display: block;
+    width: 12cm;
+    padding: .2cm;
+    border: .5mm solid var(--textColor);
+    background-color: white;
+    color: var(--textColor);
+}
+
+input::placeholder {
+    color: #666;
+}
+
+textarea {
+    height: 3cm;
+}
+
+.intestazione .logo {
+    width: 2.5cm;
+    display: inline;
+    vertical-align: middle;
+    padding: .5cm;
+}
+
+.intestazione h1 {
+    display: inline;
+}
+
+#menu {
+    display: none;
+}
+
+#breadcrumb {
+    color: var(--textColor);
+    padding: 0 0 2mm 2mm;
+    font-size: 85%;
+    border-bottom: .5mm solid var(--textColor);
+}
+
+#content>article,
+.topic {
+    border: var(--bordo-sezione);
+    box-shadow: none;
+    background-color: none;
+    margin: .4cm;
+    padding: .5cm;
+}
+
+.light-topic {
+    border: var(--bordo-sezione);
+    box-shadow: none;
+    background-color: none;
+    margin: 0.4cm;
+    padding: .5cm;
+}
+
+.contenuto-principale {
+    margin: .5cm;
+}
+
+/* ============
+ * HOME
+ ============ */
+:root {
+    --reviewImageSize: 3cm;
+}
+
+#presentazione {
+    margin: .5cm;
+}
+
+#presentazione>section {
+    display: inline;
+    width: 18cm;
+    padding: .5cm;
+}
+
+#presentazione img {
+    width: 7cm;
+    max-width: 7cm;
+    vertical-align: middle;
+    padding: .4cm;
+    margin: .25cm;
+    display: inline;
+}
+
+#catchphrase {
+    color: var(--textColor);
+    font-size: 120%;
+    width: 8cm;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#presentazione-servizi img {
+    display: block;
+    width: 80%;
+    position: relative;
+    margin: 1% 3%;
+    padding: 0;
+}
+
+#presentazione-servizi section:nth-child(3) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+#presentazione-servizi section strong {
+    font-weight: bold;
+}
+
+#presentazione-servizi article {
+    width: 80%;
+    justify-content: center;
+}
+
+#recensioni strong {
+    font-weight: bold;
+}
+
+#recensioni {
+    margin: .2cm;
+}
+
+#recensioni article {
+    margin: 0;
+}
+
+#recensioni .recensione dd:has(img) {
+    width: 40%;
+    display: inline-block;
+}
+
+#recensioni img {
+    width: var(--reviewImageSize);
+    float: left;
+    border-radius: 25%;
+    display: inline;
+}
+
+#recensioni ul {
+    display: block;
+    list-style: none;
+    justify-content: space-around;
+    padding: .2cm;
+}
+
+#recensioni .recensione {
+    display: block;
+}
+
+#recensioni li {
+    margin-top: .2cm;
+    height: 3.7cm;
+}
+
+.voto-recensione {
+    color: var(--textColor);
+}
+
+#recensioni .recensione .voto-recensione,
+#recensioni .recensione .contenuto-recensione {
+    margin-top: -4cm;
+    padding-bottom: 4cm;
+    margin-left: calc(var(--reviewImageSize) + 1cm);
+    max-width: calc(100% - var(--reviewImageSize) - 1.2cm);
+}
+
+#recensioni .recensione .contenuto-recensione {
+    padding-bottom: .3cm;
+}
+
+/* ============
+ * Corsi
+ ============ */
+
+.corso img {
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.lista-corsi {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px; 
+        border: var(--bordo-sezione);
+        padding: 10px;
+    }
+.corso {
+        display: flex;
+        flex-direction: column; 
+        border: var(--bordo-sezione);
+        padding: 10px;
+        page-break-inside: avoid;
+    }
+
+
+.corso img {
+        width: 100%;     
+        max-height: 120px; 
+        object-fit: cover; 
+        margin-bottom: 10px;
+    }
+
+.corso-descrizione {
+        font-size: 12pt; 
+        line-height: 1.2;
+    }
+
+
+ .orari-corsi table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .orari-corsi th,
+    .orari-corsi td {
+        background-color: white !important; 
+        color: black !important;          
+        border: 1px solid black !important;
+        text-shadow: none !important;       
+        box-shadow: none !important;
+        padding: 4px;
+        word-wrap: break-word;
+        white-space: normal;
+        background: initial !important;
+        background-clip: initial !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: black !important;
+    }
+
+    .orari-corsi th {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+/* ============
+ * Sala pesi 
+ ============ */
+
+.descrizioni-sala-pesi strong {
+    font-weight: normal;
+}
+
+ .descrizioni-sala-pesi article {
+        display: block;
+        page-break-inside: avoid;
+        margin-bottom: 2cm;
+    }
+
+    .descrizioni-sala-pesi article img {
+        display: block;
+        max-width: 40%;
+        float: left;
+        margin-right: 1cm;
+        margin-bottom: 0.5cm;
+    }
+
+    .testo-contenitore {
+        width: 100%;
+    }
+
+    .lista-attrezzi {   
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .lista-attrezzi li {
+        padding-left: 1.5em;
+        position: relative;
+    }
+
+    .lista-attrezzi li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #000;
+        font-size: 1.5em;
+        line-height: 1;
+    }
+
+
+/* ============
+ * CONTATTACI
+ ============ */
+
+.contatti-sede {
+    margin-bottom: 1cm;
+    page-break-inside: avoid;
+}
+
+.contatti-sede h2 {
+    margin-bottom: .4cm;
+}
+
+.contatti-sede ul {
+    list-style: none;
+    padding: 0;
+    margin-left: .5cm;
+}
+
+.contatti-sede li {
+    margin-bottom: .3cm;
+}
+
+.contatti-interazione {
+    display: block;
+}
+
+.form-contatto,
+.form-container {
+    margin-bottom: 1cm;
+    page-break-inside: avoid;
+}
+
+.btn-invia {
+    display: inline-block;
+    margin-top: .5cm;
+    padding: .3cm .8cm;
+    border: .3mm solid var(--textColor);
+    background-color: white;
+    color: var(--textColor);
+    font-weight: bold;
+    cursor: default;
+}
+
+.mappa {
+    display: none;
+}
+
+
+/* ============
+ * LOGIN
+ ============ */
+.password-wrapper {
+    display: block;
+}
+
+.form-container {
+    margin-left: .5cm;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-shadow: none;
+}
+
+.password-wrapper label,
+.form-container label {
+    display: block;
+    color: var(--textColor) !important;
+}
+
+.toggle-password {
+    display: none;
+}
+
+.link-registrazione,
+.link-login {
+    margin-top: .5cm;
+    font-size: 90%;
+    color: var(--textColor);
+}
+
+.form-container h1 {
+    color: var(--textColor);
+}
+
+
+/* ============
+ * REGISTRATI
+ ============ */
+.titolo-registrazione {
+    text-align: center;
+    margin: .8cm 0;
+    font-weight: bold;
+    color: var(--textColor);
+}
+
+.form-registrazione {
+    margin-left: .5cm;
+    margin: 0 auto;
+    border: 1px solid black;
+    box-shadow: none;
+}
+
+.form-registrazione legend,
+.form-registrazione label {
+    color: var(--textColor);
+}
+
+.info-password {
+    display: block;
+    font-size: 85%;
+    margin-top: .1cm;
+    margin-left: .2cm;
+    font-style: italic;
+    color: var(--textColor);
+}
+
+
+/* =============
+   Palestra, Abbonamenti
+   ============ */
+    .tab-menu, 
+    .badge-posizione,
+    .bottone-dettagli {
+        display: none !important;
+    }
+
+    .sezione-sala-pesi,
+    .sezione-corsi,
+    .sezione-personal-trainers {
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid #000 !important;
+        box-shadow: none !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 20px !important;
+        page-break-inside: avoid;
+        display: block !important;
+        color: #000 !important;
+    }
+
+    .sezione-sala-pesi::before,
+    .sezione-corsi::before,
+    .sezione-personal-trainers::before {
+        display: none !important;
+    }
+
+    .layout-palestra ul, 
+    .abbonamento-card ul {
+        margin-left: 20px !important;
+        color: #000 !important;
+    }
+    .layout-palestra ul li {
+        list-style-type: disc !important;
+        color: #000 !important;
+    }
+
+    .layout-abbonamenti { 
+        display: block !important; 
+        padding-top: 0 !important;
+    }
+
+    .tab-content-area {
+        border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    .tab-panel { 
+        display: block !important; 
+        opacity: 1 !important;
+        animation: none !important;
+    }
+
+    .tab-content-area .tab-panel h2,
+    .tab-panel h2 {
+        color: #000 !important;
+        background: none !important;
+        -webkit-text-fill-color: #000 !important;
+        -webkit-background-clip: initial !important;
+        text-shadow: none !important;
+    }
+
+    .abbonamento-card {
+        border: 1px solid #000 !important;
+        background: transparent !important;
+        color: #000 !important;
+        border-radius: 4px !important;
+        margin-bottom: 15px !important;
+        padding: 15px !important;
+        page-break-inside: avoid;
+        display: block !important;
+    }
+
+    .abbonamento-card h3 {
+        border-bottom: 1px solid #000 !important;
+        margin-bottom: 10px !important;
+        color: #000 !important;
+    }
+
+    .abbonamento-card .prezzo {
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+    
+    .abbonamento-card small { 
+        color: #000 !important; 
+    }
+
+    .sezione-bundles {
+        margin-top: 30px !important;
+        page-break-before: auto;
+    }
+    
+    .sezione-bundles h2 {
+        color: #000 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .bundle-podio { 
+        display: block !important; 
+    }
+
+    .bundle {
+        border: 1px solid #000 !important;
+        background: transparent !important;
+        margin-bottom: 15px !important;
+        padding: 15px !important;
+        border-radius: 4px !important;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+        color: #000 !important;
+        transform: none !important;
+    }
+    
+    .bundle h3 {
+        color: #000 !important;
+    }
+
+    .bundle-primo, .bundle-secondo, .bundle-terzo {
+        border: 1px solid #000 !important;
+        background: transparent !important;
+        width: 100% !important;
+        flex: none !important;
+        order: initial !important;
+    }
+    
+    .prezzo-originale {
+        text-decoration: line-through !important;
+        color: #666 !important;
+    }
+
+/* ============
+  * Ricerca
+  ============ */
+#form-ricerca-istruttore button {
+    display: none;
+}
+
+.barra-ricerca {
+    width: 95%;
+    margin: auto;
+}
+
+.img-pt-small {
+    min-width: 5cm;
+    width: 5cm;
+}
+
+#risultati-ricerca li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* ==========
+   Utenti
+   ========= */
+ .btn-link,          
+    .btn-modify,        
+    .account-actions,   
+    .btn-logout,
+    .btn-delete,
+    .btn-save,
+    #torna-su,
+    .upload-form, 
+    #formSection, 
+    .feedback-message,
+    #form-ricerca-istruttore button {
+        display: none !important;
+    }
+
+    .area-personale {
+        display: block !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .area-personale > h1 {
+        text-align: left !important;
+        font-size: 18pt !important;
+        border-bottom: 2px solid #000;
+        margin-bottom: 20px;
+        color: #000 !important;
+    }
+
+    .user-section {
+        border: 1px solid #000 !important;
+        margin-bottom: 25px !important;
+        padding: 15px !important;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+    }
+
+    .user-section h2 {
+        font-size: 14pt !important;
+        border-bottom: 1px solid #000 !important;
+        margin-bottom: 15px !important;
+        color: #000 !important;
+    }
+
+    .data-list-group {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1em;
+    }
+
+    .data-item label {
+        color: #000 !important;
+        font-size: 10pt !important;
+        font-weight: bold !important;
+        text-transform: uppercase;
+    }
+
+    .data-item input, 
+    .data-item textarea {
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px dotted #000 !important;
+        padding: 5px 0 !important;
+        font-size: 11pt !important;
+        color: #000 !important;
+        resize: none !important;
+    }
+
+    .links-list li {
+        border-bottom: 1px solid #000 !important;
+        color: #000 !important;
+        background: transparent !important;
+    }
+    .links-list strong, .links-list span {
+        color: #000 !important;
+    }
+
+    .admin-table {
+        display: table !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+        background-color: transparent !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+        border: 2px solid #000 !important;
+    }
+
+    .admin-table th, 
+    .admin-table td {
+        border-right: 1px solid #000 !important;
+        border-bottom: 1px solid #000 !important;
+        border-left: none !important;
+        border-top: none !important;
+        padding: 6px 8px !important;
+        color: #000 !important;
+        font-size: 11pt !important;
+        text-align: left !important;
+        vertical-align: middle !important;
+    }
+
+    .admin-table th {
+        font-weight: bold !important;
+        text-transform: uppercase !important;
+        background-color: #e0e0e0 !important;
+        border-bottom: 2px solid #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .admin-table th:last-child,
+    .admin-table td:last-child {
+        border-right: none !important;
+    }
+    .admin-table tr:last-child td {
+        border-bottom: none !important;
+    }
+
+    .admin-table tr {
+        page-break-inside: avoid !important;
+    }
+
+    .admin-table th:nth-child(4),
+    .admin-table td:nth-child(4) {
+        display: none !important;
+        width: 0 !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .admin-table.clients-table th:nth-child(1), .admin-table.clients-table td:nth-child(1) { width: 40% !important; }
+    .admin-table.clients-table th:nth-child(2), .admin-table.clients-table td:nth-child(2) { width: 35% !important; }
+    .admin-table.clients-table th:nth-child(3), .admin-table.clients-table td:nth-child(3) { width: 25% !important; }
+
+    .admin-table:not(.clients-table) th:nth-child(1), .admin-table:not(.clients-table) td:nth-child(1) { width: 30% !important; }
+    .admin-table:not(.clients-table) th:nth-child(2), .admin-table:not(.clients-table) td:nth-child(2) { width: 30% !important; }
+    .admin-table:not(.clients-table) th:nth-child(3), .admin-table:not(.clients-table) td:nth-child(3) { width: 40% !important; }
+
+    .empty-message {
+        border: 1px solid #000 !important;
+        padding: 20px !important;
+        text-align: center !important;
+        color: #000 !important;
+    }
+.area-personale h1 {
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    background: none !important;
+    text-shadow: none !important;
+    text-align: left !important;
+    border-bottom: 2px solid #000 !important;
+    margin-bottom: 20px !important;
+}
+
+.user-section {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+table.admin-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: 2px solid #000 !important;
+    margin-top: 10px !important;
+}
+
+.admin-table th, 
+.admin-table td {
+    border: 1px solid #000 !important;
+    padding: 5px 8px !important;
+    color: #000 !important;
+    text-align: left !important;
+    background: transparent !important;
+}
+
+.admin-table th {
+    background-color: #f0f0f0 !important; 
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.admin-table th:nth-child(4),
+.admin-table td:nth-child(4),
+.admin-table th:last-child,
+.admin-table td:last-child {
+    display: none !important;
+    width: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
