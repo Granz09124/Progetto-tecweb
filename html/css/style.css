@@ -1027,6 +1027,11 @@ h2 {
 
 .contatti-sede h2 {
     margin-bottom: 1rem;
+    text-align: left;
+}
+
+.contatti-sede h1 {
+    text-align: center;
 }
 
 .contatti-sede ul {
