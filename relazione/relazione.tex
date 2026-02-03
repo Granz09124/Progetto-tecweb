@@ -172,7 +172,7 @@ Vengono riportate le convenzioni interne del sito:
 	\item I link, sia quelli visitati e non visitati, vengono presentati come sottolineati, in particolare i link non visitati hanno un colore di testo chiaro vicino all'azzurro, mentre i link visitati hanno un colore di testo viola, inoltre sono entrambi posti su sfondo nero. Questi colori sono stati scelti in quanto fanno parte della palette di colori utilizzata. 
 	\item Nelle tabelle, i colori delle righe dispari e pari sono sempre diversi tra loro, e sempre gli stessi all'interno del sito
 	\item Tutte le voci del menu e del breadcrumb sono raggiungibili tramite \texttt{tab}, anche le voci che non sono link in quanto corrispondono alla pagina corrente. In questo modo, per passare dalla voce "Home" ad "Abbonamenti" bisogna premere il tasto \texttt{tab} due volte, anche se la pagina attuale è "Palestra", la cui voce si trova esattamente in mezzo tra le due.
-	\item In fase di stampa, il colore principale della palestra, il giallo, viene trasformato in nero per favorire la lettura.
+	\item In fase di stampa, il colore principale della palestra, il giallo, viene trasformato in nero per favorire la lettura. Scompare il menu, e si preserva il breadcrumb. All'interno del gruppo si è deciso individualmente quali immagini mantenere e quali stampare, immaginando l'utilizzo dell'utente.
 \end{itemize}
 
 \subsection{Struttura del database}
@@ -189,7 +189,7 @@ La progettazione è iniziata poco dopo l'inizio dell'assegnazione dei gruppi.
 Si è rapidamente deciso che l'argomento del sito sarebbe stata una palestra. Dopo aver deciso il nome, abbiamo iniziato a stilare una lista di operazioni che avremmo potuto permettere agli utenti. Successivamente, ci siamo focalizzati sul contenuto e lo stile del sito, nonché sulla struttura generale. È stato in quest'occasione che abbiamo deciso di introdurre dei cicli nella struttura gerarchica e le breadcrumb.
 \noindent
 \\
-Abbiamo riscontrato problemi quando abbiamo dovuto aggiungere del comportamento al sito, in particolare nella parte di backend: nell'analisi dei requisiti non abbiamo incluso le funzionalità che avrebbero dovuto effettivamente essere presenti in quanto progetto, e questo ci si è ritorto contro verso la fine del progetto, che abbiamo dovuto aggiungere ulteriori funzionalità.
+Abbiamo riscontrato problemi quando abbiamo dovuto aggiungere del comportamento al sito, in particolare nella parte di backend: nell'analisi dei requisiti non abbiamo incluso le funzionalità che avrebbero dovuto effettivamente essere presenti in quanto progetto, e questo ci si è ritorto contro verso la fine del progetto, quando abbiamo dovuto aggiungere ulteriori funzionalità.
 \noindent
 \\
 Ad ogni incontro sincrono abbiamo messo per iscritto quello che era stato fatto, quello che avremmo dovuto fare tra quell'incontro e quello successivo, e quali sarebbero stati gli argomenti da affrontare in seguito. Questo ci ha permesso di tenere un buon ritmo ed effettuare modifiche rapidamente quando ci siamo accorti di essere finiti fuori scope.
@@ -205,7 +205,7 @@ Vengono utilizzati tre diversi fogli di stile, ognuno con uno scopo diverso:
 	\item \texttt{print.css}: per lo stile da stampante
 \end{itemize}
 \noindent
-È stata presa questa decisione è stata presa per gestire al meglio l'aspetto responsive del sito, oltre ad avere una propria organizzazione del css.
+È stata presa questa decisione è stata presa per facilitare la gestione dei css e diminuire i tempi di risposta del sito.
 
 \subsection{Immagini e icone}
 La maggior parte delle immagini vengono archiviate prevalentemente in formato JPG, con una dimensione massima che non supera il MB, ad eccezione di questo troviamo le immagini generate per le pagine error e le icone, che vengono salvate in formato WEBP, e l'immagine del logo che è salvata in formato PNG ma non supera la grandezza di 1MB. Questa scelta è stata adottata per ridurre i tempi di caricamento delle pagine; tuttavia, l’utilizzo di questo formato potrebbe comportare possibili problemi di retrocompatibilità, dovuti alla sua introduzione relativamente recente.
@@ -252,7 +252,7 @@ Eventuali altri colori, impiegati in modo occasionale, sono stati comunque scelt
 \subsection{Lingue straniere}
 Il sito supporta contenuti in italiano come lingua principale, ma utilizza attributi \texttt{lang} per le parole straniere, permettendo una migliore accessibilità tramite screen reader.
 
-In merito a questo, nella pagina \texttt{Home} è presente un \texttt{lang="fr"} per \textit{tapis roulant} che, per qualche motivo, NVDA non legge in francese, nonostante notifichi il cambio di lingua.
+In merito a questo, nella pagina \texttt{Home} è presente un \texttt{lang="fr"} per \textit{tapis roulant} che, non capiamo il perché, NVDA non legge in francese, nonostante notifichi il cambio di lingua.
 
 \subsection{Screen reader}
 La separazione tra struttura, presentazione e comportamento garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistivi. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
@@ -267,7 +267,7 @@ Come scritto nella sezione \ref{conv-interne}, si può utilizzare \texttt{tab} a
 \paragraph{Tabelle dati}
 Le tabelle utilizzate per visualizzare gli orari dei corsi sono state progettate per essere facilmente interpretabili dagli screen reader. In particolare:
 \begin{itemize}
-	\item al posto del tag \texttt{<caption>}, è stato utilizzato un paragrafo descrittivo nascosto visivamente, collegato alla tabella tramite l’attributo \texttt{aria-describedby}. Questo consente allo screen reader di leggere una descrizione introduttiva del contenuto della tabella prima della navigazione delle celle;
+	\item è stato utilizzato un paragrafo descrittivo nascosto visivamente, collegato alla tabella tramite l’attributo \texttt{aria-describedby}. Il tag \texttt{<caption>} è stato omesso in quanto tanto vicino all'heading \texttt{<h2>}, e la tabella è l'unico contenuto sotto quest'heading. Questo consente allo screen reader di leggere una descrizione introduttiva del contenuto della tabella prima della navigazione delle celle. Abbiamo notato che NVDA legge due volte la descrizione della tabella, una volta che raggiunge la tabella: utilizzare \texttt{aria-hidden} sulla descrizione risolve il problema, ma abbiamo visto può provocare problemi di compatibilità, quindi non è stato inserito;
 	\item le celle di intestazione (\texttt{<th>}) utilizzano l’attributo \texttt{scope} per associare correttamente le celle di dati alle rispettive intestazioni di riga e di colonna, permettendo una lettura contestualizzata delle informazioni.
 \end{itemize}
 
