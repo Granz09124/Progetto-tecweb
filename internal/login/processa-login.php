@@ -2,13 +2,13 @@
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    header('Location: /login.php');
+    header('Location: login.php');
     exit();
 }
 
 if (isset($_SESSION['user_id'])) {
     http_response_code(200);
-    header('Location: /area-personale.php');  
+    header('Location: area-personale.php');  
     exit();
 }
     

@@ -175,16 +175,19 @@ Si fa presente, inoltre, che non sono presenti le pagine php pubbliche che perme
 	\includegraphics[width=.8\linewidth]{struttura_sito.png}
 \end{center}
 
-\subsection{Convenzioni interne}
+\subsection{Convenzioni interne} \label{conv-interne}
 Vengono riportate le convenzioni interne del sito:
 \begin{itemize}
 	\item I link, sia quelli visitati e non visitati, vengono presentati come sottolineati, in particolare i link non visitati hanno un colore di testo chiaro vicino all'azzurro, mentre i link visitati hanno un colore di testo viola, inoltre sono entrambi posti su sfondo nero. Questi colori sono stati scelti in quanto fanno parte della palette di colori utilizzata. 
-	\item (TABELLE?)
+	\item Nelle tabelle, i colori delle righe dispari e pari sono sempre diversi tra loro, e sempre gli stessi all'interno del sito
+	\item Tutte le voci del menu e del breadcrumb sono raggiungibili tramite \texttt{tab}, anche le voci che non sono link in quanto corrispondono alla pagina corrente. In questo modo, per passare dalla voce "Home" ad "Abbonamenti" bisogna premere il tasto \texttt{tab} due volte, anche se la pagina attuale è "Palestra", la cui voce si trova esattamente in mezzo tra le due.
 \end{itemize}
 
-\subsection{Schema database}
-Schema relazionale del database:
-
+\subsection{Struttura del database}
+A seguire la struttura del database. Come scritto sopra, la tabella \texttt{Messaggio\_Contattaci} è presente unicamente per dare un comportamento al pulsante di invio messaggi. Le informazioni vengono salvate sul database, ma non vengono mai riflesse a schermo.
+\begin{center}
+	\includegraphics[width=.9\linewidth]{diagramma_er.png}
+\end{center}
 
 
 \section{Progettazione}
@@ -271,7 +274,7 @@ L’accessibilità per gli utenti di screen reader è stata migliorata attravers
 All’inizio di ogni pagina è presente un collegamento di salto al contenuto principale (“Vai al contenuto”), posizionato come primo elemento del DOM. Questo link è inizialmente nascosto e diventa visibile quando riceve il focus da tastiera, consentendo agli utenti che navigano senza mouse di bypassare elementi ripetitivi come l’intestazione e il menu di navigazione e raggiungere direttamente il contenuto principale racchiuso nel tag \texttt{<main>}.
 
 \paragraph{Breadcrumb}
-Nessuno ama perdersi tra le pagine di un sito, quindi abbiamo aggiunto i breadcrumb per dare un riferimento chiaro a chi naviga. Non è solo estetica: abbiamo usato il tag \texttt{<nav>} con l'etichetta \texttt{aria-label="percorso di navigazione"} proprio per non creare confusione a chi usa uno screen reader, distinguendo nettamente questo blocco dal menu principale. Un dettaglio fondamentale è l'uso di \texttt{aria-current="page"} sull'ultimo elemento: serve a dire chiaramente "sei qui", confermando la posizione attuale senza margini d'errore.
+Come scritto nella sezione \ref{conv-interne}, si può utilizzare \texttt{tab} all'interno delle breadcrumb per raggiungere anche il livello che comunica la pagina attuale. La decisione è stata dovuta anche al fatto che abbiamo deciso di esprimere i breadcrumb come lista ordinata, e ci sembrava controintuitivo che il tasto \texttt{tab} saltasse sempre l'ultimo livello.
 
 \paragraph{Tabelle dati}
 Le tabelle utilizzate per visualizzare gli orari dei corsi sono state progettate per essere facilmente interpretabili dagli screen reader. In particolare:
@@ -363,13 +366,28 @@ Vengono qui esposti i vari compiti svolti da ciascun membro del team di progetto
 	\item Creazione delle pagine js: toggle-descrizione-orari.js 
 	\item Stesura e aggiornamento della relazione 
 \end{itemize}
-\textbf{Marco}
+\textbf{Beltrame Marco}
 \begin{itemize}
-	\item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
-	\item Gestione in css delle stesse
-	\item Crezione prima versione del database
-	\item conclusione e revisione della relazione
+    \item Gestione della pagine: \texttt{abbonamenti.html}, \texttt{contattaci.html},  \texttt{login.html},  \texttt{registrati.html}
+    \item Crezione della prima versione del database \texttt{db.sql} e mantenimento dello stesso
+	\item Creazione e gestione dei file:
+	\begin{itemize}
+		\item \texttt{login.php} (con css mobile, dekstop e stampa)
+		\item \texttt{registrati.php} (con css mobile, dekstop e stampa)
+		\item \texttt{contattaci.php} (con css mobile, dekstop e stampa)
+        \item \texttt{processa-registrazione.php} (gestisce la validazione lato server dei dati utente, verifica l'univocità di email e codice fiscale e finalizza l'iscrizione inserendo i dati nel database in modo sicuro)
+        \item \texttt{processa-login.php} (autentica l'utente verificando le credenziali e assegna il ruolo specifico tra cui: cliente, admin o pt)
+        \item \texttt{header.php} (inietta il template del menu di navigazione appropriato differenziando tra utente loggato o ospite, gestendo i relativi attributi tra cui aria-current e tabindex e lang)
+        \item \texttt{processa-registrazione.php} (gestisce la validazione lato server dei dati utente, verifica l'univocità di email e codice fiscale e finalizza l'iscrizione inserendo i dati nel database in modo sicuro)
+		\item \texttt{caricaLogin.js} (usato per mostrare eventuali errori sull'html)
+		\item \texttt{caricaRegistrazione.js} (usato per mostrare eventuali errori sull'html)
+		\item \texttt{mostraPassword.js}
+	\end{itemize}
+	\item Gestione in css delle stesse 
+	\item Conclusione e revisione della relazione
+    
 \end{itemize}
+
 
 \section{Conclusioni e sviluppi futuri}
 Il progetto costituisce una base strutturata per lo sviluppo di un sito web per una palestra, progettato in modo da consentire agevolmente future espansioni e l’implementazione di ulteriori funzionalità, quali ad esempio:
