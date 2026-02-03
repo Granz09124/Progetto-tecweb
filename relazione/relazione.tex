@@ -87,22 +87,21 @@ Il sito vuole rispondere alle seguenti ricerche:
 \end{itemize}
 \noindent
 Le parole chiave che sono state selezionate per rivolgersi sia ad utenti che hanno già frequentato una palestra e che quindi sanno già cosa stanno cercando, sia ai nuovi utenti che non hanno una grande idea di cosa stiano effettivamente cercando.
-\noindent
-\\
-\\
+
 Per migliorare il ranking del sito sono state svolte le seguenti operazioni:
 \begin{itemize}
 	\item Ogni pagina presenta un tag <title> univoco che segue una logica descrittiva (es. "Home - Tempio di Apollo" o "Palestra - Offre").
 	Sono stati inseriti meta tag description dettagliati per migliorare il CTR (Click-Through Rate) nella SERP, descrivendo l'offerta della palestra (es. "una palestra con sala pesi e corsi di gruppo, nonché percorsi su misura"), e meta tag keywords per definire il campo semantico della pagina.
 	
-	\item La separazione tra struttura (HTML), presentazione (CSS) e contenuto garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistive. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
-	\item Poiché l’accessibilità rappresenta un fattore indiretto di posizionamento, sono state implementate diverse soluzioni tecniche volte a migliorare sia l’esperienza degli utenti che utilizzano screen reader, sia l’indicizzazione da parte dei motori di ricerca. In particolare:
+	\item Utilizzo degli \texttt{<strong>} in base alle parole chiave della pagina
 	
-	Gestione della lingua: affrontata in modo approfondito nella sezione dedicata all’accessibilità.
+	\item La separazione tra struttura, presentazione e comportamento rende più leggero il file visualizzato dai motori di ricerca, ad elimina informazioni non utili nell'\texttt{<head>}, primo contenuto che i motori di ricerca utilizzano per determinare la tipologia di sito
+		
+	\item È stata fatta attenzione all'accessibilità del sito, di conseguenza migliorandone la qualità e quindi il ranking
 	
-	Attributi alt: tutte le immagini con valore informativo sono corredate da testi alternativi descrittivi (ad esempio: “Foto di una statua greca che lancia un disco…”), consentendo la comprensione del contenuto visivo e favorendone l’indicizzazione. (SPOSTARE MAGARI IN SEZIONE SCREEN READER E DIRE SOLAMENTE CHE VIENE AFFRONTATA ANCHE QUI DOPO COME PER LA GESTIONE DELLA LINGUA?)
+	\item Il codice HTML è sintatticamente corretto
 	
-	\item Ogni pagina include, attraverso il metatag keywords, le parole chiave che ne descrivono il contenuto.
+	\item Abbiamo cercato di rendere le pagine leggere mettendo le immagini con dimensioni più vicine possibile a quanto effettivamente utilizzate, favorendo i file \texttt{JPEG} e utilizzando immagini di grandezza diversa quando la grandezza attesa è diversa (ad es. come compare la foto profilo di un istruttore nella pagina di ricerca degli istruttori, con risultati  multipli, e come compare nel suo profilo pubblico, ove il risultato è singolo)
 \end{itemize}
 
 \section{Tecnologie Utilizzate}
@@ -257,10 +256,13 @@ I colori principali utilizzati nel sito sono riportati nella tabella; eventuali 
 
 
 \subsection{Lingue straniere}
-Il sito supporta contenuti in italiano come lingua principale, ma è progettato per essere facilmente adattabile a lingue straniere attraverso l'uso di attributi lang e meccanismi di internazionalizzazione, permettendo una migliore accessibilità per utenti non italofoni.
+Il sito supporta contenuti in italiano come lingua principale, ma utilizza attributi \texttt{lang} per le parole straniere, permettendo una migliore accessibilità tramite screen reader.
+
+In merito a questo, nella pagina \texttt{Home} è presente un \texttt{lang="fr"} per \textit{tapis roulant} che, per qualche motivo, NVDA non legge in francese, nonostante notifichi il cambio di lingua.
 
 \subsection{Screen reader}
-L’accessibilità per gli utenti di screen reader è stata migliorata attraverso l’uso appropriato della semantica HTML5 e degli attributi ARIA. Questo è stato reso possibile attraverso l'uno di screen reader come NVDA che ci hanno aiutato a simulare l'esperienza di navigazione di un utente che ne necessita il bisogno.
+La separazione tra struttura, presentazione e comportamento garantisce che il sito sia accessibile a tutti gli utenti, inclusi quelli che utilizzano screen reader o dispositivi assistive. L'HTML semantico facilita la navigazione e la comprensione del contenuto.
+L’accessibilità per gli utenti di screen reader è stata migliorata attraverso l’uso appropriato della semantica HTML5 e degli attributi ARIA e alt per le immagini, dove necessario. Questo è stato reso possibile attraverso l'uno di screen reader come NVDA che ci hanno aiutato a simulare l'esperienza di navigazione di un utente che ne necessita il bisogno.
 
 \paragraph{Aiuti alla navigazione}
 All’inizio di ogni pagina è presente un collegamento di salto al contenuto principale (“Vai al contenuto”), posizionato come primo elemento del DOM. Questo link è inizialmente nascosto e diventa visibile quando riceve il focus da tastiera, consentendo agli utenti che navigano senza mouse di bypassare elementi ripetitivi come l’intestazione e il menu di navigazione e raggiungere direttamente il contenuto principale racchiuso nel tag \texttt{<main>}.
