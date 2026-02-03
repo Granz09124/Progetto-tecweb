@@ -571,6 +571,11 @@ h2 {
     margin: 1em 2em 0 2em;
 }
 
+.lista-corsi h1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
 .corso {
     display: flex;
     flex-direction: column;
@@ -1022,6 +1027,11 @@ h2 {
 
 .contatti-sede h2 {
     margin-bottom: 1rem;
+    text-align: left;
+}
+
+.contatti-sede h1 {
+    text-align: center;
 }
 
 .contatti-sede ul {
@@ -1269,13 +1279,6 @@ textarea {
     margin-top: 0.5em;
     font-size: 0.85em;
     color: #ccc;
-}
-
-.titolo-registrazione {
-    text-align: center;
-    margin-bottom: 0.5em;
-    color: var(--mainColor, #fecd00);
-    text-transform: uppercase;
 }
 
 .link-login {
